@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/preloader.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/rgb_deep.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/rgb.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/rgba.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/shadows.css') }}">
+</head>
+
+<body>
+
+    <!-- {% block preloader %}
+    {% include 'preloader.html' %}
+    {% endblock %} -->
+    
+    {% block header %}
+    {% include 'header.html' %}
+    {% endblock %}
+
+    {% block home %}    
+    {% endblock %}
+
+    <script src="{{ url_for('static', path='/js/main.js') }}"></script>
+    <script src="https://kit.fontawesome.com/fb866d52e1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
