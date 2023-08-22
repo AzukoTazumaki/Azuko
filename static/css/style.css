@@ -5,6 +5,11 @@
     src: url(../fonts/Exo2-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: 'Azuko 2';
+    src: url(../fonts/RockSalt-Regular.ttf);
+}
+
 ::-webkit-scrollbar {
     width: 0;
 }
@@ -23,6 +28,11 @@ body {
 .nav_container {
     background-color: var(--dark-gray-rgb);
     border-radius: 10px;
+    transition: .3s;
+}
+
+.nav_container:hover {
+    transform: scale(1.05);
 }
 
 .navbar_links a, .shopping_cart {
@@ -41,26 +51,52 @@ body {
     text-shadow: var(--dark-gray-shadow);
 }
 
-.main-1 {
-    height: 100vh;
-    background-image: url(../images/bg_main_1.jpeg);
-}
-
 .title span {
     font-size: 20vh;
     color: var(--periwinkle-purple-rgb);
-    opacity: .7;
+    opacity: .85;
     letter-spacing: 4vw;
     font-weight: bold;
-    text-shadow: 10px 10px 5px var(--periwinkle-purple-rgb);
+    /* text-shadow: 5px 5px 5px var(--periwinkle-purple-rgb); */
+}
+
+.main-1 {
+    height: 100dvh;
+    background-image: url(../images/bg_main/bg_main_1.jpg);
 }
 
 .main-2 {
-    height: 100vh;
-    background-image: url(../images/bg_main_2.jpeg);
+    height: 100dvh;
+    background-image: url(../images/bg_main/bg_main_2.jpg);
 }
 
 .main-3 {
-    height: 100vh;
-    background-image: url(../images/bg_main_3.jpeg);
+    height: 100dvh;
+    background-image: url(../images/bg_main/bg_main_3.jpg);
+}
+
+.card {
+    background: var(--dark-gray-rgb);
+}
+
+.last_release {
+    filter: grayscale(1) blur(4px);
+    transition: .3s;
+}
+
+.last_release img {
+    border-radius: 10px;
+}
+
+.last_release:hover {
+    filter: none;
+    transform: scale(1.1);
+}
+
+.last_releases_title {
+    font-size: 3vh;
+    color: var(--periwinkle-purple-rgb);
+    opacity: .85;
+    font-weight: bold;
+    text-shadow: var(--periwinkle-purple-shadow);
 }

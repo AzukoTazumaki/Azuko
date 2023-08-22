@@ -1,23 +1,22 @@
 {% block main_2 %}
 <div class="main-2">
 
-    <div class="container">
-        <div class="row d-flex justify-content-center align-items-center vh-100">
-            <div class="col-3">
+    <div class="container vh-100">
+        <p class="last_releases_title text-center">LAST RELEASES</p>
 
-                <div class="card">
-                    <img src="{{url_for('static', path='/images')}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <a href="#" class="card_button">Go somewhere</a>
-                    </div>
-                </div>
-                
+        <div class="row d-flex justify-content-center align-items-center g-5">
+            {% for i in range(3) %}
+            <div class="col-4">
+                <a class="last_release" href="">
+                    <img loading="lazy" src="../../static/images/last_releases/{{ i }}.jpg" class="card-img-top"
+                        alt="...">
+                </a>
             </div>
-            <div class="col-3">ЖДА</div>
-            <div class="col-3">ЫПД</div>
+            {% endfor %}
         </div>
+
     </div>
+</div>
 
 </div>
 {% endblock %}

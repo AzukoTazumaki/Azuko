@@ -12,7 +12,7 @@
     top: 0;
     width: 51%;
     height: 100%;
-    background: var(--black-rgb);
+    background: var(--dark-gray-rgb);
     z-index: 1000;
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -51,7 +51,7 @@
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: var(--black-rgb);
+    border-top-color: var(--gray-rgb);
     -webkit-animation: spin 3s linear infinite;
     animation: spin 3s linear infinite;
 }
