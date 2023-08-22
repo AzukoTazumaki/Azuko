@@ -5,11 +5,6 @@
     src: url(../fonts/Exo2-VariableFont_wght.ttf);
 }
 
-@font-face {
-    font-family: 'Azuko 2';
-    src: url(../fonts/RockSalt-Regular.ttf);
-}
-
 ::-webkit-scrollbar {
     width: 0;
 }
@@ -24,6 +19,8 @@
 body {
     font-family: 'Azuko';
 }
+
+/* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
 
 .nav_container {
     background-color: var(--dark-gray-rgb);
@@ -56,15 +53,15 @@ body {
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
     letter-spacing: 4vw;
-    font-weight: bold;
-    /* text-shadow: 5px 5px 5px var(--periwinkle-purple-rgb); */
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
 }
+
+/* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
 
 .main-1 {
     height: 100dvh;
     background-image: url(../images/bg_main/bg_main_1.jpg);
 }
-
 .main-2 {
     height: 100dvh;
     background-image: url(../images/bg_main/bg_main_2.jpg);
@@ -75,9 +72,7 @@ body {
     background-image: url(../images/bg_main/bg_main_3.jpg);
 }
 
-.card {
-    background: var(--dark-gray-rgb);
-}
+/* ————————————————————————————————————————————————— MAIN 2 ————————————————————————————————————————————————— */
 
 .last_release {
     filter: grayscale(1) blur(4px);
@@ -97,6 +92,21 @@ body {
     font-size: 3vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
-    font-weight: bold;
     text-shadow: var(--periwinkle-purple-shadow);
 }
+
+.release_title {
+    font-size: 1.5em;
+    color: var(--whitesmoke-rgb);
+    text-shadow: var(--whitesmoke-rgb);
+}
+
+.release_artist {
+    font-size: 1em;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-rgb);
+}
+/* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
+
+
+

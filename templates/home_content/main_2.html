@@ -1,18 +1,22 @@
 {% block main_2 %}
-<div class="main-2">
+<div class="main-2 shadow">
 
-    <div class="container vh-100">
-        <p class="last_releases_title text-center">LAST RELEASES</p>
+    <div class="container ">
 
-        <div class="row d-flex justify-content-center align-items-center g-5">
-            {% for i in range(3) %}
-            <div class="col-4">
-                <a class="last_release" href="">
-                    <img loading="lazy" src="../../static/images/last_releases/{{ i }}.jpg" class="card-img-top"
-                        alt="...">
-                </a>
+        <div class="row d-flex align-items-center vh-100">
+            <div class="row">
+                <p class="last_releases_title text-center">LAST RELEASES</p>
+
+                {% for release in last_releases %}
+                <div class="col-4">
+                    <a class="last_release" href="">
+                        <img loading="lazy" src="{{ release[0] }}" class="card-img-top" alt="{{ release[1] }}">
+                    </a>
+                    <p class="m-0 text-center text-uppercase release_title">{{ release[1] }}</p>
+                    <p class="m-0 text-center text-uppercase release_artist">{{ release[2] }}</p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
 
     </div>

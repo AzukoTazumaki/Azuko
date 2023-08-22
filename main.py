@@ -13,7 +13,11 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    last_releases = ['Supposed To Be', 'with love from Azuko', 'Лавина']
+    last_releases = [
+        ['../../static/images/last_releases/0.jpg', 'Supposed To Be', 'Azuko'],
+        ['../../static/images/last_releases/1.jpg', 'with love from Azuko', 'Azuko'],
+        ['../../static/images/last_releases/2.jpg', 'Лавина', 'Azuko, 88Ringo']
+    ]
     return templates.TemplateResponse('home_content/home.html', {"request": request, "last_releases": last_releases})
 
 
