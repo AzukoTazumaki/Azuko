@@ -4,16 +4,20 @@
     <div class="container ">
 
         <div class="row d-flex align-items-center vh-100">
-            <div class="row">
+            <div class="row row-gap-2 column-gap-5 d-flex justify-content-center">
                 <p class="last_releases_title text-center">LAST RELEASES</p>
 
                 {% for release in last_releases %}
-                <div class="col-4">
-                    <a class="last_release" href="">
-                        <img loading="lazy" src="{{ release[0] }}" class="card-img-top" alt="{{ release[1] }}">
-                    </a>
-                    <p class="m-0 text-center text-uppercase release_title">{{ release[1] }}</p>
-                    <p class="m-0 text-center text-uppercase release_artist">{{ release[2] }}</p>
+                <div class="col-3">
+                    <div class="last_release">
+                        <a href="">
+                            <img loading="lazy" src="{{ release[0] }}" class="card-img-top img_release" alt="{{ release[1] }}">
+                        </a>
+                        <div class="release_info">
+                            <p class="m-0 release_title">{{ release[1] }}</p>
+                            <p class="m-0 release_artist">{{ release[2] }}</p>
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

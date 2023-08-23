@@ -76,16 +76,18 @@ body {
 
 .last_release {
     filter: grayscale(1) blur(4px);
+    border-radius: 10px;
     transition: .3s;
 }
 
 .last_release img {
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .last_release:hover {
     filter: none;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .last_releases_title {
@@ -96,15 +98,22 @@ body {
 }
 
 .release_title {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: var(--whitesmoke-rgb);
-    text-shadow: var(--whitesmoke-rgb);
+    text-shadow: var(--whitesmoke-shadow);
 }
 
 .release_artist {
-    font-size: 1em;
+    font-size: .8em;
     color: var(--periwinkle-purple-rgb);
-    text-shadow: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+}
+
+.release_info {
+    background: var(--dark-gray-rgb);
+    padding: 5px 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 /* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
 
