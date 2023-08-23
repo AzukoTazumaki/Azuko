@@ -18,6 +18,7 @@
 
 body {
     font-family: 'Azuko';
+    background: var(--dark-gray-azuko);
 }
 
 /* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
@@ -53,7 +54,7 @@ body {
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
     letter-spacing: 4vw;
-    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+    text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
 }
 
 /* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
@@ -62,9 +63,13 @@ body {
     height: 100dvh;
     background-image: url(../images/bg_main/bg_main_1.jpg);
 }
-.main-2 {
-    height: 100dvh;
-    background-image: url(../images/bg_main/bg_main_2.jpg);
+
+.main-2 {  
+    background-color: var(--dark-gray-azuko);
+}
+
+.main-2-row {
+    height: 150dvh;
 }
 
 .main-3 {
@@ -76,13 +81,11 @@ body {
 
 .last_release {
     filter: grayscale(1) blur(4px);
-    border-radius: 10px;
     transition: .3s;
 }
 
 .last_release img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
 }
 
 .last_release:hover {
@@ -90,15 +93,21 @@ body {
     transform: scale(1.05);
 }
 
+.last_release:hover .release_info {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
 .last_releases_title {
     font-size: 3vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
-    text-shadow: var(--periwinkle-purple-shadow);
+    font-weight: bold;
+    text-shadow: 1px 1px 10px var(--periwinkle-purple-rgb);
 }
 
 .release_title {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: var(--whitesmoke-rgb);
     text-shadow: var(--whitesmoke-shadow);
 }
@@ -106,14 +115,12 @@ body {
 .release_artist {
     font-size: .8em;
     color: var(--periwinkle-purple-rgb);
-    text-shadow: var(--periwinkle-purple-shadow);
 }
 
 .release_info {
-    background: var(--dark-gray-rgb);
     padding: 5px 15px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    transition: .3s;
+    opacity: 0;
 }
 /* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
 

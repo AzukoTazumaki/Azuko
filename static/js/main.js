@@ -16,11 +16,3 @@ images_main_2.forEach((image) => {
         main_2_div.style.backgroundImage = ''
     });
 })
-    
-function image_mouseenter() {
-    
-    
-}
-function image_mouseleave() {
-    body.style.backgroundImage = "";
-}

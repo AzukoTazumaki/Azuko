@@ -1,11 +1,13 @@
 {% block main_2 %}
-<div class="main-2 shadow">
+<div class="main-2">
 
     <div class="container ">
 
-        <div class="row d-flex align-items-center vh-100">
-            <div class="row row-gap-2 column-gap-5 d-flex justify-content-center">
-                <p class="last_releases_title text-center">LAST RELEASES</p>
+        <div class="row d-flex align-items-center main-2-row">
+            <div class="row gap-4 d-flex justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="last_releases_title text-center">LAST RELEASES</p>
+                </div>
 
                 {% for release in last_releases %}
                 <div class="col-3">
@@ -14,8 +16,8 @@
                             <img loading="lazy" src="{{ release[0] }}" class="card-img-top img_release" alt="{{ release[1] }}">
                         </a>
                         <div class="release_info">
-                            <p class="m-0 release_title">{{ release[1] }}</p>
-                            <p class="m-0 release_artist">{{ release[2] }}</p>
+                            <p class="m-0 text-center release_title">{{ release[1] }}</p>
+                            <p class="m-0 text-center release_artist">{{ release[2] }}</p>
                         </div>
                     </div>
                 </div>
