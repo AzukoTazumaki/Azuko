@@ -1,5 +1,43 @@
 {% block main_3 %}
 <div class="main-3">
 
+    <div class="container">
+        <div class="row d-flex align-items-center vh-100">
+
+            <div class="col-5">
+                <div class="who_is_azuko">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="who_is_azuko_title">WHO IS AZUKO?</span>
+                        <i class="fa-solid fa-circle-info fa-xl"></i>
+                    </div>
+                    <hr>
+                    <p class="m-0 who_is_azuko_description">
+                        Hello! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
+                        website.
+                        Here you can listen to my music, buy beats or other products. Cheers!
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-7">
+                <div class="row row-gap-2 d-flex justify-content-between products_div">
+                    <p class="m-0 text-center products_title">PRODUCTS</p>
+                    {% for i in range(2) %}
+                    <div class="col-6">
+                        <a href="/">
+                            <img loading="lazy" src="../../static/images/last_releases/0.jpg"
+                                class="card-img-top img_product" alt="">
+                        </a>
+                        <div class="pruduct_info">
+                            <p class="m-0 product_name">Привет</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 {% endblock %}
