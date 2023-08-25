@@ -25,8 +25,7 @@ async def index(request: Request):
     return templates.TemplateResponse('home_content/home.html',
                                       {"request": request,
                                        "last_releases": last_releases,
-                                       "products": products
-                                       })
+                                       "products": products})
 
 
 if __name__ == '__main__':

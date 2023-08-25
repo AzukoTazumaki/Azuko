@@ -53,6 +53,7 @@ body {
     font-size: 20vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
+    font-weight: bold;
     letter-spacing: 4vw;
     text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
 }
@@ -128,6 +129,12 @@ body {
     padding: 15px;
     border-radius: 10px;
     color: var(--periwinkle-purple-rgb);
+}
+
+.who_is_azuko .who_is_azuko_img {
+    margin-top: 20px;
+    border-radius: 10px;
+    filter: grayscale(.3);
 }
 
 .who_is_azuko_title {
@@ -207,17 +214,5 @@ body {
 .old_price {
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);
+    font-size: .5em;
 }
-
-.sale {
-    position: fixed;
-    top: 26vh;
-    right: 6vw;
-    background-color: var(--periwinkle-purple-rgb);
-    color: rgb(37, 37, 37);
-    padding: 0 15px;
-    font-weight: bold;
-    font-size: 1.5em;
-    transform: rotate(45deg);
-}
-
