@@ -58,6 +58,38 @@ body {
     text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
 }
 
+/* ————————————————————————————————————————————————— FOOTER ————————————————————————————————————————————————— */
+
+footer {
+    background-color: rgb(37, 37, 37);
+    padding: 30px;
+}
+
+.footer_title {
+    color: var(--periwinkle-purple-rgb);
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+
+.footer_link {
+    text-decoration: none;
+    color: rgb(130, 130, 130);
+    transition: .3s;
+}
+
+.footer_link:hover {
+    color: rgb(110, 110, 110);
+    transform: scale(1.05);
+    text-shadow: 1px 1px 2px rgb(130, 130, 130);
+}
+
+footer .col-2 ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
 /* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
 
 .main-1 {
@@ -122,19 +154,27 @@ body {
     transition: .3s;
     opacity: 0;
 }
-/* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
 
 .who_is_azuko {
     background-color: var(--dark-gray-rgb);
     padding: 15px;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     color: var(--periwinkle-purple-rgb);
 }
 
 .who_is_azuko .who_is_azuko_img {
-    margin-top: 20px;
     border-radius: 10px;
-    filter: grayscale(.3);
+    filter: grayscale(.5);
+    box-shadow: 2px 2px 10px var(--black-rgb);
+}
+
+.who_is_azuko_div {
+    background-color: rgb(37, 37, 37);
+    color: var(--periwinkle-purple-rgb);
+    padding: 10px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .who_is_azuko_title {
@@ -145,6 +185,8 @@ body {
 
 .who_is_azuko_description {
     font-size: 1.1em;
+    text-shadow: var(--black-shadow);
+    font-weight: 400;
 }
 
 .products_div .col-6:nth-of-type(1) {
@@ -185,7 +227,7 @@ body {
 
 .product_name {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
 }
 
@@ -196,23 +238,28 @@ body {
     border-bottom-right-radius: 10px;
 }
 
-.other_products_button {
+.other_products_button, .support_button {
     background-color: var(--periwinkle-purple-rgb);
     color: rgb(37, 37, 37);
     padding: 5px 20px;
     border: none;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 1em;
     box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    border-radius: 5px;
     transition: .3s;
 }
 
-.other_products_button:hover {
+.other_products_button:hover,
+.support_button:hover {
     background-color: var(--periwinkle-purple-rgb-deep);
 }
 
 .old_price {
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);
-    font-size: .5em;
+    font-size: 1em;
 }
+
+
+

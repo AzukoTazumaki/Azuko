@@ -5,13 +5,13 @@
         <div class="row d-flex align-items-center vh-100">
 
             <div class="col-5">
+                <div class="d-flex justify-content-between align-items-center who_is_azuko_div">
+                    <span class="who_is_azuko_title">WHO IS AZUKO?</span>
+                    <i class="fa-solid fa-circle-info fa-xl"></i>
+                </div>
                 <div class="who_is_azuko">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="who_is_azuko_title">WHO IS AZUKO?</span>
-                        <i class="fa-solid fa-circle-info fa-xl"></i>
-                    </div>
-                    <hr>
-                    <img class="who_is_azuko_img" src="../../static/images/other/who_is_azuko.jpg" width="100%" alt="">
+                    <img class="who_is_azuko_img rounded-3 mb-3" src="../../static/images/other/who_is_azuko.jpg"
+                        width="100%" alt="">
                     <p class="m-0 who_is_azuko_description">
                         "Hello! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
                         website.
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            <div class="col-7">
+            <div class="offset-1 col-6">
                 <div class="d-flex justify-content-center align-items-center products_title_div">
                     <p class="m-0 text-center products_title">PRODUCTS</p>
                 </div>
@@ -39,14 +39,18 @@
                             {% endif %}
                             <div class="product_info">
                                 {% if 'mixing_and_mastering' in products[i][0] %}
-                                <p class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
-                                    <span class="product_name">{{ products[i][2] }}&nbsp;<i class="fa-solid fa-ruble-sign"></i></span>
-                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ products[i][1] }}
-                                    <i class="fa-solid fa-ruble-sign"></i></span>
+                                <p
+                                    class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
+                                    <span class="product_name">{{ products[i][2] }}&nbsp;<i
+                                            class="fa-solid fa-ruble-sign"></i></span>
+                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ products[i][1]
+                                        }}
+                                        <i class="fa-solid fa-ruble-sign"></i></span>
                                 </p>
                                 {% else %}
                                 <p class="m-0 product_name text-uppercase text-center">{{ products[i][1] }}
-                                <i class="fa-solid fa-ruble-sign"></i></p>
+                                    <i class="fa-solid fa-ruble-sign"></i>
+                                </p>
                                 {% endif %}
                             </div>
                         </div>
