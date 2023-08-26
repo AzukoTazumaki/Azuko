@@ -98,11 +98,12 @@ footer .col-2 ul {
     padding: 0;
 }
 
-.support_description, .contacts {
+.support_description {
     color: rgb(130, 130, 130);
     font-weight: 700;
     font-size: 1.3em;
     text-align: center;
+    text-shadow: var(--black-shadow);
 }
 
 .contacts a {
@@ -134,7 +135,6 @@ footer .col-2 ul {
 .main-3 {
     height: 100dvh;
     background-image: url(../images/bg_main/bg_main_3.jpg);
-    backdrop-filter: blur(4px);
 }
 
 /* ————————————————————————————————————————————————— MAIN 2 ————————————————————————————————————————————————— */
