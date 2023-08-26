@@ -5,6 +5,11 @@
     src: url(../fonts/Exo2-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: 'Unbounded';
+    src: url(../fonts/Unbounded-Medium.ttf);
+}
+
 ::-webkit-scrollbar {
     width: 0;
 }
@@ -53,12 +58,13 @@ body {
 }
 
 .title span {
-    font-size: 20vh;
+    font-size: 10vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
     font-weight: bold;
-    letter-spacing: 4vw;
+    letter-spacing: 3vw;
     text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
+    font-family: 'Unbounded';
 }
 
 /* ————————————————————————————————————————————————— FOOTER ————————————————————————————————————————————————— */
