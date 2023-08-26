@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Unbounded';
-    src: url(../fonts/Unbounded-Medium.ttf);
+    src: url(../fonts/RockSalt-Regular.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -58,11 +58,11 @@ body {
 }
 
 .title span {
-    font-size: 10vh;
+    font-size: 7vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
     font-weight: bold;
-    letter-spacing: 3vw;
+    letter-spacing: .5vw;
     text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
     font-family: 'Unbounded';
 }
