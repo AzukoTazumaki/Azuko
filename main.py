@@ -13,19 +13,32 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    last_releases = [
+    last_releases_list = [
         ['../../static/images/last_releases/0.jpg', 'Supposed To Be', 'Azuko'],
         ['../../static/images/last_releases/1.jpg', 'with love from Azuko', 'Azuko'],
         ['../../static/images/last_releases/2.jpg', 'Лавина', 'Azuko, 88Ringo']
     ]
-    products = [
+    products_list = [
         ['../../static/images/products/beats.jpg', '3000'],
         ['../../static/images/products/mixing_and_mastering.jpg', '2000', '1500']
     ]
     return templates.TemplateResponse('home_content/home.html',
                                       {"request": request,
-                                       "last_releases": last_releases,
-                                       "products": products})
+                                       "last_releases": last_releases_list,
+                                       "products": products_list})
+
+
+@app.get("/products", response_class=HTMLResponse)
+async def products(request: Request):
+    products_list = [
+        ['../../static/images/products/beats.jpg', '3000'],
+        ['../../static/images/products/mixing.jpg', '3500'],
+        ['../../static/images/products/mastering.jpg', '1500'],
+        ['../../static/images/products/mixing_and_mastering.jpg', '5000', '3750']
+    ]
+    return templates.TemplateResponse("products_content/products.html",
+                                      {"request": request,
+                                       "products": products_list})
 
 
 if __name__ == '__main__':

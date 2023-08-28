@@ -1,13 +1,13 @@
 /* ————————————————————————————————————————————————— DEFAULT SETTINGS ————————————————————————————————————————————————— */
 
-@font-face {
-    font-family: 'Azuko';
-    src: url(../fonts/Exo2-VariableFont_wght.ttf);
+:root {
+    --dark-gray-azuko-rgb: rgb(37, 37, 37);
+    --light-gray-azuko-rgb: rgb(130, 130, 130);
 }
 
 @font-face {
-    font-family: 'Unbounded';
-    src: url(../fonts/RockSalt-Regular.ttf);
+    font-family: 'Azuko';
+    src: url(../fonts/Exo2-VariableFont_wght.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -23,7 +23,7 @@
 
 body {
     font-family: 'Azuko';
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
 }
 
 /* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
@@ -58,24 +58,23 @@ body {
 }
 
 .title span {
-    font-size: 7vh;
+    font-size: 10vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
     font-weight: bold;
     letter-spacing: .5vw;
     text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
-    font-family: 'Unbounded';
 }
 
 /* ————————————————————————————————————————————————— FOOTER ————————————————————————————————————————————————— */
 
 footer {
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     padding: 30px;
 }
 
 footer hr {
-    color: rgb(130, 130, 130);
+    color: var(--light-gray-azuko-rgb);
 }
 
 .footer_title {
@@ -88,14 +87,14 @@ footer hr {
 
 .footer_link {
     text-decoration: none;
-    color: rgb(130, 130, 130);
+    color: var(--light-gray-azuko-rgb);
     transition: .3s;
 }
 
 .footer_link:hover {
     color: rgb(110, 110, 110);
     transform: scale(1.05);
-    text-shadow: 1px 1px 2px rgb(130, 130, 130);
+    text-shadow: 1px 1px 2px var(--light-gray-azuko-rgb);
 }
 
 footer .col-2 ul {
@@ -105,7 +104,7 @@ footer .col-2 ul {
 }
 
 .support_description {
-    color: rgb(130, 130, 130);
+    color: var(--light-gray-azuko-rgb);
     font-weight: 700;
     font-size: 1.3em;
     text-align: center;
@@ -131,7 +130,7 @@ footer .col-2 ul {
 }
 
 .main-2 {  
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
 }
 
 .main-2-row {
@@ -188,6 +187,8 @@ footer .col-2 ul {
     opacity: 0;
 }
 
+/* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
+
 .who_is_azuko {
     background-color: var(--dark-gray-rgb);
     padding: 30px;
@@ -203,7 +204,7 @@ footer .col-2 ul {
 }
 
 .who_is_azuko_div {
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     color: var(--periwinkle-purple-rgb);
     padding: 10px 15px;
     border-top-left-radius: 10px;
@@ -220,7 +221,7 @@ footer .col-2 ul {
     font-size: 1.1em;
     text-shadow: var(--black-shadow);
     font-weight: 500;
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     padding: 15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -237,7 +238,7 @@ footer .col-2 ul {
 }
 
 .product_info {
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     padding: 10px 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -252,7 +253,7 @@ footer .col-2 ul {
 .products_title_div {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     padding: 10px 30px;
     color: var(--periwinkle-purple-rgb);
 }
@@ -269,7 +270,7 @@ footer .col-2 ul {
 }
 
 .other_products_div {
-    background-color: rgb(37, 37, 37);
+    background-color: var(--dark-gray-azuko-rgb);
     padding: 15px 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -277,7 +278,7 @@ footer .col-2 ul {
 
 .other_products_button, .order_service_button {
     background-color: var(--periwinkle-purple-rgb);
-    color: rgb(37, 37, 37);
+    color: var(--dark-gray-azuko-rgb);
     padding: 10px 40px;
     border: none;
     font-weight: 800;
@@ -302,5 +303,8 @@ footer .col-2 ul {
     font-size: 1em;
 }
 
+/* ————————————————————————————————————————————————— PRODUCTS ————————————————————————————————————————————————— */
 
-
+.products {
+    background-color: var(--dark-gray-azuko-rgb);
+}
