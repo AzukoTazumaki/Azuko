@@ -27,29 +27,29 @@
                 </div>
                 <div class="products_main_div">
                     <div class="row d-flex justify-content-between products_div">
-                        {% for i in range(2) %}
+                        {% for product in products %}
                         <div class="col-6">
-                            {% if 'mixing_and_mastering' in products[i][0] %}
+                            {% if 'mixing_and_mastering' in product[0] %}
                             <a href="/">
-                                <img loading="lazy" src="{{ products[i][0] }}" class="card-img-top img_product" alt="">
+                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}" class="card-img-top img_product" alt="">
                             </a>
                             {% else %}
                             <a href="/">
-                                <img loading="lazy" src="{{ products[i][0] }}" class="card-img-top img_product" alt="">
+                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}" class="card-img-top img_product" alt="">
                             </a>
                             {% endif %}
                             <div class="product_info">
-                                {% if 'mixing_and_mastering' in products[i][0] %}
+                                {% if 'mixing_and_mastering' in product[0] %}
                                 <p
                                     class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
-                                    <span class="product_name">{{ products[i][2] }}&nbsp;<i
+                                    <span class="product_name">{{ product[2] }}&nbsp;<i
                                             class="fa-solid fa-ruble-sign"></i></span>
-                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ products[i][1]
+                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ product[1]
                                         }}
                                         <i class="fa-solid fa-ruble-sign"></i></span>
                                 </p>
                                 {% else %}
-                                <p class="m-0 product_name text-uppercase text-center">{{ products[i][1] }}
+                                <p class="m-0 product_name text-uppercase text-center">{{ product[1] }}
                                     <i class="fa-solid fa-ruble-sign"></i>
                                 </p>
                                 {% endif %}

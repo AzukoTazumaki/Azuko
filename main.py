@@ -19,8 +19,8 @@ async def index(request: Request):
         ['../../static/images/last_releases/2.jpg', 'Лавина', 'Azuko, 88Ringo']
     ]
     products_list = [
-        ['../../static/images/products/beats.jpg', '3000'],
-        ['../../static/images/products/mixing_and_mastering.jpg', '2000', '1500']
+        ['beats.jpg', '3000'],
+        ['mixing_and_mastering.jpg', '5000', '3750']
     ]
     return templates.TemplateResponse('home_content/home.html',
                                       {"request": request,
@@ -31,10 +31,20 @@ async def index(request: Request):
 @app.get("/products", response_class=HTMLResponse)
 async def products(request: Request):
     products_list = [
-        ['../../static/images/products/beats.jpg', '3000'],
-        ['../../static/images/products/mixing.jpg', '3500'],
-        ['../../static/images/products/mastering.jpg', '1500'],
-        ['../../static/images/products/mixing_and_mastering.jpg', '5000', '3750']
+        ["beats.jpg", 'Beats', '3000'],
+        ['mixing.jpg', 'Mixing', '3500'],
+        ['mastering.jpg', 'Mastering', '1500'],
+        ['mixing_and_mastering.jpg', 'Mixing & Mastering', '5000', '3750']
+    ]
+    products_descriptions = [
+        {
+            'beats': [
+                ['WAV License', 'Unlimited License'],
+                ['MP3 + WAV', 'WAV + Track-Out'],
+                ['1500', '3000']
+            ],
+            'mixing': ''
+        }
     ]
     return templates.TemplateResponse("products_content/products.html",
                                       {"request": request,

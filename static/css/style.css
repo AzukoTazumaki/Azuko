@@ -3,6 +3,7 @@
 :root {
     --dark-gray-azuko-rgb: rgb(37, 37, 37);
     --light-gray-azuko-rgb: rgb(130, 130, 130);
+    --product-card-rgb: rgb(149, 149, 149);
 }
 
 @font-face {
@@ -19,10 +20,10 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family: 'Azuko';
 }
 
 body {
-    font-family: 'Azuko';
     background-color: var(--dark-gray-azuko-rgb);
 }
 
@@ -307,4 +308,22 @@ footer .col-2 ul {
 
 .products {
     background-color: var(--dark-gray-azuko-rgb);
+}
+
+.product_img {
+    box-shadow: 1px 1px 20px var(--light-gray-azuko-rgb);
+}
+
+.product_card_info {
+    background-color: var(--dark-gray-rgb);
+    padding: 20px;
+}
+
+.product_card_info h3 {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+}
+
+.product_card_info p {
+    color: var(--periwinkle-purple-rgb);
 }

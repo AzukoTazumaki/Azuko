@@ -4,18 +4,25 @@
 
 <div class="products">
     <div class="container">
+        {% for product in products %}
         <div class="row d-flex justify-content-center align-items-center vh-100">
-            <div class="row">
-                {% for product in products %}
-                <div class="col-6">
-                    <div class="product_card">
-                        <img src="{{ product[0] }}" alt="">
-                        
+            <div class="row justify-content-center gap-5">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <div class="col-5">
+                            <img loading="lazy" class="rounded-3 product_img" src="{{url_for('static', path='/images/products/'+product[0])}}" width="90%" alt="">
+                        </div>
+                        <div class="offset-1 col-6">
+                            <div class="product_card_info rounded-3">
+                                <h3 class="text-center text-uppercase m-0">{{ product[1] }}</h3>
+                                <p></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
