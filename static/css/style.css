@@ -27,6 +27,18 @@ body {
     background-color: var(--dark-gray-azuko-rgb);
 }
 
+/* ————————————————————————————————————————————————— BUTTON SLIDER FOR PAGES ————————————————————————————————————————————————— */
+
+.slider_button {
+    background-color: var(--dark-gray-azuko-rgb);
+    position: absolute;
+    margin-top: 25vh;
+    margin-left: 85vw;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+    border: none;
+}
+
 /* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
 
 .nav_container {
@@ -125,9 +137,8 @@ footer .col-2 ul {
 
 /* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
 
-.main-1 {
+.main-1, .main-3 {
     height: 100dvh;
-    background-image: url(../images/bg_main/bg_main_1.jpg);
 }
 
 .main-2 {  
@@ -136,11 +147,6 @@ footer .col-2 ul {
 
 .main-2-row {
     height: 150dvh;
-}
-
-.main-3 {
-    height: 100dvh;
-    background-image: url(../images/bg_main/bg_main_3.jpg);
 }
 
 /* ————————————————————————————————————————————————— MAIN 2 ————————————————————————————————————————————————— */
@@ -305,10 +311,6 @@ footer .col-2 ul {
 }
 
 /* ————————————————————————————————————————————————— PRODUCTS ————————————————————————————————————————————————— */
-
-.products {
-    background-color: var(--dark-gray-azuko-rgb);
-}
 
 .product_img {
     box-shadow: 1px 1px 20px var(--light-gray-azuko-rgb);

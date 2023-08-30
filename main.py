@@ -36,16 +36,6 @@ async def products(request: Request):
         ['mastering.jpg', 'Mastering', '1500'],
         ['mixing_and_mastering.jpg', 'Mixing & Mastering', '5000', '3750']
     ]
-    products_descriptions = [
-        {
-            'beats': [
-                ['WAV License', 'Unlimited License'],
-                ['MP3 + WAV', 'WAV + Track-Out'],
-                ['1500', '3000']
-            ],
-            'mixing': ''
-        }
-    ]
     return templates.TemplateResponse("products_content/products.html",
                                       {"request": request,
                                        "products": products_list})
