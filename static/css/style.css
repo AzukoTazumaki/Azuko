@@ -30,12 +30,13 @@ body {
 /* ————————————————————————————————————————————————— BUTTON SLIDER FOR PAGES ————————————————————————————————————————————————— */
 
 .slider_buttons {
+    position: absolute;
     background-color: var(--dark-gray-azuko-rgb);
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
     border: none;
     padding: 30px 5px;
-    position: absolute;
+    text-decoration: none;
 }
 
 .slider_button_up {
@@ -77,15 +78,6 @@ body {
     background-color: var(--periwinkle-purple-rgb);
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);
-}
-
-.title span {
-    font-size: 10vh;
-    color: var(--periwinkle-purple-rgb);
-    opacity: .85;
-    font-weight: bold;
-    letter-spacing: .5vw;
-    text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
 }
 
 /* ————————————————————————————————————————————————— FOOTER ————————————————————————————————————————————————— */
@@ -150,12 +142,35 @@ footer .col-2 ul {
     height: 100dvh;
 }
 
+.main-1 {
+    background-image: url(../images/bg/bg_main_1.jpg);
+}
+
+.main-3 {
+    background-image: url(../images/bg/bg_main_3.jpg);
+}
+
 .main-2 {  
     background-color: var(--dark-gray-azuko-rgb);
 }
 
 .main-2-row {
     height: 150dvh;
+}
+
+.products {
+    background-image: url(../images/bg/bg_products.jpg);
+}
+
+/* ————————————————————————————————————————————————— MAIN 1 ————————————————————————————————————————————————— */
+
+.title span {
+    font-size: 10vh;
+    color: var(--periwinkle-purple-rgb);
+    opacity: .85;
+    font-weight: bold;
+    letter-spacing: .5vw;
+    text-shadow: 1px 1px 20px var(--periwinkle-purple-rgb);
 }
 
 /* ————————————————————————————————————————————————— MAIN 2 ————————————————————————————————————————————————— */
@@ -337,4 +352,5 @@ footer .col-2 ul {
 
 .product_card_info p {
     color: var(--periwinkle-purple-rgb);
+    box-shadow: 1px 1px 20px var(--dark-gray-rgb);
 }

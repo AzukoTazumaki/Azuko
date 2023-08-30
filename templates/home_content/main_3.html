@@ -1,5 +1,5 @@
 {% block main_3 %}
-<div class="main-3" style="background-image: url({{ url_for('static', path='/images/bg_main/bg_main_3.jpg') }});">
+<div class="main-3">
 
     <div class="container">
         <div class="row d-flex align-items-center vh-100">
@@ -10,7 +10,7 @@
                 </div>
                 <div class="who_is_azuko">
                     <div class="who_is_azuko_card">
-                        <img class="who_is_azuko_img" src="../../static/images/other/who_is_azuko.jpg"
+                        <img class="who_is_azuko_img" src="{{url_for('static', path='/images/other/who_is_azuko.jpg')}}"
                             width="100%" alt="">
                         <p class="m-0 who_is_azuko_description">
                             <em>"Hi! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
@@ -29,24 +29,16 @@
                     <div class="row d-flex justify-content-between products_div">
                         {% for product in products %}
                         <div class="col-6">
-                            {% if 'mixing_and_mastering' in product[0] %}
                             <a href="/">
                                 <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}" class="card-img-top img_product" alt="">
                             </a>
-                            {% else %}
-                            <a href="/">
-                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}" class="card-img-top img_product" alt="">
-                            </a>
-                            {% endif %}
                             <div class="product_info">
                                 {% if 'mixing_and_mastering' in product[0] %}
                                 <p
                                     class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
-                                    <span class="product_name">{{ product[2] }}&nbsp;<i
-                                            class="fa-solid fa-ruble-sign"></i></span>
-                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ product[1]
-                                        }}
-                                        <i class="fa-solid fa-ruble-sign"></i></span>
+                                    <span class="product_name">{{ product[2] }}&nbsp;<i class="fa-solid fa-ruble-sign"></i></span>
+                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ product[1]}}
+                                    <i class="fa-solid fa-ruble-sign"></i></span>
                                 </p>
                                 {% else %}
                                 <p class="m-0 product_name text-uppercase text-center">{{ product[1] }}
