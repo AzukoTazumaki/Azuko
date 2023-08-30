@@ -29,14 +29,23 @@ body {
 
 /* ————————————————————————————————————————————————— BUTTON SLIDER FOR PAGES ————————————————————————————————————————————————— */
 
-.slider_button {
+.slider_buttons {
     background-color: var(--dark-gray-azuko-rgb);
-    position: absolute;
-    margin-top: 25vh;
-    margin-left: 85vw;
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
     border: none;
+    padding: 30px 5px;
+    position: absolute;
+}
+
+.slider_button_up {
+    margin-top: 25vh;
+    margin-left: 85vw;
+}
+
+.slider_button_down {
+    margin-top: 30vh;
+    margin-left: 85vw;
 }
 
 /* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
