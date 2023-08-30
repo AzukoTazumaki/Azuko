@@ -1,8 +1,8 @@
 {% block main_2 %}
 <div class="main-2">
 
-    <div class="container ">
-
+    <span class="position-absolute" style="margin-top: 25vh;" id="main-2"></span>
+    <div class="container">
         <div class="row d-flex align-items-center main-2-row">
             <div class="row gap-4 d-flex justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
@@ -13,7 +13,8 @@
                 <div class="col-3">
                     <div class="last_release">
                         <a href="/">
-                            <img loading="lazy" src="{{ release[0] }}" class="card-img-top img_release" alt="{{ release[1] }}">
+                            <img loading="lazy" src="{{ release[0] }}" class="card-img-top img_release"
+                                alt="{{ release[1] }}">
                         </a>
                         <div class="release_info">
                             <p class="m-0 text-center release_title">{{ release[1] }}</p>
@@ -24,8 +25,10 @@
                 {% endfor %}
             </div>
         </div>
-
     </div>
+
+    <a href="#main-1" class="slider_buttons slider_button_up_2"><i class="fa-solid fa-up-long fa-xl"></i></a>
+    <a href="#main-3" class="slider_buttons slider_button_down_2"><i class="fa-solid fa-down-long fa-xl"></i></a>
 </div>
 
 </div>

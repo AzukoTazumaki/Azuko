@@ -1,10 +1,10 @@
 {% block main_3 %}
-<div class="main-3">
+<div class="main-3" id="main-3">
 
     <div class="container">
         <div class="row d-flex align-items-center vh-100">
 
-            <div class="col-6">
+            <div class="col-5">
                 <div class="d-flex justify-content-center align-items-center who_is_azuko_div">
                     <span class="who_is_azuko_title">WHO IS AZUKO?</span>
                 </div>
@@ -13,15 +13,15 @@
                         <img class="who_is_azuko_img" src="{{url_for('static', path='/images/other/who_is_azuko.jpg')}}"
                             width="100%" alt="">
                         <p class="m-0 who_is_azuko_description">
-                            <em>"Hi! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
+                            "Hi! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
                                 website.
-                                Here you can listen to my music, buy beats or other products. Cheers!"</em> — Azuko.
+                                Here you can listen to my music, buy beats or other products. Cheers!" — Azuko.
                         </p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-7">
                 <div class="d-flex justify-content-center align-items-center products_title_div">
                     <p class="m-0 text-center products_title">PRODUCTS</p>
                 </div>
@@ -30,15 +30,17 @@
                         {% for product in products %}
                         <div class="col-6">
                             <a href="/">
-                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}" class="card-img-top img_product" alt="">
+                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}"
+                                    class="card-img-top img_product" alt="">
                             </a>
                             <div class="product_info">
                                 {% if 'mixing_and_mastering' in product[0] %}
                                 <p
                                     class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
-                                    <span class="product_name">{{ product[2] }}&nbsp;<i class="fa-solid fa-ruble-sign"></i></span>
+                                    <span class="product_name">{{ product[2] }}&nbsp;<i
+                                            class="fa-solid fa-ruble-sign"></i></span>
                                     &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ product[1]}}
-                                    <i class="fa-solid fa-ruble-sign"></i></span>
+                                        <i class="fa-solid fa-ruble-sign"></i></span>
                                 </p>
                                 {% else %}
                                 <p class="m-0 product_name text-uppercase text-center">{{ product[1] }}
@@ -57,6 +59,9 @@
 
         </div>
     </div>
+
+    <a href="#main-2" class="slider_buttons slider_button_up_3"><i class="fa-solid fa-up-long fa-xl"></i></a>
+    <a href="#footer" class="slider_buttons slider_button_down_3"><i class="fa-solid fa-down-long fa-xl"></i></a>
 
 </div>
 {% endblock %}
