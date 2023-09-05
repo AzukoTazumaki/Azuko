@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from names import slider_albums
 
 app = FastAPI()
 
@@ -14,9 +15,9 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     last_releases_list = [
-        ['../../static/images/last_releases/0.jpg', 'Supposed To Be', 'Azuko'],
-        ['../../static/images/last_releases/1.jpg', 'with love from Azuko', 'Azuko'],
-        ['../../static/images/last_releases/2.jpg', 'Лавина', 'Azuko, 88Ringo']
+        ['0.jpg', 'FADED.', 'Azuko'],
+        ['1.jpg', 'Supposed To Be', 'Azuko'],
+        ['2.jpg', 'with love from Azuko', 'Azuko']
     ]
     products_list = [
         ['beats.jpg', '3000'],
@@ -39,6 +40,12 @@ async def products(request: Request):
     return templates.TemplateResponse("products_content/products.html",
                                       {"request": request,
                                        "products": products_list})
+
+
+@app.get("/projects", response_class=HTMLResponse)
+async def projects(request: Request):
+    albums_names = slider_albums()
+    return templates.TemplateResponse("projects_content/projects.html", {"request": request, "albums": albums_names})
 
 
 if __name__ == '__main__':

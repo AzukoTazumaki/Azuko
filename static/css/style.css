@@ -124,17 +124,20 @@ body {
     transform: scale(1.05);
 }
 
-.navbar_links a, .shopping_cart {
+.navbar_links a, .shopping_cart, .user {
     text-decoration: none;
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
-    margin-right: 20px;
     border-radius: 5px;
     padding: 5px 10px;
     transition: .3s;
 }
 
-.navbar_links a:hover, .shopping_cart:hover {
+.user {
+    margin-right: 20px;
+}
+
+.navbar_links a:hover, .shopping_cart:hover, .user:hover {
     background-color: var(--periwinkle-purple-rgb);
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);
@@ -414,4 +417,18 @@ footer .col-2 ul {
 .product_card_info p {
     color: var(--periwinkle-purple-rgb);
     box-shadow: 1px 1px 20px var(--dark-gray-rgb);
+}
+
+/* ————————————————————————————————————————————————— PROJECTS ————————————————————————————————————————————————— */
+
+.projects {
+    background-image: url(../images/bg/bg_projects.jpg);
+}
+
+.carousel_album_title {
+    padding: 10px 20px;
+    background-color: var(--dark-gray-rgb);
+    color: var(--white-rgb);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px var(--dark-gray-rgb);
 }

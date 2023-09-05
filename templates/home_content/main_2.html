@@ -13,7 +13,7 @@
                 <div class="col-3">
                     <div class="last_release">
                         <a href="/">
-                            <img loading="lazy" src="{{ release[0] }}" class="card-img-top img_release"
+                            <img loading="lazy" src="{{ url_for('static', path='/images/last_releases/'+release[0]) }}" class="card-img-top img_release"
                                 alt="{{ release[1] }}">
                         </a>
                         <div class="release_info">
