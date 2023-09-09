@@ -2,55 +2,17 @@
 
 {% block content %}
 <div class="projects">
-    <div class="container">
-        <div class="row justify-content-center align-items-center vh-100">
-            <div class="col-9">
-                <div id="carouselExampleCaptions" class="carousel slide">
-                    <div class="carousel-indicators">
-                        {% for item in range(albums|length) %}
-    
-                        {% if loop.first %}
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index - 1 }}" class="active"
-                        aria-current="true" aria-label="Slide {{ loop.index }}"></button>
-                        {% else %}
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ loop.index - 1 }}"
-                        aria-current="true" aria-label="Slide {{ loop.index }}"></button>
-                        {% endif %}
-    
-                        {% endfor %}
-                    </div>
-                    <div class="carousel-inner">
-                        {% for album in albums %}
-    
-                        {% if loop.first %}
-                        <div class="carousel-item active">
-                        {% else %}
-                        <div class="carousel-item">
-                        {% endif %}
-    
-                            <img src="{{ url_for('static', path='/images/carousel/carousel_albums/'+album.cover) }}" class="d-block w-100 rounded-3" alt="{{ album.name }}">
-                            <div class="carousel-caption d-flex justify-content-center">
-                                <h5 class="carousel_album_title text-uppercase">{{ album.name }}</h5>
-                            </div>
-                        </div>
-    
-                        {% endfor %}
-                    </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"><i
-                                    class="fa-solid fa-angle-left fa-2xl"></i></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><i
-                                    class="fa-solid fa-angle-right fa-2xl"></i></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div class="title d-flex justify-content-center align-items-center vh-100 p-5">
+        <span>THIS IS PROJECTS.</span>
+
+        <a href="#" class="slider_buttons slider_button_up_disabled"><i class="fa-solid fa-up-long fa-xl"></i></a>
+        <a href="#projects_carousels" class="slider_buttons slider_button_down_1"><i class="fa-solid fa-down-long fa-xl"></i></a>
+
+        <div class="animation_arrow_down d-flex justify-content-center">
+            <i class="fa-solid fa-angles-down"></i>
         </div>
+    </div>
+    <div class="container" id="projects_carousels">
+        {% include 'projects_content/album_carousel.html' %}
     </div>
     {% endblock %}

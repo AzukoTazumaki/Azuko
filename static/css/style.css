@@ -227,7 +227,7 @@ footer .col-2 ul {
 
 /* ————————————————————————————————————————————————— MAIN 1 ————————————————————————————————————————————————— */
 
-.title span {
+.main-1 .title span {
     font-size: 10vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
@@ -427,8 +427,15 @@ footer .col-2 ul {
 
 .carousel_album_title {
     padding: 10px 20px;
-    background-color: var(--dark-gray-rgb);
     color: var(--white-rgb);
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px var(--dark-gray-rgb);
+    text-shadow: var(--black-shadow);
+    font-style: italic;
+}
+
+.projects .title span {
+    font-size: 6vh;
+    color: var(--periwinkle-purple-rgb);
+    opacity: .85;
+    letter-spacing: .5vw;
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
 }
