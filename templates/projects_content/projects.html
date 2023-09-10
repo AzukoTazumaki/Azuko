@@ -2,17 +2,17 @@
 
 {% block content %}
 <div class="projects">
-    <div class="title d-flex justify-content-center align-items-center vh-100 p-5">
-        <span>THIS IS PROJECTS.</span>
+    <div class="title d-flex justify-content-center align-items-center vh-100" id="projects">
+        <span>PROJECTS</span>
 
         <a href="#" class="slider_buttons slider_button_up_disabled"><i class="fa-solid fa-up-long fa-xl"></i></a>
-        <a href="#projects_carousels" class="slider_buttons slider_button_down_1"><i class="fa-solid fa-down-long fa-xl"></i></a>
+        <a href="#albums_carousel_div" class="slider_buttons slider_button_down_1"><i class="fa-solid fa-down-long fa-xl"></i></a>
 
-        <div class="animation_arrow_down d-flex justify-content-center">
-            <i class="fa-solid fa-angles-down"></i>
-        </div>
     </div>
-    <div class="container" id="projects_carousels">
+    <div class="container-fluid">
         {% include 'projects_content/album_carousel.html' %}
+        {% include 'projects_content/single_carousel.html' %}
+        {% include 'projects_content/featurings_carousel.html' %}
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

@@ -3,6 +3,7 @@
 :root {
     --dark-gray-azuko-rgb: rgb(37, 37, 37);
     --light-gray-azuko-rgb: rgb(130, 130, 130);
+    --light-gray-azuko-rgba: rgb(130, 130, 130, .7);
     --light-gray-azuko-rgb-deep: rgb(110, 110, 110);
     --product-card-rgb: rgb(149, 149, 149);
 }
@@ -30,6 +31,8 @@ html {
 
 body {
     background-color: var(--dark-gray-azuko-rgb);
+    padding: 0;
+    margin: 0;
 }
 
 /* ————————————————————————————————————————————————— BUTTON SLIDER FOR PAGES ————————————————————————————————————————————————— */
@@ -174,7 +177,7 @@ footer hr {
     text-shadow: 1px 1px 2px var(--light-gray-azuko-rgb);
 }
 
-footer .col-2 ul {
+footer .footer_col ul {
     list-style-type: none;
     text-align: center;
     padding: 0;
@@ -197,6 +200,11 @@ footer .col-2 ul {
 
 .contacts a:hover {
     color: var(--periwinkle-purple-rgb-deep);
+}
+
+.all_rights {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
 }
 
 /* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
@@ -227,7 +235,8 @@ footer .col-2 ul {
 
 /* ————————————————————————————————————————————————— MAIN 1 ————————————————————————————————————————————————— */
 
-.main-1 .title span {
+.main-1 .title span,
+.projects .title span {
     font-size: 10vh;
     color: var(--periwinkle-purple-rgb);
     opacity: .85;
@@ -421,21 +430,53 @@ footer .col-2 ul {
 
 /* ————————————————————————————————————————————————— PROJECTS ————————————————————————————————————————————————— */
 
-.projects {
+#projects {
     background-image: url(../images/bg/bg_projects.jpg);
 }
 
 .carousel_album_title {
-    padding: 10px 20px;
-    color: var(--white-rgb);
+    padding: 0 20px 20px 0;
+    color: var(--light-gray-azuko-rgb);
     text-shadow: var(--black-shadow);
-    font-style: italic;
+    font-weight: 200;
 }
 
-.projects .title span {
-    font-size: 6vh;
-    color: var(--periwinkle-purple-rgb);
-    opacity: .85;
-    letter-spacing: .5vw;
-    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+.project_description {
+    background-color: var(--dark-gray-rgb);
+}
+
+.project_slider_button {
+    position: absolute;
+    left: 16.4%;
+    padding: 15px 100px;
+    border: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: rgb(149, 149, 149);
+    text-shadow: var(--black-shadow);
+    background-color: var(--light-gray-azuko-rgb);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    box-shadow: 2px 2px 10px var(--dark-gray-azuko-rgb);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.project_slider_button:hover {
+    background-color: var(--light-gray-azuko-rgb-deep);
+}
+
+.project_slider_button:focus {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.albums_slider_button {
+    top: 77.5%;
+}
+
+.singles_slider_button,
+.featurings_slider_button {
+    top: 52%;
 }

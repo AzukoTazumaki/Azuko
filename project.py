@@ -1,9 +1,12 @@
+from typing import Union
+
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from names import slider_albums
+from starlette.responses import RedirectResponse
+from names import ProjectNames
 
 app = FastAPI()
 
@@ -12,7 +15,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=RedirectResponse)
+async def index():
+    return '/home'
+
+
+@app.get("/home", response_class=HTMLResponse)
 async def index(request: Request):
     last_releases_list = [
         ['0.jpg', 'FADED.', 'Azuko'],
@@ -42,10 +50,18 @@ async def products(request: Request):
                                        "products": products_list})
 
 
-@app.get("/projects", response_class=HTMLResponse)
+@app.get("/projects", response_class=HTMLResponse, response_model=None)
 async def projects(request: Request):
-    albums_names = slider_albums()
-    return templates.TemplateResponse("projects_content/projects.html", {"request": request, "albums": albums_names})
+    albums = ProjectNames('carousel_albums')
+    singles = ProjectNames('carousel_singles')
+    featurings = ProjectNames('carousel_featurings')
+    return templates.TemplateResponse("projects_content/projects.html",
+                                      {
+                                          "request": request,
+                                          "albums": albums.get_project_info(),
+                                          "singles": singles.get_project_info(),
+                                          "featurings": featurings.get_project_info()
+                                      })
 
 
 if __name__ == '__main__':
