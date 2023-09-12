@@ -50,7 +50,7 @@ async def products(request: Request):
                                        "products": products_list})
 
 
-@app.get("/projects", response_class=HTMLResponse, response_model=None)
+@app.get("/projects", response_class=HTMLResponse)
 async def projects(request: Request):
     albums = ProjectNames('carousel_albums')
     singles = ProjectNames('carousel_singles')
@@ -62,6 +62,11 @@ async def projects(request: Request):
                                           "singles": singles.get_project_info(),
                                           "featurings": featurings.get_project_info()
                                       })
+
+
+@app.get("/playlist", response_class=HTMLResponse)
+async def playlist(request: Request):
+    return templates.TemplateResponse("playlist_content/playlist.html", {'request': request})
 
 
 if __name__ == '__main__':
