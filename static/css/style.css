@@ -448,7 +448,7 @@ footer .footer_col ul {
 .project_slider_button {
     position: absolute;
     left: 16.4%;
-    padding: 15px 100px;
+    padding: 1vh 5vw;
     border: none;
     font-size: 1.4em;
     font-weight: bold;
@@ -473,7 +473,7 @@ footer .footer_col ul {
 }
 
 .albums_slider_button {
-    top: 77.5%;
+    top: 75.5%;
 }
 
 .singles_slider_button,
