@@ -3,55 +3,65 @@
 <footer id="footer">
     <div class="container-fluid">
         <div class="row gap-5">
-            <div class="col-2 d-flex flex-column justify-content-between align-items-center">
+            <div class="col-2 d-flex flex-column justify-content-center align-items-center">
                 <img src="{{url_for('static', path='/images/logos/footer_logo_azuko.png')}}" width="100%" alt="AZUKO">
             </div>
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">MENU</p>
                 <hr>
                 <ul>
+                    {% set menu = ['Home', 'Playlist', 'Projects', 'Products'] %}
+                    {% for footer_link in menu %}
                     <a href="/" class="footer_link">
-                        <li>Home</li>
+                        <li>{{ footer_link }}</li>
                     </a>
-                    <a href="/" class="footer_link">
-                        <li>Playlist</li>
-                    </a>
-                    <a href="/" class="footer_link">
-                        <li>Projects</li>
-                    </a>
-                    <a href="/" class="footer_link">
-                        <li>Products</li>
-                    </a>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">PRODUCTS</p>
                 <hr>
                 <ul>
+                    {% set products = ['Beats', 'Mixing', 'Mastering'] %}
+                    {% for footer_link in products %}
                     <a href="/" class="footer_link">
-                        <li>Beats</li>
+                        <li>{{ footer_link }}</li>
                     </a>
-                    <a href="/" class="footer_link">
-                        <li>Mixing</li>
-                    </a>
-                    <a href="/" class="footer_link">
-                        <li>Mastering</li>
-                    </a>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">PROJECTS</p>
                 <hr>
                 <ul>
-                    <a href="/projects#albums_carousel_div" class="footer_link">
-                        <li>Albums</li>
+                    {% set projects = [
+                        {'name': 'Albums', 'url': '#albums_carousel_div'},
+                        {'name': 'Singles', 'url': '#singles_carousel_div'},
+                        {'name': 'Featurings', 'url': '#featurings_carousel_div'}
+                        ] 
+                    %}
+                    {% for footer_link in projects %}
+                    <a href="/projects{{ footer_link.url }}" class="footer_link">
+                        <li>{{ footer_link.name }}</li>
                     </a>
-                    <a href="/projects#singles_carousel_div" class="footer_link">
-                        <li>Singles</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col footer_col text-uppercase">
+                <p class="footer_title">PLAYLIST</p>
+                <hr>
+                <ul>
+                    {% set projects = [
+                        {'name': 'Albums', 'url': 'albums'},
+                        {'name': 'Singles', 'url': 'singles'},
+                        {'name': 'Featurings', 'url': 'featurings'}
+                        ] 
+                    %}
+                    {% for footer_link in projects %}
+                    <a href="/{{ footer_link.url }}" class="footer_link">
+                        <li>{{ footer_link.name }}</li>
                     </a>
-                    <a href="/projects#featurings_carousel_div" class="footer_link">
-                        <li>Featurings</li>
-                    </a>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="col footer_col text-uppercase">

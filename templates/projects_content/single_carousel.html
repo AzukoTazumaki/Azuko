@@ -30,7 +30,7 @@
                         {% endif %}
         
                             <img src="{{ url_for('static', path='/images/carousel/carousel_singles/'+single.cover) }}" class="d-block w-100 rounded-5" alt="{{ single.name }}">
-                            <a href="/{{ single.url }}"><button style="background-image: url({{url_for('static', path='/images/carousel/carousel_singles/buttons/'+single.button)}});" class="project_slider_button singles_slider_button">LISTEN</button></a>
+                            <a href="/singles"><button style="background-image: url({{url_for('static', path='/images/carousel/carousel_singles/buttons/'+single.button)}});" class="project_slider_button singles_slider_button">LISTEN</button></a>
                         </div>
         
                         {% endfor %}
