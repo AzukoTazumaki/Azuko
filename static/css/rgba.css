@@ -1,4 +1,5 @@
 :root {
+    --light-gray-azuko-rgba: rgb(130, 130, 130, .7);
     --black-rgba: rgba(0, 0, 0, .7); 
     --night-rgba: rgba(12, 9, 10, .7); 
     --charcoal-rgba: rgba(52, 40, 44, .7); 
