@@ -52,15 +52,15 @@ async def products(request: Request):
 
 @app.get("/projects", response_class=HTMLResponse)
 async def projects(request: Request):
-    albums = ProjectNames('carousel_albums')
-    singles = ProjectNames('carousel_singles')
-    featurings = ProjectNames('carousel_featurings')
+    albums = ProjectNames('albums')
+    singles = ProjectNames('singles')
+    featurings = ProjectNames('featurings')
     return templates.TemplateResponse("projects_content/projects.html",
                                       {
                                           "request": request,
-                                          "albums": albums.get_project_info(),
-                                          "singles": singles.get_project_info(),
-                                          "featurings": featurings.get_project_info()
+                                          "albums": albums.get_album_info(),
+                                          "singles": singles.get_single_or_featuring_info(),
+                                          "featurings": featurings.get_single_or_featuring_info()
                                       })
 
 

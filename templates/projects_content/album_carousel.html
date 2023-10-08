@@ -29,8 +29,8 @@
                         <div class="carousel-item">
                         {% endif %}
         
-                            <img src="{{ url_for('static', path='/images/carousel/carousel_albums/'+album.cover) }}" class="d-block w-100 rounded-5" alt="{{ album.name }}">
-                            <a href="/{{ album.url }}"><button style="background-image: url({{url_for('static', path='/images/carousel/carousel_albums/buttons/'+album.button)}});" class="project_slider_button albums_slider_button">LISTEN</button></a>
+                            <img src="{{ url_for('static', path='/images/projects/albums/'+album.cover) }}" class="d-block w-100 rounded-5" alt="{{ album.name }}">
+                            <a href="/{{ album.url }}"><button style="background-image: url({{url_for('static', path='/images/projects/albums/buttons/'+album.button)}});" class="project_slider_button albums_slider_button">LISTEN</button></a>
                         </div>
         
                         {% endfor %}
@@ -57,7 +57,7 @@
                     <a href="#projects" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
                 </div>
                 <div class="col-2 d-flex justify-content-center">
-                    <a href="#singles_carousel_div" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
+                    <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
                 </div>
             </div>    
         </div>

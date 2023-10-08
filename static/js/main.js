@@ -5,8 +5,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 500)
 })
 
-import { Amplitude } from './amplitude';
-
-Amplitude.init()
-
-
