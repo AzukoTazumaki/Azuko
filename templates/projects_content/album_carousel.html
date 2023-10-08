@@ -1,7 +1,7 @@
 {% block album_carousel %}
 <div class="row justify-content-center align-items-center vh-100" id="albums_carousel_div">
     <div class="col-10">
-        <div class="row justify-content-center shadow-sm rounded-5">
+        <div class="row justify-content-center rounded-5">
             <div class="col-12 d-flex justify-content-center">
                 <img src="{{url_for('static', path='/images/logos/albums_logo.png')}}" alt="Albums" width="300">
             </div>
@@ -9,32 +9,35 @@
                 <div id="albums_carousel" class="carousel slide">
                     <div class="carousel-indicators">
                         {% for item in range(albums|length) %}
-        
+
                         {% if loop.first %}
-                        <button type="button" data-bs-target="#albums_carousel" data-bs-slide-to="{{ loop.index - 1 }}" class="active"
-                        aria-current="true" aria-label="Slide {{ loop.index }}"></button>
+                        <button type="button" data-bs-target="#albums_carousel" data-bs-slide-to="{{ loop.index - 1 }}"
+                            class="active" aria-current="true" aria-label="Slide {{ loop.index }}"></button>
                         {% else %}
                         <button type="button" data-bs-target="#albums_carousel" data-bs-slide-to="{{ loop.index - 1 }}"
-                        aria-current="true" aria-label="Slide {{ loop.index }}"></button>
+                            aria-current="true" aria-label="Slide {{ loop.index }}"></button>
                         {% endif %}
-        
+
                         {% endfor %}
                     </div>
                     <div class="carousel-inner">
                         {% for album in albums %}
-        
+
                         {% if loop.first %}
                         <div class="carousel-item active">
-                        {% else %}
-                        <div class="carousel-item">
-                        {% endif %}
-        
-                            <img src="{{ url_for('static', path='/images/projects/albums/'+album.cover) }}" class="d-block w-100 rounded-5" alt="{{ album.name }}">
-                            <a href="/{{ album.url }}"><button style="background-image: url({{url_for('static', path='/images/projects/albums/buttons/'+album.button)}});" class="project_slider_button albums_slider_button">LISTEN</button></a>
+                            {% else %}
+                            <div class="carousel-item">
+                                {% endif %}
+
+                                <img src="{{ url_for('static', path='/images/projects/albums/'+album.cover) }}"
+                                    class="d-block w-100 rounded-5" alt="{{ album.name }}">
+                                <a href="/{{ album.url }}"><button
+                                        style="background-image: url({{ url_for('static', path='/images/projects/albums/buttons/'+album.button)}} );"
+                                        class="project_slider_button albums_slider_button">LISTEN</button></a>
+                            </div>
+
+                            {% endfor %}
                         </div>
-        
-                        {% endfor %}
-                    </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#albums_carousel"
                             data-bs-slide="prev">
                             <span aria-hidden="true">
@@ -49,18 +52,18 @@
                             </span>
                             <span class="visually-hidden">Next</span>
                         </button>
+
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-2 d-flex justify-content-center">
+                        <a href="#projects" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
+                    </div>
+                    <div class="col-2 d-flex justify-content-center">
+                        <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-2 d-flex justify-content-center">
-                    <a href="#projects" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
-                </div>
-                <div class="col-2 d-flex justify-content-center">
-                    <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
-                </div>
-            </div>    
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
