@@ -521,7 +521,7 @@ footer .footer_col ul {
 }
 
 .single_name {
-  font-size: 1.3em !important;
+  font-size: 1em !important;
   color: var(--whitesmoke-rgb);
   text-shadow: var(--black-shadow);
 }

@@ -29,16 +29,11 @@ class ProjectNames:
         for root, dirs, files in os.walk(self.path_covers):
             for file in files:
                 if file.endswith(image_expansion):
-                    cover = file
-                    file_split_by_point = file.split('.')[0]
-                    print(file_split_by_point)
-                    name = file_split_by_point.split('|')[1]
-                    artist = file_split_by_point.split('|')[0]
                     project_info.append(
                         {
-                            key_1: cover,
-                            key_2: name,
-                            key_3: artist
+                            key_1: file,
+                            key_2: file.split('.')[0].split('|')[1],
+                            key_3: file.split('.')[0].split('|')[0]
                         }
                     )
         sorted_project_info: list = sorted(project_info, key=lambda x: x[key_1], reverse=True)

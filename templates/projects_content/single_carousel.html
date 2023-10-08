@@ -10,7 +10,8 @@
             {% for single in singles %}
             <div class="col-3">
                 <div class="card card_single rounded-4">
-                    <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+single.cover) }}" class="card-img-top rounded-top-4" alt="{{ single.name }}">
+                    <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+single.cover) }}" 
+                    class="card-img-top rounded-top-4" alt="{{ single.name }}">
                     <div class="card-body">
                         <p class="single_name m-0 text-center">{{ single.name }}</p>
                         <p class="single_artist text-center">{{ single.artist }}</p>
