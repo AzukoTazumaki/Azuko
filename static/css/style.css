@@ -485,11 +485,11 @@ footer .footer_col ul {
   top: 52%;
 }
 
-#singles_cards {
+#singles_cards, #featurings_cards {
   padding-top: 17vh;
 }
 
-.card_single {
+.card_single, .card_featuring {
   background-color: var(--dark-gray-rgb) !important;
 }
 
@@ -502,11 +502,11 @@ footer .footer_col ul {
   box-shadow: 3px 3px 10px var(--black-rgb);
 }
 
-.card_single a {
+.card_single a, .card_featuring a {
   text-decoration: none;
 }
 
-.button_single {
+.button_single, .button_featuring {
   background-color: var(--light-gray-azuko-rgb);
   color: var(--whitesmoke-rgb);
   text-shadow: var(--black-shadow);
@@ -516,7 +516,7 @@ footer .footer_col ul {
   border-radius: 8px;
 }
 
-.button_single:hover {
+.button_single:hover, .button_featuring:hover {
   background-color: var(--light-gray-azuko-rgb-deep);
 }
 

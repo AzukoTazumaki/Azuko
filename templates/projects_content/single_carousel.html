@@ -1,14 +1,14 @@
 {% block single_carousel %}
 <div class="row justify-content-center align-items-center" id="singles_cards">
-    <div class="col-9">
-        <div class="row justify-content-center column-gap-5 row-gap-5">
+    <div class="col-12">
+        <div class="row justify-content-center column-gap-1 row-gap-5">
 
             <div class="col-12 d-flex justify-content-center">
                 <img src="{{url_for('static', path='/images/logos/singles_logo.png')}}" alt="Singles" width="350">
             </div>
 
             {% for single in singles %}
-            <div class="col-3">
+            <div class="col-2">
                 <div class="card card_single rounded-4">
                     <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+single.cover) }}" 
                     class="card-img-top rounded-top-4" alt="{{ single.name }}">
