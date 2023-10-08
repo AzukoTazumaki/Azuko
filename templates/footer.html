@@ -2,94 +2,101 @@
 
 <footer id="footer">
     <div class="container-fluid">
-        <div class="row gap-5">
+        <div class="row">
 
             <div class="col-2 d-flex flex-column justify-content-center align-items-center">
                 <img src="{{url_for('static', path='/images/logos/footer_logo_azuko.png')}}" width="100%" alt="AZUKO">
             </div>
 
-            <div class="col footer_col text-uppercase">
-                <p class="footer_title">MENU</p>
-                <hr>
-                <ul>
-                    {% set menu = ['Home', 'Playlist', 'Projects', 'Products'] %}
-                    {% for footer_link in menu %}
-                    <a href="/" class="footer_link">
-                        <li>{{ footer_link }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="col footer_col text-uppercase">
-                <p class="footer_title">PRODUCTS</p>
-                <hr>
-                <ul>
-                    {% set products = ['Beats', 'Mixing', 'Mastering'] %}
-                    {% for footer_link in products %}
-                    <a href="/" class="footer_link">
-                        <li>{{ footer_link }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <!-- <div class="col footer_col text-uppercase">
-                <p class="footer_title">PROJECTS</p>
-                <hr>
-                <ul>
-                    {% set projects = [
-                        {'name': 'Albums', 'url': '#albums_carousel_div'},
-                        {'name': 'Singles', 'url': '#singles_cards'},
-                        {'name': 'Featurings', 'url': '#featurings_cards'}
-                        ] 
-                    %}
-                    {% for footer_link in projects %}
-                    <a href="/projects{{ footer_link.url }}" class="footer_link">
-                        <li>{{ footer_link.name }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
-            </div> -->
-
-            <div class="col footer_col text-uppercase">
-                <p class="footer_title">PLAYLIST</p>
-                <hr>
-                <ul>
-                    {% set projects = [
-                        {'name': 'Albums', 'url': 'albums'},
-                        {'name': 'Singles', 'url': 'singles'},
-                        {'name': 'Featurings', 'url': 'featurings'}
-                        ] 
-                    %}
-                    {% for footer_link in projects %}
-                    <a href="/{{ footer_link.url }}" class="footer_link">
-                        <li>{{ footer_link.name }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div class="col footer_col text-uppercase">
-                <p class="footer_title">ALBUMS</p>
-                <hr>
-                <ul>
-                    {% set albums_names = [
-                        {'name': 'with love from Azuko', 'url': 'with_love_from_azuko'},
-                        {'name': 'ВРЕМЯ ПЕРЕМЕН', 'url': 'time_for_change'},
-                        {'name': 'Highway Of Love (Deluxe)', 'url': 'highway_of_love_deluxe'},
-                        {'name': 'Highway Of Love', 'url': 'highway_of_love'},
-                        {'name': 'Mileran Vibes', 'url': 'mileran_vibes'},
-                        {'name': 'Life Is Full Of Lies 2', 'url': 'life_is_full_of_lies_2'},
-                        {'name': 'Life Is Full Of Lies', 'url': 'life_is_full_of_lies'}
-                        ] 
-                    %}
-                    {% for album_info in albums_names %}
-                    <a href="/{{ album_info.url }}" class="footer_link">
-                        <li>{{ album_info.name }}</li>
-                    </a>
-                    {% endfor %}
-                </ul>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-3 footer_col text-uppercase">
+                        <p class="footer_title">MENU</p>
+                        <hr>
+                        <ul>
+                            {% set menu = ['Home', 'Playlist', 'Projects', 'Products'] %}
+                            {% for footer_link in menu %}
+                            <a href="/" class="footer_link">
+                                <li>{{ footer_link }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                    <div class="col-3 footer_col text-uppercase">
+                        <p class="footer_title">PRODUCTS</p>
+                        <hr>
+                        <ul>
+                            {% set products = ['Beats', 'Mixing', 'Mastering'] %}
+                            {% for footer_link in products %}
+                            <a href="/" class="footer_link">
+                                <li>{{ footer_link }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                    <div class="col-3 footer_col text-uppercase">
+                        <p class="footer_title">PROJECTS</p>
+                        <hr>
+                        <ul>
+                            {% set projects = [
+                                {'name': 'Albums', 'url': '#albums_carousel_div'},
+                                {'name': 'Singles', 'url': '#singles_cards'},
+                                {'name': 'Featurings', 'url': '#featurings_cards'}
+                                ] 
+                            %}
+                            {% for footer_link in projects %}
+                            <a href="/projects{{ footer_link.url }}" class="footer_link">
+                                <li>{{ footer_link.name }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                    <div class="col-3 footer_col text-uppercase">
+                        <p class="footer_title">PLAYLIST</p>
+                        <hr>
+                        <ul>
+                            {% set projects = [
+                                {'name': 'Albums', 'url': 'albums'},
+                                {'name': 'Singles', 'url': 'singles'},
+                                {'name': 'Featurings', 'url': 'featurings'}
+                                ] 
+                            %}
+                            {% for footer_link in projects %}
+                            <a href="/{{ footer_link.url }}" class="footer_link">
+                                <li>{{ footer_link.name }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                    <div class="col-12 row-gap-1 footer_col text-uppercase">
+                        <p class="footer_title">ALBUMS</p>
+                        <hr>
+                        <div class="row d-flex flex-wrap justify-content-between align-items-center">
+                            {% set albums_names = [
+                                {'name': 'FUNNY but NOBODY', 'url': 'funny_but_nobody'},
+                                {'name': 'with love from Azuko', 'url': 'with_love_from_azuko'},
+                                {'name': 'ВРЕМЯ ПЕРЕМЕН', 'url': 'time_for_change'},
+                                {'name': 'Highway Of Love (Deluxe)', 'url': 'highway_of_love_deluxe'},
+                                {'name': 'Highway Of Love', 'url': 'highway_of_love'},
+                                {'name': 'Mileran Vibes', 'url': 'mileran_vibes'},
+                                {'name': 'Life Is Full Of Lies 2', 'url': 'life_is_full_of_lies_2'},
+                                {'name': 'Life Is Full Of Lies', 'url': 'life_is_full_of_lies'}
+                                ] 
+                            %}
+                            {% for album_info in albums_names %}
+                            <div class="col-3">
+                                <a href="/{{ album_info.url }}" class="footer_link">
+                                    <p class="m-0 text-center">{{ album_info.name }}</p>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-2 d-flex flex-column justify-content-center align-items-center">
