@@ -16,12 +16,12 @@ class ProjectNames:
             for file in files:
                 if file.endswith(image_expansion):
                     if key_3 is None:
-                        project_info.append({key_1: file, key_2: file.split('.')[0]})
+                        project_info.append({key_1: file, key_2: file.split(image_expansion)[0]})
                     else:
                         project_info.append({
                             key_1: file,
-                            key_2: file.split('.')[0].split('|')[1],
-                            key_3: file.split('.')[0].split('|')[0]
+                            key_2: file.split(image_expansion)[0].split('|')[1],
+                            key_3: file.split(image_expansion)[0].split('|')[0]
                         })
         sorted_project_info: list = sorted(project_info, key=lambda x: x[key_1], reverse=True)
         return sorted_project_info
@@ -40,4 +40,4 @@ class ProjectNames:
 
 
 a = ProjectNames('singles')
-print(a.get_single_or_featuring_info())
+a.get_single_or_featuring_info()

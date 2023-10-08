@@ -3,9 +3,11 @@
 <footer id="footer">
     <div class="container-fluid">
         <div class="row gap-5">
+
             <div class="col-2 d-flex flex-column justify-content-center align-items-center">
                 <img src="{{url_for('static', path='/images/logos/footer_logo_azuko.png')}}" width="100%" alt="AZUKO">
             </div>
+
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">MENU</p>
                 <hr>
@@ -18,6 +20,7 @@
                     {% endfor %}
                 </ul>
             </div>
+
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">PRODUCTS</p>
                 <hr>
@@ -30,14 +33,15 @@
                     {% endfor %}
                 </ul>
             </div>
-            <div class="col footer_col text-uppercase">
+
+            <!-- <div class="col footer_col text-uppercase">
                 <p class="footer_title">PROJECTS</p>
                 <hr>
                 <ul>
                     {% set projects = [
                         {'name': 'Albums', 'url': '#albums_carousel_div'},
-                        {'name': 'Singles', 'url': '#singles_carousel_div'},
-                        {'name': 'Featurings', 'url': '#featurings_carousel_div'}
+                        {'name': 'Singles', 'url': '#singles_cards'},
+                        {'name': 'Featurings', 'url': '#featurings_cards'}
                         ] 
                     %}
                     {% for footer_link in projects %}
@@ -46,7 +50,8 @@
                     </a>
                     {% endfor %}
                 </ul>
-            </div>
+            </div> -->
+
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">PLAYLIST</p>
                 <hr>
@@ -64,6 +69,7 @@
                     {% endfor %}
                 </ul>
             </div>
+
             <div class="col footer_col text-uppercase">
                 <p class="footer_title">ALBUMS</p>
                 <hr>
@@ -85,6 +91,7 @@
                     {% endfor %}
                 </ul>
             </div>
+
             <div class="col-2 d-flex flex-column justify-content-center align-items-center">
                 <a href="/" class="text-decoration-none">
                     <button class="order_service_button">ORDER SERVICE</button>
@@ -92,11 +99,13 @@
                 <p class="mb-0 mt-2 support_description">SUPPORT&nbsp;&nbsp;THE&nbsp;&nbsp;AUTHOR</p>
                 <div class="d-flex justify-content-between align-items-center column-gap-2 mt-1 contacts">
                     <a href="/">tazumaki@mail.ru</a>
-                    <a href="/"><i class="fa-brands fa-vk fa-xl"></i></a>
-                    <a href="/"><i class="fa-brands fa-telegram fa-xl"></i></a>
-                    <a href="/"><i class="fa-brands fa-youtube fa-xl"></i></a>
+                    {% set fa_icons = ['fa-vk', 'fa-telegram', 'fa-youtube'] %}
+                    {% for icon in fa_icons %}
+                    <a href="/"><i class="fa-brands {{ icon }} fa-xl"></i></a> 
+                    {% endfor %}
                 </div>
             </div>
+
         </div>
     </div>
 </footer>

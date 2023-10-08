@@ -38,7 +38,7 @@ function common_show_more_function(card, array) {
         card.style.display = 'none';
         array[1].classList.add('vh-100')
         array[1].style.paddingTop = '0'
-        array[0].innerHTML = 'SHOW ALL'
+        array[0].innerHTML = 'SHOW MORE'
     } else {
         card.style.display = 'block';
         array[1].classList.remove('vh-100')
