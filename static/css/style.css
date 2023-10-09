@@ -432,13 +432,8 @@ footer .footer_col ul {
 
 /* ————————————————————————————————————————————————— PROJECTS ————————————————————————————————————————————————— */
 
-#projects {
-  background-image: url(../images/bg/bg_projects.jpg);
-  transition: .6s;
-}
-
 .projects {
-  background-color: var(--dark-gray-azuko-rgb);
+  background-image: url(../images/bg/bg_projects.jpg);
 }
 
 .carousel_album_title {

@@ -47,3 +47,4 @@ function common_show_more_function(card, array) {
     }
 }
 
+Amplitude.init()

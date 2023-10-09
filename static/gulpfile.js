@@ -8,7 +8,7 @@ function js() {
   return src([
     'js/*.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-    /* 'node_modules/amplitudejs/dist/amplitude.js' */
+    'node_modules/amplitudejs/dist/amplitude.js'
   ])
     .pipe(concat('bundle.min.js'))
     .pipe(uglify())
