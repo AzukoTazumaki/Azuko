@@ -21,9 +21,7 @@ const albums = {
 }
 
 
-const all_songs = [
-    
-]
+const all_songs = []
 
 
 for (album in albums) {
