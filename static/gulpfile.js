@@ -1,4 +1,4 @@
-const { src, dest, watch, series } = require('gulp')
+const { src, dest, watch } = require('gulp')
 let uglify = require('gulp-uglify');
 let concat = require('gulp-concat');
 let concatCss = require('gulp-concat-css');
@@ -6,12 +6,12 @@ const cleanCSS = require('gulp-clean-css');
 
 function js() {
   return src([
+    'node_modules/amplitudejs/dist/amplitude.js',
     'js/*.js',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-    'node_modules/amplitudejs/dist/amplitude.js'
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
   ])
     .pipe(concat('bundle.min.js'))
-    .pipe(uglify())
+    /* .pipe(uglify()) */
     .pipe(dest('dist/'));
 }
 
