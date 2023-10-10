@@ -1,0 +1,109 @@
+.player_part_center,
+.player_part_left,
+.player_part_right {
+    background: linear-gradient(115deg, var(--dark-gray-rgb) 0%, var(--dark-gray-azuko-rgb) 100%);
+    padding: 3vh !important;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px var(--dark-gray-azuko-rgb);
+    border: 1px solid var(--dark-gray-azuko-rgb);
+}
+
+.album_art {
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--dark-gray-azuko-rgb);
+}
+
+.song_name,
+.song_artist {
+    text-shadow: 2px 2px 5px var(--darker-gray-azuko-rgb);
+}
+
+.song_name {
+    color: var(--white-rgb);
+    font-size: 1.3em;
+}
+
+.song_artist {
+    color: var(--periwinkle-purple-rgb);
+}
+
+.previous_song_button,
+.play_pause_song_button,
+.next_song_button,
+.shuffle_song_button,
+.repeat_song_button {
+    border: none;
+}
+
+.previous_song_button,
+.next_song_button,
+.shuffle_song_button,
+.repeat_song_button {
+    text-shadow: var(--black-shadow);
+}
+
+.repeat_song_button,
+.shuffle_song_button {
+    background-color: transparent;
+    color: var(--periwinkle-purple-rgb);
+    transition: .3s;
+}
+
+.repeat_song_button:hover,
+.shuffle_song_button:hover {
+    text-shadow: var(--periwinkle-purple-shadow);
+}
+
+.shuffle_song_button:focus,
+.repeat_song_button:focus {
+    text-shadow: var(--periwinkle-purple-shadow);
+}
+
+.previous_song_button,
+.next_song_button {
+    background-color: transparent;
+    color: var(--white-rgb);
+    transition: .2s;
+}
+
+.previous_song_button:hover,
+.next_song_button:hover {
+    color: var(--white-rgb-deep);
+}
+
+.play_pause_song_button {
+    padding: 15px !important;
+    border-radius: 10%;
+    background: 
+        linear-gradient(135deg, 
+        var(--periwinkle-purple-rgba) 0%,
+        var(--periwinkle-purple-rgb-deep) 100%);
+        height: 5vh;
+        width: 5vh;
+    color: var(--white-rgb);
+    box-shadow: var(--black-shadow);
+    transition: .2s;
+}
+
+.play_pause_song_button:hover {
+    background-color: var(--periwinkle-purple-rgba);
+}
+
+.previous_song_button:active,
+.play_pause_song_button:active,
+.next_song_button:active,
+.shuffle_song_button:active,
+.repeat_song_button:active {
+    transform: scale(.9);
+}
+
+.song_current_time,
+.song_duration_time {
+    color: var(--white-rgb);
+    text-shadow: var(--black-shadow);
+}
+
+input[type=range] {
+    cursor: pointer;
+    color: var(--periwinkle-purple-rgb);
+}

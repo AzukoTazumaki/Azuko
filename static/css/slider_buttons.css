@@ -1,0 +1,76 @@
+/* ————————————————————————————————————————————————— BUTTON SLIDER FOR PAGES ————————————————————————————————————————————————— */
+
+.slider_buttons {
+    position: absolute;
+    margin-left: 96.4vw;
+    background-color: var(--light-gray-azuko-rgb);
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    color: var(--dark-gray-azuko-rgb);
+    border: none;
+    padding: 5vh .8vw;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.slider_buttons:focus,
+.slider_products:focus {
+    box-shadow: none;
+    transform: scale(.85);
+}
+
+.slider_buttons:hover:not(.slider_button_up_disabled),
+.slider_products:hover:not(.slider_products_disabled, .show_more_button) {
+    background-color: var(--light-gray-azuko-rgb-deep);
+}
+
+.slider_button_up_disabled {
+    margin-top: -15vh;
+    background-color: var(--dark-gray-azuko-rgb);
+    color: var(--dark-gray-rgb);
+    box-shadow: none;
+    cursor: default;
+    pointer-events: none;
+}
+
+.slider_button_down_1 {
+    margin-top: 15vh;
+}
+
+.slider_button_up_2 {
+    margin-top: -86vh;
+}
+
+.slider_button_down_2 {
+    margin-top: -71vh;
+}
+
+.slider_button_up_3 {
+    margin-top: -64vh;
+}
+
+.slider_button_down_3 {
+    margin-top: -49vh;
+}
+
+.slider_products,
+.slider_products_disabled {
+    padding: 1.5vh 5vw;
+    border-radius: 3px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+.slider_products {
+    background-color: var(--light-gray-azuko-rgb);
+    color: var(--dark-gray-azuko-rgb);
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
+.slider_products_disabled {
+    background-color: var(--dark-gray-azuko-rgb);
+    color: var(--dark-gray-rgb);
+    cursor: default;
+    pointer-events: none;
+}

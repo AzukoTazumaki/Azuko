@@ -1,0 +1,117 @@
+/* ————————————————————————————————————————————————— PROJECTS ————————————————————————————————————————————————— */
+
+.projects {
+    background-image: url(../images/bg/bg_projects.jpg);
+}
+
+.carousel_album_title {
+    padding: 0 20px 20px 0;
+    color: var(--light-gray-azuko-rgb);
+    text-shadow: var(--black-shadow);
+    font-weight: 200;
+}
+
+.project_slider_button {
+    position: absolute;
+    left: 16.4%;
+    padding: 1vh 5vw;
+    border: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: rgb(149, 149, 149);
+    text-shadow: var(--black-shadow);
+    background-color: var(--light-gray-azuko-rgb);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    box-shadow: 2px 2px 10px var(--dark-gray-azuko-rgb);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.project_slider_button:hover {
+    background-color: var(--light-gray-azuko-rgb-deep);
+}
+
+.project_slider_button:focus {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.albums_slider_button {
+    top: 75.5%;
+}
+
+.singles_slider_button,
+.featurings_slider_button {
+    top: 52%;
+}
+
+.card_single,
+.card_featuring {
+    background-color: var(--dark-gray-rgb) !important;
+}
+
+.card {
+    transition: .3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px 10px var(--black-rgb);
+}
+
+.card_single a,
+.card_featuring a {
+    text-decoration: none;
+}
+
+.button_single,
+.button_featuring {
+    background-color: var(--light-gray-azuko-rgb);
+    color: var(--whitesmoke-rgb);
+    text-shadow: var(--black-shadow);
+    text-align: center;
+    padding: 8px 0;
+    transition: .3s;
+    border-radius: 8px;
+}
+
+.show_more_button {
+    background-color: var(--periwinkle-purple-rgb);
+    border-radius: 10px;
+}
+
+.button_single:hover,
+.button_featuring:hover {
+    background-color: var(--light-gray-azuko-rgb-deep);
+}
+
+.show_more_button:hover {
+    background-color: var(--periwinkle-purple-rgb-deep);
+    box-shadow: 3px 3px 10px var(--black-rgb);
+    transform: scale(1.05);
+}
+
+.show_more_button:focus {
+    transform: scale(.95);
+}
+
+.single_name,
+.featuring_name {
+    font-size: 1em !important;
+    color: var(--whitesmoke-rgb);
+    text-shadow: var(--black-shadow);
+}
+
+.single_artist,
+.featuring_artist {
+    font-size: .8em;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--black-shadow);
+}
+
+.disabled_single_card,
+.disabled_featuring_card {
+    display: none;
+}

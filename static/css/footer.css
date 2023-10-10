@@ -1,0 +1,60 @@
+/* ————————————————————————————————————————————————— FOOTER ————————————————————————————————————————————————— */
+
+footer {
+    background-color: var(--darker-gray-azuko-rgb);
+    padding: 30px;
+}
+
+footer hr {
+    color: var(--light-gray-azuko-rgb);
+}
+
+.footer_title {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.footer_link {
+    text-decoration: none;
+    color: var(--light-gray-azuko-rgb);
+    transition: .3s;
+}
+
+.footer_link:hover {
+    color: rgb(110, 110, 110);
+    transform: scale(1.05);
+    text-shadow: 1px 1px 2px var(--light-gray-azuko-rgb);
+}
+
+footer .footer_col ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+.support_description {
+    color: var(--light-gray-azuko-rgb);
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+    text-shadow: var(--black-shadow);
+}
+
+.contacts a {
+    text-decoration: none;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--black-shadow);
+    transition: .3s;
+}
+
+.contacts a:hover {
+    color: var(--periwinkle-purple-rgb-deep);
+}
+
+.all_rights {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+}

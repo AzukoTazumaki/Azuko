@@ -1,0 +1,20 @@
+/* ————————————————————————————————————————————————— PRODUCTS ————————————————————————————————————————————————— */
+
+.product_img {
+    box-shadow: 1px 1px 20px var(--light-gray-azuko-rgb);
+}
+
+.product_card_info {
+    background-color: var(--dark-gray-rgb);
+    padding: 20px;
+}
+
+.product_card_info h3 {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+}
+
+.product_card_info p {
+    color: var(--periwinkle-purple-rgb);
+    box-shadow: 1px 1px 20px var(--dark-gray-rgb);
+}

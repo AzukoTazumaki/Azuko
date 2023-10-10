@@ -7,7 +7,8 @@ const cleanCSS = require('gulp-clean-css');
 function js() {
   return src([
     'node_modules/amplitudejs/dist/amplitude.js',
-    'js/*.js',
+    'js/songs.js',
+    'js/main.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
   ])
     .pipe(concat('bundle.min.js'))

@@ -1,0 +1,175 @@
+/* ————————————————————————————————————————————————— MAIN 1 ————————————————————————————————————————————————— */
+
+.main-1 .title span,
+.projects .title span {
+    font-size: 10vh;
+    color: var(--periwinkle-purple-rgb);
+    opacity: .85;
+    font-weight: bold;
+    letter-spacing: .5vw;
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+}
+
+/* ————————————————————————————————————————————————— MAIN 2 ————————————————————————————————————————————————— */
+
+.last_release {
+    filter: grayscale(1) blur(4px);
+    transition: .3s;
+}
+
+.last_release img {
+    border-radius: 10px;
+}
+
+.last_release:hover {
+    filter: none;
+    transform: scale(1.05);
+}
+
+.last_release:hover .release_info {
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+.last_releases_title,
+.products_title {
+    font-size: 3vh;
+    color: var(--periwinkle-purple-rgb);
+    font-weight: bold;
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+}
+
+.release_title {
+    font-size: 1.1em;
+    color: var(--whitesmoke-rgb);
+    text-shadow: var(--whitesmoke-shadow);
+}
+
+.release_artist {
+    font-size: .8em;
+    color: var(--periwinkle-purple-rgb);
+}
+
+.release_info {
+    padding: 5px 15px;
+    transition: .3s;
+    opacity: 0;
+}
+
+/* ————————————————————————————————————————————————— MAIN 3 ————————————————————————————————————————————————— */
+
+.who_is_azuko {
+    background-color: var(--dark-gray-rgb);
+    padding: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--periwinkle-purple-rgb);
+}
+
+.who_is_azuko .who_is_azuko_img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    filter: grayscale(.5);
+}
+
+.who_is_azuko_div {
+    background-color: var(--dark-gray-azuko-rgb);
+    color: var(--periwinkle-purple-rgb);
+    padding: 10px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.who_is_azuko_title {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+}
+
+.who_is_azuko_description {
+    font-size: 1.1em;
+    text-shadow: var(--black-shadow);
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--dark-gray-azuko-rgb);
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.products_div .col-6:nth-of-type(1) {
+    padding-left: 0 !important;
+    padding-right: 15px;
+}
+
+.products_div .col-6:nth-of-type(2) {
+    padding-left: 15px;
+    padding-right: 0 !important;
+}
+
+.product_info {
+    background-color: var(--dark-gray-azuko-rgb);
+    padding: 10px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: var(--periwinkle-purple-rgb);
+}
+
+.img_product {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.products_title_div {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: var(--dark-gray-azuko-rgb);
+    padding: 10px 30px;
+    color: var(--periwinkle-purple-rgb);
+}
+
+.products_main_div {
+    padding: 30px 43px;
+    background-color: var(--dark-gray-rgb);
+}
+
+.product_name {
+    font-weight: bold;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 5px var(--periwinkle-purple-rgb);
+}
+
+.other_products_div {
+    background-color: var(--dark-gray-azuko-rgb);
+    padding: 15px 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.other_products_button,
+.order_service_button {
+    background-color: var(--periwinkle-purple-rgb);
+    color: var(--dark-gray-azuko-rgb);
+    padding: 10px 40px;
+    border: none;
+    font-weight: 800;
+    font-size: 1em;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.order_service_button {
+    padding: 10px 40px;
+}
+
+.other_products_button:hover,
+.order_service_button:hover {
+    background-color: var(--periwinkle-purple-rgb-deep);
+}
+
+.old_price {
+    color: var(--dark-gray-rgb);
+    text-shadow: var(--dark-gray-shadow);
+    font-size: 1em;
+}

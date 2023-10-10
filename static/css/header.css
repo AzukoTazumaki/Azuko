@@ -1,0 +1,35 @@
+/* ————————————————————————————————————————————————— HEADER ————————————————————————————————————————————————— */
+
+.nav_container {
+    background-color: var(--dark-gray-rgb);
+    border-radius: 10px;
+    box-shadow:
+        3px -3px 10px rgba(30, 30, 30, .5),
+        -3px 3px 10px rgba(30, 30, 30, .5);
+    transition: .3s;
+}
+
+.nav_container:hover {
+    transform: scale(1.05);
+}
+
+.navbar_links a,
+.shopping_cart {
+    text-decoration: none;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: .3s;
+}
+
+.shopping_cart {
+    margin-right: 20px;
+}
+
+.navbar_links a:hover,
+.shopping_cart:hover {
+    background-color: var(--periwinkle-purple-rgb);
+    color: var(--dark-gray-rgb);
+    text-shadow: var(--dark-gray-shadow);
+}

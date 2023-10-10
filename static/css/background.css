@@ -1,0 +1,30 @@
+/* ————————————————————————————————————————————————— BACKGROUND ————————————————————————————————————————————————— */
+
+.main-1,
+.main-3 {
+  height: 100dvh;
+}
+
+.main-1 {
+  background-image: url(../images/bg/bg_main_1.jpg);
+}
+
+.main-3 {
+  background-image: url(../images/bg/bg_main_3.jpg);
+}
+
+.main-2 {
+  background-color: var(--dark-gray-azuko-rgb);
+}
+
+.main-2-row {
+  height: 150dvh;
+}
+
+.products {
+  background-image: url(../images/bg/bg_products.jpg);
+}
+
+/* .with_love_from_azuko {
+  background-image: url(../images/bg/albums/6.jpg);
+} */
