@@ -12,7 +12,7 @@ function js() {
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
   ])
     .pipe(concat('bundle.min.js'))
-    .pipe(uglify())
+    /* .pipe(uglify()) */
     .pipe(dest('dist/'));
 }
 

@@ -2,10 +2,12 @@
 .player_part_left,
 .player_part_right {
     background: linear-gradient(115deg, var(--dark-gray-rgb) 0%, var(--dark-gray-azuko-rgb) 100%);
-    padding: 3vh !important;
     border-radius: 15px;
     box-shadow: 2px 2px 15px var(--dark-gray-azuko-rgb);
-    border: 1px solid var(--dark-gray-azuko-rgb);
+}
+
+.player_part_center {
+    padding: 3vh !important; 
 }
 
 .album_art {
@@ -143,7 +145,6 @@ input[type="range"]:focus::-webkit-slider-thumb {
 }
 
 .song {
-    padding: 10px;
     background-color: var(--light-gray-azuko-rgb);
     border-radius: 8px;
     cursor: pointer;
@@ -154,20 +155,35 @@ input[type="range"]:focus::-webkit-slider-thumb {
     background-color: var(--light-gray-azuko-rgb-deep);
 }
 
-.playlist {
+.playlist, .song_title {
+    background-color: var(--dark-gray-azuko-rgb);
     text-align: center;
     font-size: 1.5em;
     color: var(--light-gray-azuko-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
 }
 
-.player_part_left,
-.player_part_right {
-    height: 60vh;
+.player_part_left_inside,
+.player_part_right_inside {
+    height: 55vh;
     overflow-y: scroll;
+}
+
+.player_part_left_inside,
+.player_part_right_inside {
+    padding: 20px 50px;
 }
 
 .volume_song_button {
     width: 30px;
     margin-right: 15px;
+}
+
+.song_cover {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }

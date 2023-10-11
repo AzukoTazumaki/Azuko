@@ -20,7 +20,6 @@ const albums = {
     },  
 }
 
-
 const all_songs = []
 const all_playlists = {
     'FUNNY but NOBODY': {
