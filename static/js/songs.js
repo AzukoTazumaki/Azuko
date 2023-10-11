@@ -22,6 +22,26 @@ const albums = {
 
 
 const all_songs = []
+const all_playlists = {
+    'FUNNY but NOBODY': {
+        songs: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+        title: 'FUNNY but NOBODY',
+        author: 'Azuko'
+    },
+    'with love from Azuko': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    }, 
+}
+
+/* function get_numbers_array(track_number) {
+    let numbers_array = []
+    for (let num = 0; num < track_number; num++) {
+        numbers_array.push(num)
+    }
+    return numbers_array
+} */
 
 
 for (album in albums) {
@@ -35,3 +55,4 @@ for (album in albums) {
         })
     }
 }
+
