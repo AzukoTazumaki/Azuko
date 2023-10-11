@@ -79,12 +79,12 @@ Amplitude.init({
     debug: true,
     callbacks: {
         play: function () {
-            play_pause_icon.classList.remove('fa-play');
-            play_pause_icon.classList.add('fa-pause');
+            play_pause_icon.classList.remove('fa-circle-play');
+            play_pause_icon.classList.add('fa-circle-pause');
         },
         pause: function () {
-            play_pause_icon.classList.remove('fa-pause');
-            play_pause_icon.classList.add('fa-play');
+            play_pause_icon.classList.remove('fa-circle-pause');
+            play_pause_icon.classList.add('fa-circle-play');
         }
     },
     playlists: all_playlists
@@ -101,6 +101,7 @@ shuffle_button.addEventListener('click', () => {
         shuffle_button.style.textShadow = 'var(--white-shadow)'
     }
 })
+
 
 /* REPEAT BUTTON */
 const repeat_button = document.querySelector('.repeat_song_button')
@@ -144,5 +145,8 @@ volume_button.addEventListener('click', () => {
         volume_song_icon.classList.remove('fa-volume-xmark')
     }
 })
+
+const active_song = document.querySelector('amplitude-active-song-container')
+
 
 
