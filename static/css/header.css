@@ -14,7 +14,8 @@
 }
 
 .navbar_links a,
-.shopping_cart {
+.shopping_cart,
+.github {
     text-decoration: none;
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
@@ -23,12 +24,13 @@
     transition: .3s;
 }
 
-.shopping_cart {
+.github {
     margin-right: 20px;
 }
 
 .navbar_links a:hover,
-.shopping_cart:hover {
+.shopping_cart:hover,
+.github:hover {
     background-color: var(--periwinkle-purple-rgb);
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);

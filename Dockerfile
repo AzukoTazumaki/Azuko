@@ -1,13 +1,12 @@
-ARG PYTHON_VERSION=3.10.10
-FROM python:3.9.18-slim-bullseye as base
+FROM tiangolo/uvicorn-gunicorn:latest
 
 WORKDIR /app
 
-COPY static templates names.py project.py Pipfile Pipfile.lock ./
+COPY static templates models names.py lyrics.py project.py Pipfile Pipfile.lock ./
 
 RUN python -m pip install --upgrade pip && pip install pipenv
 
-RUN pipenv install --system --deploy
+RUN pipenv --python /usr/local/bin/python3 install
 
 EXPOSE 8000
 

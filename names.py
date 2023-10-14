@@ -37,7 +37,3 @@ class ProjectNames:
     def get_single_or_featuring_info(self):
         covers_and_names: list = self.make_project_info(self.keys[0], self.keys[1], self.keys[4], self.image_expansions[0])
         return covers_and_names
-
-
-a = ProjectNames('singles')
-a.get_single_or_featuring_info()

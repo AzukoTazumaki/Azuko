@@ -6,13 +6,23 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 from names import ProjectNames
+from models.models import InitDatabase
+from db_projects import SelectProjects
 
 app = FastAPI()
+init_db = InitDatabase()
+db_projects = SelectProjects()
 
-app.mount('/static', StaticFiles(directory=os.path.join(os.getcwd(), 'static')), name='static')
-# app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
+
+
+@app.on_event('startup')
+def startup():
+    init_db.create_db_and_tables()
+    init_db.create_projects()
+    init_db.close_session()
 
 
 @app.get("/", response_class=RedirectResponse)
@@ -73,6 +83,10 @@ async def playlist(request: Request):
 async def albums_playlist(request: Request):
     return templates.TemplateResponse("albums_content/albums.html", {"request": request})
 
+
+@app.get("/test", response_class=HTMLResponse)
+async def test(request: Request):
+    return templates.TemplateResponse("test.html", {"request": request, "albums": db_projects.select_albums()})
 
 if __name__ == '__main__':
     uvicorn.run('project:app', host='127.0.0.1', port=8000, reload=True)

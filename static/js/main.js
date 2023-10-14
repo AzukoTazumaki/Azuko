@@ -67,6 +67,7 @@ for (var i = 0; i < bandcampLinks.length; i++) {
 /* PLAY_PAUSE BUTTON */
 const play_pause_button = document.querySelector('.play_pause_song_button')
 const play_pause_icon = document.querySelector('.play_pause_icon')
+const volume_percentage = document.querySelector('.volume_percentage')
 
 /* INIZIALIZATION OF AMPLITUDE */
 Amplitude.init({
@@ -123,6 +124,7 @@ const volume_song_icon = document.querySelector('.volume_song_icon')
 volume_slider.addEventListener('input', (el) => {
     let el_value = el.target.value
     let classes = ['fa-volume-xmark', 'fa-volume-off', 'fa-volume-low', 'fa-volume-high']
+    volume_percentage.innerText = el_value
     if (el_value == 0) {
         volume_song_icon.classList.remove(...classes)
         volume_song_icon.classList.add(classes[0])

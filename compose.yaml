@@ -8,18 +8,13 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-  azuko_fast_api:
-    build:
-      context: .
+  web:
+    build: .
     ports:
       - 8000:8000
     volumes:
-      - ./static:/app/static
-      - ./templates:/app/templates
-      - ./names.py:/app/names.py
-      - ./project.py:/app/project.py
-      - ./Pipfile:/app/Pipfile
-      - ./Pipfile.lock:/app/Pipfile.lock
+      - ./static ./templates ./models ./names.py ./lyrics.py ./project.py ./Pipfile ./Pipfile.lock:/app
+
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
