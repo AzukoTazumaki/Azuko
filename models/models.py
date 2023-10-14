@@ -19,7 +19,7 @@ from .settings import db_driver, db_user, db_password, db_host, db_port, db_name
 
 class InitEngine:
     def __init__(self):
-        self.engine = create_engine(f'{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}', echo=True)
+        self.engine = create_engine(f'{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
         self.session = Session(bind=self.engine)
 
 

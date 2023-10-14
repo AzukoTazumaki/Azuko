@@ -1,14 +1,15 @@
-const audio_albums_path = 'static/audio/albums'
+const audio_albums_path = '/static/audio/albums'
+
 const albums = {
     fbn_songs: {
-        track_name: ['HONESTLY.', 'MEROCK.', 'THEATER.', 'FADED.', 'ALL YEAR.', 'NO CHANGE.', 'WHERE DREAMS LEAD.', 
+        track_name: ['FADED.', 'HONESTLY.', 'MEROCK.', 'THEATER.', 'ALL YEAR.', 'NO CHANGE.', 'WHERE DREAMS LEAD.', 
         'UP DOWN.', 'PILGRIM.', 'IN MY SOUL.', 'WE LOVE.', 'NEW SEASON.', 'COLD.', 'A LONG TIME AGO.', 'BOBBY FISCHER.', 
         'IDOL.', 'REAL.', 'STRANGERS.', 'WEEKEND.', 'BANKROLL.', 'SUPPOSED TO BE.', 'HARD FOR ME.', 'FORGIVENESS.'],
         track_number: 23,
         track_artist: 'Azuko',
         album_title: 'FUNNY but NOBODY',
         audio_dir: audio_albums_path + '/funny_but_nobody',
-        cover: audio_albums_path + '/funny_but_nobody' + '/cover.jpg'
+        cover: '..' + audio_albums_path + '/funny_but_nobody' + '/cover.jpg'
     },
     wlfa_songs : {
         track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
@@ -16,8 +17,56 @@ const albums = {
         track_artist: 'Azuko',
         album_title: 'with love from Azuko',
         audio_dir: audio_albums_path + '/with_love_from_azuko',
-        cover: audio_albums_path + '/with_love_from_azuko' + '/cover.jpg'
+        cover: '..' + audio_albums_path + '/with_love_from_azuko' + '/cover.jpg'
     },  
+    tc_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 12,
+        track_artist: 'Azuko, Kaneki',
+        album_title: 'ВРЕМЯ ПЕРЕМЕН',
+        audio_dir: audio_albums_path + '/time_for_change',
+        cover: '..' + audio_albums_path + '/time_for_change' + '/cover.jpg'
+    }, 
+    hofd_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 14,
+        track_artist: 'Azuko',
+        album_title: 'Highway Of Love (Deluxe)',
+        audio_dir: audio_albums_path + '/highway_of_love_deluxe',
+        cover: '..' + audio_albums_path + '/highway_of_love_deluxe' + '/cover.jpg'
+    }, 
+    hof_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 25,
+        track_artist: 'Azuko',
+        album_title: 'Highway Of Love',
+        audio_dir: audio_albums_path + '/highway_of_love',
+        cover: '..' + audio_albums_path + '/highway_of_love' + '/cover.jpg'
+    }, 
+    mv_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 8,
+        track_artist: 'Azuko',
+        album_title: 'Mileran Vibes',
+        audio_dir: audio_albums_path + '/mileran_vibes',
+        cover: '..' + audio_albums_path + '/mileran_vibes' + '/cover.jpg'
+    }, 
+    lfl2_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 17,
+        track_artist: 'Azuko',
+        album_title: 'Life Is Full Of Lies 2 (Before Love Story)',
+        audio_dir: audio_albums_path + '/life_is_full_of_lies_2',
+        cover: '..' + audio_albums_path + '/life_is_full_of_lies_2' + '/cover.jpg'
+    }, 
+    lfl_songs : {
+        track_name: ['Моя Вина', 'Ничего Лишнего', 'Занят', 'Время Летит', 'Babe <3', 'Маньяк', 'Время Покажет', 'Может Быть'],
+        track_number: 19,
+        track_artist: 'Azuko',
+        album_title: 'Life Is Full Of Lies',
+        audio_dir: audio_albums_path + '/life_is_full_of_lies',
+        cover: '..' + audio_albums_path + '/life_is_full_of_lies' + '/cover.jpg'
+    }, 
 }
 
 const all_songs = []
@@ -32,16 +81,37 @@ const all_playlists = {
         title: 'with love from Azuko',
         author: 'Azuko'
     }, 
+    'ВРЕМЯ ПЕРЕМЕН': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    }, 
+    'Highway Of Love (Deluxe)': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    }, 
+    'Highway Of Love': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    }, 
+    'Mileran Vibes': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    },
+    'Life Is Full Of Lies 2 (Before Love Story)': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    },
+    'Life Is Full Of Lies': {
+        songs: [23, 24, 25, 26, 27, 28, 29, 30],
+        title: 'with love from Azuko',
+        author: 'Azuko'
+    },
 }
-
-/* function get_numbers_array(track_number) {
-    let numbers_array = []
-    for (let num = 0; num < track_number; num++) {
-        numbers_array.push(num)
-    }
-    return numbers_array
-} */
-
 
 for (album in albums) {
     for (let i = 0; i < albums[album].track_number; i++) {
@@ -54,4 +124,3 @@ for (album in albums) {
         })
     }
 }
-

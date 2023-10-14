@@ -76,17 +76,13 @@ async def projects(request: Request):
 
 @app.get("/playlist", response_class=HTMLResponse)
 async def playlist(request: Request):
-    return templates.TemplateResponse("playlist_content/playlist.html", {'request': request})
+    return templates.TemplateResponse("playlist_content/playlist.html", {'request': request, "albums": db_projects.select_albums()})
 
 
-@app.get("/albums", response_class=HTMLResponse)
+@app.get("/playlist/albums", response_class=HTMLResponse)
 async def albums_playlist(request: Request):
-    return templates.TemplateResponse("albums_content/albums.html", {"request": request})
+    return templates.TemplateResponse("playlist_content/albums.html", {"request": request, "albums": db_projects.select_albums()})
 
-
-@app.get("/test", response_class=HTMLResponse)
-async def test(request: Request):
-    return templates.TemplateResponse("test.html", {"request": request, "albums": db_projects.select_albums()})
 
 if __name__ == '__main__':
     uvicorn.run('project:app', host='127.0.0.1', port=8000, reload=True)

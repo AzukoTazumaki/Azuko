@@ -1,9 +1,0 @@
-{% extends 'index.html' %}
-
-{% block content %}
-
-{% for album in range(0, 7) %}
-<div style="background-image: url({{ url_for('static', path='/images/bg/albums/'+album|string+'.jpg') }});" class="vh-100"></div>
-{% endfor %}
-
-{% endblock %}

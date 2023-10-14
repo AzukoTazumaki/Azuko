@@ -5,7 +5,7 @@ albums = [
     {'title': 'Highway Of Love (Deluxe)', 'date_release': '2020-03-22'},
     {'title': 'Highway Of Love', 'date_release': '2020-03-08'},
     {'title': 'Mileran Vibes', 'date_release': '2019-10-18'},
-    {'title': 'Life Is Full Of Lies 2: Before Love Story', 'date_release': '2019-09-07'},
+    {'title': 'Life Is Full Of Lies 2 (Before Love Story)', 'date_release': '2019-09-07'},
     {'title': 'Life Is Full Of Lies', 'date_release': '2018-11-04'}
 ]
 
@@ -29,6 +29,15 @@ artists = [
 ]
 
 albums_tracks = [
+    # FUNNY but NOBODY
+    {'AlbumID': 1, 'TrackID': 155}, {'AlbumID': 1, 'TrackID': 156}, {'AlbumID': 1, 'TrackID': 157},
+    {'AlbumID': 1, 'TrackID': 158}, {'AlbumID': 1, 'TrackID': 159}, {'AlbumID': 1, 'TrackID': 160},
+    {'AlbumID': 1, 'TrackID': 161}, {'AlbumID': 1, 'TrackID': 162}, {'AlbumID': 1, 'TrackID': 163},
+    {'AlbumID': 1, 'TrackID': 164}, {'AlbumID': 1, 'TrackID': 165}, {'AlbumID': 1, 'TrackID': 166},
+    {'AlbumID': 1, 'TrackID': 167}, {'AlbumID': 1, 'TrackID': 168}, {'AlbumID': 1, 'TrackID': 169},
+    {'AlbumID': 1, 'TrackID': 170}, {'AlbumID': 1, 'TrackID': 171}, {'AlbumID': 1, 'TrackID': 172},
+    {'AlbumID': 1, 'TrackID': 173}, {'AlbumID': 1, 'TrackID': 174}, {'AlbumID': 1, 'TrackID': 175},
+    {'AlbumID': 1, 'TrackID': 1},
     # with love from Azuko
     {'AlbumID': 2, 'TrackID': 5}, {'AlbumID': 2, 'TrackID': 6}, {'AlbumID': 2, 'TrackID': 7},
     {'AlbumID': 2, 'TrackID': 8}, {'AlbumID': 2, 'TrackID': 9}, {'AlbumID': 2, 'TrackID': 10},
@@ -55,11 +64,11 @@ albums_tracks = [
     {'AlbumID': 5, 'TrackID': 85}, {'AlbumID': 5, 'TrackID': 86}, {'AlbumID': 5, 'TrackID': 87},
     {'AlbumID': 5, 'TrackID': 88},
     # Mileran Vibes
-    {'AlbumID': 6, 'TrackID': 93}, {'AlbumID': 6, 'TrackID': 94}, {'AlbumID': 6, 'TrackID': 95},
-    {'AlbumID': 6, 'TrackID': 96}, {'AlbumID': 6, 'TrackID': 97}, {'AlbumID': 6, 'TrackID': 98},
-    {'AlbumID': 6, 'TrackID': 99}, {'AlbumID': 6, 'TrackID': 100},
+    {'AlbumID': 6, 'TrackID': 93}, {'AlbumID': 6, 'TrackID': 94}, {'AlbumID': 6, 'TrackID': 116},
+    {'AlbumID': 6, 'TrackID': 95}, {'AlbumID': 6, 'TrackID': 96}, {'AlbumID': 6, 'TrackID': 97},
+    {'AlbumID': 6, 'TrackID': 106}, {'AlbumID': 6, 'TrackID': 98},
     # Life Is Full Of Lies 2: Before Love Story
-    {'AlbumID': 7, 'TrackID': 99}, {'AlbumID': 7, 'TrackID': 100}, {'AlbumID': 7, 'TrackID': 107},
+    {'AlbumID': 7, 'TrackID': 105}, {'AlbumID': 7, 'TrackID': 106}, {'AlbumID': 7, 'TrackID': 107},
     {'AlbumID': 7, 'TrackID': 108}, {'AlbumID': 7, 'TrackID': 109}, {'AlbumID': 7, 'TrackID': 110},
     {'AlbumID': 7, 'TrackID': 111}, {'AlbumID': 7, 'TrackID': 112}, {'AlbumID': 7, 'TrackID': 113},
     {'AlbumID': 7, 'TrackID': 114}, {'AlbumID': 7, 'TrackID': 115}, {'AlbumID': 7, 'TrackID': 116},
@@ -76,11 +85,21 @@ albums_tracks = [
 ]
 
 albums_artists = [
-    {'AlbumID': 2, 'ArtistID': 1}, {'AlbumID': 3, 'ArtistID': 1}, {'AlbumID': 3, 'ArtistID': 4},
-    {'AlbumID': 3, 'ArtistID': 14}, {'AlbumID': 3, 'ArtistID': 15}, {'AlbumID': 3, 'ArtistID': 16},
-    {'AlbumID': 4, 'ArtistID': 1}, {'AlbumID': 5, 'ArtistID': 1}, {'AlbumID': 5, 'ArtistID': 3},
-    {'AlbumID': 5, 'ArtistID': 9}, {'AlbumID': 5, 'ArtistID': 5}, {'AlbumID': 6, 'ArtistID': 1},
-    {'AlbumID': 7, 'ArtistID': 1}
+    {'AlbumID': 1, 'ArtistID': 1},
+    {'AlbumID': 2, 'ArtistID': 1},
+    {'AlbumID': 3, 'ArtistID': 1},
+    {'AlbumID': 3, 'ArtistID': 4},
+    {'AlbumID': 3, 'ArtistID': 14},
+    {'AlbumID': 3, 'ArtistID': 15},
+    {'AlbumID': 3, 'ArtistID': 16},
+    {'AlbumID': 4, 'ArtistID': 1},
+    {'AlbumID': 5, 'ArtistID': 1},
+    {'AlbumID': 5, 'ArtistID': 3},
+    {'AlbumID': 5, 'ArtistID': 9},
+    {'AlbumID': 5, 'ArtistID': 5},
+    {'AlbumID': 6, 'ArtistID': 1},
+    {'AlbumID': 7, 'ArtistID': 1},
+    {'AlbumID': 8, 'ArtistID': 1}
 ]
 
 singles_artists = [
@@ -173,7 +192,7 @@ artists_tracks = [
     {'TrackID': 96, 'ArtistID': 1}, {'TrackID': 97, 'ArtistID': 1}, {'TrackID': 98, 'ArtistID': 1},
     {'TrackID': 99, 'ArtistID': 1}, {'TrackID': 100, 'ArtistID': 1}, {'TrackID': 101, 'ArtistID': 1},
     {'TrackID': 101, 'ArtistID': 12}, {'TrackID': 102, 'ArtistID': 1}, {'TrackID': 103, 'ArtistID': 1},
-    {'TrackID': 104, 'ArtistID': 1}, {'TrackID': 105, 'ArtistID': 1}, {'TrackID': 105, 'ArtistID': 5},
+    {'TrackID': 104, 'ArtistID': 1}, {'TrackID': 105, 'ArtistID': 1},
     {'TrackID': 106, 'ArtistID': 1}, {'TrackID': 107, 'ArtistID': 1}, {'TrackID': 108, 'ArtistID': 1},
     {'TrackID': 109, 'ArtistID': 1}, {'TrackID': 110, 'ArtistID': 1}, {'TrackID': 111, 'ArtistID': 1},
     {'TrackID': 112, 'ArtistID': 1}, {'TrackID': 113, 'ArtistID': 1}, {'TrackID': 114, 'ArtistID': 1},
@@ -310,7 +329,7 @@ tracks = [
     {'title': 'Tryin Be The Best', 'date_release': '2020-03-08', 'duration': '02:43'},  # 75
     {'title': 'Early Bird 3', 'date_release': '2020-03-08', 'duration': '02:31'},  # 76
     {'title': 'How Am I Lost?', 'date_release': '2020-01-28', 'duration': '02:30'},  # 77
-    {'title': "Don't Leave Me ALone", 'date_release': '2020-03-08', 'duration': '02:23'},  # 78
+    {'title': "Don't Leave Me Alone", 'date_release': '2020-03-08', 'duration': '02:23'},  # 78
     {'title': 'Far From Home', 'date_release': '2019-11-07', 'duration': '02:21'},  # 79
     {'title': 'Why Not?', 'date_release': '2020-03-08', 'duration': '02:18'},  # 80
     {'title': 'Chasing The Money', 'date_release': '2020-03-08', 'duration': '02:20'},  # 81
@@ -327,28 +346,28 @@ tracks = [
     {'title': 'Happy New Year', 'date_release': '2019-12-31', 'duration': ''},  # 92
     {'title': 'Mileran Vibes', 'date_release': '2019-10-18', 'duration': '02:08'},  # 93
     {'title': 'Money Kill', 'date_release': '2019-10-18', 'duration': '02:24'},  # 94
-    {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00'},  # 95
-    {'title': 'Early Bird 2', 'date_release': '2019-10-18', 'duration': '02:28'},  # 96
-    {'title': 'No Lonely', 'date_release': '2019-10-18', 'duration': '02:20'},  # 97
-    {'title': "Fake Talkin'", 'date_release': '2019-10-18', 'duration': '02:09'},  # 98
-    {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24'},  # 99
-    {'title': 'No Time', 'date_release': '2019-09-14', 'duration': '02:22'},  # 100
-    {'title': 'I Got Some Move', 'date_release': '2019-10-11', 'duration': '02:28'},  # 101
-    {'title': 'Что ты сделал?', 'date_release': '2019-09-30', 'duration': '02:58'},  # 102
-    {'title': 'wassup, girl', 'date_release': '2019-09-27', 'duration': '02:01'},  # 103
-    {'title': 'Не Сдавайся', 'date_release': '2019-09-28', 'duration': '02:01'},  # 104
-    {'title': 'Tanjiro Kamado', 'date_release': '2019-09-21', 'duration': '02:54'},  # 105
-    {'title': 'momma tell me', 'date_release': '2019-09-20', 'duration': '02:34'},  # 106
-    {'title': 'Intro', 'date_release': '2019-09-07', 'duration': '01:17'},  # 107
-    {'title': 'Spend All Night', 'date_release': '2019-09-07', 'duration': '01:57'},  # 108
-    {'title': 'Through The Sky', 'date_release': '2019-09-07', 'duration': '02:33'},  # 109
-    {'title': 'We Are Put Our Heart In The Phone', 'date_release': '2019-09-07', 'duration': '02:40'},  # 110
-    {'title': 'Go In The Gap', 'date_release': '2019-09-07', 'duration': '02:19'},  # 111
-    {'title': 'Heart Is a Full Of Lies', 'date_release': '2019-04-19', 'duration': '02:06'},  # 112
-    {'title': 'You Just A Hoe', 'date_release': '2019-09-07', 'duration': '02:38'},  # 113
-    {'title': 'Closed Door', 'date_release': '2019-09-07', 'duration': '02:55'},  # 114
-    {'title': 'Bang 2', 'date_release': '2019-09-07', 'duration': '02:03'},  # 115
-    {'title': 'My Feelings', 'date_release': '2019-09-07', 'duration': '02:24'},  # 116
+    {'title': 'Early Bird 2', 'date_release': '2019-10-18', 'duration': '02:28'},  # 95
+    {'title': 'No Lonely', 'date_release': '2019-10-18', 'duration': '02:20'},  # 96
+    {'title': "Fake Talkin'", 'date_release': '2019-10-18', 'duration': '02:09'},  # 97
+    {'title': 'No Time', 'date_release': '2019-09-14', 'duration': '02:22'},  # 98
+    {'title': 'I Got Some Move', 'date_release': '2019-10-11', 'duration': '02:28'},  # 99
+    {'title': 'Что ты сделал?', 'date_release': '2019-09-30', 'duration': '02:58'},  # 100
+    {'title': 'wassup, girl', 'date_release': '2019-09-27', 'duration': '02:01'},  # 101
+    {'title': 'Не Сдавайся', 'date_release': '2019-09-28', 'duration': '02:01'},  # 102
+    {'title': 'Tanjiro Kamado', 'date_release': '2019-09-21', 'duration': '02:54'},  # 103
+    {'title': 'momma tell me', 'date_release': '2019-09-20', 'duration': '02:34'},  # 104
+    {'title': 'Intro', 'date_release': '2019-09-07', 'duration': '01:17'},  # 105
+    {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24'},  # 106
+    {'title': 'Spend All Night', 'date_release': '2019-09-07', 'duration': '01:57'},  # 107
+    {'title': 'Through The Sky', 'date_release': '2019-09-07', 'duration': '02:33'},  # 108
+    {'title': 'We Are Put Our Heart In The Phone', 'date_release': '2019-09-07', 'duration': '02:40'},  # 109
+    {'title': 'Go In The Gap', 'date_release': '2019-09-07', 'duration': '02:19'},  # 110
+    {'title': 'Heart Is a Full Of Lies', 'date_release': '2019-04-19', 'duration': '02:06'},  # 111
+    {'title': 'You Just A Hoe', 'date_release': '2019-09-07', 'duration': '02:38'},  # 112
+    {'title': 'Closed Door', 'date_release': '2019-09-07', 'duration': '02:55'},  # 113
+    {'title': 'Bang 2', 'date_release': '2019-09-07', 'duration': '02:03'},  # 114
+    {'title': 'My Feelings', 'date_release': '2019-09-07', 'duration': '02:24'},  # 115
+    {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00'},  # 116
     {'title': 'Hate That World', 'date_release': '2019-09-07', 'duration': '02:27'},  # 117
     {'title': 'Swag!', 'date_release': '2019-09-07', 'duration': '02:07'},  # 118
     {'title': 'Time Is Sad With Every Day', 'date_release': '2019-06-14', 'duration': '03:05'},  # 119
@@ -387,4 +406,25 @@ tracks = [
     {'title': 'Trip In My Head', 'date_release': '2018-11-04', 'duration': '03:12'},  # 152
     {'title': 'Take Her Out', 'date_release': '2018-11-04', 'duration': '02:13'},  # 153
     {'title': "Don't Lose Your Chance", 'date_release': '2018-11-04', 'duration': '02:00'},  # 154
+    {'title': "HONESTLY.", 'date_release': '2023-11-04', 'duration': '02:11'},  # 155
+    {'title': "MEROCK.", 'date_release': '2023-11-04', 'duration': '01:24'},  # 156
+    {'title': "THEATER.", 'date_release': '2023-11-04', 'duration': '03:09'},  # 157
+    {'title': "ALL YEAR.", 'date_release': '2023-11-04', 'duration': '02:05'},  # 158
+    {'title': "NO CHANGE.", 'date_release': '2023-11-04', 'duration': '02:18'},  # 159
+    {'title': "WHERE DREAMS LEAD.", 'date_release': '2023-11-04', 'duration': '02:32'},  # 160
+    {'title': "UP DOWN.", 'date_release': '2023-11-04', 'duration': '03:04'},  # 161
+    {'title': "IN MY SOUL.", 'date_release': '2023-11-04', 'duration': '02:29'},  # 162
+    {'title': "WE LOVE.", 'date_release': '2023-11-04', 'duration': '02:03'},  # 163
+    {'title': "NEW SEASON.", 'date_release': '2023-11-04', 'duration': '01:35'},  # 164
+    {'title': "COLD.", 'date_release': '2023-11-04', 'duration': '02:08'},  # 165
+    {'title': "A LONG TIME AGO.", 'date_release': '2023-11-04', 'duration': '02:34'},  # 166
+    {'title': "BOBBY FISCHER.", 'date_release': '2023-11-04', 'duration': '02:35'},  # 167
+    {'title': "IDOL.", 'date_release': '2023-11-04', 'duration': '02:17'},  # 168
+    {'title': "REAL.", 'date_release': '2023-11-04', 'duration': '02:53'},  # 169
+    {'title': "STRANGERS.", 'date_release': '2023-11-04', 'duration': '01:36'},  # 170
+    {'title': "WEEKEND.", 'date_release': '2023-11-04', 'duration': '01:36'},  # 171
+    {'title': "BANKROLL.", 'date_release': '2023-11-04', 'duration': '01:57'},  # 172
+    {'title': "SUPPOSED TO BE.", 'date_release': '2023-11-04', 'duration': '02:00'},  # 173
+    {'title': "HARD FOR ME.", 'date_release': '2023-11-04', 'duration': '01:38'},  # 174
+    {'title': "FORGIVENESS.", 'date_release': '2023-11-04', 'duration': '05:26'}  # 175
 ]

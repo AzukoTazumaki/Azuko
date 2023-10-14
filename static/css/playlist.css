@@ -3,7 +3,7 @@
 .player_part_right {
     /* background: linear-gradient(115deg, var(--dark-gray-rgb) 0%, var(--dark-gray-azuko-rgb) 100%); */
     background-color: var(--dark-gray-rgb);
-    box-shadow: 2px 2px 15px var(--dark-gray-azuko-rgb);
+    box-shadow: 2px 2px 15px var(--darker-gray-azuko-rgb);
 }
 
 .player_part_center {
@@ -151,7 +151,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
     border-top: .5px solid var(--dark-gray-azuko-rgb);
 }
 
-.song:hover {
+.song:hover:not(.amplitude-active-song-container) {
     background-color: var(--light-gray-azuko-rgb-deep);
 }
 
