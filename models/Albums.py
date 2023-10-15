@@ -12,5 +12,6 @@ class Albums(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     title: Mapped[str] = mapped_column(String(64), nullable=False, unique=True)
     date_release: Mapped[Date] = mapped_column(Date())
+    cover: Mapped[str] = mapped_column(String(64), nullable=False, unique=True)
     artists: Mapped[Set['Artists']] = relationship(secondary=AlbumsArtists, back_populates='albums')
     tracks: Mapped[Set['Tracks']] = relationship(secondary=AlbumsTracks, back_populates='albums')

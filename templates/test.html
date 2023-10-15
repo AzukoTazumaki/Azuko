@@ -13,8 +13,9 @@
                 {{ artist.name + ', ' if not loop.last else artist.name }}
             {% endfor %}
         </p>
+        <p>{{album.tracks|length}}</p>
         <ul>
-            {% for track in album.tracks %}
+            {% for track in album.tracks | sort(attribute='position') %}
             <li>
                 <div class="d-flex flex-column">
                     {{ track.title }}

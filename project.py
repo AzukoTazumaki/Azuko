@@ -84,5 +84,10 @@ async def albums_playlist(request: Request):
     return templates.TemplateResponse("playlist_content/albums.html", {"request": request, "albums": db_projects.select_albums()})
 
 
+@app.get("/test", response_class=HTMLResponse)
+async def albums_playlist(request: Request):
+    return templates.TemplateResponse("test.html", {"request": request, "albums": db_projects.select_albums()})
+
+
 if __name__ == '__main__':
     uvicorn.run('project:app', host='127.0.0.1', port=8000, reload=True)

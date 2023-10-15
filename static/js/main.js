@@ -52,22 +52,8 @@ try {
     console.log(error)
 }
 
-/*
-  When the bandcamp link is pressed, stop all propagation so AmplitudeJS doesn't
-  play the song.
-*/
-let bandcampLinks = document.getElementsByClassName('bandcamp-link');
-
-for (var i = 0; i < bandcampLinks.length; i++) {
-    bandcampLinks[i].addEventListener('click', function (e) {
-        e.stopPropagation();
-    });
-}
-
-/* PLAY_PAUSE BUTTON */
-const play_pause_button = document.querySelector('.play_pause_song_button')
-const play_pause_icon = document.querySelector('.play_pause_icon')
-const volume_percentage = document.querySelector('.volume_percentage')
+let play_pause_icon = document.querySelectorAll('.play_pause_icon')
+let volume_percentage = document.querySelector('.volume_percentage')
 
 /* INIZIALIZATION OF AMPLITUDE */
 Amplitude.init({
@@ -79,20 +65,28 @@ Amplitude.init({
     volume: 35,
     debug: true,
     callbacks: {
-        play: function () {
-            play_pause_icon.classList.remove('fa-circle-play');
-            play_pause_icon.classList.add('fa-circle-pause');
+        play: function() {
+            play_pause_icon.forEach((tag) => {
+                tag.addEventListener('click', element => {
+                    element.target.classList.remove('fa-circle-play');
+                    element.target.classList.add('fa-circle-pause');
+                })
+            })    
         },
-        pause: function () {
-            play_pause_icon.classList.remove('fa-circle-pause');
-            play_pause_icon.classList.add('fa-circle-play');
+        pause: function() {
+            play_pause_icon.forEach((tag) => {
+                tag.addEventListener('click', element => {
+                    element.target.classList.remove('fa-circle-pause');
+                    element.target.classList.add('fa-circle-play');
+                })
+            })
         }
     },
     playlists: all_playlists
 });
 
 /* SHUFFLE BUTTON */
-const shuffle_button = document.querySelector('.shuffle_song_button')
+let shuffle_button = document.querySelector('.shuffle_song_button')
 shuffle_button.addEventListener('click', () => {
     if (shuffle_button.style.color == 'var(--white-rgb)') {
         shuffle_button.style.color = 'var(--periwinkle-purple-rgb)'
@@ -105,7 +99,7 @@ shuffle_button.addEventListener('click', () => {
 
 
 /* REPEAT BUTTON */
-const repeat_button = document.querySelector('.repeat_song_button')
+let repeat_button = document.querySelector('.repeat_song_button')
 repeat_button.addEventListener('click', () => {
     if (repeat_button.style.color == 'var(--white-rgb)') {
         repeat_button.style.color = 'var(--periwinkle-purple-rgb)'
@@ -117,9 +111,9 @@ repeat_button.addEventListener('click', () => {
 })
 
 /* VOLUME BUTTON */
-const volume_slider = document.querySelector('.volume_slider')
-const volume_button = document.querySelector('.volume_song_button')
-const volume_song_icon = document.querySelector('.volume_song_icon')
+let volume_slider = document.querySelector('.volume_slider')
+let volume_button = document.querySelector('.volume_song_button')
+let volume_song_icon = document.querySelector('.volume_song_icon')
 
 volume_slider.addEventListener('input', (el) => {
     let el_value = el.target.value
@@ -148,7 +142,7 @@ volume_button.addEventListener('click', () => {
     }
 })
 
-const active_song = document.querySelector('amplitude-active-song-container')
+let active_song = document.querySelector('amplitude-active-song-container')
 
 
 

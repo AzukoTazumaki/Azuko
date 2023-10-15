@@ -32,11 +32,12 @@ class SelectProjects(InitEngine):
             print(album.title)
             result.append({
                 'title': album.title,
-                'date_release': album.date_release.strftime('%d %B, %Y'),
+                'date_release': album.date_release.strftime('%d %B %Y'),
+                'cover': album.cover,
                 'artists': album.artists,
                 'tracks': [
                     {
-                        'id': track.id,
+                        'position': track.track_position_in_album,
                         'title': track.title,
                         'duration': f'{str(track.duration).split(":")[0]}:{str(track.duration).split(":")[1]}',
                         'artists': track.artists
