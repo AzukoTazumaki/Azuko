@@ -23,7 +23,9 @@ const albums = {
         track_name: ['Время Перемен', 'Не Отпускай Меня', 'Молчание', 'Ночь', 'Одинокий', 'Нужна Она', 'Ранен', 'Опоздал', 
         'Между Нами', 'Мгновенье', 'Внимание', 'Не Могу'],
         track_number: 12,
-        track_artist: 'Azuko, Kaneki',
+        track_artist: ['Azuko, Kaneki', 'Azuko, Kaneki', 'Azuko, Kaneki', 'Azuko, Kaneki feat. Flipboy', 'Azuko, Kaneki', 
+        'Azuko, Kaneki feat. YslBby, CHATTY', 'Azuko, Kaneki', 'Azuko, Kaneki', 'Azuko, Kaneki', 'Azuko, Kaneki', 
+        'Azuko, Kaneki', 'Azuko, Kaneki feat. Foreign Beep'],
         album_title: 'ВРЕМЯ ПЕРЕМЕН',
         audio_dir: audio_albums_path + '/time_for_change',
         cover: audio_albums_path + '/time_for_change' + '/cover.jpg'
@@ -43,7 +45,9 @@ const albums = {
         'How Am I Lost?', "Don't Leave Me Alone", 'Far From Home', 'Why Not?', 'Chasing The Money', 'I Will No Hate You', 'Tonight', 
         'Under Purple Rain', 'Deadmans', 'Visions', 'Bad Bad Bad', 'Outro'],
         track_number: 25,
-        track_artist: 'Azuko',
+        track_artist: ['Azuko', 'Azuko', 'Azuko, ICYWAVE', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Bobby D', 'Azuko', 
+        'Azuko', 'Azuko', 'Azuko, Bobby D', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 
+        'Azuko, YUNG ROUZY', 'Azuko', 'Azuko', ],
         album_title: 'Highway Of Love',
         audio_dir: audio_albums_path + '/highway_of_love',
         cover: audio_albums_path + '/highway_of_love' + '/cover.jpg'
@@ -124,12 +128,22 @@ const all_playlists = {
     
 for (album in albums) {
     for (let i = 0; i < albums[album].track_number; i++) {
-        all_songs.push({
-            "name": albums[album].track_name[i],
-            "artist": albums[album].track_artist,
-            "album": albums[album].album_title,
-            "url": albums[album].audio_dir + '/' + `${i}` + '.mp3',
-            "cover_art_url": albums[album].cover
-        })
+        if (albums[album].track_artist instanceof Array) {
+            all_songs.push({
+                "name": albums[album].track_name[i],
+                "artist": albums[album].track_artist[i],
+                "album": albums[album].album_title,
+                "url": albums[album].audio_dir + '/' + `${i}` + '.mp3',
+                "cover_art_url": albums[album].cover
+            })
+        } else {
+            all_songs.push({
+                "name": albums[album].track_name[i],
+                "artist": albums[album].track_artist,
+                "album": albums[album].album_title,
+                "url": albums[album].audio_dir + '/' + `${i}` + '.mp3',
+                "cover_art_url": albums[album].cover
+            })
+        }
     }
 }

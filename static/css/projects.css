@@ -79,7 +79,7 @@
 
 .show_more_button {
     background-color: var(--periwinkle-purple-rgb);
-    border-radius: 10px;
+    border-radius: 10px !important;
 }
 
 .button_single:hover,

@@ -1,148 +1,99 @@
-/* PRELOADER */
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(function () {
-        document.querySelector("body").classList.add("loaded");
-    }, 500)
-})
-
 try {
-    /* SINGLES SHOW MORE BUTTON */
+    let play_pause_icons = document.querySelectorAll('.play_pause_icon')
+    let volume_percentage = document.querySelector('.volume_percentage')
 
-    let show_more_singles_btn = document.getElementById('show_more_singles_button')
-    let singles_cards_row = document.getElementById('singles_cards')
-    let disabled_single_cards = document.querySelectorAll('.disabled_single_card')
-
-    show_more_singles_btn.addEventListener('click', () => {
-        let singles_array = [show_more_singles_btn, singles_cards_row]
-        disabled_single_cards.forEach((card) => {
-            common_show_more_function(card, singles_array)
-        });
-    })
-
-    /* FEATURINGS SHOW MORE BUTTON */
-
-    let show_more_featurings_btn = document.getElementById('show_more_featurings_button')
-    let featurings_cards_row = document.getElementById('featurings_cards')
-    let disabled_featuring_cards = document.querySelectorAll('.disabled_featuring_card')
-
-    show_more_featurings_btn.addEventListener('click', () => {
-        let featurings_array = [show_more_featurings_btn, featurings_cards_row]
-        disabled_featuring_cards.forEach((card) => {
-            common_show_more_function(card, featurings_array)
-        });
-    })
-
-    /* COMMON SHOW MORE FUNCTION */
-
-    function common_show_more_function(card, array) {
-        if (card.style.display === 'block') {
-            card.style.display = 'none';
-            array[1].classList.add('vh-100')
-            array[1].style.paddingTop = '0'
-            array[0].innerHTML = 'SHOW MORE'
-        } else {
-            card.style.display = 'block';
-            array[1].classList.remove('vh-100')
-            array[1].style.paddingTop = '17vh'
-            array[0].innerHTML = 'SHOW LESS'
-        }
-    }
-
-} catch (error) {
-    console.log(error)
-}
-
-let play_pause_icon = document.querySelectorAll('.play_pause_icon')
-let volume_percentage = document.querySelector('.volume_percentage')
-
-/* INIZIALIZATION OF AMPLITUDE */
-Amplitude.init({
-    bindings: {
-        39: 'next',
-        37: 'prev'
-    },
-    songs: all_songs,
-    volume: 35,
-    debug: true,
-    callbacks: {
-        play: function() {
-            play_pause_icon.forEach((tag) => {
-                tag.addEventListener('click', element => {
-                    element.target.classList.remove('fa-circle-play');
-                    element.target.classList.add('fa-circle-pause');
-                })
-            })    
+    /* INIZIALIZATION OF AMPLITUDE */
+    Amplitude.init({
+        bindings: {
+            39: 'next',
+            37: 'prev'
         },
-        pause: function() {
-            play_pause_icon.forEach((tag) => {
-                tag.addEventListener('click', element => {
-                    element.target.classList.remove('fa-circle-pause');
-                    element.target.classList.add('fa-circle-play');
-                })
-            })
+        songs: all_songs,
+        volume: 35,
+        debug: true,
+        callbacks: {
+            play: function () {
+                play_pause_icons.forEach(tag => {
+                    let classes = tag.classList
+                    console.log(classes)
+                    tag.addEventListener('click', () => {
+                        classes.replace('fa-circle-pause', 'fa-circle-play');
+                        console.log(classes)
+                    });
+                });
+            },
+            pause: function () {
+                play_pause_icons.forEach(tag => {
+                    let classes = tag.classList
+                    console.log(classes)
+                    tag.addEventListener('click', () => {
+                        classes.replace('fa-circle-play', 'fa-circle-pause');
+                    });
+                    console.log(classes)
+                });
+            }
+        },
+        playlists: all_playlists
+    });
+
+    /* SHUFFLE BUTTON */
+    let shuffle_button = document.querySelector('.shuffle_song_button')
+    shuffle_button.addEventListener('click', () => {
+        if (shuffle_button.style.color == 'var(--white-rgb)') {
+            shuffle_button.style.color = 'var(--periwinkle-purple-rgb)'
+            shuffle_button.style.textShadow = 'none'
+        } else {
+            shuffle_button.style.color = 'var(--white-rgb)'
+            shuffle_button.style.textShadow = 'var(--white-shadow)'
         }
-    },
-    playlists: all_playlists
-});
-
-/* SHUFFLE BUTTON */
-let shuffle_button = document.querySelector('.shuffle_song_button')
-shuffle_button.addEventListener('click', () => {
-    if (shuffle_button.style.color == 'var(--white-rgb)') {
-        shuffle_button.style.color = 'var(--periwinkle-purple-rgb)'
-        shuffle_button.style.textShadow = 'var(--periwinkle-purple-shadow)'
-    } else {
-        shuffle_button.style.color = 'var(--white-rgb)'
-        shuffle_button.style.textShadow = 'var(--white-shadow)'
-    }
-})
+    })
 
 
-/* REPEAT BUTTON */
-let repeat_button = document.querySelector('.repeat_song_button')
-repeat_button.addEventListener('click', () => {
-    if (repeat_button.style.color == 'var(--white-rgb)') {
-        repeat_button.style.color = 'var(--periwinkle-purple-rgb)'
-        repeat_button.style.textShadow = 'var(--periwinkle-purple-shadow)'
-    } else {
-        repeat_button.style.color = 'var(--white-rgb)'
-        repeat_button.style.textShadow = 'var(--white-shadow)'
-    }
-})
+    /* REPEAT BUTTON */
+    let repeat_button = document.querySelector('.repeat_song_button')
+    repeat_button.addEventListener('click', () => {
+        if (repeat_button.style.color == 'var(--white-rgb)') {
+            repeat_button.style.color = 'var(--periwinkle-purple-rgb)'
+            repeat_button.style.textShadow = 'none'
+        } else {
+            repeat_button.style.color = 'var(--white-rgb)'
+            repeat_button.style.textShadow = 'var(--white-shadow)'
+        }
+    })
 
-/* VOLUME BUTTON */
-let volume_slider = document.querySelector('.volume_slider')
-let volume_button = document.querySelector('.volume_song_button')
-let volume_song_icon = document.querySelector('.volume_song_icon')
+    /* VOLUME BUTTON */
+    let volume_slider = document.querySelector('.volume_slider')
+    let volume_button = document.querySelector('.volume_song_button')
+    let volume_song_icon = document.querySelector('.volume_song_icon')
 
-volume_slider.addEventListener('input', (el) => {
-    let el_value = el.target.value
-    let classes = ['fa-volume-xmark', 'fa-volume-off', 'fa-volume-low', 'fa-volume-high']
-    volume_percentage.innerText = el_value
-    if (el_value == 0) {
-        volume_song_icon.classList.remove(...classes)
-        volume_song_icon.classList.add(classes[0])
-    } else if (el_value > 0 && el_value < 25) {
-        volume_song_icon.classList.remove(...classes)
-        volume_song_icon.classList.add(classes[1])
-    } else if (el_value >= 25 && el_value < 60) {
-        volume_song_icon.classList.remove(...classes)
-        volume_song_icon.classList.add(classes[2])
-    } else {
-        volume_song_icon.classList.remove(...classes)
-        volume_song_icon.classList.add(classes[3])
-    }
-})
+    volume_slider.addEventListener('input', (el) => {
+        let el_value = el.target.value
+        let classes = ['fa-volume-xmark', 'fa-volume-off', 'fa-volume-low', 'fa-volume-high']
+        volume_percentage.innerText = el_value
+        if (el_value == 0) {
+            volume_song_icon.classList.remove(...classes)
+            volume_song_icon.classList.add(classes[0])
+        } else if (el_value > 0 && el_value < 25) {
+            volume_song_icon.classList.remove(...classes)
+            volume_song_icon.classList.add(classes[1])
+        } else if (el_value >= 25 && el_value < 60) {
+            volume_song_icon.classList.remove(...classes)
+            volume_song_icon.classList.add(classes[2])
+        } else {
+            volume_song_icon.classList.remove(...classes)
+            volume_song_icon.classList.add(classes[3])
+        }
+    })
 
-volume_button.addEventListener('click', () => {
-    if (!volume_song_icon.classList.contains('fa-volume-xmark')) {
-        volume_song_icon.classList.add('fa-volume-xmark')
-    } else {
-        volume_song_icon.classList.remove('fa-volume-xmark')
-    }
-})
+    volume_button.addEventListener('click', () => {
+        if (!volume_song_icon.classList.contains('fa-volume-xmark')) {
+            volume_song_icon.classList.add('fa-volume-xmark')
+        } else {
+            volume_song_icon.classList.remove('fa-volume-xmark')
+        }
+    })
 
-let active_song = document.querySelector('amplitude-active-song-container')
+    let active_song = document.querySelector('amplitude-active-song-container')
+} catch (error) {
 
-
-
+}

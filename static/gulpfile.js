@@ -6,6 +6,8 @@ const cleanCSS = require('gulp-clean-css');
 
 function js() {
   return src([
+    'js/preloader.js',
+    'js/projects.js',
     'node_modules/amplitudejs/dist/amplitude.js',
     'js/songs.js',
     'js/main.js',

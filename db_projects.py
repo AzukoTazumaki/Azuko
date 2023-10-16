@@ -29,7 +29,6 @@ class SelectProjects(InitEngine):
         db_albums_scalars = db_albums.scalars()
         result = []
         for album in db_albums_scalars:
-            print(album.title)
             result.append({
                 'title': album.title,
                 'date_release': album.date_release.strftime('%d %B %Y'),
@@ -45,11 +44,23 @@ class SelectProjects(InitEngine):
                     for track in album.tracks
                 ]
             })
-        print(result)
         return result
 
     def select_singles(self):
-        pass
+        stmt = select(Singles).join(Singles.track).join(Singles.artists).group_by(Singles.id)
+        db_singles = self.session.execute(stmt)
+        db_singles_scalars = db_singles.scalars()
+        result = []
+        for single in db_singles_scalars:
+            result.append(
+                {
+                    'id': single.track.id,
+                    'date_release': single.track.date_release,
+                    'title': single.track.title,
+                    'artists': single.track.artists
+                }
+            )
+        return result
 
     def select_featurings(self):
         pass

@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center align-items-center gap-3">
+        {% for single in singles %}
+        <div class="col-3 bg-black">
+            <p class=" text-light">{{ single.title }}</p>
+            <p class=" text-light">
+                {% for artist in single.artists | sort(attribute='id') %}
+                {{ artist.name + ', ' if not loop.last else artist.name }}
+                {% endfor %}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

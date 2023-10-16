@@ -69,19 +69,24 @@ async def projects(request: Request):
                                       {
                                           "request": request,
                                           "albums": albums.get_album_info(),
-                                          "singles": singles.get_single_or_featuring_info(),
+                                          "singles": db_projects.select_singles(),
                                           "featurings": featurings.get_single_or_featuring_info()
                                       })
 
 
 @app.get("/playlist", response_class=HTMLResponse)
 async def playlist(request: Request):
-    return templates.TemplateResponse("playlist_content/playlist.html", {'request': request, "albums": db_projects.select_albums()})
+    return templates.TemplateResponse("playlist_content/playlist.html", {'request': request})
 
 
 @app.get("/playlist/albums", response_class=HTMLResponse)
 async def albums_playlist(request: Request):
     return templates.TemplateResponse("playlist_content/albums.html", {"request": request, "albums": db_projects.select_albums()})
+
+
+@app.get("/playlist/singles", response_class=HTMLResponse)
+async def albums_playlist(request: Request):
+    return templates.TemplateResponse("playlist_content/singles.html", {"request": request, "singles": db_projects.select_singles()})
 
 
 @app.get("/test", response_class=HTMLResponse)
