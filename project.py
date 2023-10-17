@@ -18,11 +18,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.on_event('startup')
-def startup():
-    init_db.create_db_and_tables()
-    init_db.create_projects()
-    init_db.close_session()
+# @app.on_event('startup')
+# def startup():
+#     init_db.create_db_and_tables()
+#     init_db.create_projects()
+#     init_db.close_session()
 
 
 @app.get("/", response_class=RedirectResponse)
@@ -62,16 +62,13 @@ async def products(request: Request):
 
 @app.get("/projects", response_class=HTMLResponse)
 async def projects(request: Request):
-    albums = ProjectNames('albums')
-    singles = ProjectNames('singles')
     featurings = ProjectNames('featurings')
-    return templates.TemplateResponse("projects_content/projects.html",
-                                      {
+    return templates.TemplateResponse("projects_content/projects.html", {
                                           "request": request,
-                                          "albums": albums.get_album_info(),
+                                          "albums": db_projects.select_albums(),
                                           "singles": db_projects.select_singles(),
                                           "featurings": featurings.get_single_or_featuring_info()
-                                      })
+                                    })
 
 
 @app.get("/playlist", response_class=HTMLResponse)

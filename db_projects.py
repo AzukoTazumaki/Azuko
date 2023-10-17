@@ -30,6 +30,7 @@ class SelectProjects(InitEngine):
         result = []
         for album in db_albums_scalars:
             result.append({
+                'id': album.id,
                 'title': album.title,
                 'date_release': album.date_release.strftime('%d %B %Y'),
                 'cover': album.cover,

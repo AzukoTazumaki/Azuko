@@ -28,13 +28,13 @@ class InitDatabase(InitEngine):
         super().__init__()
 
     def create_db_and_tables(self):
-        drop_db_query = f'drop database if exists {db_name}'
-        create_db_query = f'create database {db_name}'
-        use_db_query = f'use {db_name}'
+        # drop_db_query = f'drop database if exists {db_name}'
+        # create_db_query = f'create database {db_name}'
+        # use_db_query = f'use {db_name}'
         with self.engine.begin() as connection:
-            connection.execute(text(drop_db_query))
-            connection.execute(text(create_db_query))
-            connection.execute(text(use_db_query))
+            # connection.execute(text(drop_db_query))
+            # connection.execute(text(create_db_query))
+            # connection.execute(text(use_db_query))
             Base.metadata.create_all(connection)
 
     def create_projects(self):

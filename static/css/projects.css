@@ -1,7 +1,7 @@
 /* ————————————————————————————————————————————————— PROJECTS ————————————————————————————————————————————————— */
 
-.projects {
-    background-image: url(../images/bg/bg_projects.jpg);
+#projects {
+    background-image: url('../images/bg/bg_projects.jpg');
 }
 
 .carousel_album_title {
@@ -12,8 +12,6 @@
 }
 
 .project_slider_button {
-    position: absolute;
-    left: 16.4%;
     padding: 1vh 5vw;
     border: none;
     font-size: 1.4em;
@@ -21,9 +19,6 @@
     color: rgb(149, 149, 149);
     text-shadow: var(--black-shadow);
     background-color: var(--light-gray-azuko-rgb);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: scroll;
     box-shadow: 2px 2px 10px var(--dark-gray-azuko-rgb);
     border-radius: 10px;
     transition: .3s;
@@ -53,11 +48,14 @@
 }
 
 .card {
+    border: 1px solid var(--black-shadow) !important;
+    z-index: 1;
     transition: .3s;
 }
 
 .card:hover {
     transform: scale(1.05);
+    z-index: 1000;
     box-shadow: 3px 3px 10px var(--black-rgb);
 }
 
@@ -99,14 +97,14 @@
 
 .single_name,
 .featuring_name {
-    font-size: 1em !important;
+    font-size: .85em !important;
     color: var(--whitesmoke-rgb);
     text-shadow: var(--black-shadow);
 }
 
 .single_artist,
 .featuring_artist {
-    font-size: .8em;
+    font-size: .85em;
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--black-shadow);
 }
@@ -114,4 +112,58 @@
 .disabled_single_card,
 .disabled_featuring_card {
     display: none;
+}
+
+.carousel_image {
+    border-radius: 25px;
+}
+
+.bg_carousel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.bg_1 {
+    background-image: url(../images/projects/albums/bg_carousel/1.jpg);
+}
+.bg_2 {
+    background-image: url(../images/projects/albums/bg_carousel/2.jpg);
+}
+.bg_3 {
+    background-image: url(../images/projects/albums/bg_carousel/3.jpg);
+}
+.bg_4 {
+    background-image: url(../images/projects/albums/bg_carousel/4.jpg);
+}
+.bg_5 {
+    background-image: url(../images/projects/albums/bg_carousel/5.jpg);
+}
+.bg_6 {
+    background-image: url(../images/projects/albums/bg_carousel/6.jpg);
+}
+.bg_7 {
+    background-image: url(../images/projects/albums/bg_carousel/7.jpg);
+}
+.bg_8 {
+    background-image: url(../images/projects/albums/bg_carousel/8.jpg);
+}
+
+.carousel_left_part {
+    margin-left: 12vw;
+}
+
+.carousel_left_part h4 {
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--black-shadow);
+    font-weight: bold;
+}
+
+.carousel_right_part {
+    margin-right: 12vw;
+}
+
+.cover_carousel {
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px var(--dark-gray-azuko-rgb);
 }

@@ -21,49 +21,61 @@
                         {% endfor %}
                     </div>
                     <div class="carousel-inner">
-                        {% for album in albums %}
+                        {% for album in albums|sort(attribute='id') %}
 
-                        {% if loop.first %}
-                        <div class="carousel-item active">
+                            {% if loop.first %}
+                            <div class="carousel-item active">
                             {% else %}
                             <div class="carousel-item">
-                                {% endif %}
+                            {% endif %}
 
-                                <img src="{{ url_for('static', path='/images/projects/albums/'+album.cover) }}"
-                                    class="d-block w-100 rounded-5" alt="{{ album.name }}">
-                                <a href="/{{ album.url }}"><button
-                                        style="background-image: url({{ url_for('static', path='/images/projects/albums/buttons/'+album.button)}} );"
-                                        class="project_slider_button albums_slider_button">LISTEN</button></a>
+                                <div class="carousel_image bg_carousel bg_{{ loop.index }} py-5">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="carousel_left_part d-flex align-items-center">
+                                            <h4>{{ album.title }}</h4>
+                                            <a href="/playlist/albums#album_{{ loop.index|string }}">
+                                                <button class="project_slider_button albums_slider_button">
+                                                    LISTEN
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex justify-content-end align-items-center carousel_right_part">
+                                            <img src="{{ url_for('static', path='/images/projects/albums/covers_carousel/'+album.id|string+'.jpg') }}" 
+                                            alt="{{ album.title }}" height="400" class="cover_carousel">
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
 
-                            {% endfor %}
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#albums_carousel"
-                            data-bs-slide="prev">
-                            <span aria-hidden="true">
-                                <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
-                            </span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#albums_carousel"
-                            data-bs-slide="next">
-                            <span aria-hidden="true">
-                                <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
-                            </span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#albums_carousel"
+                        data-bs-slide="prev">
+                        <span aria-hidden="true">
+                            <i class="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                        </span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#albums_carousel"
+                        data-bs-slide="next">
+                        <span aria-hidden="true">
+                            <i class="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                        </span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
 
-                    </div>
                 </div>
-                <div class="row justify-content-center mt-5">
-                    <div class="col-2 d-flex justify-content-center">
-                        <a href="#projects" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
-                    </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-2 d-flex justify-content-center">
+                    <a href="#projects" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
+                </div>
+                <div class="col-2 d-flex justify-content-center">
+                    <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

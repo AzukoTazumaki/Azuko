@@ -10,6 +10,8 @@ jinja2 = "*"
 python-dotenv = "*"
 mysql-connector-python = "*"
 sqlalchemy = "*"
+psycopg2 = "*"
+alembic = "*"
 
 [dev-packages]
 

@@ -2,9 +2,9 @@
 
 {% block content %}
 
-{% for album in albums %}
+{% for album in albums|sort(attribute='id') %}
 
-<div class="album_{{ loop.index }}">
+<div class="album_{{ loop.index }}" id="album_{{ loop.index }}">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center column-gap-5 vh-100">
 
