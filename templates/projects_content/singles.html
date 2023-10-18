@@ -1,9 +1,9 @@
 {% block single_carousel %}
 <div class="row justify-content-center align-items-center vh-100" id="singles_cards">
 
-    <div class="col-10">
+    <div class="col-12">
 
-        <div class="row justify-content-center singles_row">
+        <div class="row justify-content-center gap-4 singles_row">
 
             <div class="col-12 d-flex justify-content-center">
                 <img src="{{url_for('static', path='/images/logos/singles_logo.png')}}" alt="Singles" width="350">
@@ -12,12 +12,12 @@
 
             {% for single in singles | sort(attribute='id') %}
 
-            {% if loop.index <= 3 %} <div class="col-3 p-0">
-                <div class="card rounded-0 card_single">
+            {% if loop.index <= 3 %} <div class="col-2 p-0">
+                <div class="card rounded-3 card_single">
 
-                        <!-- <img loading="lazy" role="presentation"
+                        <img loading="lazy" role="presentation"
                             src="{{ url_for('static', path='/images/projects/singles/'+single.id|string+'.jpg') }}"
-                            class="card-img-top rounded-0" alt="{{ single.title }}"> -->
+                            class="card-img-top rounded-top-3" alt="{{ single.title }}">
                     <div class="card-body">
                         <p class="single_name m-0 text-center">
                             {{ single.id }}. {{ single.title }}
@@ -33,12 +33,12 @@
 
         {% else %}
 
-        <div class="col-3 p-0 disabled_single_card">
-            <div class="card rounded-0 card_single">
+        <div class="col-2 p-0 disabled_single_card">
+            <div class="card rounded-3 card_single">
 
-                <!-- <img loading="lazy" decoding="async" role="presentation"
+                <img loading="lazy" decoding="async" role="presentation"
                     src="{{ url_for('static', path='/images/projects/singles/'+single.id|string+'.jpg') }}"
-                    class="card-img-top rounded-0" alt="{{ single.title }}"> -->
+                    class="card-img-top rounded-top-3" alt="{{ single.title }}">
 
                 <div class="card-body">
                     <p class="single_name m-0 text-center">
@@ -57,17 +57,17 @@
 
         {% endfor %}
 
-        <div class="col-12 mt-4">
+        <div class="col-12">
             <div class="row d-flex justify-content-center column-gap-0 align-items-center">
                 <div class="col-3 d-flex justify-content-center">
-                    <a class="slider_products show_more_button" id="show_more_singles_button" href="#singles_cards">
+                    <a class="slider_products show_more_button fw-bold" id="show_more_singles_button" href="#singles_cards">
                         SHOW MORE
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 mt-4">
+        <!-- <div class="col-12">
             <div class="row d-flex justify-content-center column-gap-0 align-items-center">
                 <div class="col-2 d-flex justify-content-center">
                     <a href="#albums_carousel_div" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
@@ -76,7 +76,7 @@
                     <a href="#featurings_cards" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

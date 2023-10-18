@@ -1,18 +1,13 @@
 import datetime
 
 from models.models import InitEngine
-from sqlalchemy import select
-from models.ArtistsTracks import ArtistsTracks
-from models.AlbumsArtists import AlbumsArtists
+from sqlmodel import select, desc
 from models.Artists import Artists
 from models.Featurings import Featurings
-from models.FeaturingsArtists import FeaturingsArtists
 from models.Albums import Albums
 from models.Singles import Singles
 from models.Tracks import Tracks
-from models.AlbumsTracks import AlbumsTracks
 import locale
-from datetime import datetime
 
 locale.setlocale(locale.LC_ALL)
 
@@ -89,14 +84,11 @@ class SelectProjects(InitEngine):
         pass
 
     def select_last_releases(self):
-        pass
-
-    def select_one_single(self):
-        stmt = select(Tracks).join(Tracks.artists).where(Tracks.id == 101)
-        db_single = self.session.execute(stmt)
-        db_singles_scalars = db_single.scalars()
-        for a in db_singles_scalars:
-            print(a.artists)
+        stmt = select(Tracks).join(Tracks.single).order_by(desc(Tracks.date_release)).limit(3)
+        db_last_releases = self.session.execute(stmt)
+        db_last_releases_scalars = db_last_releases.scalars()
+        for release in db_last_releases_scalars:
+            print(release.title)
 
 
-# SelectProjects().select_one_single()
+SelectProjects().select_last_releases()

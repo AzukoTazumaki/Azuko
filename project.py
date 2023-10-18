@@ -5,6 +5,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
+
+from models.Albums import Albums
 from names import ProjectNames
 from models.models import InitDatabase
 from db_projects import SelectProjects
@@ -82,8 +84,18 @@ async def albums_playlist(request: Request, album_id: int):
 
 
 @app.get("/playlist/singles", response_class=HTMLResponse)
-async def albums_playlist(request: Request):
+async def singles_playlist(request: Request):
     return templates.TemplateResponse("playlist_content/singles.html", {"request": request, "singles": db_projects.select_singles()})
+
+
+@app.get("/test", response_class=HTMLResponse)
+async def test(request: Request):
+    return templates.TemplateResponse("test.html", {"request": request})
+
+
+# @app.get("/playlist/albums/{albums_id}")
+# async def albums_playlist(albums_id: int, albums: Albums):
+#     return {'albums_id': albums_id, **albums.dict()}
 
 
 if __name__ == '__main__':

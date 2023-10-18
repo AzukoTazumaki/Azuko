@@ -7,8 +7,8 @@
 
             <div class="col-3 player_part_left px-0">
                 <div class="song_title">
-                    <h4 class="text-center fw-bold m-0" data-amplitude-song-info="name"
-                        data-amplitude-playlist="{{ album.title }}"></h4>
+                    <h6 class="text-center fw-bold m-0" data-amplitude-song-info="name"
+                        data-amplitude-playlist="{{ album.title }}"></h6>
                 </div>
                 <div class="player_part_left_inside">
                     <p class="text-light text-start m-0">
@@ -19,7 +19,8 @@
 
             <div class="col-3 player_part_center">
 
-                <img loading="lazy" src="{{url_for('static', path='/audio/albums/'+album.cover+'/cover.jpg')}}" class="album_art w-100">
+                <img loading="lazy" src="{{url_for('static', path='/audio/albums/'+album.cover+'/cover.jpg')}}"
+                    class="album_art w-100">
 
                 <div class="d-flex flex-column align-items-center mt-2 mb-0">
                     <span class="song_name" data-amplitude-song-info="name"
@@ -85,23 +86,25 @@
 
             <div class="col-3 player_part_right px-0">
                 <div class="playlist">
-                    <h4 class="fw-bold m-0" data-amplitude-playlist="{{ album.title }}">
+                    <h5 class="fw-bold m-0" data-amplitude-playlist="{{ album.title }}">
                         {{ album.title }}
-                    </h4>
-                    <span class="fs-5">Date release: {{ album.date_release }}</span>
+                    </h5>
+                    <span class="fs-6">Date release: {{ album.date_release }}</span>
                 </div>
                 <div class="player_part_right_inside">
                     {% for track in album.tracks | sort(attribute='position') %}
                     <div class="d-flex justify-content-between song amplitude-play amplitude-song-container"
-                        data-amplitude-song-index="{{ track.position - 1 }}" data-amplitude-playlist="{{ album.title }}">
+                        data-amplitude-song-index="{{ track.position - 1 }}"
+                        data-amplitude-playlist="{{ album.title }}">
                         <div class="d-flex">
-                            <img loading="lazy" class="song_cover" src="{{url_for('static', path='/audio/albums/'+album.cover+'/cover.jpg')}}" width="20%">
+                            <img loading="lazy" class="song_cover"
+                                src="{{url_for('static', path='/audio/albums/'+album.cover+'/cover.jpg')}}" width="20%">
                             <div class="d-flex flex-column justify-content-center mx-2">
                                 <div>
                                     {{ track.position }}. <span data-amplitude-song-index="{{ album.id }}"
                                         data-amplitude-playlist="{{ album.title }}">{{ track.title }}</span>
                                 </div>
-                                <span>
+                                <span class="playlist_song_artist">
                                     {% for artist in track.artists | sort(attribute='name') %}
                                     {{ artist.name + ', ' if not loop.last else artist.name }}
                                     {% endfor %}
@@ -115,7 +118,6 @@
                     {% endfor %}
                 </div>
             </div>
-
         </div>
     </div>
 </div>
