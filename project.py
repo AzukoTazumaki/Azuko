@@ -18,11 +18,11 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-# @app.on_event('startup')
-# def startup():
-#     init_db.create_db_and_tables()
-#     init_db.create_projects()
-#     init_db.close_session()
+@app.on_event('startup')
+def startup():
+    init_db.create_db_and_tables()
+    init_db.create_projects()
+    init_db.close_session()
 
 
 @app.get("/", response_class=RedirectResponse)
@@ -64,11 +64,11 @@ async def products(request: Request):
 async def projects(request: Request):
     featurings = ProjectNames('featurings')
     return templates.TemplateResponse("projects_content/projects.html", {
-                                          "request": request,
-                                          "albums": db_projects.select_albums(),
-                                          "singles": db_projects.select_singles(),
-                                          "featurings": featurings.get_single_or_featuring_info()
-                                    })
+        "request": request,
+        "albums": db_projects.select_all_albums(),
+        "singles": db_projects.select_singles(),
+        "featurings": featurings.get_single_or_featuring_info()
+    })
 
 
 @app.get("/playlist", response_class=HTMLResponse)
@@ -76,19 +76,14 @@ async def playlist(request: Request):
     return templates.TemplateResponse("playlist_content/playlist.html", {'request': request})
 
 
-@app.get("/playlist/albums", response_class=HTMLResponse)
-async def albums_playlist(request: Request):
-    return templates.TemplateResponse("playlist_content/albums.html", {"request": request, "albums": db_projects.select_albums()})
+@app.get("/playlist/albums/{album_id}", response_class=HTMLResponse)
+async def albums_playlist(request: Request, album_id: int):
+    return templates.TemplateResponse("playlist_content/albums.html", {"request": request, "album": db_projects.select_one_album(album_id)})
 
 
 @app.get("/playlist/singles", response_class=HTMLResponse)
 async def albums_playlist(request: Request):
     return templates.TemplateResponse("playlist_content/singles.html", {"request": request, "singles": db_projects.select_singles()})
-
-
-@app.get("/test", response_class=HTMLResponse)
-async def albums_playlist(request: Request):
-    return templates.TemplateResponse("test.html", {"request": request, "albums": db_projects.select_albums()})
 
 
 if __name__ == '__main__':

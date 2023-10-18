@@ -12,6 +12,7 @@ mysql-connector-python = "*"
 sqlalchemy = "*"
 psycopg2 = "*"
 alembic = "*"
+sqlmodel = "*"
 
 [dev-packages]
 

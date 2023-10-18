@@ -1,25 +1,23 @@
-from sqlalchemy import create_engine, select, insert, text
-from sqlalchemy.orm import Session
+from datetime import time
 
-from .SinglesArtists import SinglesArtists
+from sqlmodel import SQLModel, Session, create_engine, insert, text
 from .ArtistsTracks import ArtistsTracks
 from .AlbumsArtists import AlbumsArtists
 from .Artists import Artists
 from .Featurings import Featurings
 from .FeaturingsArtists import FeaturingsArtists
 from .Albums import Albums
-from .Base import Base
 from .Singles import Singles
 from .Tracks import Tracks
 from .AlbumsTracks import AlbumsTracks
-from .data import albums, artists, singles, tracks, albums_tracks, albums_artists, singles_artists, artists_tracks, \
+from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, artists_tracks, \
     featurings, featurings_artists
-from .settings import db_driver, db_user, db_password, db_host, db_port, db_name
+from .settings import db_url, db_name
 
 
 class InitEngine:
     def __init__(self):
-        self.engine = create_engine(f'{db_driver}://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
+        self.engine = create_engine(db_url, echo=True)
         self.session = Session(bind=self.engine)
 
 
@@ -28,27 +26,43 @@ class InitDatabase(InitEngine):
         super().__init__()
 
     def create_db_and_tables(self):
-        # drop_db_query = f'drop database if exists {db_name}'
-        # create_db_query = f'create database {db_name}'
-        # use_db_query = f'use {db_name}'
-        with self.engine.begin() as connection:
-            # connection.execute(text(drop_db_query))
-            # connection.execute(text(create_db_query))
-            # connection.execute(text(use_db_query))
-            Base.metadata.create_all(connection)
+        with self.engine.connect() as connection:
+            connection.execution_options(isolation_level='AUTOCOMMIT')
+            SQLModel.metadata.create_all(connection)
 
     def create_projects(self):
         self.session.execute(insert(Albums), albums)
-        self.session.execute(insert(Tracks), tracks)
-        self.session.execute(insert(Singles), singles)
+        self.session.commit()
+        for track in tracks:
+            track_iter = Tracks(
+                    title=track['title'],
+                    duration=time.fromisoformat(track['duration']),
+                    date_release=track['date_release'],
+                    track_position_in_album=track['track_position_in_album']
+                )
+            self.session.add(track_iter)
+        self.session.commit()
         self.session.execute(insert(Artists), artists)
+        self.session.commit()
+        self.session.execute(insert(Singles), singles)
+        self.session.commit()
         self.session.execute(insert(Featurings), featurings)
+        self.session.commit()
         self.session.execute(insert(AlbumsTracks), albums_tracks)
+        self.session.commit()
         self.session.execute(insert(AlbumsArtists), albums_artists)
-        self.session.execute(insert(SinglesArtists), singles_artists)
+        self.session.commit()
         self.session.execute(insert(ArtistsTracks), artists_tracks)
+        self.session.commit()
         self.session.execute(insert(FeaturingsArtists), featurings_artists)
         self.session.commit()
 
     def close_session(self):
         self.session.close()
+
+
+if __name__ == '__main__':
+    init_db = InitDatabase()
+    init_db.create_db_and_tables()
+    init_db.create_projects()
+    init_db.close_session()

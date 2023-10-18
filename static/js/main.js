@@ -1,5 +1,5 @@
 try {
-    let play_pause_icons = document.querySelectorAll('.play_pause_icon')
+    let play_pause_icon = document.querySelector('.play_pause_icon')
     let volume_percentage = document.querySelector('.volume_percentage')
 
     /* INIZIALIZATION OF AMPLITUDE */
@@ -13,24 +13,12 @@ try {
         debug: true,
         callbacks: {
             play: function () {
-                play_pause_icons.forEach(tag => {
-                    let classes = tag.classList
-                    console.log(classes)
-                    tag.addEventListener('click', () => {
-                        classes.replace('fa-circle-pause', 'fa-circle-play');
-                        console.log(classes)
-                    });
-                });
+                play_pause_icon.classList.remove('fa-circle-play');
+                play_pause_icon.classList.add('fa-circle-pause');
             },
             pause: function () {
-                play_pause_icons.forEach(tag => {
-                    let classes = tag.classList
-                    console.log(classes)
-                    tag.addEventListener('click', () => {
-                        classes.replace('fa-circle-play', 'fa-circle-pause');
-                    });
-                    console.log(classes)
-                });
+                play_pause_icon.classList.remove('fa-circle-pause');
+                play_pause_icon.classList.add('fa-circle-play');
             }
         },
         playlists: all_playlists

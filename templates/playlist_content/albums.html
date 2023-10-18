@@ -1,10 +1,7 @@
 {% extends 'index.html' %}
 
 {% block content %}
-
-{% for album in albums|sort(attribute='id') %}
-
-<div class="album_{{ loop.index }}" id="album_{{ loop.index }}">
+<div class="album_{{ album.id }}" id="album_{{ album.id }}">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center column-gap-5 vh-100">
 
@@ -101,7 +98,7 @@
                             <img loading="lazy" class="song_cover" src="{{url_for('static', path='/audio/albums/'+album.cover+'/cover.jpg')}}" width="20%">
                             <div class="d-flex flex-column justify-content-center mx-2">
                                 <div>
-                                    {{ track.position }}. <span data-amplitude-song-index="{{ loop.index }}"
+                                    {{ track.position }}. <span data-amplitude-song-index="{{ album.id }}"
                                         data-amplitude-playlist="{{ album.title }}">{{ track.title }}</span>
                                 </div>
                                 <span>
@@ -122,7 +119,4 @@
         </div>
     </div>
 </div>
-
-{% endfor %}
-
 {% endblock %}

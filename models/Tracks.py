@@ -1,20 +1,18 @@
-from typing import Set
-from sqlalchemy import Time, String, Date, Integer
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from typing import List, Optional
+from sqlmodel import SQLModel, Field, Relationship
 from .AlbumsTracks import AlbumsTracks
 from .ArtistsTracks import ArtistsTracks
-from .Base import Base
+from datetime import time, date
 
 
-class Tracks(Base):
-    __tablename__ = 'Tracks'
+class Tracks(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    title: str = Field(nullable=False)
+    duration: time
+    date_release: date
+    track_position_in_album: Optional[int] = Field(nullable=True)
+    artists: List['Artists'] = Relationship(back_populates='tracks', link_model=ArtistsTracks)
+    albums: List['Albums'] = Relationship(back_populates='tracks', link_model=AlbumsTracks)
+    single: Optional['Singles'] = Relationship(back_populates='track')
+    featuring: Optional['Featurings'] = Relationship(back_populates='track')
 
-    id: Mapped[int] = mapped_column(primary_key=True)
-    title: Mapped[str] = mapped_column(String(64), nullable=False)
-    duration: Mapped[Time] = mapped_column(Time())
-    date_release: Mapped[Date] = mapped_column(Date())
-    track_position_in_album: Mapped[int] = mapped_column(Integer, nullable=True)
-    artists: Mapped[Set['Artists']] = relationship(secondary=ArtistsTracks, back_populates='tracks')
-    albums: Mapped[Set['Albums']] = relationship(secondary=AlbumsTracks, back_populates='tracks')
-    single: Mapped['Singles'] = relationship(back_populates='track')
-    featurings: Mapped['Featurings'] = relationship(back_populates='tracks')

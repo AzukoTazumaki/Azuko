@@ -12,16 +12,15 @@
 
             {% for single in singles | sort(attribute='id') %}
 
-            {% if loop.index <= 3 %} 
-            <div class="col-3 p-0">
+            {% if loop.index <= 3 %} <div class="col-3 p-0">
                 <div class="card rounded-0 card_single">
 
-                    <img loading="lazy" role="presentation"
-                        src="{{ url_for('static', path='/images/projects/singles/'+single.id|string+'.jpg') }}"
-                        class="card-img-top rounded-0" alt="{{ single.title }}">
+                        <!-- <img loading="lazy" role="presentation"
+                            src="{{ url_for('static', path='/images/projects/singles/'+single.id|string+'.jpg') }}"
+                            class="card-img-top rounded-0" alt="{{ single.title }}"> -->
                     <div class="card-body">
                         <p class="single_name m-0 text-center">
-                            {{ single.title }}
+                            {{ single.id }}. {{ single.title }}
                         </p>
                         <p class="single_artist m-0 text-center">
                             {% for artist in single.artists | sort(attribute='id') %}
@@ -30,20 +29,20 @@
                         </p>
                     </div>
                 </div>
-            </div>
+        </div>
 
         {% else %}
 
         <div class="col-3 p-0 disabled_single_card">
             <div class="card rounded-0 card_single">
 
-                <img loading="lazy" decoding="async" role="presentation"
+                <!-- <img loading="lazy" decoding="async" role="presentation"
                     src="{{ url_for('static', path='/images/projects/singles/'+single.id|string+'.jpg') }}"
-                    class="card-img-top rounded-0" alt="{{ single.title }}">
+                    class="card-img-top rounded-0" alt="{{ single.title }}"> -->
 
                 <div class="card-body">
                     <p class="single_name m-0 text-center">
-                        {{ single.title }}
+                        {{ single.id }}. {{ single.title }}
                     </p>
                     <p class="single_artist m-0 text-center">
                         {% for artist in single.artists | sort(attribute='id') %}

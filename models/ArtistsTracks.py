@@ -1,9 +1,7 @@
-from sqlalchemy import Table, Column, ForeignKey
-from .Base import Base
+from typing import Optional
+from sqlmodel import SQLModel, Field
 
-ArtistsTracks = Table(
-    "ArtistsTracks",
-    Base.metadata,
-    Column("TrackID", ForeignKey("Tracks.id")),
-    Column("ArtistID", ForeignKey("Artists.id")),
-)
+
+class ArtistsTracks(SQLModel, table=True):
+    track_id: Optional[int] = Field(foreign_key='tracks.id', primary_key=True)
+    artist_id: Optional[int] = Field(foreign_key='artists.id', primary_key=True)
