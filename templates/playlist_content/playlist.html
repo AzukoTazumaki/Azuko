@@ -1,35 +1,68 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<div class="container">
-    <div class="row d-flex justify-content-center align-items-center vh-100">
-        <div class="col-6 d-flex justify-content-between">
-            <a href="playlist/albums">Albums</a>
-            <a href="playlist/singles">Singles</a>
-            <a href="playlist/featurings">Featurings</a>
-            <a href="playlist/tracks">Tracks</a>
+<div id="playlist">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center vh-100">
+            <div class="col-6 d-flex justify-content-between playlist_links p-0">
+                <a href="#albums">
+                    <img src="{{ url_for('static', path='/images/playlist/albums.jpg') }}" alt="Albums">
+                </a>
+                <a href="playlist/singles">
+                    <img src="{{ url_for('static', path='/images/playlist/singles.jpg') }}" alt="Singles">
+                </a>
+                <a href="playlist/featurings">
+                    <img src="{{ url_for('static', path='/images/playlist/featurings.jpg') }}" alt="Featurings">
+                </a>
+            </div>
+        </div>
+    
+        <div class="row d-flex justify-content-center align-items-center vh-100" id="albums">
+            <div class="col-10">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/1">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/1.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/2">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/2.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/3">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/3.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/4">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/4.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/5">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/5.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/6">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/6.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/7">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/7.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center p-4">
+                        <a href="playlist/albums/8">
+                            <img loading="eager" src="{{ url_for('static', path='/images/projects/albums/covers/8.jpg') }}" alt="0">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {% endblock %}
-<!-- {% for album in albums %}
-        <h1>Album: {{ album.title }}</h1>
-        <h4>Date Release: {{ album.date_release }}</h4>
-        <p>
-            {% for artist in album.artists %}
-                {{ artist.name + ', ' if not loop.last else artist.name }}
-            {% endfor %}
-        </p>
-        <ul style="list-style-type: decimal;">
-            {% for track in album.tracks|sort(attribute='id') %}
-            <li>
-                {{ track.title }} —
-                {% for artist in track.artists %}
-                {{ artist.name + ', ' if not loop.last else artist.name }}
-                {% endfor %} |
-                {{ track.duration }}
-            </li>    
-            {% endfor %}
-        </ul>
-        {{loop.index}}
-    {% endfor %} -->

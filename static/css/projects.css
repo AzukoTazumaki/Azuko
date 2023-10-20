@@ -114,8 +114,8 @@
     display: none;
 }
 
-.carousel_image {
-    border-radius: 25px;
+.carousel_image, .carousel-inner {
+    border-radius: 25px !important;
 }
 
 .bg_carousel {
@@ -165,4 +165,5 @@
 
 .cover_carousel {
     border-radius: 15px;
+    height: 35vh;
 }

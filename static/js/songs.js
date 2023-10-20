@@ -40,7 +40,7 @@ const albums = {
         cover: audio_albums_path + '/highway_of_love_deluxe' + '/cover.jpg'
     }, 
     hof_songs : {
-        track_name: ['Intro', 'Long Way', 'Live In Dreams', 'Breakdown', 'Playin In Love', 'Can We Be Together', 'Bad Memories', 
+        track_name: ['Intro', 'Long Way', 'Live In Dreams', 'Breakdown', 'Playin In Love', 'Can We Be Together?', 'Bad Memories', 
         'Workin Hard', 'What You Want From Love?', 'I Was Need A Break', 'Wassup From The Gap', 'Tryin Be The Best', 'Early Bird 3', 
         'How Am I Lost?', "Don't Leave Me Alone", 'Far From Home', 'Why Not?', 'Chasing The Money', 'I Will No Hate You', 'Tonight', 
         'Under Purple Rain', 'Deadmans', 'Visions', 'Bad Bad Bad', 'Outro'],

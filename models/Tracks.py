@@ -15,4 +15,5 @@ class Tracks(SQLModel, table=True):
     albums: List['Albums'] = Relationship(back_populates='tracks', link_model=AlbumsTracks)
     single: Optional['Singles'] = Relationship(back_populates='track')
     featuring: Optional['Featurings'] = Relationship(back_populates='track')
+    text: Optional['Lyrics'] = Relationship(back_populates='track')
 

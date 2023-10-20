@@ -1,23 +1,23 @@
 from datetime import time
-
-from sqlmodel import SQLModel, Session, create_engine, insert, text
+from sqlmodel import SQLModel, create_engine, insert, Session
 from .ArtistsTracks import ArtistsTracks
 from .AlbumsArtists import AlbumsArtists
 from .Artists import Artists
 from .Featurings import Featurings
-from .FeaturingsArtists import FeaturingsArtists
 from .Albums import Albums
 from .Singles import Singles
 from .Tracks import Tracks
 from .AlbumsTracks import AlbumsTracks
-from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, artists_tracks, \
-    featurings, featurings_artists
-from .settings import db_url, db_name
+from .Products import Products
+from .Lyrics import Lyrics
+from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, artists_tracks, featurings, products, \
+    lyrics
+from .settings import db_url
 
 
 class InitEngine:
     def __init__(self):
-        self.engine = create_engine(db_url, echo=True)
+        self.engine = create_engine(db_url)
         self.session = Session(bind=self.engine)
 
 
@@ -34,13 +34,11 @@ class InitDatabase(InitEngine):
         self.session.execute(insert(Albums), albums)
         self.session.commit()
         for track in tracks:
-            track_iter = Tracks(
-                    title=track['title'],
-                    duration=time.fromisoformat(track['duration']),
-                    date_release=track['date_release'],
-                    track_position_in_album=track['track_position_in_album']
-                )
-            self.session.add(track_iter)
+            self.session.add(Tracks(title=track['title'], duration=time.fromisoformat(track['duration']),
+                                    date_release=track['date_release'],
+                                    track_position_in_album=track['track_position_in_album']))
+        self.session.commit()
+        self.session.execute(insert(Lyrics), lyrics)
         self.session.commit()
         self.session.execute(insert(Artists), artists)
         self.session.commit()
@@ -54,15 +52,8 @@ class InitDatabase(InitEngine):
         self.session.commit()
         self.session.execute(insert(ArtistsTracks), artists_tracks)
         self.session.commit()
-        self.session.execute(insert(FeaturingsArtists), featurings_artists)
+        self.session.execute(insert(Products), products)
         self.session.commit()
 
     def close_session(self):
         self.session.close()
-
-
-if __name__ == '__main__':
-    init_db = InitDatabase()
-    init_db.create_db_and_tables()
-    init_db.create_projects()
-    init_db.close_session()

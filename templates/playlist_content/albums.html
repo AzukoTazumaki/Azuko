@@ -7,13 +7,36 @@
 
             <div class="col-3 player_part_left px-0">
                 <div class="song_title">
-                    <h6 class="text-center fw-bold m-0" data-amplitude-song-info="name"
-                        data-amplitude-playlist="{{ album.title }}"></h6>
+                    <h5 class="text-center fw-bold m-0 song_title_name" data-amplitude-song-info="name"
+                    data-amplitude-playlist="{{ album.title }}"></h5>
+                    <span class="fs-6 align-middle m-0 p-0">Lyrics</span>
                 </div>
                 <div class="player_part_left_inside">
-                    <p class="text-light text-start m-0">
+                    {% for track in album.tracks | sort(attribute='position') %}
+                        {% if track.text[0].lyrics is not none and track.text[0].lyrics != ' ' %}
+                            {% if track.title == 'Supposed To Be' %}
+                                <p class="text-start m-0 song_lyrics" data-lyrics-song="SUPPOSED TO BE.">
+                            {% else %}
+                                <p class="text-start m-0 song_lyrics" data-lyrics-song="{{ track.title }}">
+                            {% endif %}
 
-                    </p>
+                            {% set lines = track.text[0].lyrics.split('\n') %}
+
+                            {% for line in lines %}
+                                {% if loop.index == 1 %}
+                                    {{ line }}
+                                {% else %}
+                                    {{ line }}<br>
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+
+                        {% else %}
+                        <div class="d-flex justify-content-center align-items-center song_lyrics">
+                            <h2 class="song_lyrics mb-0" data-lyrics-song="{{ track.title }}" style="margin-top: 21vh;">NO LYRICS.</h2>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
 
@@ -86,10 +109,10 @@
 
             <div class="col-3 player_part_right px-0">
                 <div class="playlist">
-                    <h5 class="fw-bold m-0" data-amplitude-playlist="{{ album.title }}">
+                    <h5 class="fw-bold m-0 p-0" data-amplitude-playlist="{{ album.title }}">
                         {{ album.title }}
                     </h5>
-                    <span class="fs-6">Date release: {{ album.date_release }}</span>
+                    <span class="fs-6 align-middle m-0 p-0">Date release: {{ album.date_release }}</span>
                 </div>
                 <div class="player_part_right_inside">
                     {% for track in album.tracks | sort(attribute='position') %}
@@ -102,7 +125,13 @@
                             <div class="d-flex flex-column justify-content-center mx-2">
                                 <div>
                                     {{ track.position }}. <span data-amplitude-song-index="{{ album.id }}"
-                                        data-amplitude-playlist="{{ album.title }}">{{ track.title }}</span>
+                                        data-amplitude-playlist="{{ album.title }}">
+                                        {% if track.title == 'Supposed To Be' %}
+                                        SUPPOSED TO BE.
+                                        {% else %}
+                                        {{ track.title }}
+                                        {% endif %}
+                                    </span>
                                 </div>
                                 <span class="playlist_song_artist">
                                     {% for artist in track.artists | sort(attribute='name') %}

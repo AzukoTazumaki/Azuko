@@ -1,66 +1,60 @@
 {% block featurings_carousel %}
 <div class="row justify-content-center align-items-center vh-100" id="featurings_cards">
     <div class="col-9">
-        <div class="row justify-content-center column-gap-3 row-gap-3">
+        <div class="row justify-content-center gap-4">
 
             <div class="col-12 d-flex justify-content-center">
                 <img src="{{url_for('static', path='/images/logos/featurings_logo.png')}}" alt="Featurings" width="350">
             </div>
 
-            {% for featuring in featurings %}
+            {% for featuring in featurings | sort(attribute='id') %}
 
-            {% if loop.index <= 3 %}
-            <div class="col-3">
-                <div class="card card_featuring rounded-4">
-                    <a href="#">
-                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/featurings/'+featuring.cover) }}" 
-                        class="card-img-top rounded-top-4" alt="{{ featuring.name }}">
-                    </a>
-                    <div class="card-body">
-                        <p class="featuring_name m-0 text-center">{{ featuring.name }}</p>
-                        <p class="featuring_artist m-0 text-center">{{ featuring.artist }}</p>
+                {% if loop.index <= 3 %} 
+                <div class="col-3 p-0">
+                    <div class="card card_featuring rounded-3">
+                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/featurings/'+featuring.id|string+'.jpg') }}" class="card-img-top rounded-top-3" alt="{{ featuring.title }}">
+                        <div class="card-body">
+                            <p class="featuring_name m-0 text-center">
+                                {{ featuring.title }}
+                            </p>
+                            <p class="featuring_artist m-0 text-center">
+                                {% for artist in featuring.artists | sort(attribute='id', reverse=True) %}
+                                {{ artist.name + ', ' if not loop.last else artist.name }}
+                                {% endfor %}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% else %}
-            <div class="col-3 disabled_featuring_card">
-                <div class="card card_featuring rounded-4">
-                    <a href="#">
-                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/featurings/'+featuring.cover) }}" 
-                        class="card-img-top rounded-top-4" alt="{{ featuring.name }}">
-                    </a>
-                    <div class="card-body">
-                        <p class="featuring_name m-0 text-center">{{ featuring.name }}</p>
-                        <p class="featuring_artist m-0 text-center">{{ featuring.artist }}</p>
+                {% else %}
+                <div class="col-3 p-0 disabled_featuring_card">
+                    <div class="card card_featuring rounded-3">
+                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/featurings/'+featuring.id|string+'.jpg') }}" class="card-img-top rounded-top-3" alt="{{ featuring.title }}">
+                        <div class="card-body">
+                            <p class="featuring_name m-0 text-center">
+                                {{ featuring.title }}
+                            </p>
+                            <p class="featuring_artist m-0 text-center">
+                                {% for artist in featuring.artists | sort(attribute='id', reverse=True) %}
+                                {{ artist.name + ', ' if not loop.last else artist.name }}
+                                {% endfor %}
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% endif %}
+                {% endif %}
 
             {% endfor %}
 
-            <div class="col-12">
+            <div class="col-12 mb-5">
                 <div class="row d-flex justify-content-center column-gap-1 align-items-center">
                     <div class="col-3 d-flex justify-content-center">
-                        <a class="slider_products show_more_button" id="show_more_featurings_button" href="#featurings_cards">SHOW MORE</a>
+                        <a class="slider_products show_more_button" id="show_more_featurings_button"
+                            href="#featurings_cards">SHOW MORE</a>
                     </div>
                 </div>
             </div>
 
-            <!-- <div class="col-12 mb-5">
-                <div class="row d-flex justify-content-center column-gap-0 align-items-center">
-                    <div class="col-2 d-flex justify-content-center">
-                        <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
-                    </div>
-                    <div class="col-2 d-flex justify-content-center">
-                        <a href="#footer" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
-                    </div>
-                </div>
-            </div> -->
-
         </div>
     </div>
-
-
 </div>
 {% endblock %}

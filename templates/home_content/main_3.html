@@ -14,8 +14,8 @@
                             width="100%" alt="">
                         <p class="m-0 who_is_azuko_description">
                             "Hi! My name is Azuko and I'm an artist, producer, sound engineer, and I also wrote this
-                                website.
-                                Here you can listen to my music, buy beats or other products. Cheers!" — Azuko.
+                            website.
+                            Here you can listen to my music, buy beats or other products. Cheers!" — Azuko.
                         </p>
                     </div>
                 </div>
@@ -30,23 +30,21 @@
                         {% for product in products %}
                         <div class="col-6">
                             <a href="/">
-                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product[0])}}"
+                                <img loading="lazy" src="{{url_for('static', path='/images/products/'+product.id|string+'.jpg')}}"
                                     class="card-img-top img_product" alt="">
                             </a>
                             <div class="product_info">
-                                {% if 'mixing_and_mastering' in product[0] %}
                                 <p
                                     class="m-0 text-uppercase text-center d-flex align-items-center justify-content-center">
-                                    <span class="product_name">{{ product[2] }}&nbsp;<i
+                                    <span class="product_name">{{ product.price }}&nbsp;<i
                                             class="fa-solid fa-ruble-sign"></i></span>
-                                    &nbsp;&nbsp;<span class="text-decoration-line-through old_price">{{ product[1]}}
-                                        <i class="fa-solid fa-ruble-sign"></i></span>
+                                    &nbsp;&nbsp;
+                                    {% if product.old_price is none %}
+                                    <span class="text-decoration-line-through old_price d-none">{{ product.old_price}}<i class="fa-solid fa-ruble-sign"></i></span>
+                                    {% else %}
+                                    <span class="text-decoration-line-through old_price">{{ product.old_price}}<i class="fa-solid fa-ruble-sign"></i></span>
+                                    {% endif %}
                                 </p>
-                                {% else %}
-                                <p class="m-0 product_name text-uppercase text-center">{{ product[1] }}
-                                    <i class="fa-solid fa-ruble-sign"></i>
-                                </p>
-                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}

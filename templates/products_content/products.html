@@ -10,12 +10,12 @@
                 <div class="col-12">
                     <div class="row align-items-center">
                         <div class="col-5">
-                            <img loading="lazy" class="rounded-3 product_img" src="{{url_for('static', path='/images/products/'+product[0])}}" width="90%" alt="">
+                            <img loading="lazy" class="rounded-3 product_img" src="{{url_for('static', path='/images/products/'+product.id|string+'.jpg')}}" width="70%" alt="">
                         </div>
                         <div class="offset-1 col-6">
                             <div class="product_card_info rounded-3">
-                                <h3 class="text-center text-uppercase m-0">{{ product[1] }}</h3>
-                                {% if 'beats' in product[0] %}
+                                <h3 class="text-center text-uppercase m-0">{{ product.name }}</h3>
+                                <!-- {% if 'beats' in product.name %}
                                 <p class="mt-3">
                                     All beats are the property of Azuko. In total, two licenses are available - a <strong>WAV</strong> 
                                     and an <strong>EXCLUSIVE</strong> license. By clicking on the link below, you can listen to the 
@@ -29,7 +29,7 @@
                                     
                                 {% else %}
                                     
-                                {% endif %}
+                                {% endif %} -->
                                 
                             </div>
                         </div>
