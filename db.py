@@ -1,8 +1,11 @@
+from sqlalchemy.exc import ArgumentError
+
 from models.Products import Products
 from models.models import InitEngine
 from sqlmodel import select, desc
 from models.Albums import Albums
 from models.Tracks import Tracks
+from models.Beats import Beats
 
 
 class SelectProjects(InitEngine):
@@ -87,3 +90,21 @@ class SelectProjects(InitEngine):
             } for product in db_products_scalars
         ]
 
+    @staticmethod
+    def match_product_name(product_id: int):
+        match product_id:
+            case 1:
+                return select(Products).join(Products.beats)
+            case 2:
+                return select(Products).join(Products.mixing)
+            case 3:
+                return select(Products).join(Products.mastering)
+            case 4:
+                return select(Products).join(Products.mixing_and_mastering)
+
+    def select_one_product(self, product_id: int):
+        db_product_scalars = self.session.execute(self.match_product_name(product_id)).scalars()
+        db_product_all = db_product_scalars.all()
+        if not db_product_all:
+            return 'Coming soon'
+        return db_product_all

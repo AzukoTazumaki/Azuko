@@ -3,6 +3,8 @@ from sqlmodel import SQLModel, Field, Relationship, text
 
 
 class Lyrics(SQLModel, table=True):
+    __tablename__ = 'lyrics'
+
     id: Optional[int] = Field(default=None, primary_key=True)
     lyrics: str | None = None
     track_id: Optional[int] = Field(foreign_key='tracks.id')

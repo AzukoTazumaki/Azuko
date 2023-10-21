@@ -6,6 +6,8 @@ from datetime import time, date
 
 
 class Tracks(SQLModel, table=True):
+    __tablename__ = 'tracks'
+
     id: Optional[int] = Field(default=None, primary_key=True)
     title: str = Field(nullable=False)
     duration: time
@@ -16,4 +18,7 @@ class Tracks(SQLModel, table=True):
     single: Optional['Singles'] = Relationship(back_populates='track')
     featuring: Optional['Featurings'] = Relationship(back_populates='track')
     text: Optional['Lyrics'] = Relationship(back_populates='track')
+    mixing: Optional['Mixing'] = Relationship(back_populates='tracks')
+    mastering: Optional['Mastering'] = Relationship(back_populates='tracks')
+    mixing_and_mastering: Optional['MixingAndMastering'] = Relationship(back_populates='tracks')
 

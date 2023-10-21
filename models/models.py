@@ -10,8 +10,14 @@ from .Tracks import Tracks
 from .AlbumsTracks import AlbumsTracks
 from .Products import Products
 from .Lyrics import Lyrics
-from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, artists_tracks, featurings, products, \
-    lyrics
+from .Beats import Beats
+from .Genres import Genres
+from .Keys import Keys
+from .Mixing import Mixing
+from .Mastering import Mastering
+from .MixingAndMastering import MixingAndMastering
+from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, \
+    artists_tracks, featurings, products, lyrics
 from .settings import db_url
 
 
@@ -34,9 +40,10 @@ class InitDatabase(InitEngine):
         self.session.execute(insert(Albums), albums)
         self.session.commit()
         for track in tracks:
-            self.session.add(Tracks(title=track['title'], duration=time.fromisoformat(track['duration']),
-                                    date_release=track['date_release'],
-                                    track_position_in_album=track['track_position_in_album']))
+            self.session.add(
+                Tracks(title=track['title'], duration=time.fromisoformat(track['duration']),
+                       date_release=track['date_release'],
+                       track_position_in_album=track['track_position_in_album']))
         self.session.commit()
         self.session.execute(insert(Lyrics), lyrics)
         self.session.commit()

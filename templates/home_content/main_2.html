@@ -1,14 +1,14 @@
 {% block main_2 %}
 <div class="main-2">
-    <span class="position-absolute" style="margin-top: 25vh;" id="main-2"></span>
-    <div class="container">
+    <span class="position-absolute" style="margin-top: 20vh;" id="main-2"></span>
+    <div class="container-fluid">
         <div class="row d-flex align-items-center main-2-row">
             <div class="row gap-4 d-flex justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
                     <p class="last_releases_title text-center">LAST RELEASES</p>
                 </div>
                 {% for release in last_releases %}
-                <div class="col-3">
+                <div class="col-3 p-4">
                     <div class="last_release">
                         <a href="/">
                             {% if release.is_album %}

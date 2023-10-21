@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 from models.models import InitDatabase
-from db_projects import SelectProjects
+from db import SelectProjects
 
 app = FastAPI()
 
@@ -44,8 +44,17 @@ async def products(request: Request):
     db_projects = SelectProjects()
     products_list = db_projects.select_products()
     return templates.TemplateResponse(
-        "products_content/products.html",
+        "products_content/all_products.html",
         {"request": request, "products": products_list})
+
+
+@app.get("/products/{product_id}", response_class=HTMLResponse)
+async def albums_playlist(request: Request, product_id: int):
+    db = SelectProjects()
+    product = db.select_one_product(product_id)
+    return templates.TemplateResponse(
+        f"products_content/product.html", {"request": request, "product": product}
+    )
 
 
 @app.get("/projects", response_class=HTMLResponse)

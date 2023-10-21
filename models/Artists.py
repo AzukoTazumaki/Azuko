@@ -5,6 +5,8 @@ from .ArtistsTracks import ArtistsTracks
 
 
 class Artists(SQLModel, table=True):
+    __tablename__ = 'artists'
+
     id: Optional[int] = Field(primary_key=True)
     name: str = Field(unique=True)
     albums: List['Albums'] = Relationship(back_populates='artists', link_model=AlbumsArtists)

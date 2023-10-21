@@ -1,0 +1,70 @@
+{% extends 'products_content/products.html' %}
+
+{% block product %}
+<div class="container">
+    {% for product in products %}
+    <div class="row d-flex align-items-center vh-100" id="product_{{ loop.index }}">
+        <div class="row justify-content-center gap-5">
+            <div class="col-12">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <img loading="lazy" class="rounded-3 product_img" src="{{url_for('static', path='/images/products/'+product.id|string+'.jpg')}}" width="80%" alt="">
+                    </div>
+                    <div class="col-7">
+                        <div class="d-flex justify-content-center align-items-center products_title_div">
+                            <p class="m-0 text-center products_title">{{ product.name }}</p>
+                        </div>
+                        <div class="product_card_info flex-column">
+                            {% if product.name == 'Beats' %}
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <ul class="m-0">
+                                <li>All instrumentals are available in two formats — MP3 and WAV</li>
+                                <li>All instrumentals have a genre, bpm and key</li>
+                                <li>The opportunity to order an exclusive instrumental, which Azuko will make taking into account your ideas (price is negotiable)</li>
+                            </ul>
+                            {% elif product.name == 'Mixing' %}
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <ul class="m-0">
+                                <li>All of Azuko's tracks are mixed by himself</li>
+                                <li>You can see examples of mixing for other artists</li>
+                            </ul>
+                            {% elif product.name == 'Mastering' %}
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <ul class="m-0">
+                                <li>All of Azuko's tracks are mastered by himself</li>
+                                <li>You can see examples of mastering for other artists</li>
+                            </ul>
+                            {% else %}
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <ul class="m-0">
+                                <li>All of Azuko's tracks are mixed and mastered by himself</li>
+                                <li>You can see examples of mixing and mastering for other artists</li>
+                                <li>If you choose this product, you will receive a 25% discount.</li>
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center other_products_div">
+                            <a href="/products/{{ product.id }}"><button class="other_products_button">EXPLORE</button></a>
+                        </div>         
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                {% if loop.first %}
+                <a href="#" class="slider_products_disabled"><i class="fa-solid fa-up-long fa-xl"></i></a>
+                {% else %}
+                <a href="#product_{{ loop.index - 1 }}" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
+                {% endif %}
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+                {% if loop.last %}
+                <a href="#footer" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
+                {% else %}
+                <a href="#product_{{ loop.index + 1 }}" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

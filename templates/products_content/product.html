@@ -1,0 +1,20 @@
+{% extends 'products_content/products.html' %}
+
+{% block product %}
+{% if product is string %}
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center vh-100">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <span class="text-center available_soon_text">{{ product }}</span>
+            </div>
+            <div class="col-12 d-flex justify-content-center mt-3">
+                <a href="/products">
+                    <button class="other_products_button">BACK</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

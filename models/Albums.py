@@ -1,4 +1,3 @@
-from datetime import datetime
 from typing import List, Optional
 from .AlbumsArtists import AlbumsArtists
 from .AlbumsTracks import AlbumsTracks
@@ -7,6 +6,8 @@ from datetime import date
 
 
 class Albums(SQLModel, table=True):
+    __tablename__ = 'albums'
+
     id: Optional[int] = Field(primary_key=True)
     title: str = Field(unique=True)
     date_release: date
