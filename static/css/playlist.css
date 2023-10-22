@@ -196,7 +196,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 #albums img {
     width: 100%;
     border-radius: 20px;
-    border: 5px solid var(--black-rgb);
+    border: 5px solid var(--light-gray-azuko-rgb);
     transition: .3s;
 }
 
@@ -223,3 +223,24 @@ input[type="range"]:focus::-webkit-slider-thumb {
     transition: .3s;
 }
 
+.song_cover {
+    width: 4vw;
+}
+
+.active_song {
+    background-color: var(--periwinkle-purple-rgba);
+}
+
+#bg_singles_video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: 
+        hue-rotate(20deg);
+}

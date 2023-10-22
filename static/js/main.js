@@ -81,13 +81,13 @@ try {
         }
     })
 
-    let active_song = document.querySelector('amplitude-active-song-container')
+
     let song_lyrics = document.querySelectorAll('.song_lyrics')
     window.onclick = function () {
         song_lyrics.forEach(elem => {
+            let active_song = document.querySelector('.active_song')
             let data_title = document.querySelector('.song_title_name').innerText
             let data_lyrics = elem.dataset.lyricsSong
-            // console.log(data_title, data_lyrics)
             if (data_title == data_lyrics) {
                 elem.style.display = 'block'
             } else {
@@ -95,6 +95,7 @@ try {
             }
         })
     }
+
 } catch (error) {
-    
+
 }

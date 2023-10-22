@@ -10,6 +10,7 @@ class Albums(SQLModel, table=True):
 
     id: Optional[int] = Field(primary_key=True)
     title: str = Field(unique=True)
+    description: str
     date_release: date
     cover: str = Field(unique=True)
     artists: List['Artists'] = Relationship(back_populates='albums', link_model=AlbumsArtists)

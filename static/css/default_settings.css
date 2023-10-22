@@ -5,8 +5,13 @@
 }
 
 @font-face {
-  font-family: 'Azuko';
+  font-family: 'Exo';
   src: url(../fonts/Exo2-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url(../fonts/Unbounded-Medium.ttf);
 }
 
 ::-webkit-scrollbar {
@@ -22,7 +27,7 @@ html {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: 'Azuko';
+  font-family: 'Exo';
 }
 
 body {

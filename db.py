@@ -41,7 +41,8 @@ class SelectProjects(InitEngine):
         db_albums_scalars = self.all_albums.scalars()
         result = [
             {
-                'id': album.id, 'title': album.title, 'date_release': album.date_release.strftime('%d %B %Y'),
+                'id': album.id, 'title': album.title, 'description': album.description,
+                'date_release': album.date_release.strftime('%d %B %Y'),
                 'cover': album.cover, 'artists': album.artists, 'tracks': [
                     {
                         'position': track.track_position_in_album, 'title': track.title,
@@ -54,7 +55,17 @@ class SelectProjects(InitEngine):
         return result
 
     def select_singles(self):
-        return self.all_singles.scalars()
+        result = [
+            {
+                'id': single.id,
+                'title': single.title,
+                'date_release': single.date_release.strftime('%d %B %Y'),
+                'artists': single.artists,
+                'duration': f'{str(single.duration).split(":")[0]}:{str(single.duration).split(":")[1]}',
+                'text': single.text
+            } for single in self.all_singles.scalars()
+        ]
+        return result
 
     def select_featurings(self):
         return self.all_featurings.scalars()
@@ -81,14 +92,7 @@ class SelectProjects(InitEngine):
 
     def select_products(self):
         db_products_scalars = self.all_products.scalars()
-        return [
-            {
-                'id': product.id,
-                'name': product.name,
-                'price': product.price,
-                'old_price': product.old_price
-            } for product in db_products_scalars
-        ]
+        return db_products_scalars.all()
 
     @staticmethod
     def match_product_name(product_id: int):

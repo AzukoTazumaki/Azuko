@@ -9,6 +9,7 @@ function js() {
     'js/preloader.js',
     'js/projects.js',
     'node_modules/amplitudejs/dist/amplitude.js',
+    'node_modules/amplitudejs/dist/visualizations/circular-equalizer.js',
     'js/songs.js',
     'js/main.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'

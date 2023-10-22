@@ -88,9 +88,10 @@ async def albums_playlist(request: Request, album_id: int):
 
 @app.get("/playlist/singles", response_class=HTMLResponse)
 async def singles_playlist(request: Request):
-    db_projects = SelectProjects()
+    db_singles = SelectProjects()
+    singles = db_singles.select_singles()
     return templates.TemplateResponse(
-        "playlist_content/singles.html", {"request": request, "singles": db_projects.select_singles()}
+        "playlist_content/singles.html", {"request": request, "singles": singles}
     )
 
 

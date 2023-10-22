@@ -5,17 +5,18 @@
 }
 
 .product_card_info {
+    min-height: 25vh;
     background-color: var(--dark-gray-rgb);
     padding: 20px;
 }
 
 .product_card_info p {
-    list-style-type: ' — ';
     color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
 }
 
 .product_card_info ul {
+    list-style-type: ' — ';
     font-size: 1.2em;
     color: var(--light-gray-azuko-rgb);
     font-weight: 300;

@@ -1,4 +1,6 @@
 const audio_albums_path = '/static/audio/albums'
+const audio_singles_path = '/static/audio/singles'
+const singles_covers_path = '/static/images/projects/singles'
 
 const albums = {
     fbn_songs: {
@@ -79,7 +81,42 @@ const albums = {
         album_title: 'Life Is Full Of Lies',
         audio_dir: audio_albums_path + '/life_is_full_of_lies',
         cover: audio_albums_path + '/life_is_full_of_lies' + '/cover.jpg'
-    }, 
+    }
+}
+
+const singles = {
+    track_name: [
+        'FADED.', 'Supposed To Be', 'For Another', 'Dead For You', 'Лавина', 'Эйфория', 'Секси!', 'Киборг', 'Highway Of Love',
+        'Время', 'Тени', 'Я Скучаю', 'Первый Снег', 'Make Choice', 'Believe', 'Stars', 'Out The Way', 'Kill Me Now', 'Reason',
+        'Quarantine', 'Long Way', 'Breakdown', 'Can We Be Together?', 'What You Want From Love?', 'I Was Need A Break', 'How Am I Lost?', 
+        'Far From Home', 'Tonight', 'Deadmans', 'Bad Bad Bad', 'Starry Sky', 'Do You Love Me?', 'Slatt Talk', 'Happy New Year', 
+        'I Got Some Move', 'Что ты сделал?', 'wassup, girl', 'Не Сдавайся', 'momma tell me', 'Heart Is a Full Of Lies', 'Time Is Sad With Every Day', 
+        '730, oh yeah', 'dr. stone', 'never want dat kind of love', 'diamonds dance', 'in the space', '448!', 'Before', 'where we go?', 'smith & wesson', 
+        "takin 'n' takin", 'look like pearl', "that's for love", 'meet the girl', 'You No Lit'
+    ],        
+    track_number: 55,
+    track_artist: [
+        'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 
+        'Azuko, СЭТ ГРАНЖ', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo, Noicat', 'Azuko', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 
+        'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Bobby D', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 
+        'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, FARO', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Brayke', 
+        'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 
+    ],
+    album_title: 'Singles',
+    audio_dir: audio_singles_path,
+    cover: [
+        singles_covers_path + '/1.jpg', singles_covers_path + '/4.jpg', singles_covers_path + '/13.jpg', singles_covers_path + '/15.jpg', singles_covers_path + '/16.jpg', 
+        singles_covers_path + '/29.jpg', singles_covers_path + '/31.jpg', singles_covers_path + '/34.jpg', singles_covers_path + '/35.jpg', singles_covers_path + '/36.jpg', 
+        singles_covers_path + '/37.jpg', singles_covers_path + '/38.jpg', singles_covers_path + '/39.jpg', singles_covers_path + '/42.jpg', singles_covers_path + '/43.jpg', 
+        singles_covers_path + '/44.jpg', singles_covers_path + '/45.jpg', singles_covers_path + '/46.jpg', singles_covers_path + '/47.jpg', singles_covers_path + '/48.jpg', 
+        singles_covers_path + '/65.jpg', singles_covers_path + '/67.jpg', singles_covers_path + '/69.jpg', singles_covers_path + '/72.jpg', singles_covers_path + '/73.jpg', 
+        singles_covers_path + '/77.jpg', singles_covers_path + '/79.jpg', singles_covers_path + '/83.jpg', singles_covers_path + '/85.jpg', singles_covers_path + '/87.jpg',
+        singles_covers_path + '/89.jpg', singles_covers_path + '/90.jpg', singles_covers_path + '/91.jpg', singles_covers_path + '/92.jpg', singles_covers_path + '/99.jpg', 
+        singles_covers_path + '/100.jpg', singles_covers_path + '/101.jpg', singles_covers_path + '/102.jpg', singles_covers_path + '/104.jpg', singles_covers_path + '/111.jpg',
+        singles_covers_path + '/119.jpg', singles_covers_path + '/122.jpg', singles_covers_path + '/123.jpg', singles_covers_path + '/124.jpg', singles_covers_path + '/125.jpg',
+        singles_covers_path + '/126.jpg', singles_covers_path + '/127.jpg', singles_covers_path + '/128.jpg', singles_covers_path + '/129.jpg', singles_covers_path + '/130.jpg', 
+        singles_covers_path + '/131.jpg', singles_covers_path + '/132.jpg', singles_covers_path + '/133.jpg', singles_covers_path + '/134.jpg', singles_covers_path + '/135.jpg',
+    ]
 }
 
 const all_songs = []
@@ -124,6 +161,15 @@ const all_playlists = {
         title: 'Life Is Full Of Lies',
         author: 'Azuko'
     },
+    'Singles': {
+        songs: [
+            126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 
+            148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 
+            170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180
+        ],
+        title: 'Singles',
+        author: 'Azuko'
+    }
 }
     
 for (album in albums) {
@@ -146,4 +192,14 @@ for (album in albums) {
             })
         }
     }
+}
+
+for (let index = 0; index < singles.track_number; index++) {
+    all_songs.push({
+        "name": singles.track_name[index],
+        "artist": singles.track_artist[index],
+        "album": singles.album_title,
+        "url": singles.audio_dir + '/' + `${index}` + '.mp3',
+        "cover_art_url": singles.cover[index]
+    })
 }
