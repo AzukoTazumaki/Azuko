@@ -1,7 +1,6 @@
 .player_part_center,
 .player_part_left,
 .player_part_right {
-    /* background: linear-gradient(115deg, var(--dark-gray-rgb) 0%, var(--dark-gray-azuko-rgb) 100%); */
     background-color: var(--dark-gray-rgb);
     box-shadow: 2px 2px 15px var(--darker-gray-azuko-rgb);
 }
@@ -227,11 +226,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
     width: 4vw;
 }
 
-.active_song {
-    background-color: var(--periwinkle-purple-rgba);
-}
-
-#bg_singles_video {
+#bg_singles_featurings_video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -241,6 +236,5 @@ input[type="range"]:focus::-webkit-slider-thumb {
     top: 0;
     bottom: 0;
     z-index: -1;
-    filter: 
-        hue-rotate(20deg);
+    filter: hue-rotate(25deg);
 }

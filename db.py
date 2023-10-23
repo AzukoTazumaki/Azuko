@@ -68,7 +68,17 @@ class SelectProjects(InitEngine):
         return result
 
     def select_featurings(self):
-        return self.all_featurings.scalars()
+        result = [
+            {
+                'id': featuring.id,
+                'title': featuring.title,
+                'date_release': featuring.date_release.strftime('%d %B %Y'),
+                'artists': featuring.artists,
+                'duration': f'{str(featuring.duration).split(":")[0]}:{str(featuring.duration).split(":")[1]}',
+                'text': featuring.text
+            } for featuring in self.all_featurings.scalars()
+        ]
+        return result
 
     def select_last_releases(self):
         last_releases = []

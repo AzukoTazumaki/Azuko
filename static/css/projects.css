@@ -12,7 +12,6 @@
 }
 
 .project_slider_button {
-    font-family: 'Unbounded';
     padding: 1vh 5vw;
     border: none;
     font-size: 1.4em;
@@ -152,25 +151,25 @@
 
 .carousel_left_part {
     margin-left: 12vw;
-    margin-right: 5vw;
+    margin-right: 8vw;
 }
 
-.carousel_left_part h3 {
+.carousel_left_part span {
+    font-size: 1.4em;
+    font-weight: bold;
     text-align: center;
-    padding: 1vh 0;
+    padding: 1vh 5vw;
     color: var(--white-rgb);
     text-shadow: var(--black-shadow);
     background-color: var(--periwinkle-purple-rgb);
     box-shadow: 2px 2px 10px var(--dark-gray-azuko-rgb);
     border-radius: 10px;
-    font-family: 'Unbounded';
 }
 
 .carousel_left_part p {
     font-size: 1.3em;
     color: var(--white-rgb);
     text-shadow: var(--black-shadow);
-    font-family: 'Unbounded';
 }
 
 .carousel_right_part {

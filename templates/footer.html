@@ -14,10 +14,10 @@
                         <p class="footer_title">MENU</p>
                         <hr>
                         <ul>
-                            {% set menu = ['Home', 'Playlist', 'Projects', 'Products'] %}
+                            {% set menu = ['home', 'playlist', 'projects', 'products', 'extras', 'shopping cart'] %}
                             {% for footer_link in menu %}
-                            <a href="/" class="footer_link">
-                                <li>{{ footer_link }}</li>
+                            <a href="/{{ footer_link }}" class="footer_link">
+                                <li>{{ footer_link|capitalize }}</li>
                             </a>
                             {% endfor %}
                         </ul>
@@ -27,9 +27,9 @@
                         <p class="footer_title">PRODUCTS</p>
                         <hr>
                         <ul>
-                            {% set products = ['Beats', 'Mixing', 'Mastering'] %}
+                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering'] %}
                             {% for footer_link in products %}
-                            <a href="/" class="footer_link">
+                            <a href="/products#product_{{ loop.index }}" class="footer_link">
                                 <li>{{ footer_link }}</li>
                             </a>
                             {% endfor %}
@@ -58,14 +58,14 @@
                         <p class="footer_title">PLAYLIST</p>
                         <hr>
                         <ul>
-                            {% set projects = [
-                            {'name': 'Albums', 'url': 'albums'},
+                            {% set playlist = [
+                            {'name': 'Albums', 'url': '#albums'},
                             {'name': 'Singles', 'url': 'singles'},
                             {'name': 'Featurings', 'url': 'featurings'}
                             ]
                             %}
-                            {% for footer_link in projects %}
-                            <a href="/{{ footer_link.url }}" class="footer_link">
+                            {% for footer_link in playlist %}
+                            <a href="/playlist/{{ footer_link.url }}" class="footer_link">
                                 <li>{{ footer_link.name }}</li>
                             </a>
                             {% endfor %}

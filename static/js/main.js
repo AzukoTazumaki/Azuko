@@ -9,7 +9,7 @@ try {
             37: 'prev'
         },
         songs: all_songs,
-        volume: 35,
+        volume: 15,
         debug: true,
         callbacks: {
             play: function () {
@@ -29,7 +29,7 @@ try {
     shuffle_button.addEventListener('click', () => {
         if (shuffle_button.style.color == 'var(--white-rgb)') {
             shuffle_button.style.color = 'var(--periwinkle-purple-rgb)'
-            shuffle_button.style.textShadow = 'none'
+            shuffle_button.style.textShadow = 'var(--black-shadow)'
         } else {
             shuffle_button.style.color = 'var(--white-rgb)'
             shuffle_button.style.textShadow = 'var(--white-shadow)'
@@ -42,7 +42,7 @@ try {
     repeat_button.addEventListener('click', () => {
         if (repeat_button.style.color == 'var(--white-rgb)') {
             repeat_button.style.color = 'var(--periwinkle-purple-rgb)'
-            repeat_button.style.textShadow = 'none'
+            repeat_button.style.textShadow = 'var(--black-shadow)'
         } else {
             repeat_button.style.color = 'var(--white-rgb)'
             repeat_button.style.textShadow = 'var(--white-shadow)'

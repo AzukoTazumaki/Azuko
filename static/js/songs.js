@@ -1,6 +1,8 @@
 const audio_albums_path = '/static/audio/albums'
 const audio_singles_path = '/static/audio/singles'
+const audio_featurings_path = '/static/audio/featurings'
 const singles_covers_path = '/static/images/projects/singles'
+const featurings_covers_path = '/static/images/projects/featurings'
 
 const albums = {
     fbn_songs: {
@@ -99,7 +101,7 @@ const singles = {
         'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 
         'Azuko, СЭТ ГРАНЖ', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo, Noicat', 'Azuko', 'Azuko, 88Ringo', 'Azuko', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 
         'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko, 88Ringo', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Bobby D', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 
-        'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, FARO', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Brayke', 
+        'Azuko', 'Azuko', 'Azuko', 'Azuko, FARO', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko, Brayke', 
         'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 'Azuko', 
     ],
     album_title: 'Singles',
@@ -116,6 +118,26 @@ const singles = {
         singles_covers_path + '/119.jpg', singles_covers_path + '/122.jpg', singles_covers_path + '/123.jpg', singles_covers_path + '/124.jpg', singles_covers_path + '/125.jpg',
         singles_covers_path + '/126.jpg', singles_covers_path + '/127.jpg', singles_covers_path + '/128.jpg', singles_covers_path + '/129.jpg', singles_covers_path + '/130.jpg', 
         singles_covers_path + '/131.jpg', singles_covers_path + '/132.jpg', singles_covers_path + '/133.jpg', singles_covers_path + '/134.jpg', singles_covers_path + '/135.jpg',
+    ]
+}
+
+const featurings = {
+    track_name: [
+        'Супермен', 'Мы не играем в любовь (Remix)', 'Bitch Live In Texas', 'Половина обезбола', 'МЫ НЕ ИГРАЕМ В ЛЮБОВЬ', 
+        'Тсукуёми', 'Bad Bitch', 'Марихуана', 'Космос 2', 'Tanjiro Kamado (Remix)'
+    ],        
+    track_number: 10,
+    track_artist: [
+        'ICYWAVE, Azuko', 'ICYWAVE, Azuko', 'Flipboy, Azuko', 'Flipboy, Azuko', 'ICYWAVE, Azuko', 'Blant, Azuko', 
+        'YUNG ROUZY, Azuko', 'YUNG ROUZY, Azuko', 'Свиридов, ICYWAVE, Azuko', 'YUNG ROUZY, Azuko'
+    ],
+    album_title: 'Featurings',
+    audio_dir: audio_featurings_path,
+    cover: [
+        featurings_covers_path + '/2.jpg', featurings_covers_path + '/3.jpg', featurings_covers_path + '/14.jpg',
+        featurings_covers_path + '/30.jpg', featurings_covers_path + '/32.jpg', featurings_covers_path + '/33.jpg',
+        featurings_covers_path + '/40.jpg', featurings_covers_path + '/41.jpg', featurings_covers_path + '/49.jpg',
+        featurings_covers_path + '/103.jpg',
     ]
 }
 
@@ -169,6 +191,13 @@ const all_playlists = {
         ],
         title: 'Singles',
         author: 'Azuko'
+    },
+    'Featurings': {
+        songs: [
+            181, 182, 183, 184, 185, 186, 187, 188, 189, 190
+        ],
+        title: 'Featurings',
+        author: 'Azuko'
     }
 }
     
@@ -198,8 +227,16 @@ for (let index = 0; index < singles.track_number; index++) {
     all_songs.push({
         "name": singles.track_name[index],
         "artist": singles.track_artist[index],
-        "album": singles.album_title,
         "url": singles.audio_dir + '/' + `${index}` + '.mp3',
         "cover_art_url": singles.cover[index]
+    })
+}
+
+for (let index = 0; index < featurings.track_number; index++) {
+    all_songs.push({
+        "name": featurings.track_name[index],
+        "artist": featurings.track_artist[index],
+        "url": featurings.audio_dir + '/' + `${index}` + '.mp3',
+        "cover_art_url": featurings.cover[index]
     })
 }

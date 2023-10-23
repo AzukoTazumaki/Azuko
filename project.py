@@ -81,17 +81,24 @@ async def playlist(request: Request):
 @app.get("/playlist/albums/{album_id}", response_class=HTMLResponse)
 async def albums_playlist(request: Request, album_id: int):
     db_projects = SelectProjects()
+    one_album = db_projects.select_one_album(album_id)
     return templates.TemplateResponse(
-        "playlist_content/albums.html", {"request": request, "album": db_projects.select_one_album(album_id)}
+        "playlist_content/albums.html", {"request": request, "album": one_album}
     )
 
 
-@app.get("/playlist/singles", response_class=HTMLResponse)
-async def singles_playlist(request: Request):
-    db_singles = SelectProjects()
-    singles = db_singles.select_singles()
+@app.get("/playlist/{project_name}", response_class=HTMLResponse)
+async def singles_playlist(request: Request, project_name: str):
+    tracks = None
+    playlist_title = project_name.capitalize()
+    db_projects = SelectProjects()
+    if project_name == 'singles':
+        tracks = db_projects.select_singles()
+    elif project_name == 'featurings':
+        tracks = db_projects.select_featurings()
     return templates.TemplateResponse(
-        "playlist_content/singles.html", {"request": request, "singles": singles}
+        "playlist_content/singles_featurings.html",
+        {"request": request, "tracks": tracks, "title": playlist_title}
     )
 
 

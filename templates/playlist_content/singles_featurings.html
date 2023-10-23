@@ -1,0 +1,142 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="singles_featurings_playlist">
+
+    {% include 'bg_video.html' %}
+
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-items-center column-gap-5 vh-100">
+
+            <div class="col-3 player_part_left px-0">
+                <div class="song_title">
+                    <h5 class="text-center fw-bold m-0 song_title_name" data-amplitude-song-info="name"
+                    data-amplitude-playlist="{{ title }}"></h5>
+                </div>
+                <div class="player_part_left_inside">
+                    {% for track in tracks | sort(attribute='id') %}
+                        {% if track.text[0].lyrics is not none and track.text[0].lyrics != ' ' %}
+                            <p class="text-start m-0 song_lyrics" data-lyrics-song="{{ track.title }}">
+
+                            {% set lines = track.text[0].lyrics.split('\n') %}
+
+                            {% for line in lines %}
+                                {% if loop.index == 1 %}
+                                    {{ line }}
+                                {% else %}
+                                    {{ line }}<br>
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+
+                        {% else %}
+                        <div class="d-flex justify-content-center align-items-center song_lyrics">
+                            <h2 class="song_lyrics mb-0" data-lyrics-song="{{ track.title }}" style="margin-top: 21vh;">NO LYRICS.</h2>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-3 player_part_center">
+
+                <img loading="lazy" class="album_art w-100" data-amplitude-song-info="cover_art_url">
+
+                <div class="d-flex flex-column align-items-center mt-2 mb-0">
+                    <span class="song_name" data-amplitude-song-info="name"
+                        data-amplitude-playlist="{{ title }}"></span>
+                    <span class="song_artist" data-amplitude-song-info="artist"
+                        data-amplitude-playlist="{{ title }}"></span>
+                </div>
+
+                <input type="range" class="amplitude-song-slider w-100" step=".1" />
+                <div class="d-flex justify-content-between">
+                    <span class="amplitude-current-time song_current_time"
+                        data-amplitude-playlist="{{ title }}"></span>
+                    <span class="amplitude-duration-time song_duration_time"
+                        data-amplitude-playlist="{{ title }}"></span>
+                </div>
+
+                <div class="row d-flex justify-content-between align-items-center mt-2">
+
+                    <div class="col-3 d-flex justify-content-center">
+                        <button class="amplitude-repeat mx-2 repeat_song_button"
+                            data-amplitude-playlist="{{ title }}">
+                            <i class="fa-solid fa-repeat fa-lg"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-3 d-flex justify-content-between align-items-center px-0">
+                        <button class="amplitude-prev previous_song_button" data-amplitude-playlist="{{ title }}">
+                            <i class="fa-solid fa-backward-step fa-xl"></i>
+                        </button>
+                        <button class="amplitude-play-pause play_pause_song_button"
+                            data-amplitude-playlist="{{ title }}">
+                            <i class="fa-solid fa-circle-play fa-2xl play_pause_icon"></i>
+                        </button>
+                        <button class="amplitude-next next_song_button" data-amplitude-playlist="{{ title }}">
+                            <i class="fa-solid fa-forward-step fa-xl"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-3 d-flex justify-content-center">
+                        <button class="amplitude-shuffle shuffle_song_button"
+                            data-amplitude-playlist="{{ title }}">
+                            <i class="fa-solid fa-shuffle fa-lg"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-3 d-flex justify-content-end align-items-center px-0">
+                        <button class="amplitude-mute volume_song_button">
+                            <i class="fa-solid fa-volume-off fa-xl volume_song_icon"></i>
+                        </button>
+                    </div>
+                    <div class="col-6 d-flex align-items-center px-0">
+                        <input type="range" class="amplitude-volume-slider volume_slider w-100" />
+                    </div>
+                    <div class="col-3 d-flex justify-content-start align-items-center px-0">
+                        <span class="volume_percentage fw-bold">15</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-3 player_part_right px-0">
+                <div class="playlist">
+                    <h5 class="fw-bold m-0 p-0" data-amplitude-playlist="{{ title }}">
+                        {{ title|upper }}
+                    </h5>
+                </div>
+                <div class="player_part_right_inside">
+                    {% for track in tracks | sort(attribute='id') %}
+                    <div class="d-flex justify-content-between song amplitude-play amplitude-song-container" data-amplitude-song-index="{{ loop.index - 1 }}" data-amplitude-playlist="{{ title }}">
+                        <div class="d-flex">
+                            <img loading="lazy" class="song_cover" src="{{url_for('static', path='/images/projects/' ~ title ~ '/' ~ track.id|string ~ '.jpg')}}">
+                            <div class="d-flex flex-column justify-content-center mx-2">
+                                <div>
+                                    <span data-amplitude-song-index="{{ loop.index - 1 }}" data-amplitude-playlist="{{ title }}">
+                                    {{ track.title }}
+                                    </span>
+                                </div>
+                                <span class="playlist_song_artist">
+                                    {% for artist in track.artists | sort(attribute='name') %}
+                                    {{ artist.name + ', ' if not loop.last else artist.name }}
+                                    {% endfor %}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mx-3">
+                            <span>{{ track.duration }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
