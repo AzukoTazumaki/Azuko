@@ -1,6 +1,6 @@
 __pycache__
 .idea
 .DS_Store
-static/node_modules
-compose.yaml
+src/node_modules
 .env
+db_data

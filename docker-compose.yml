@@ -1,0 +1,40 @@
+version: '3'
+services:
+  web:
+    image: nginx:stable-alpine3.17
+    volumes:
+      - ./config/nginx.conf:/etc/nginx.conf:ro
+      - ./templates:/usr/share/nginx/html
+    ports:
+      - '8000:80'
+    container_name: web
+
+  db:
+    image: postgres:alpine3.18
+    volumes:
+      - ./db_data:/Library/PostgreSQL/16/doc/postgresql
+    env_file:
+      - .env
+    environment:
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - '54032:5432'
+    container_name: postgres
+
+  python:
+    build:
+      context: .
+      dockerfile: .docker/backend/Dockerfile
+    volumes:
+      - ./src/static:/app/src/static
+      - ./models:/app/models
+    container_name: python
+
+  node:
+    build:
+      context: .
+      dockerfile: .docker/frontend/Dockerfile
+    container_name: node

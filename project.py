@@ -9,7 +9,7 @@ from db import SelectProjects
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/src/static", StaticFiles(directory="src/static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 

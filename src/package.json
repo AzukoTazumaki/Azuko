@@ -4,7 +4,8 @@
   "description": "Site of artist",
   "main": "static/js/main.js",
   "scripts": {
-    "gulp": "gulp js_css"
+    "gulp": "gulp js_css",
+    "gulp_watch": "gulp js_css_watch"
   },
   "keywords": [
     "Azuko"
@@ -13,8 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "amplitudejs": "^5.3.2",
-    "bootstrap": "^5.3.0-alpha3",
-    "swiper": "^10.3.1"
+    "bootstrap": "^5.3.0-alpha3"
   },
   "devDependencies": {
     "gulp": "^4.0.2",

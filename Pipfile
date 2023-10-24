@@ -8,7 +8,6 @@ fastapi = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 jinja2 = "*"
 python-dotenv = "*"
-mysql-connector-python = "*"
 sqlalchemy = "*"
 psycopg2 = "*"
 alembic = "*"
