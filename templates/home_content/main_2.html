@@ -3,22 +3,20 @@
     <span class="position-absolute" style="margin-top: 20vh;" id="main-2"></span>
     <div class="container-fluid">
         <div class="row d-flex align-items-center main-2-row">
-            <div class="row gap-4 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center">
                 <div class="col-12 d-flex justify-content-center">
                     <p class="last_releases_title text-center">LAST RELEASES</p>
                 </div>
                 {% for release in last_releases %}
-                <div class="col-3 p-4">
+                <div class="col-3 p-5">
                     <div class="last_release">
-                        <a href="/">
-                            {% if release.is_album %}
-                            <img loading="lazy" src="{{ url_for('static', path='/images/projects/albums/covers/'+release.id|string+'.jpg') }}"
-                                class="card-img-top img_release" alt="{{ release.title }}">
-                            {% else %}
-                            <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+release.id|string+'.jpg') }}"
-                                class="card-img-top img_release" alt="{{ release.title }}">
-                            {% endif %}
-                        </a>
+                        {% if release.is_album %}
+                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/albums/covers/'+release.id|string+'.jpg') }}"
+                            class="card-img-top img_release" alt="{{ release.title }}">
+                        {% else %}
+                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+release.id|string+'.jpg') }}"
+                            class="card-img-top img_release" alt="{{ release.title }}">
+                        {% endif %}
                         <div class="release_info">
                             <p class="m-0 text-center release_title">{{ release.title }}</p>
                             <p class="m-0 text-center release_artist">

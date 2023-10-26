@@ -39,3 +39,9 @@
     text-shadow: 1px 1px 3px var(--tiger-orange-rgb);
     font-weight: 600;
 }
+
+.product_card_info .old_price {
+    color: var(--dark-gray-rgb);
+    text-shadow: var(--dark-gray-azuko-shadow);
+    font-size: .8em;
+}

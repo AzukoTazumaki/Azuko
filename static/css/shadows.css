@@ -1,4 +1,5 @@
 :root {
+    --dark-gray-azuko-shadow: 1px 1px 2px rgb(37, 37, 37); 
     --black-shadow: 1px 1px 2px rgb(0, 0, 0); 
     --night-shadow: 1px 1px 2px rgb(12, 9, 10); 
     --charcoal-shadow: 1px 1px 2px rgb(52, 40, 44); 

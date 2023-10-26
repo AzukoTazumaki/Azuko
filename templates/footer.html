@@ -10,11 +10,11 @@
 
             <div class="col-8">
                 <div class="row">
-                    <div class="col-3 footer_col text-uppercase">
+                    <div class="col-4 footer_col text-uppercase">
                         <p class="footer_title">MENU</p>
                         <hr>
                         <ul>
-                            {% set menu = ['home', 'playlist', 'projects', 'products', 'extras', 'shopping cart'] %}
+                            {% set menu = ['home', 'playlist', 'projects', 'products', 'extras'] %}
                             {% for footer_link in menu %}
                             <a href="/{{ footer_link }}" class="footer_link">
                                 <li>{{ footer_link|capitalize }}</li>
@@ -23,20 +23,20 @@
                         </ul>
                     </div>
 
-                    <div class="col-3 footer_col text-uppercase">
+                    <div class="col-4 footer_col text-uppercase">
                         <p class="footer_title">PRODUCTS</p>
                         <hr>
                         <ul>
                             {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering'] %}
                             {% for footer_link in products %}
-                            <a href="/products#product_{{ loop.index }}" class="footer_link">
+                            <a href="/products/{{ loop.index }}" class="footer_link">
                                 <li>{{ footer_link }}</li>
                             </a>
                             {% endfor %}
                         </ul>
                     </div>
 
-                    <div class="col-3 footer_col text-uppercase">
+                    <div class="col-4 footer_col text-uppercase">
                         <p class="footer_title">PROJECTS</p>
                         <hr>
                         <ul>
@@ -54,7 +54,7 @@
                         </ul>
                     </div>
 
-                    <div class="col-3 footer_col text-uppercase">
+                    <div class="col-4 footer_col text-uppercase">
                         <p class="footer_title">PLAYLIST</p>
                         <hr>
                         <ul>
@@ -72,30 +72,39 @@
                         </ul>
                     </div>
 
-                    <div class="col-12 row-gap-1 footer_col text-uppercase">
+                    <div class="col-4 footer_col text-uppercase">
+                        <p class="footer_title">PRODUCTS FAQ</p>
+                        <hr>
+                        <ul>
+                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering'] %}
+                            {% for footer_link in products %}
+                            <a href="/products#product_{{ loop.index }}" class="footer_link">
+                                <li>About {{ footer_link }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="col-4 row-gap-1 footer_col text-uppercase">
                         <p class="footer_title">ALBUMS</p>
                         <hr>
-                        <div class="row d-flex flex-wrap justify-content-between align-items-center">
-                            {% set albums = [
-                            {'name': 'FUNNY but NOBODY', 'url': 'playlist/albums/1'},
-                            {'name': 'with love from Azuko', 'url': 'playlist/albums/2'},
-                            {'name': 'ВРЕМЯ ПЕРЕМЕН', 'url': '3'},
-                            {'name': 'Highway Of Love (Deluxe)', 'url': 'playlist/albums/4'},
-                            {'name': 'Highway Of Love', 'url': 'playlist/albums/5'},
-                            {'name': 'Mileran Vibes', 'url': 'playlist/albums/6'},
-                            {'name': 'Life Is Full Of Lies 2', 'url': 'playlist/albums/7'},
-                            {'name': 'Life Is Full Of Lies', 'url': 'playlist/albums/8'}
-                            ]
-                            %}
-                            {% for album in albums %}
-                            <div class="col-3">
-                                <a href="/{{ album.url }}" class="footer_link">
-                                    <p class="m-0 text-center">{{ album.name }}</p>
-                                </a>
-                            </div>
-                            {% endfor %}
-                        </div>
+                        {% set albums = [
+                        {'name': 'FUNNY but NOBODY', 'url': 'playlist/albums/1'},
+                        {'name': 'with love from Azuko', 'url': 'playlist/albums/2'},
+                        {'name': 'ВРЕМЯ ПЕРЕМЕН', 'url': '3'},
+                        {'name': 'Highway Of Love (Deluxe)', 'url': 'playlist/albums/4'},
+                        {'name': 'Highway Of Love', 'url': 'playlist/albums/5'},
+                        {'name': 'Mileran Vibes', 'url': 'playlist/albums/6'},
+                        {'name': 'Life Is Full Of Lies 2', 'url': 'playlist/albums/7'}
+                        ]
+                        %}
+                        {% for album in albums %}
+                        <a href="/{{ album.url }}" class="footer_link">
+                            <p class="m-0 text-center">{{ album.name }}</p>
+                        </a>
+                        {% endfor %}
                     </div>
+                    
                 </div>
             </div>
 

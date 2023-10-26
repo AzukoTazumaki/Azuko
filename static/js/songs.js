@@ -73,16 +73,6 @@ const albums = {
         album_title: 'Life Is Full Of Lies 2 (Before Love Story)',
         audio_dir: audio_albums_path + '/life_is_full_of_lies_2',
         cover: audio_albums_path + '/life_is_full_of_lies_2' + '/cover.jpg'
-    }, 
-    lfl_songs : {
-        track_name: ['The So Froze To You (Intro) ', 'So, Where?', 'Early Bird', 'Bang!', 'Idle Heroes', 'Never Give Up!', 'Milly Rock!', 
-        'I Hope...', 'Hip-Hop Never Dead', 'Good Vibes', 'Many People', 'What They Think?', 'LLC', 'Seven Need A Love', 'Tiny Skiff', 
-        'Thanks, God', 'Trip In My Head', 'Take Her Out', "Don't Lose Your Chance"],        
-        track_number: 19,
-        track_artist: 'Azuko',
-        album_title: 'Life Is Full Of Lies',
-        audio_dir: audio_albums_path + '/life_is_full_of_lies',
-        cover: audio_albums_path + '/life_is_full_of_lies' + '/cover.jpg'
     }
 }
 
@@ -178,23 +168,19 @@ const all_playlists = {
         title: 'Life Is Full Of Lies 2 (Before Love Story)',
         author: 'Azuko'
     },
-    'Life Is Full Of Lies': {
-        songs: [107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125],
-        title: 'Life Is Full Of Lies',
-        author: 'Azuko'
-    },
     'Singles': {
         songs: [
-            126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 
-            148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 
-            170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180
+            107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 
+            124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 
+            141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 
+            158, 159, 160, 161
         ],
         title: 'Singles',
         author: 'Azuko'
     },
     'Featurings': {
         songs: [
-            181, 182, 183, 184, 185, 186, 187, 188, 189, 190
+            162, 163, 164, 165, 166, 167, 168, 169, 170, 171
         ],
         title: 'Featurings',
         author: 'Azuko'

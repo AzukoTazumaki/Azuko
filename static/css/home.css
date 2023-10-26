@@ -65,7 +65,7 @@
 .who_is_azuko .who_is_azuko_img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    filter: grayscale(.5);
+    filter: grayscale(1);
 }
 
 .who_is_azuko_div {
@@ -85,8 +85,8 @@
 .who_is_azuko_description {
     font-size: 1.1em;
     text-shadow: var(--black-shadow);
-    font-weight: 700;
-    text-align: center;
+    font-weight: 200;
+    text-align: start;
     background-color: var(--dark-gray-azuko-rgb);
     padding: 15px;
     border-bottom-left-radius: 10px;
@@ -168,4 +168,8 @@
     color: var(--dark-gray-rgb);
     text-shadow: var(--dark-gray-shadow);
     font-size: 1em;
+}
+
+.img_release {
+    border-radius: 20px !important;
 }

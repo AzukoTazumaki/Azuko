@@ -6,6 +6,7 @@ from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 from models.models import InitDatabase
 from db import SelectProjects
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 app = FastAPI()
 
@@ -105,6 +106,12 @@ def singles_playlist(request: Request, project_name: str):
 @app.get("/order", response_class=HTMLResponse)
 def order(request: Request):
     return templates.TemplateResponse("order.html", {"request": request})
+
+
+@app.exception_handler(StarletteHTTPException)
+async def my_custom_exception_handler(request: Request, exception: StarletteHTTPException):
+    if exception.status_code == 404:
+        return templates.TemplateResponse('404.html', {'request': request})
 
 
 if __name__ == '__main__':
