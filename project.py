@@ -9,13 +9,13 @@ from db import SelectProjects
 
 app = FastAPI()
 
-app.mount("/src/static", StaticFiles(directory="src/static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
 
 # @app.on_event('startup')
-# async def startup():
+# def startup():
 #     init_db = InitDatabase()
 #     init_db.create_db_and_tables()
 #     init_db.create_projects()
@@ -23,12 +23,12 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/", response_class=RedirectResponse)
-async def index():
+def index():
     return '/home'
 
 
 @app.get("/home", response_class=HTMLResponse)
-async def index(request: Request):
+def index(request: Request):
     db_projects = SelectProjects()
     last_releases = db_projects.select_last_releases()
     products_list = db_projects.select_products()
@@ -40,7 +40,7 @@ async def index(request: Request):
 
 
 @app.get("/products", response_class=HTMLResponse)
-async def products(request: Request):
+def products(request: Request):
     db_projects = SelectProjects()
     products_list = db_projects.select_products()
     return templates.TemplateResponse(
@@ -49,7 +49,7 @@ async def products(request: Request):
 
 
 @app.get("/products/{product_id}", response_class=HTMLResponse)
-async def albums_playlist(request: Request, product_id: int):
+def albums_playlist(request: Request, product_id: int):
     db = SelectProjects()
     product = db.select_one_product(product_id)
     return templates.TemplateResponse(
@@ -58,7 +58,7 @@ async def albums_playlist(request: Request, product_id: int):
 
 
 @app.get("/projects", response_class=HTMLResponse)
-async def projects(request: Request):
+def projects(request: Request):
     db_projects = SelectProjects()
     albums = db_projects.select_all_albums()
     singles = db_projects.select_singles()
@@ -74,12 +74,12 @@ async def projects(request: Request):
 
 
 @app.get("/playlist", response_class=HTMLResponse)
-async def playlist(request: Request):
+def playlist(request: Request):
     return templates.TemplateResponse("playlist_content/playlist.html", {'request': request})
 
 
 @app.get("/playlist/albums/{album_id}", response_class=HTMLResponse)
-async def albums_playlist(request: Request, album_id: int):
+def albums_playlist(request: Request, album_id: int):
     db_projects = SelectProjects()
     one_album = db_projects.select_one_album(album_id)
     return templates.TemplateResponse(
@@ -88,7 +88,7 @@ async def albums_playlist(request: Request, album_id: int):
 
 
 @app.get("/playlist/{project_name}", response_class=HTMLResponse)
-async def singles_playlist(request: Request, project_name: str):
+def singles_playlist(request: Request, project_name: str):
     tracks = None
     playlist_title = project_name.capitalize()
     db_projects = SelectProjects()
@@ -102,9 +102,9 @@ async def singles_playlist(request: Request, project_name: str):
     )
 
 
-@app.get("/test", response_class=HTMLResponse)
-async def test(request: Request):
-    return templates.TemplateResponse("test.html", {"request": request})
+@app.get("/order", response_class=HTMLResponse)
+def order(request: Request):
+    return templates.TemplateResponse("order.html", {"request": request})
 
 
 if __name__ == '__main__':

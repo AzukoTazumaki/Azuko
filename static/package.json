@@ -4,8 +4,7 @@
   "description": "Site of artist",
   "main": "static/js/main.js",
   "scripts": {
-    "gulp": "gulp js_css",
-    "gulp_watch": "gulp js_css_watch"
+    "gulp": "gulp js_css"
   },
   "keywords": [
     "Azuko"

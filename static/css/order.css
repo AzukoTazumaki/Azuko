@@ -1,0 +1,9 @@
+.order_available_soon_text {
+    font-size: 5vh;
+    font-weight: 300;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--periwinkle-purple-shadow);
+    background-color: var(--dark-gray-rgba);
+    padding: 1vh 3vw;
+    border-radius: 10px;
+}
