@@ -4,3 +4,5 @@ __pycache__
 src/node_modules
 environment/.env
 db_data
+alembic.ini
+migrations
