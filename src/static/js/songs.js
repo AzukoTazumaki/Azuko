@@ -1,8 +1,8 @@
-const audio_albums_path = '/static/audio/albums'
-const audio_singles_path = '/static/audio/singles'
-const audio_featurings_path = '/static/audio/featurings'
-const singles_covers_path = '/static/images/projects/singles'
-const featurings_covers_path = '/static/images/projects/featurings'
+const audio_albums_path = '/src/static/audio/albums'
+const audio_singles_path = '/src/static/audio/singles'
+const audio_featurings_path = '/src/static/audio/featurings'
+const singles_covers_path = '/src/static/images/projects/singles'
+const featurings_covers_path = '/src/static/images/projects/featurings'
 
 const albums = {
     fbn_songs: {

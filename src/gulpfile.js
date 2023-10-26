@@ -4,31 +4,32 @@ let concat = require('gulp-concat');
 let concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 
-task('js', done => {
-  src([
-    'static/js/preloader.js',
-    'static/js/projects.js',
-    'node_modules/amplitudejs/dist/amplitude.js',
-    'static/js/songs.js',
-    'static/js/main.js',
-    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+function js() {
+  return src([
+    'src/static/js/preloader.js',
+    'src/static/js/projects.js',
+    'src/node_modules/amplitudejs/dist/amplitude.js',
+    'src/static/js/songs.js',
+    'src/static/js/main.js',
+    'src/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
   ])
     .pipe(concat('bundle.min.js'))
     .pipe(uglify())
-    .pipe(dest('static/public/'));
-  done();
-})
+    .pipe(dest('src/static/public/'));
+}
 
-task('css', done => {
-  src([
-    'static/css/*.css',
-    'node_modules/bootstrap/dist/css/bootstrap.min.css'
+function css() {
+  return src([
+    'src/static/css/*.css',
+    'src/node_modules/bootstrap/dist/css/bootstrap.min.css'
   ])
     .pipe(concatCss('bundle.min.css'))
     .pipe(cleanCSS({ compatibility: 'ie8' }))
-    .pipe(dest('static/public/'));
-  done();
-})
+    .pipe(dest('src/static/public/'));
+}
+
+task('js', js)
+task('css', css)
 
 task('js_css_watch', function () {
   watch('css/*.css', css);

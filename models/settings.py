@@ -1,7 +1,9 @@
 from os import getenv
+from os.path import join, dirname
 from dotenv import load_dotenv
 
-load_dotenv()
+dotenv_path = join('environment', '.env')
+load_dotenv(dotenv_path)
 
 db_driver = getenv("DB_DRIVER")
 db_user = getenv("DB_USER")

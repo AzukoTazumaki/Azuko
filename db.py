@@ -1,5 +1,3 @@
-from sqlalchemy.exc import ArgumentError
-
 from models.Products import Products
 from models.models import InitEngine
 from sqlmodel import select, desc
