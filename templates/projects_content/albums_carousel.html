@@ -5,7 +5,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[0].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[0].title }}</h2>
                     <p class="py-4 m-0">{{ albums[0].description }}</p>
                     <a href="/playlist/albums/{{ albums[0].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -26,7 +26,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[1].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[1].title }}</h2>
                     <p class="py-4 m-0">{{ albums[1].description }}</p>
                     <a href="/playlist/albums/{{ albums[1].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -47,7 +47,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[2].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[2].title }}</h2>
                     <p class="py-4 m-0">{{ albums[2].description }}</p>
                     <a href="/playlist/albums/{{ albums[2].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -68,7 +68,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[3].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[3].title }}</h2>
                     <p class="py-4 m-0">{{ albums[3].description }}</p>
                     <a href="/playlist/albums/{{ albums[3].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -89,7 +89,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[4].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[4].title }}</h2>
                     <p class="py-4 m-0">{{ albums[4].description }}</p>
                     <a href="/playlist/albums/{{ albums[4].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -110,7 +110,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[5].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[5].title }}</h2>
                     <p class="py-4 m-0">{{ albums[6].description }}</p>
                     <a href="/playlist/albums/{{ albums[5].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -131,7 +131,7 @@
         <div class="d-flex justify-content-between">
             <div class="carousel_left_part d-flex justify-content-start align-items-center">
                 <div class="py-3">
-                    <span>{{ albums[6].title }}</span>
+                    <h2 class="text-center m-0">{{ albums[6].title }}</h2>
                     <p class="py-4 m-0">{{ albums[6].description }}</p>
                     <a href="/playlist/albums/{{ albums[6].id }}">
                         <button class="project_slider_button albums_slider_button">
@@ -143,27 +143,6 @@
             <div class="d-flex justify-content-end align-items-center carousel_right_part">
                 <img src="{{ url_for('static', path='/images/projects/albums/covers/' + albums[6].id|string + '.jpg') }}"
                     alt="{{ albums[6].title }}" class="cover_carousel">
-            </div>
-        </div>
-    </div>
-</div>
-<div class="carousel-item">
-    <div class="carousel_image bg_carousel bg_8 py-5">
-        <div class="d-flex justify-content-between">
-            <div class="carousel_left_part d-flex justify-content-start align-items-center">
-                <div class="py-3">
-                    <span>{{ albums[7].title }}</span>
-                    <p class="py-4 m-0">{{ albums[7].description }}</p>
-                    <a href="/playlist/albums/{{ albums[7].id }}">
-                        <button class="project_slider_button albums_slider_button">
-                            LISTEN
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <div class="d-flex justify-content-end align-items-center carousel_right_part">
-                <img src="{{ url_for('static', path='/images/projects/albums/covers/' + albums[7].id|string + '.jpg') }}"
-                    alt="{{ albums[7].title }}" class="cover_carousel">
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 import uvicorn
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -7,20 +8,25 @@ from starlette.responses import RedirectResponse
 from models.models import InitDatabase
 from db import SelectProjects
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from sqlalchemy.exc import IntegrityError
 
-app = FastAPI()
+
+@asynccontextmanager
+async def startup(app: FastAPI):
+    yield
+    try:
+        init_db = InitDatabase()
+        init_db.create_db_and_tables()
+        init_db.create_projects()
+        init_db.close_session()
+    except IntegrityError:
+        pass
+
+app = FastAPI(lifespan=startup)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
-
-
-# @app.on_event('startup')
-# def startup():
-#     init_db = InitDatabase()
-#     init_db.create_db_and_tables()
-#     init_db.create_projects()
-#     init_db.close_session()
 
 
 @app.get("/", response_class=RedirectResponse)
@@ -32,7 +38,7 @@ def index():
 def index(request: Request):
     db_projects = SelectProjects()
     last_releases = db_projects.select_last_releases()
-    products_list = db_projects.select_products()
+    products_list = db_projects.select_products(None)
     return templates.TemplateResponse(
         'home_content/home.html',
         {"request": request, "last_releases": last_releases,
@@ -43,7 +49,7 @@ def index(request: Request):
 @app.get("/products", response_class=HTMLResponse)
 def products(request: Request):
     db_projects = SelectProjects()
-    products_list = db_projects.select_products()
+    products_list = db_projects.select_products(None)
     return templates.TemplateResponse(
         "products_content/all_products.html",
         {"request": request, "products": products_list})
@@ -52,7 +58,7 @@ def products(request: Request):
 @app.get("/products/{product_id}", response_class=HTMLResponse)
 def albums_playlist(request: Request, product_id: int):
     db = SelectProjects()
-    product = db.select_one_product(product_id)
+    product = db.select_products(product_id)
     return templates.TemplateResponse(
         f"products_content/product.html", {"request": request, "product": product}
     )
@@ -61,16 +67,12 @@ def albums_playlist(request: Request, product_id: int):
 @app.get("/projects", response_class=HTMLResponse)
 def projects(request: Request):
     db_projects = SelectProjects()
-    albums = db_projects.select_all_albums()
+    albums = db_projects.select_albums(None)
     singles = db_projects.select_singles()
     featurings = db_projects.select_featurings()
     return templates.TemplateResponse(
-        "projects_content/projects.html", {
-            "request": request,
-            "albums": albums,
-            "singles": singles,
-            "featurings": featurings
-        }
+        "projects_content/projects.html",
+        {"request": request, "albums": albums, "singles": singles, "featurings": featurings}
     )
 
 
@@ -82,7 +84,7 @@ def playlist(request: Request):
 @app.get("/playlist/albums/{album_id}", response_class=HTMLResponse)
 def albums_playlist(request: Request, album_id: int):
     db_projects = SelectProjects()
-    one_album = db_projects.select_one_album(album_id)
+    one_album = db_projects.select_albums(album_id)
     return templates.TemplateResponse(
         "playlist_content/albums.html", {"request": request, "album": one_album}
     )
@@ -105,13 +107,22 @@ def singles_playlist(request: Request, project_name: str):
 
 @app.get("/order", response_class=HTMLResponse)
 def order(request: Request):
-    return templates.TemplateResponse("order.html", {"request": request})
+    return templates.TemplateResponse("shopping_cart_content/order.html", {"request": request})
+
+
+@app.get("/extras", response_class=HTMLResponse)
+def order(request: Request):
+    db_projects = SelectProjects()
+    genres = db_projects.select_genres()
+    return templates.TemplateResponse(
+        "extras_content/extras.html",
+        {"request": request, "genres": genres})
 
 
 @app.exception_handler(StarletteHTTPException)
 async def my_custom_exception_handler(request: Request, exception: StarletteHTTPException):
     if exception.status_code == 404:
-        return templates.TemplateResponse('404.html', {'request': request})
+        return templates.TemplateResponse('errors/404.html', {'request': request})
 
 
 if __name__ == '__main__':

@@ -124,41 +124,13 @@
     background-attachment: scroll;
 }
 
-.bg_1 {
-    background-image: url(../images/projects/albums/bg_carousel/1.jpg);
-}
-.bg_2 {
-    background-image: url(../images/projects/albums/bg_carousel/2.jpg);
-}
-.bg_3 {
-    background-image: url(../images/projects/albums/bg_carousel/3.jpg);
-}
-.bg_4 {
-    background-image: url(../images/projects/albums/bg_carousel/4.jpg);
-}
-.bg_5 {
-    background-image: url(../images/projects/albums/bg_carousel/5.jpg);
-}
-.bg_6 {
-    background-image: url(../images/projects/albums/bg_carousel/6.jpg);
-}
-.bg_7 {
-    background-image: url(../images/projects/albums/bg_carousel/7.jpg);
-}
-.bg_8 {
-    background-image: url(../images/projects/albums/bg_carousel/8.jpg);
-}
-
 .carousel_left_part {
     margin-left: 12vw;
-    margin-right: 8vw;
+    margin-right: 3vw;
 }
 
-.carousel_left_part span {
-    font-size: 1.4em;
-    font-weight: bold;
-    text-align: center;
-    padding: 1vh 5vw;
+.carousel_left_part h2 {
+    padding: 1vh 0;
     color: var(--white-rgb);
     text-shadow: var(--black-shadow);
     background-color: var(--periwinkle-purple-rgb);
@@ -167,7 +139,7 @@
 }
 
 .carousel_left_part p {
-    font-size: 1.3em;
+    font-size: 1.5em !important;
     color: var(--white-rgb);
     text-shadow: var(--black-shadow);
 }

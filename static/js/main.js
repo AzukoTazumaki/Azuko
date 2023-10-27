@@ -4,10 +4,6 @@ try {
 
     /* INIZIALIZATION OF AMPLITUDE */
     Amplitude.init({
-        bindings: {
-            39: 'next',
-            37: 'prev'
-        },
         songs: all_songs,
         volume: 15,
         debug: true,

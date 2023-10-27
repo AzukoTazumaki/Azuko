@@ -54,8 +54,8 @@
     border: 3px solid transparent;
     border-top-color: var(--periwinkle-purple-rgb);
     text-shadow: var(--periwinkle-purple-shadow);
-    -webkit-animation: spin 3s linear infinite;
-    animation: spin 3s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 #loader:after {

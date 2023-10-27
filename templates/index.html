@@ -11,16 +11,14 @@
 
 <body style="background-color: rgb(37, 37, 37);">
 
-    {% include 'preloader.html' %}
-
-    {% include 'shopping_cart.html' %}
+    {% include 'elements/preloader.html' %}
     
-    {% include 'header.html' %} 
+    {% include 'elements/header.html' %} 
 
     {% block content %}    
     {% endblock %}
 
-    {% include 'footer.html' %}
+    {% include 'elements/footer.html' %}
 
     <script src="{{ url_for('static', path='/public/bundle.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/fb866d52e1.js" crossorigin="anonymous"></script>

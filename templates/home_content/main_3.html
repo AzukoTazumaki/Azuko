@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="col-7">
+            <div class="offset-1 col-6">
                 <div class="d-flex justify-content-center align-items-center products_title_div">
                     <p class="m-0 text-center products_title">PRODUCTS</p>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="row d-flex justify-content-between products_div">
                         {% for product in products %}
                         <div class="col-6">
-                            <a href="/">
+                            <a href="/products/#{{ product.name|lower }}">
                                 <img loading="lazy" src="{{url_for('static', path='/images/products/'+product.id|string+'.jpg')}}"
                                     class="card-img-top img_product" alt="">
                             </a>

@@ -1,0 +1,17 @@
+{% block header %}
+<header class="extras_header">
+    <nav class="navbar fixed-top">
+        <div class="container-fluid d-flex justify-content-start">
+            <a href="/" class="navbar-brand"><img src="{{url_for('static', path='/images/logos/logo_azuko.svg')}}"
+                    width="120" alt="AZUKO"></a>
+            <div class="navbar_links">
+                <a href="/">HOME</a>
+                <a class="mx-2" href="/playlist">PLAYLIST</a>
+                <a href="/projects">PROJECTS</a>
+                <a class="mx-2" href="/products">PRODUCTS</a>
+                <a href="/extras">EXTRAS</a>
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock %}

@@ -1,0 +1,78 @@
+.extras_title {
+    font-size: 10vh;
+    color: var(--windows-blue-rgb);
+    font-weight: bold;
+    letter-spacing: .5vw;
+    animation: title 3s infinite;
+    border-radius: 10px;
+}
+
+.extras_description {
+    font-size: 2vh;
+    color: var(--light-gray-azuko-rgb);
+    text-shadow: var(--black-shadow);
+}
+
+.extras_arrow_down {
+    position: absolute;
+    top: 93vh;
+    left: 48.6vw;
+    color: var(--periwinkle-purple-rgb);
+    text-shadow: var(--white-shadow);
+    animation: up_down 2s infinite;
+}
+
+@keyframes up_down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes title {
+    0% {
+        font-weight: 500;
+        text-shadow: 
+            1px 1px 3px var(--periwinkle-purple-rgb);
+    }
+    50% {
+        color: var(--windows-blue-rgb);
+        font-weight: 200;
+        text-shadow: 
+            1px 1px 30px var(--periwinkle-purple-rgb),
+            3px 3px 10px var(--windows-blue-rgb);
+    }
+    100% {
+        font-weight: 500;
+        text-shadow: 
+            1px 1px 3px var(--periwinkle-purple-rgb);
+    }
+}
+
+.extras_header .nav_container {
+    background-color: transparent;
+}
+
+.extras_header .navbar_links a,
+.extras_header .shopping_cart,
+.extras_header .github {
+    text-decoration: none;
+    color: var(--coral-peach-rgba);
+    text-shadow: var(--dark-gray-azuko-shadow);
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: .3s;
+}
+
+.extras_header .navbar_links a:hover,
+.extras_header .shopping_cart:hover,
+.extras_header .github:hover {
+    background-color: var(--coral-peach-rgba);
+    color: var(--dark-gray-azuko-rgb);
+    text-shadow: var(--dark-gray-azuko-shadow);
+}

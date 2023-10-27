@@ -56,3 +56,56 @@
 .album_8 {
   background-image: url(../images/bg/albums/Life\ Is\ Full\ Of\ Lies.jpg);
 }
+
+.bg_1 {
+  background-image: url(../images/projects/albums/bg_carousel/1.jpg);
+}
+
+.bg_2 {
+  background-image: url(../images/projects/albums/bg_carousel/2.jpg);
+}
+
+.bg_3 {
+  background-image: url(../images/projects/albums/bg_carousel/3.jpg);
+}
+
+.bg_4 {
+  background-image: url(../images/projects/albums/bg_carousel/4.jpg);
+}
+
+.bg_5 {
+  background-image: url(../images/projects/albums/bg_carousel/5.jpg);
+}
+
+.bg_6 {
+  background-image: url(../images/projects/albums/bg_carousel/6.jpg);
+}
+
+.bg_7 {
+  background-image: url(../images/projects/albums/bg_carousel/7.jpg);
+}
+
+.bg_8 {
+  background-image: url(../images/projects/albums/bg_carousel/8.jpg);
+}
+
+#bg_singles_featurings_video,
+#bg_video_extras {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+#bg_singles_featurings_video {
+  filter: hue-rotate(25deg);
+}
+
+#bg_video_extras {
+  filter: brightness(.7);
+}
