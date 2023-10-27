@@ -9,42 +9,53 @@
     <link rel="shortcut icon" href="{{ url_for('static', path='favicon_azuko.ico') }}" type="image/x-icon">
 </head>
 
-<body style="background-color: rgb(37, 37, 37);">
+<body>
 
     {% include 'elements/preloader.html' %}
 
     {% include 'shopping_cart_content/shopping_cart.html' %}
-    
-    {% include 'extras_content/extras_header.html' %} 
 
-    {% include 'extras_content/bg_video_extras.html'   %}
+    {% include 'extras_content/extras_header.html' %}
+
+    {% include 'extras_content/bg_video_extras.html' %}
 
     <div class="container-fluid">
 
-        <div class="row d-flex justify-content-center align-items-center vh-100">
-            <div class="col-12 d-flex justify-content-center">
-                <div class="extras_main">
+        <div class="row d-flex align-items-center vh-100">
+            <div class="offset-1 col-11 d-flex justify-content-between align-items-center">
+                <div>
                     <span class="extras_title">EXTRAS</span>
                     <p class="m-0 text-center extras_description">
-                        More information is provided here
+                        Scroll below to see more information
                     </p>
                 </div>
             </div>
         </div>
 
-        <span class="extras_arrow_down"><i class="fa-solid fa-angles-down fa-2xl"></i></span>
-
-        <div class="row" id="extras_genres">
-            {% for genre in genres %}
-            <div class="col-3 bg-light">
-                <h1 class="text-center">{{ genre.name }}</h1>
-                <p>Description: {{ genre.description }}</p>
+        <div class="row d-flex align-items-center vh-100" id="extras_genres">
+            <div class="offset-1 col-5 d-flex justify-content-between align-items-center">
+                <div>
+                    <span class="extras_title">GENRES & KEYS</span>
+                    <p class="m-0 text-start extras_description">
+                        All beats in the Products section will have a genre and key. 
+                        In the scrollable section on the right you can see all the available 
+                        genres and their descriptions to fully understand what kind of sound you 
+                        want to use in your song.
+                    </p>
+                </div>
             </div>
-            {% endfor %}
+            <div class="col-5 extras_genre_div">
+                {% for genre in genres %}
+                <div class="m-5">
+                    <h1>{{ genre.name }}</h1>
+                    <p>Description: {{ genre.description }}</p>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
-    {% include 'elements/footer.html' %}
+    {% include 'extras_content/extras_footer.html' %}
 
     <script src="{{ url_for('static', path='/public/bundle.min.js') }}"></script>
     <script src="https://kit.fontawesome.com/fb866d52e1.js" crossorigin="anonymous"></script>

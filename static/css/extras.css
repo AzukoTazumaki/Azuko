@@ -1,15 +1,18 @@
 .extras_title {
     font-size: 10vh;
-    color: var(--windows-blue-rgb);
-    font-weight: bold;
+    color: var(--coral-peach-rgb);
+    font-weight: 300;
     letter-spacing: .5vw;
     animation: title 3s infinite;
     border-radius: 10px;
+    text-shadow: 
+        10px 10px 10px var(--dark-gray-azuko-rgb),
+        3px 3px 5px var(--coral-peach-rgb);
 }
 
 .extras_description {
-    font-size: 2vh;
-    color: var(--light-gray-azuko-rgb);
+    font-size: 1.5vh;
+    color: var(--coral-peach-rgba);
     text-shadow: var(--black-shadow);
 }
 
@@ -34,26 +37,6 @@
     }
 }
 
-@keyframes title {
-    0% {
-        font-weight: 500;
-        text-shadow: 
-            1px 1px 3px var(--periwinkle-purple-rgb);
-    }
-    50% {
-        color: var(--windows-blue-rgb);
-        font-weight: 200;
-        text-shadow: 
-            1px 1px 30px var(--periwinkle-purple-rgb),
-            3px 3px 10px var(--windows-blue-rgb);
-    }
-    100% {
-        font-weight: 500;
-        text-shadow: 
-            1px 1px 3px var(--periwinkle-purple-rgb);
-    }
-}
-
 .extras_header .nav_container {
     background-color: transparent;
 }
@@ -75,4 +58,40 @@
     background-color: var(--coral-peach-rgba);
     color: var(--dark-gray-azuko-rgb);
     text-shadow: var(--dark-gray-azuko-shadow);
+}
+
+.extras_genre_div {
+    overflow-y: scroll;
+    height: 60vh;
+    padding: 20px;
+    color: var(--coral-peach-rgb);
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 15px;
+}
+
+#extras_genres .extras_description {
+    text-align: start;
+}
+
+#extras_genres .extras_title {
+    font-size: 6vh;
+}
+
+#extras_footer .footer_title {
+    color: var(--coral-peach-rgb);
+    text-shadow: 1px 1px 5px var(--coral-peach-rgb);
+}
+#extras_footer .contacts a {
+    color: var(--coral-peach-rgb);
+}
+#extras_footer .contacts a:hover {
+    color: var(--coral-peach-rgb-deep);
+}
+#extras_footer .all_rights {
+    color: var(--coral-peach-rgb);
+    text-shadow: var(--coral-peach-shadow);
+}
+
+#extras_footer .order_service_button {
+    background-color: var(--coral-peach-rgb);
 }
