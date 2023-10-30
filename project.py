@@ -42,7 +42,7 @@ def index(request: Request):
     return templates.TemplateResponse(
         'home_content/home.html',
         {"request": request, "last_releases": last_releases,
-         "products": [products_list[0], products_list[3]]}
+         "products": [products_list[4], products_list[3]]}
     )
 
 

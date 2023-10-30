@@ -21,4 +21,4 @@ class Tracks(SQLModel, table=True):
     mixing: Optional['Mixing'] = Relationship(back_populates='tracks')
     mastering: Optional['Mastering'] = Relationship(back_populates='tracks')
     mixing_and_mastering: Optional['MixingAndMastering'] = Relationship(back_populates='tracks')
-
+    ghostwriting: Optional['Ghostwriting'] = Relationship(back_populates='tracks')

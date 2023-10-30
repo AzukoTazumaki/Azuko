@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', path='favicon_azuko.ico') }}" type="image/x-icon">
 </head>
 
-<body>
+<body id="extras">
 
     {% include 'elements/preloader.html' %}
 
@@ -37,20 +37,31 @@
                 <div>
                     <span class="extras_title">GENRES & KEYS</span>
                     <p class="m-0 text-start extras_description">
-                        All beats in the Products section will have a genre and key. 
-                        In the scrollable section on the right you can see all the available 
-                        genres and their descriptions to fully understand what kind of sound you 
+                        All beats in the Products section will have a genre and key.
+                        In the scrollable section on the right you can see all the available
+                        genres and their descriptions to fully understand what kind of sound you
                         want to use in your song.
                     </p>
                 </div>
             </div>
-            <div class="col-5 extras_genre_div">
-                {% for genre in genres %}
-                <div class="m-5">
-                    <h1>{{ genre.name }}</h1>
-                    <p>Description: {{ genre.description }}</p>
+            <div class="col-5">
+                <div class="row">
+                    <div class="col-12 extras_genre_div p-4">
+                        {% for genre in genres %}
+                        {% if loop.last %}
+                        <div>
+                        {% else %}
+                        <div class="mb-5">
+                        {% endif %}
+                            <h1>{{ genre.name }}</h1>
+                            <p>{{ genre.description }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mt-4">
+                        <i class="fa-solid fa-angles-down fa-xl genres_arrow_down"></i>
+                    </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>

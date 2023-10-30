@@ -5,10 +5,10 @@ let concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 function js() {
   return src([
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'js/preloader.js',
     'js/projects.js',
     'node_modules/amplitudejs/dist/amplitude.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'js/songs.js',
     'js/main.js'
   ])

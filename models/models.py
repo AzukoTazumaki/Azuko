@@ -16,6 +16,7 @@ from .Keys import Keys
 from .Mixing import Mixing
 from .Mastering import Mastering
 from .MixingAndMastering import MixingAndMastering
+from .Ghostwriting import Ghostwriting
 from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, \
     artists_tracks, featurings, products, lyrics, genres, keys
 from .settings import db_url

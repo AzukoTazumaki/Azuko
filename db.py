@@ -112,6 +112,8 @@ class SelectProjects(InitEngine):
                 return select(Products).join(Products.mastering)
             case 4:
                 return select(Products).join(Products.mixing_and_mastering)
+            case 5:
+                return select(Products).join(Products.ghostwriting)
 
     def select_products(self, product_id: int | None):
         if product_id is None:
