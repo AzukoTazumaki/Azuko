@@ -38,7 +38,7 @@ class InitDatabase(InitEngine):
             self.create_products, self.create_genres, self.create_keys
         ]
 
-    def create_db_and_tables(self):
+    def create_tables(self):
         with self.engine.connect() as connection:
             connection.execution_options(isolation_level='AUTOCOMMIT')
             SQLModel.metadata.create_all(connection)

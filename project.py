@@ -16,7 +16,7 @@ async def startup(app: FastAPI):
     yield
     try:
         init_db = InitDatabase()
-        init_db.create_db_and_tables()
+        init_db.create_tables()
         init_db.create_projects()
         init_db.close_session()
     except IntegrityError:
