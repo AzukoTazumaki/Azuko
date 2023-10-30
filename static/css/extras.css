@@ -44,6 +44,10 @@
 .extras_header .nav_container {
     background-color: transparent;
 }
+.extras_header .navbar {
+    background-color: var(--darker-gray-azuko-rgb);
+    box-shadow: 2px 2px 10px var(--darker-gray-azuko-rgb);
+}
 
 .extras_header .navbar_links a,
 .extras_header .shopping_cart,
@@ -109,6 +113,10 @@
 
 #extras_footer .order_service_button {
     background-color: var(--coral-peach-rgb);
+}
+
+#extras_footer .order_service_button:hover {
+    background-color: var(--coral-peach-rgb-deep);
 }
 
 .genres_arrow_down {

@@ -27,7 +27,7 @@
                         <p class="footer_title">PRODUCTS</p>
                         <hr>
                         <ul>
-                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering'] %}
+                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering', 'Ghostwriting'] %}
                             {% for footer_link in products %}
                             <a href="/products/{{ loop.index }}" class="footer_link">
                                 <li>{{ footer_link }}</li>
@@ -68,7 +68,7 @@
                         <p class="footer_title">PRODUCTS FAQ</p>
                         <hr>
                         <ul>
-                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering'] %}
+                            {% set products = ['Beats', 'Mixing', 'Mastering', 'Mixing & Mastering', 'Ghostwriting'] %}
                             {% for footer_link in products %}
                             <a href="/products#product_{{ loop.index }}" class="footer_link">
                                 <li>About {{ footer_link }}</li>
@@ -98,7 +98,14 @@
                     <div class="col-3 footer_col text-uppercase">
                         <p class="footer_title">EXTRAS</p>
                         <hr>
-
+                        <ul>
+                            {% set extras_links = [{'name': 'Genres & Keys', 'url': '#extras_genres'}] %}
+                            {% for link in extras_links %}
+                            <a href="extras{{ link.url }}" class="footer_link">
+                                <li>{{ link.name }}</li>
+                            </a>
+                            {% endfor %}
+                        </ul>
                     </div>
 
                 </div>
