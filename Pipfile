@@ -10,9 +10,8 @@ jinja2 = "*"
 python-dotenv = "*"
 sqlalchemy = "*"
 psycopg2 = "*"
-alembic = "*"
 sqlmodel = "*"
-mysql-connector = "*"
+mysql-connector-python = "*"
 
 [dev-packages]
 
