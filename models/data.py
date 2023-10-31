@@ -1,146 +1,144 @@
-products = [
-    {'name': 'Beats', 'price': 3000, 'old_price': None},
-    {'name': 'Mixing', 'price': 2000, 'old_price': None},
-    {'name': 'Mastering', 'price': 1200, 'old_price': None},
-    {'name': 'Mixing & Mastering', 'price': 2400, 'old_price': 3200},
-    {'name': 'Ghostwriting', 'price': 5000, 'old_price': None}
-]
-
-genres = [
-    {
-        'name': 'Jazz',
-        'description': "Jazz is a music genre that originated in the African-American communities of New Orleans, "
-                       "Louisiana, in the late 19th and early 20th centuries, with its roots in blues and ragtime. "
-                       "Since the 1920s Jazz Age, it has been recognized as a major form of musical expression in "
-                       "traditional and popular music."
-    },
-    {
-        'name': 'Reggae',
-        'description': "Reggae is a music genre that originated in Jamaica in the late 1960s. The term also denotes "
-                       "the modern popular music of Jamaica and its diaspora."
-    },
-    {
-        'name': 'Punk',
-        'description': "Punk rock is a music genre that emerged in the mid-1970s. Rooted in 1950s rock and roll and "
-                       "1960s garage rock, punk bands rejected the perceived excesses of mainstream 1970s rock music."
-    },
-    {
-        'name': 'Indie rock',
-        'description': "Indie rock is a subgenre of rock music that originated in the United Kingdom, United States "
-                       "and New Zealand in the early to mid-1980s."
-    },
-    {
-        'name': 'Grunge',
-        'description': "Grunge is an alternative rock genre and subculture which emerged during the mid-1980s in the "
-                       "U.S. state of Washington, particularly in Seattle and nearby towns. Grunge fuses elements of "
-                       "punk rock and heavy metal, but without punk's structure and speed."
-    },
-    {
-        'name': 'Hip Hop',
-        'description': "Hip hop or hip-hop, also known as rap, and formerly known as disco rap, is a genre of popular "
-                       "music that originated in the early 1970s by African Americans in the Bronx, a borough of New "
-                       "York City. It existed for several years prior to mainstream discovery."
-    },
-    {
-        'name': 'Rock',
-        'description': "Rock is a broad genre of popular music that originated as 'rock and roll' in the United States "
-                       "in the late 1940s and early 1950s, developing into a range of different styles from the "
-                       "mid-1960s, particularly in the U.S. and the United Kingdom."
-    },
-    {
-        'name': 'R&B',
-        'description': "Rhythm and blues, frequently abbreviated as R&B or R'n'B, is a genre of popular music that "
-                       "originated in African-American communities in the 1940s."
-    },
-    {
-        'name': 'Soul',
-        'description': "Soul music is a popular music genre that originated in the African American community "
-                       "throughout the United States in the late 1950s and early 1960s. It has its roots in "
-                       "African-American gospel music and rhythm and blues."
-    },
-    {
-        'name': 'Techno',
-        'description': "Techno is a genre of electronic dance music which is generally produced for use in a continuous "
-                       "DJ set, with tempo often varying between 120 and 150 beats per minute. The central rhythm is "
-                       "typically in common time and often characterized by a repetitive four on the floor beat."
-    },
-    {
-        'name': 'Funk',
-        'description': "Funk is a music genre that originated in African American communities in the mid-1960s "
-                       "whenmusicians created a rhythmic, danceable new form of music through a mixture of various "
-                       "music genres that were popular among African-Americans in the mid-20th century."
-    },
-    {
-        'name': 'Alternative',
-        'description': "Alternative rock is a category of rock music that emerged from the independent music "
-                       "underground of the 1970s and became widely popular in the 1990s. 'Alternative' refers to the "
-                       "genre's distinction from mainstream or commercial rock or pop music."
-    },
-    {
-        'name': 'Electronic',
-        'description': "Electronic music is a genre of music that employs electronic musical instruments, digital "
-                       "instruments, or circuitry-based music technology in its creation. It includes both music made "
-                       "using electronic and electromechanical means (electroacoustic music). Pure electronic "
-                       "instruments depended entirely on circuitry-based sound generation, for instance using devices "
-                       "such as an electronic oscillator, theremin, or synthesizer. Electromechanical instruments can "
-                       "have mechanical parts such as strings, hammers, and electric elements including magnetic "
-                       "pickups, power amplifiers and loudspeakers. Such electromechanical devices include the "
-                       "telharmonium, Hammond organ, electric piano and the electric guitar."
-    }
-]
-
-keys = [
-    {'name': 'Ab major'},  #1
-    {'name': 'A major'},  #2
-    {'name': 'A# major'},  #3
-    {'name': 'Bb major'},  #4
-    {'name': 'B major'},  #5
-    {'name': 'C major'},  #6
-    {'name': 'C# major'},  #7
-    {'name': 'Db major'},  #8
-    {'name': 'D major'},  #9
-    {'name': 'D# major'},  #10
-    {'name': 'Eb major'},  #11
-    {'name': 'E major'},  #12
-    {'name': 'F major'},  #13
-    {'name': 'F# major'},  #14
-    {'name': 'Gb major'},  #15
-    {'name': 'G major'},  #16
-    {'name': 'G# major'},  #17
-    {'name': 'Ab minor'},  #18
-    {'name': 'A minor'},  #19
-    {'name': 'A# minor'},  #20
-    {'name': 'Bb minor'},  #21
-    {'name': 'B minor'},  #22
-    {'name': 'C minor'},  #23
-    {'name': 'C# minor'},  #24
-    {'name': 'Db minor'},  #25
-    {'name': 'D minor'},  #26
-    {'name': 'D# minor'},  #27
-    {'name': 'Eb minor'},  #28
-    {'name': 'E minor'},  #29
-    {'name': 'F minor'},  #30
-    {'name': 'F# minor'},  #31
-    {'name': 'Gb minor'},  #32
-    {'name': 'G minor'},  #33
-    {'name': 'G# minor'}  #34
-]
-
-albums = [
-    {
-        'title': 'FUNNY but NOBODY',
-        'description': """
+class Data:
+    products: list = [
+        {'name': 'Beats', 'price': 3000, 'old_price': None},
+        {'name': 'Mixing', 'price': 2000, 'old_price': None},
+        {'name': 'Mastering', 'price': 1200, 'old_price': None},
+        {'name': 'Mixing & Mastering', 'price': 2400, 'old_price': 3200},
+        {'name': 'Ghostwriting', 'price': 5000, 'old_price': None}
+    ]
+    genres: list = [
+        {
+            'name': 'Jazz',
+            'description': "Jazz is a music genre that originated in the African-American communities of New Orleans, "
+                           "Louisiana, in the late 19th and early 20th centuries, with its roots in blues and ragtime. "
+                           "Since the 1920s Jazz Age, it has been recognized as a major form of musical expression in "
+                           "traditional and popular music."
+        },
+        {
+            'name': 'Reggae',
+            'description': "Reggae is a music genre that originated in Jamaica in the late 1960s. The term also denotes "
+                           "the modern popular music of Jamaica and its diaspora."
+        },
+        {
+            'name': 'Punk',
+            'description': "Punk rock is a music genre that emerged in the mid-1970s. Rooted in 1950s rock and roll and "
+                           "1960s garage rock, punk bands rejected the perceived excesses of mainstream 1970s rock music."
+        },
+        {
+            'name': 'Indie rock',
+            'description': "Indie rock is a subgenre of rock music that originated in the United Kingdom, United States "
+                           "and New Zealand in the early to mid-1980s."
+        },
+        {
+            'name': 'Grunge',
+            'description': "Grunge is an alternative rock genre and subculture which emerged during the mid-1980s in the "
+                           "U.S. state of Washington, particularly in Seattle and nearby towns. Grunge fuses elements of "
+                           "punk rock and heavy metal, but without punk's structure and speed."
+        },
+        {
+            'name': 'Hip Hop',
+            'description': "Hip hop or hip-hop, also known as rap, and formerly known as disco rap, is a genre of popular "
+                           "music that originated in the early 1970s by African Americans in the Bronx, a borough of New "
+                           "York City. It existed for several years prior to mainstream discovery."
+        },
+        {
+            'name': 'Rock',
+            'description': "Rock is a broad genre of popular music that originated as 'rock and roll' in the United States "
+                           "in the late 1940s and early 1950s, developing into a range of different styles from the "
+                           "mid-1960s, particularly in the U.S. and the United Kingdom."
+        },
+        {
+            'name': 'R&B',
+            'description': "Rhythm and blues, frequently abbreviated as R&B or R'n'B, is a genre of popular music that "
+                           "originated in African-American communities in the 1940s."
+        },
+        {
+            'name': 'Soul',
+            'description': "Soul music is a popular music genre that originated in the African American community "
+                           "throughout the United States in the late 1950s and early 1960s. It has its roots in "
+                           "African-American gospel music and rhythm and blues."
+        },
+        {
+            'name': 'Techno',
+            'description': "Techno is a genre of electronic dance music which is generally produced for use in a continuous "
+                           "DJ set, with tempo often varying between 120 and 150 beats per minute. The central rhythm is "
+                           "typically in common time and often characterized by a repetitive four on the floor beat."
+        },
+        {
+            'name': 'Funk',
+            'description': "Funk is a music genre that originated in African American communities in the mid-1960s "
+                           "whenmusicians created a rhythmic, danceable new form of music through a mixture of various "
+                           "music genres that were popular among African-Americans in the mid-20th century."
+        },
+        {
+            'name': 'Alternative',
+            'description': "Alternative rock is a category of rock music that emerged from the independent music "
+                           "underground of the 1970s and became widely popular in the 1990s. 'Alternative' refers to the "
+                           "genre's distinction from mainstream or commercial rock or pop music."
+        },
+        {
+            'name': 'Electronic',
+            'description': "Electronic music is a genre of music that employs electronic musical instruments, digital "
+                           "instruments, or circuitry-based music technology in its creation. It includes both music made "
+                           "using electronic and electromechanical means (electroacoustic music). Pure electronic "
+                           "instruments depended entirely on circuitry-based sound generation, for instance using devices "
+                           "such as an electronic oscillator, theremin, or synthesizer. Electromechanical instruments can "
+                           "have mechanical parts such as strings, hammers, and electric elements including magnetic "
+                           "pickups, power amplifiers and loudspeakers. Such electromechanical devices include the "
+                           "telharmonium, Hammond organ, electric piano and the electric guitar."
+        }
+    ]
+    keys: list = [
+        {'name': 'Ab major'},  # 1
+        {'name': 'A major'},  # 2
+        {'name': 'A# major'},  # 3
+        {'name': 'Bb major'},  # 4
+        {'name': 'B major'},  # 5
+        {'name': 'C major'},  # 6
+        {'name': 'C# major'},  # 7
+        {'name': 'Db major'},  # 8
+        {'name': 'D major'},  # 9
+        {'name': 'D# major'},  # 10
+        {'name': 'Eb major'},  # 11
+        {'name': 'E major'},  # 12
+        {'name': 'F major'},  # 13
+        {'name': 'F# major'},  # 14
+        {'name': 'Gb major'},  # 15
+        {'name': 'G major'},  # 16
+        {'name': 'G# major'},  # 17
+        {'name': 'Ab minor'},  # 18
+        {'name': 'A minor'},  # 19
+        {'name': 'A# minor'},  # 20
+        {'name': 'Bb minor'},  # 21
+        {'name': 'B minor'},  # 22
+        {'name': 'C minor'},  # 23
+        {'name': 'C# minor'},  # 24
+        {'name': 'Db minor'},  # 25
+        {'name': 'D minor'},  # 26
+        {'name': 'D# minor'},  # 27
+        {'name': 'Eb minor'},  # 28
+        {'name': 'E minor'},  # 29
+        {'name': 'F minor'},  # 30
+        {'name': 'F# minor'},  # 31
+        {'name': 'Gb minor'},  # 32
+        {'name': 'G minor'},  # 33
+        {'name': 'G# minor'}  # 34
+    ]
+    albums: list = [
+        {
+            'title': 'FUNNY but NOBODY',
+            'description': """
         A large-scale project that Azuko worked on for more than 2 years. 
         The release includes a variety of genres, including Drum and Bass, 
         Punk, Rap and others, with a total of 23 tracks, each of which 
         contains its own story.
         """,
-        'date_release': '2023-11-04',
-        'cover': 'funny_but_nobody'
-    },
-    {
-        'title': 'with love from Azuko',
-        'description': """
+            'date_release': '2023-11-04',
+            'cover': 'funny_but_nobody'
+        },
+        {
+            'title': 'with love from Azuko',
+            'description': """
         «with love from Azuko» war written in just
         a month. Easy flow, summer mood and dreams
         of what didn’t come true – all this is contained
@@ -148,35 +146,35 @@ albums = [
         their own here. Everyone has been through
         this. Everyone felt these feelings.
         """,
-        'date_release': '2023-06-30',
-        'cover': 'with_love_from_azuko'
-    },
-    {
-        'title': 'ВРЕМЯ ПЕРЕМЕН',
-        'description': """
+            'date_release': '2023-06-30',
+            'cover': 'with_love_from_azuko'
+        },
+        {
+            'title': 'ВРЕМЯ ПЕРЕМЕН',
+            'description': """
         The album was written in collaboration 
         with artist Kaneki. It's filled melodic 
         choruses, lyrics about love and changes 
         in life that help us grow as individuals.
         """,
-        'date_release': '2022-11-25',
-        'cover': 'time_for_change'
-    },
-    {
-        'title': 'Highway Of Love (Deluxe)',
-        'description': """
+            'date_release': '2022-11-25',
+            'cover': 'time_for_change'
+        },
+        {
+            'title': 'Highway Of Love (Deluxe)',
+            'description': """
         The deluxe version of "Highway of Love" perfectly 
         complements the previous album. Here Azuko comes 
         out of depression with thoughts about the future 
         path, self-realization and work on herself. This is 
         where Azuko's new journey begins.
         """,
-        'date_release': '2020-03-22',
-        'cover': 'highway_of_love_deluxe'
-    },
-    {
-        'title': 'Highway Of Love',
-        'description': """
+            'date_release': '2020-03-22',
+            'cover': 'highway_of_love_deluxe'
+        },
+        {
+            'title': 'Highway Of Love',
+            'description': """
         Azuko's most listened to project. This album 
         traces the continuation of the story from 
         the album "Mileran Vibes", but in a more 
@@ -184,24 +182,24 @@ albums = [
         of 25 songs is essentially a collection of 
         the artist’s thoughts and experiences.
         """,
-        'date_release': '2020-03-08',
-        'cover': 'highway_of_love'
-    },
-    {
-        'title': 'Mileran Vibes',
-        'description': """
+            'date_release': '2020-03-08',
+            'cover': 'highway_of_love'
+        },
+        {
+            'title': 'Mileran Vibes',
+            'description': """
         Dedicated to the girl Azuko loved
         for a very long time. People like
         her love to play with the feelings
         of others. Texts about unbreakable
         hopes for the best.
         """,
-        'date_release': '2019-10-18',
-        'cover': 'mileran_vibes'
-    },
-    {
-        'title': 'Life Is Full Of Lies 2 (Before Love Story)',
-        'description': """
+            'date_release': '2019-10-18',
+            'cover': 'mileran_vibes'
+        },
+        {
+            'title': 'Life Is Full Of Lies 2 (Before Love Story)',
+            'description': """
         The second part of the album «Life is Full Of
         Lies» continues the monologue about the past.
         More confidently, more emotionally, with a
@@ -210,403 +208,481 @@ albums = [
         and betrayal. All this is in the second part
         of the LFL.
         """,
-        'date_release': '2019-09-07',
-        'cover': 'life_is_full_of_lies_2'
-    }
-]
-
-artists = [
-    {'name': 'Azuko'},  # 1
-    {'name': '88Ringo'},  # 2
-    {'name': 'ICYWAVE'},  # 3
-    {'name': 'Kaneki'},  # 4
-    {'name': 'YUNG ROUZY'},  # 5
-    {'name': 'Blant'},  # 6
-    {'name': 'СЭТ ГРАНЖ'},  # 7
-    {'name': 'Noicat'},  # 8
-    {'name': 'Bobby D'},  # 9
-    {'name': 'Flipboy'},  # 10
-    {'name': 'Свиридов'},  # 11
-    {'name': 'FARO'},  # 12
-    {'name': 'Brayke'},  # 13
-    {'name': 'YslBby'},  # 14
-    {'name': 'CHATTY'},  # 15
-    {'name': 'Foreign Beep'}  # 16
-]
-
-albums_tracks = [
-    # FUNNY but NOBODY
-    {'album_id': 1, 'track_id': 136}, {'album_id': 1, 'track_id': 137},
-    {'album_id': 1, 'track_id': 138}, {'album_id': 1, 'track_id': 139},
-    {'album_id': 1, 'track_id': 140}, {'album_id': 1, 'track_id': 141},
-    {'album_id': 1, 'track_id': 142}, {'album_id': 1, 'track_id': 143},
-    {'album_id': 1, 'track_id': 144}, {'album_id': 1, 'track_id': 145},
-    {'album_id': 1, 'track_id': 146}, {'album_id': 1, 'track_id': 147},
-    {'album_id': 1, 'track_id': 148}, {'album_id': 1, 'track_id': 149},
-    {'album_id': 1, 'track_id': 150}, {'album_id': 1, 'track_id': 151},
-    {'album_id': 1, 'track_id': 152}, {'album_id': 1, 'track_id': 153},
-    {'album_id': 1, 'track_id': 154}, {'album_id': 1, 'track_id': 155},
-    {'album_id': 1, 'track_id': 156}, {'album_id': 1, 'track_id': 1},
-    {'album_id': 1, 'track_id': 4},
-    # with love from Azuko
-    {'album_id': 2, 'track_id': 5}, {'album_id': 2, 'track_id': 6},
-    {'album_id': 2, 'track_id': 7}, {'album_id': 2, 'track_id': 8},
-    {'album_id': 2, 'track_id': 9}, {'album_id': 2, 'track_id': 10},
-    {'album_id': 2, 'track_id': 11}, {'album_id': 2, 'track_id': 12},
-    # ВРЕМЯ ПЕРЕМЕН
-    {'album_id': 3, 'track_id': 17}, {'album_id': 3, 'track_id': 18},
-    {'album_id': 3, 'track_id': 19}, {'album_id': 3, 'track_id': 20},
-    {'album_id': 3, 'track_id': 21}, {'album_id': 3, 'track_id': 22},
-    {'album_id': 3, 'track_id': 23}, {'album_id': 3, 'track_id': 24},
-    {'album_id': 3, 'track_id': 25}, {'album_id': 3, 'track_id': 26},
-    {'album_id': 3, 'track_id': 27}, {'album_id': 3, 'track_id': 28},
-    # Highway Of Love (Deluxe)
-    {'album_id': 4, 'track_id': 50}, {'album_id': 4, 'track_id': 51},
-    {'album_id': 4, 'track_id': 52}, {'album_id': 4, 'track_id': 53},
-    {'album_id': 4, 'track_id': 54}, {'album_id': 4, 'track_id': 55},
-    {'album_id': 4, 'track_id': 56}, {'album_id': 4, 'track_id': 57},
-    {'album_id': 4, 'track_id': 58}, {'album_id': 4, 'track_id': 59},
-    {'album_id': 4, 'track_id': 60}, {'album_id': 4, 'track_id': 61},
-    {'album_id': 4, 'track_id': 62}, {'album_id': 4, 'track_id': 63},
-    # Highway Of Love
-    {'album_id': 5, 'track_id': 64}, {'album_id': 5, 'track_id': 65},
-    {'album_id': 5, 'track_id': 66}, {'album_id': 5, 'track_id': 67},
-    {'album_id': 5, 'track_id': 68}, {'album_id': 5, 'track_id': 69},
-    {'album_id': 5, 'track_id': 70}, {'album_id': 5, 'track_id': 71},
-    {'album_id': 5, 'track_id': 72}, {'album_id': 5, 'track_id': 73},
-    {'album_id': 5, 'track_id': 74}, {'album_id': 5, 'track_id': 75},
-    {'album_id': 5, 'track_id': 76}, {'album_id': 5, 'track_id': 77},
-    {'album_id': 5, 'track_id': 78}, {'album_id': 5, 'track_id': 79},
-    {'album_id': 5, 'track_id': 80}, {'album_id': 5, 'track_id': 81},
-    {'album_id': 5, 'track_id': 82}, {'album_id': 5, 'track_id': 83},
-    {'album_id': 5, 'track_id': 84}, {'album_id': 5, 'track_id': 85},
-    {'album_id': 5, 'track_id': 86}, {'album_id': 5, 'track_id': 87},
-    {'album_id': 5, 'track_id': 88},
-    # Mileran Vibes
-    {'album_id': 6, 'track_id': 93}, {'album_id': 6, 'track_id': 94},
-    {'album_id': 6, 'track_id': 158}, {'album_id': 6, 'track_id': 95},
-    {'album_id': 6, 'track_id': 96}, {'album_id': 6, 'track_id': 97},
-    {'album_id': 6, 'track_id': 157}, {'album_id': 6, 'track_id': 98},
-    # Life Is Full Of Lies 2: Before Love Story
-    {'album_id': 7, 'track_id': 105}, {'album_id': 7, 'track_id': 106},
-    {'album_id': 7, 'track_id': 107}, {'album_id': 7, 'track_id': 108},
-    {'album_id': 7, 'track_id': 109}, {'album_id': 7, 'track_id': 110},
-    {'album_id': 7, 'track_id': 111}, {'album_id': 7, 'track_id': 112},
-    {'album_id': 7, 'track_id': 113}, {'album_id': 7, 'track_id': 114},
-    {'album_id': 7, 'track_id': 115}, {'album_id': 7, 'track_id': 116},
-    {'album_id': 7, 'track_id': 117}, {'album_id': 7, 'track_id': 118},
-    {'album_id': 7, 'track_id': 119}, {'album_id': 7, 'track_id': 120},
-    {'album_id': 7, 'track_id': 121}
-]
-
-albums_artists = [
-    {'album_id': 1, 'artist_id': 1}, {'album_id': 2, 'artist_id': 1}, {'album_id': 3, 'artist_id': 1},
-    {'album_id': 3, 'artist_id': 4}, {'album_id': 3, 'artist_id': 14}, {'album_id': 3, 'artist_id': 15},
-    {'album_id': 3, 'artist_id': 16}, {'album_id': 4, 'artist_id': 1}, {'album_id': 5, 'artist_id': 1},
-    {'album_id': 5, 'artist_id': 3}, {'album_id': 5, 'artist_id': 9}, {'album_id': 5, 'artist_id': 5},
-    {'album_id': 6, 'artist_id': 1}, {'album_id': 7, 'artist_id': 1}
-]
-
-artists_tracks = [
-    {'track_id': 1, 'artist_id': 1}, {'track_id': 2, 'artist_id': 1}, {'track_id': 2, 'artist_id': 3},
-    {'track_id': 3, 'artist_id': 1}, {'track_id': 3, 'artist_id': 3}, {'track_id': 4, 'artist_id': 1},
-    {'track_id': 5, 'artist_id': 1}, {'track_id': 6, 'artist_id': 1}, {'track_id': 7, 'artist_id': 1},
-    {'track_id': 8, 'artist_id': 1}, {'track_id': 9, 'artist_id': 1}, {'track_id': 10, 'artist_id': 1},
-    {'track_id': 11, 'artist_id': 1}, {'track_id': 12, 'artist_id': 1}, {'track_id': 13, 'artist_id': 1},
-    {'track_id': 14, 'artist_id': 1}, {'track_id': 14, 'artist_id': 10}, {'track_id': 15, 'artist_id': 1},
-    {'track_id': 16, 'artist_id': 1}, {'track_id': 16, 'artist_id': 2}, {'track_id': 17, 'artist_id': 1},
-    {'track_id': 17, 'artist_id': 4}, {'track_id': 18, 'artist_id': 1}, {'track_id': 18, 'artist_id': 4},
-    {'track_id': 19, 'artist_id': 1}, {'track_id': 19, 'artist_id': 4}, {'track_id': 20, 'artist_id': 1},
-    {'track_id': 20, 'artist_id': 4}, {'track_id': 20, 'artist_id': 10}, {'track_id': 21, 'artist_id': 1},
-    {'track_id': 21, 'artist_id': 4}, {'track_id': 22, 'artist_id': 1}, {'track_id': 22, 'artist_id': 4},
-    {'track_id': 22, 'artist_id': 14}, {'track_id': 22, 'artist_id': 15}, {'track_id': 23, 'artist_id': 1},
-    {'track_id': 23, 'artist_id': 4}, {'track_id': 24, 'artist_id': 1}, {'track_id': 24, 'artist_id': 4},
-    {'track_id': 25, 'artist_id': 1}, {'track_id': 25, 'artist_id': 4}, {'track_id': 26, 'artist_id': 1},
-    {'track_id': 26, 'artist_id': 4}, {'track_id': 27, 'artist_id': 1}, {'track_id': 27, 'artist_id': 4},
-    {'track_id': 28, 'artist_id': 1}, {'track_id': 28, 'artist_id': 4}, {'track_id': 28, 'artist_id': 16},
-    {'track_id': 29, 'artist_id': 1}, {'track_id': 30, 'artist_id': 1}, {'track_id': 30, 'artist_id': 10},
-    {'track_id': 31, 'artist_id': 1}, {'track_id': 31, 'artist_id': 2}, {'track_id': 32, 'artist_id': 1},
-    {'track_id': 32, 'artist_id': 3}, {'track_id': 33, 'artist_id': 1}, {'track_id': 33, 'artist_id': 6},
-    {'track_id': 34, 'artist_id': 1}, {'track_id': 34, 'artist_id': 2}, {'track_id': 35, 'artist_id': 1},
-    {'track_id': 35, 'artist_id': 2}, {'track_id': 36, 'artist_id': 1}, {'track_id': 36, 'artist_id': 2},
-    {'track_id': 37, 'artist_id': 1}, {'track_id': 37, 'artist_id': 7}, {'track_id': 38, 'artist_id': 1},
-    {'track_id': 38, 'artist_id': 2}, {'track_id': 39, 'artist_id': 1}, {'track_id': 40, 'artist_id': 1},
-    {'track_id': 40, 'artist_id': 5}, {'track_id': 41, 'artist_id': 1}, {'track_id': 41, 'artist_id': 5},
-    {'track_id': 42, 'artist_id': 1}, {'track_id': 42, 'artist_id': 2}, {'track_id': 42, 'artist_id': 8},
-    {'track_id': 43, 'artist_id': 1}, {'track_id': 44, 'artist_id': 1}, {'track_id': 44, 'artist_id': 2},
-    {'track_id': 45, 'artist_id': 1}, {'track_id': 46, 'artist_id': 1}, {'track_id': 46, 'artist_id': 2},
-    {'track_id': 47, 'artist_id': 1}, {'track_id': 47, 'artist_id': 2}, {'track_id': 48, 'artist_id': 1},
-    {'track_id': 48, 'artist_id': 2}, {'track_id': 49, 'artist_id': 1}, {'track_id': 49, 'artist_id': 3},
-    {'track_id': 49, 'artist_id': 11}, {'track_id': 50, 'artist_id': 1}, {'track_id': 51, 'artist_id': 1},
-    {'track_id': 52, 'artist_id': 1}, {'track_id': 53, 'artist_id': 1}, {'track_id': 54, 'artist_id': 1},
-    {'track_id': 55, 'artist_id': 1}, {'track_id': 56, 'artist_id': 1}, {'track_id': 57, 'artist_id': 1},
-    {'track_id': 58, 'artist_id': 1}, {'track_id': 59, 'artist_id': 1}, {'track_id': 60, 'artist_id': 1},
-    {'track_id': 61, 'artist_id': 1}, {'track_id': 62, 'artist_id': 1}, {'track_id': 63, 'artist_id': 1},
-    {'track_id': 64, 'artist_id': 1}, {'track_id': 65, 'artist_id': 1}, {'track_id': 66, 'artist_id': 1},
-    {'track_id': 66, 'artist_id': 3}, {'track_id': 67, 'artist_id': 1}, {'track_id': 68, 'artist_id': 1},
-    {'track_id': 69, 'artist_id': 1}, {'track_id': 70, 'artist_id': 1}, {'track_id': 71, 'artist_id': 1},
-    {'track_id': 72, 'artist_id': 1}, {'track_id': 72, 'artist_id': 9}, {'track_id': 73, 'artist_id': 1},
-    {'track_id': 74, 'artist_id': 1}, {'track_id': 75, 'artist_id': 1}, {'track_id': 76, 'artist_id': 1},
-    {'track_id': 76, 'artist_id': 9}, {'track_id': 77, 'artist_id': 1}, {'track_id': 78, 'artist_id': 1},
-    {'track_id': 79, 'artist_id': 1}, {'track_id': 80, 'artist_id': 1}, {'track_id': 81, 'artist_id': 1},
-    {'track_id': 82, 'artist_id': 1}, {'track_id': 83, 'artist_id': 1}, {'track_id': 84, 'artist_id': 1},
-    {'track_id': 85, 'artist_id': 1}, {'track_id': 86, 'artist_id': 1}, {'track_id': 86, 'artist_id': 5},
-    {'track_id': 87, 'artist_id': 1}, {'track_id': 88, 'artist_id': 1}, {'track_id': 89, 'artist_id': 1},
-    {'track_id': 90, 'artist_id': 1}, {'track_id': 91, 'artist_id': 1}, {'track_id': 92, 'artist_id': 1},
-    {'track_id': 93, 'artist_id': 1}, {'track_id': 94, 'artist_id': 1}, {'track_id': 95, 'artist_id': 1},
-    {'track_id': 96, 'artist_id': 1}, {'track_id': 97, 'artist_id': 1}, {'track_id': 98, 'artist_id': 1},
-    {'track_id': 99, 'artist_id': 1}, {'track_id': 99, 'artist_id': 12}, {'track_id': 100, 'artist_id': 1},
-    {'track_id': 101, 'artist_id': 1}, {'track_id': 102, 'artist_id': 1}, {'track_id': 103, 'artist_id': 1},
-    {'track_id': 103, 'artist_id': 5},
-    {'track_id': 104, 'artist_id': 1}, {'track_id': 105, 'artist_id': 1}, {'track_id': 106, 'artist_id': 1},
-    {'track_id': 107, 'artist_id': 1}, {'track_id': 108, 'artist_id': 1}, {'track_id': 109, 'artist_id': 1},
-    {'track_id': 110, 'artist_id': 1}, {'track_id': 111, 'artist_id': 1}, {'track_id': 112, 'artist_id': 1},
-    {'track_id': 113, 'artist_id': 1}, {'track_id': 114, 'artist_id': 1}, {'track_id': 115, 'artist_id': 1},
-    {'track_id': 116, 'artist_id': 1}, {'track_id': 117, 'artist_id': 1}, {'track_id': 118, 'artist_id': 1},
-    {'track_id': 119, 'artist_id': 1}, {'track_id': 120, 'artist_id': 1}, {'track_id': 121, 'artist_id': 1},
-    {'track_id': 122, 'artist_id': 1}, {'track_id': 123, 'artist_id': 1}, {'track_id': 124, 'artist_id': 1},
-    {'track_id': 125, 'artist_id': 1}, {'track_id': 126, 'artist_id': 1}, {'track_id': 127, 'artist_id': 1},
-    {'track_id': 128, 'artist_id': 1}, {'track_id': 128, 'artist_id': 13}, {'track_id': 129, 'artist_id': 1},
-    {'track_id': 130, 'artist_id': 1}, {'track_id': 131, 'artist_id': 1}, {'track_id': 132, 'artist_id': 1},
-    {'track_id': 133, 'artist_id': 1}, {'track_id': 134, 'artist_id': 1}, {'track_id': 135, 'artist_id': 1},
-    {'track_id': 136, 'artist_id': 1}, {'track_id': 137, 'artist_id': 1}, {'track_id': 138, 'artist_id': 1},
-    {'track_id': 139, 'artist_id': 1}, {'track_id': 140, 'artist_id': 1}, {'track_id': 141, 'artist_id': 1},
-    {'track_id': 142, 'artist_id': 1}, {'track_id': 143, 'artist_id': 1}, {'track_id': 144, 'artist_id': 1},
-    {'track_id': 145, 'artist_id': 1}, {'track_id': 146, 'artist_id': 1}, {'track_id': 147, 'artist_id': 1},
-    {'track_id': 148, 'artist_id': 1}, {'track_id': 149, 'artist_id': 1}, {'track_id': 150, 'artist_id': 1},
-    {'track_id': 151, 'artist_id': 1}, {'track_id': 152, 'artist_id': 1}, {'track_id': 153, 'artist_id': 1},
-    {'track_id': 154, 'artist_id': 1}, {'track_id': 155, 'artist_id': 1}, {'track_id': 156, 'artist_id': 1},
-    {'track_id': 157, 'artist_id': 1}, {'track_id': 158, 'artist_id': 1}
-]
-
-singles = [
-    {'track_id': 1},  # 1
-    {'track_id': 4},  # 2
-    {'track_id': 13},  # 3
-    {'track_id': 15},  # 4
-    {'track_id': 16},  # 5
-    {'track_id': 29},  # 6
-    {'track_id': 31},  # 7
-    {'track_id': 34},  # 8
-    {'track_id': 35},  # 9
-    {'track_id': 36},  # 10
-    {'track_id': 37},  # 11
-    {'track_id': 38},  # 12
-    {'track_id': 39},  # 13
-    {'track_id': 42},  # 14
-    {'track_id': 43},  # 15
-    {'track_id': 44},  # 16
-    {'track_id': 45},  # 17
-    {'track_id': 46},  # 18
-    {'track_id': 47},  # 19
-    {'track_id': 48},  # 20
-    {'track_id': 65},  # 21
-    {'track_id': 67},  # 22
-    {'track_id': 69},  # 23
-    {'track_id': 72},  # 24
-    {'track_id': 73},  # 25
-    {'track_id': 79},  # 26
-    {'track_id': 83},  # 27
-    {'track_id': 85},  # 28
-    {'track_id': 87},  # 29
-    {'track_id': 89},  # 30
-    {'track_id': 90},  # 31
-    {'track_id': 91},  # 32
-    {'track_id': 92},  # 33
-    {'track_id': 99},  # 34
-    {'track_id': 100},  # 35
-    {'track_id': 101},  # 36
-    {'track_id': 102},  # 37
-    {'track_id': 104},  # 38
-    {'track_id': 77},  # 39
-    {'track_id': 111},  # 40
-    {'track_id': 119},  # 41
-    {'track_id': 122},  # 42
-    {'track_id': 123},  # 43
-    {'track_id': 124},  # 44
-    {'track_id': 125},  # 45
-    {'track_id': 126},  # 46
-    {'track_id': 127},  # 47
-    {'track_id': 128},  # 48
-    {'track_id': 129},  # 49
-    {'track_id': 130},  # 50
-    {'track_id': 131},  # 51
-    {'track_id': 132},  # 52
-    {'track_id': 133},  # 53
-    {'track_id': 134},  # 54
-    {'track_id': 135},  # 55
-]
-
-featurings = [
-    {'track_id': 2}, {'track_id': 3}, {'track_id': 14}, {'track_id': 30}, {'track_id': 32},
-    {'track_id': 33}, {'track_id': 40}, {'track_id': 41}, {'track_id': 49}, {'track_id': 103}
-]
-
-tracks = [
-    {'title': 'FADED.', 'date_release': '2023-08-26', 'duration': '02:24', 'track_position_in_album': 4},  # 1
-    {'title': 'Супермен', 'date_release': '2023-08-04', 'duration': '01:53', 'track_position_in_album': None},  # 2
-    {'title': 'Мы не играем в любовь (Remix)', 'date_release': '2023-08-04', 'duration': '01:58', 'track_position_in_album': None},  # 3
-    {'title': 'Supposed To Be', 'date_release': '2023-08-04', 'duration': '02:00', 'track_position_in_album': 21},  # 4
-    {'title': 'Моя Вина', 'date_release': '2023-06-30', 'duration': '02:24', 'track_position_in_album': 1},  # 5
-    {'title': 'Ничего Лишнего', 'date_release': '2023-06-30', 'duration': '03:16', 'track_position_in_album': 2},  # 6
-    {'title': 'Занят', 'date_release': '2023-06-30', 'duration': '02:08', 'track_position_in_album': 3},  # 7
-    {'title': 'Время Летит', 'date_release': '2023-06-30', 'duration': '02:57', 'track_position_in_album': 4},  # 8
-    {'title': 'Babe <3', 'date_release': '2023-06-30', 'duration': '02:16', 'track_position_in_album': 5},  # 9
-    {'title': 'Маньяк', 'date_release': '2023-06-30', 'duration': '02:07', 'track_position_in_album': 6},  # 10
-    {'title': 'Время Покажет', 'date_release': '2023-06-30', 'duration': '02:49', 'track_position_in_album': 7},  # 11
-    {'title': 'Может Быть', 'date_release': '2023-06-30', 'duration': '02:06', 'track_position_in_album': 8},  # 12
-    {'title': 'For Another', 'date_release': '2023-02-23', 'duration': '03:11', 'track_position_in_album': None},  # 13
-    {'title': 'Bitch Live In Texas', 'date_release': '2023-02-21', 'duration': '01:12', 'track_position_in_album': None},  # 14
-    {'title': 'Dead For You', 'date_release': '2022-12-31', 'duration': '01:54', 'track_position_in_album': None},  # 15
-    {'title': 'Лавина', 'date_release': '2022-12-09', 'duration': '02:46', 'track_position_in_album': None},  # 16
-    {'title': 'Время Перемен', 'date_release': '2022-11-25', 'duration': '02:16', 'track_position_in_album': 1},  # 17
-    {'title': 'Не Отпускай Меня', 'date_release': '2022-11-25', 'duration': '02:30', 'track_position_in_album': 2},  # 18
-    {'title': 'Молчание', 'date_release': '2022-11-25', 'duration': '02:53', 'track_position_in_album': 3},  # 19
-    {'title': 'Ночь', 'date_release': '2022-11-25', 'duration': '02:28', 'track_position_in_album': 4},  # 20
-    {'title': 'Одинокий', 'date_release': '2022-11-25', 'duration': '02:49', 'track_position_in_album': 5},  # 21
-    {'title': 'Нужна Она', 'date_release': '2022-11-25', 'duration': '03:04', 'track_position_in_album': 6},  # 22
-    {'title': 'Ранен', 'date_release': '2022-11-25', 'duration': '02:24', 'track_position_in_album': 7},  # 23
-    {'title': 'Опоздал', 'date_release': '2022-11-25', 'duration': '02:16', 'track_position_in_album': 8},  # 24
-    {'title': 'Между Нами', 'date_release': '2022-11-25', 'duration': '02:21', 'track_position_in_album': 9},  # 25
-    {'title': 'Мгновенье', 'date_release': '2022-11-25', 'duration': '02:08', 'track_position_in_album': 10},  # 26
-    {'title': 'Внимание', 'date_release': '2022-11-25', 'duration': '02:19', 'track_position_in_album': 11},  # 27
-    {'title': 'Не Могу', 'date_release': '2022-11-25', 'duration': '03:14', 'track_position_in_album': 12},  # 28
-    {'title': 'Эйфория', 'date_release': '2022-10-19', 'duration': '02:27', 'track_position_in_album': None},  # 29
-    {'title': 'Половина обезбола', 'date_release': '2022-10-07', 'duration': '01:29', 'track_position_in_album': None},  # 30
-    {'title': 'Секси!', 'date_release': '2022-07-22', 'duration': '02:21', 'track_position_in_album': None},  # 31
-    {'title': 'МЫ НЕ ИГРАЕМ В ЛЮБОВЬ', 'date_release': '2022-07-15', 'duration': '02:25', 'track_position_in_album': None},  # 32
-    {'title': 'Тсукуёми', 'date_release': '2022-07-15', 'duration': '02:03', 'track_position_in_album': None},  # 33
-    {'title': 'Киборг', 'date_release': '2022-06-03', 'duration': '02:24', 'track_position_in_album': None},  # 34
-    {'title': 'Highway Of Love', 'date_release': '2022-04-01', 'duration': '02:34', 'track_position_in_album': None},  # 35
-    {'title': 'Время', 'date_release': '2022-02-11', 'duration': '02:47', 'track_position_in_album': None},  # 36
-    {'title': 'Тени', 'date_release': '2022-01-28', 'duration': '02:14', 'track_position_in_album': None},  # 37
-    {'title': 'Я Скучаю', 'date_release': '2022-01-14', 'duration': '02:09', 'track_position_in_album': None},  # 38
-    {'title': 'Первый Снег', 'date_release': '2021-12-31', 'duration': '02:05', 'track_position_in_album': None},  # 39
-    {'title': 'Bad Bitch', 'date_release': '2021-05-23', 'duration': '02:50', 'track_position_in_album': None},  # 40
-    {'title': 'Марихуана', 'date_release': '2021-05-23', 'duration': '02:51', 'track_position_in_album': None},  # 41
-    {'title': 'Make Choice', 'date_release': '2021-02-24', 'duration': '03:37', 'track_position_in_album': None},  # 42
-    {'title': 'Believe', 'date_release': '2020-12-31', 'duration': '02:11', 'track_position_in_album': None},  # 43
-    {'title': 'Stars', 'date_release': '2020-12-29', 'duration': '02:13', 'track_position_in_album': None},  # 44
-    {'title': 'Out The Way', 'date_release': '2020-11-12', 'duration': '03:12', 'track_position_in_album': None},  # 45
-    {'title': 'Kill Me Now', 'date_release': '2020-08-28', 'duration': '02:39', 'track_position_in_album': None},  # 46
-    {'title': 'Reason', 'date_release': '2020-08-01', 'duration': '02:16', 'track_position_in_album': None},  # 47
-    {'title': 'Quarantine', 'date_release': '2020-05-20', 'duration': '02:44', 'track_position_in_album': None},  # 48
-    {'title': 'Космос 2', 'date_release': '2020-04-27', 'duration': '04:13', 'track_position_in_album': None},  # 49
-    {'title': 'Who Needs Love?', 'date_release': '2020-03-22', 'duration': '02:40', 'track_position_in_album': 1},  # 50
-    {'title': 'Tell Me Bout That Night', 'date_release': '2020-03-22', 'duration': '01:42', 'track_position_in_album': 2},  # 51
-    {'title': 'Highway Of Love', 'date_release': '2020-03-22', 'duration': '02:14', 'track_position_in_album': 3},  # 52
-    {'title': 'Love Games', 'date_release': '2020-03-22', 'duration': '02:15', 'track_position_in_album': 4},  # 53
-    {'title': 'Scars', 'date_release': '2020-03-22', 'duration': '02:37', 'track_position_in_album': 5},  # 54
-    {'title': "I'm In love", 'date_release': '2020-03-22', 'duration': '03:14', 'track_position_in_album': 6},  # 55
-    {'title': 'Baby Wants', 'date_release': '2020-03-22', 'duration': '02:00', 'track_position_in_album': 7},  # 56
-    {'title': 'Лишь Ложь', 'date_release': '2020-03-22', 'duration': '03:13', 'track_position_in_album': 8},  # 57
-    {'title': 'Настоящий Ты', 'date_release': '2020-03-22', 'duration': '02:24', 'track_position_in_album': 9},  # 58
-    {'title': 'Свет Небес', 'date_release': '2020-03-22', 'duration': '01:57', 'track_position_in_album': 10},  # 59
-    {'title': 'Разбуди Меня', 'date_release': '2020-03-22', 'duration': '02:12', 'track_position_in_album': 11},  # 60
-    {'title': 'Остался Прежним', 'date_release': '2020-03-22', 'duration': '02:42', 'track_position_in_album': 12},  # 61
-    {'title': 'Мир Грёз', 'date_release': '2020-03-22', 'duration': '02:25', 'track_position_in_album': 13},  # 62
-    {'title': 'За Мечтами', 'date_release': '2020-03-22', 'duration': '02:53', 'track_position_in_album': 14},  # 63
-    {'title': 'Intro', 'date_release': '2020-03-08', 'duration': '02:21', 'track_position_in_album': 1},  # 64
-    {'title': 'Long Way', 'date_release': '2019-10-02', 'duration': '03:04', 'track_position_in_album': 2},  # 65
-    {'title': 'Live In Dreams', 'date_release': '2020-03-08', 'duration': '02:36', 'track_position_in_album': 3},  # 66
-    {'title': 'Breakdown', 'date_release': '2019-11-20', 'duration': '02:23', 'track_position_in_album': 4},  # 67
-    {'title': 'Playin In Love', 'date_release': '2020-03-08', 'duration': '02:21', 'track_position_in_album': 5},  # 68
-    {'title': 'Can We Be Together?', 'date_release': '2019-11-06', 'duration': '02:18', 'track_position_in_album': 6},  # 69
-    {'title': 'Bad Memories', 'date_release': '2020-03-08', 'duration': '02:42', 'track_position_in_album': 7},  # 70
-    {'title': 'Workin Hard', 'date_release': '2020-03-08', 'duration': '01:54', 'track_position_in_album': 8},  # 71
-    {'title': 'What You Want From Love?', 'date_release': '2020-02-14', 'duration': '03:12',
-     'track_position_in_album': 9},  # 72
-    {'title': 'I Was Need A Break', 'date_release': '2019-10-24', 'duration': '01:58', 'track_position_in_album': 10},  # 73
-    {'title': 'Wassup From The Gap', 'date_release': '2020-03-08', 'duration': '02:49', 'track_position_in_album': 11},  # 74
-    {'title': 'Tryin Be The Best', 'date_release': '2020-03-08', 'duration': '02:43', 'track_position_in_album': 12},  # 75
-    {'title': 'Early Bird 3', 'date_release': '2020-03-08', 'duration': '02:31', 'track_position_in_album': 13},  # 76
-    {'title': 'How Am I Lost?', 'date_release': '2020-01-28', 'duration': '02:30', 'track_position_in_album': 14},  # 77
-    {'title': "Don't Leave Me Alone", 'date_release': '2020-03-08', 'duration': '02:23', 'track_position_in_album': 15},  # 78
-    {'title': 'Far From Home', 'date_release': '2019-11-07', 'duration': '02:21', 'track_position_in_album': 16},  # 79
-    {'title': 'Why Not?', 'date_release': '2020-03-08', 'duration': '02:18', 'track_position_in_album': 17},  # 80
-    {'title': 'Chasing The Money', 'date_release': '2020-03-08', 'duration': '02:20', 'track_position_in_album': 18},  # 81
-    {'title': 'I Will No Hate You', 'date_release': '2020-03-08', 'duration': '02:08', 'track_position_in_album': 19},  # 82
-    {'title': 'Tonight', 'date_release': '2020-02-11', 'duration': '02:24', 'track_position_in_album': 20},  # 83
-    {'title': 'Under Purple Rain', 'date_release': '2020-03-08', 'duration': '02:24', 'track_position_in_album': 21},  # 84
-    {'title': 'Deadmans', 'date_release': '2019-11-28', 'duration': '02:17', 'track_position_in_album': 22},  # 85
-    {'title': 'Visions', 'date_release': '2020-03-08', 'duration': '03:30', 'track_position_in_album': 23},  # 86
-    {'title': 'Bad Bad Bad', 'date_release': '2019-12-10', 'duration': '02:09', 'track_position_in_album': 24},  # 87
-    {'title': 'Outro', 'date_release': '2020-03-08', 'duration': '02:14', 'track_position_in_album': 25},  # 88
-    {'title': 'Starry Sky', 'date_release': '2020-03-06', 'duration': '02:56', 'track_position_in_album': None},  # 89
-    {'title': 'Do You Love Me?', 'date_release': '2020-03-03', 'duration': '02:46', 'track_position_in_album': None},  # 90
-    {'title': 'Slatt Talk', 'date_release': '2020-02-21', 'duration': '02:32', 'track_position_in_album': None},  # 91
-    {'title': 'Happy New Year', 'date_release': '2019-12-31', 'duration': '01:57', 'track_position_in_album': None},  # 92
-    {'title': 'Mileran Vibes', 'date_release': '2019-10-18', 'duration': '02:08', 'track_position_in_album': 1},  # 93
-    {'title': 'Money Kill', 'date_release': '2019-10-18', 'duration': '02:24', 'track_position_in_album': 2},  # 94
-    {'title': 'Early Bird 2', 'date_release': '2019-10-18', 'duration': '02:28', 'track_position_in_album': 4},  # 95
-    {'title': 'No Lonely', 'date_release': '2019-10-18', 'duration': '02:20', 'track_position_in_album': 5},  # 96
-    {'title': "Fake Talkin'", 'date_release': '2019-10-18', 'duration': '02:09', 'track_position_in_album': 6},  # 97
-    {'title': 'No Time', 'date_release': '2019-09-14', 'duration': '02:22', 'track_position_in_album': 8},  # 98
-    {'title': 'I Got Some Move', 'date_release': '2019-10-11', 'duration': '02:28', 'track_position_in_album': None}, # 99
-    {'title': 'Что ты сделал?', 'date_release': '2019-09-30', 'duration': '02:58', 'track_position_in_album': None}, # 100
-    {'title': 'wassup, girl', 'date_release': '2019-09-27', 'duration': '02:01', 'track_position_in_album': None}, # 101
-    {'title': 'Не Сдавайся', 'date_release': '2019-09-28', 'duration': '02:01', 'track_position_in_album': None},  # 102
-    {'title': 'Tanjiro Kamado (Remix)', 'date_release': '2019-09-21', 'duration': '02:54', 'track_position_in_album': None}, # 103
-    {'title': 'momma tell me', 'date_release': '2019-09-20', 'duration': '02:34', 'track_position_in_album': None}, # 104
-    {'title': 'Intro', 'date_release': '2019-09-07', 'duration': '01:17', 'track_position_in_album': 1},  # 105
-    {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 2},  # 106
-    {'title': 'Spend All Night', 'date_release': '2019-09-07', 'duration': '01:57', 'track_position_in_album': 3}, # 107
-    {'title': 'Through The Sky', 'date_release': '2019-09-07', 'duration': '02:33', 'track_position_in_album': 4}, # 108
-    {'title': 'We Are Put Our Heart In The Phone', 'date_release': '2019-09-07', 'duration': '02:40', 'track_position_in_album': 5},  # 109
-    {'title': 'Go In The Gap', 'date_release': '2019-09-07', 'duration': '02:19', 'track_position_in_album': 6},  # 110
-    {'title': 'Heart Is a Full Of Lies', 'date_release': '2019-04-19', 'duration': '02:06', 'track_position_in_album': 7},  # 111
-    {'title': 'You Just A Hoe', 'date_release': '2019-09-07', 'duration': '02:38', 'track_position_in_album': 8},  # 112
-    {'title': 'Closed Door', 'date_release': '2019-09-07', 'duration': '02:55', 'track_position_in_album': 9},  # 113
-    {'title': 'Bang 2', 'date_release': '2019-09-07', 'duration': '02:03', 'track_position_in_album': 10},  # 114
-    {'title': 'My Feelings', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 11},  # 115
-    {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00', 'track_position_in_album': 12}, # 116
-    {'title': 'Hate That World', 'date_release': '2019-09-07', 'duration': '02:27', 'track_position_in_album': 13}, # 117
-    {'title': 'Swag!', 'date_release': '2019-09-07', 'duration': '02:07', 'track_position_in_album': 14},  # 118
-    {'title': 'Time Is Sad With Every Day', 'date_release': '2019-06-14', 'duration': '03:05', 'track_position_in_album': 15},  # 119
-    {'title': "You're So Fuckin' Bad, Bae", 'date_release': '2019-09-07', 'duration': '02:59', 'track_position_in_album': 16},  # 120
-    {'title': 'Outro', 'date_release': '2019-09-07', 'duration': '01:32', 'track_position_in_album': 17},  # 121
-    {'title': '730, oh yeah', 'date_release': '2019-08-30', 'duration': '02:22', 'track_position_in_album': None},  # 122
-    {'title': 'dr. stone', 'date_release': '2019-08-28', 'duration': '02:24', 'track_position_in_album': None},  # 123
-    {'title': 'never want dat kind of love', 'date_release': '2019-08-27', 'duration': '01:57', 'track_position_in_album': None},  # 124
-    {'title': 'diamonds dance', 'date_release': '2019-08-25', 'duration': '02:28', 'track_position_in_album': None},  # 125
-    {'title': 'in the space', 'date_release': '2019-08-23', 'duration': '02:24', 'track_position_in_album': None},  # 126
-    {'title': '448!', 'date_release': '2019-08-22', 'duration': '02:04', 'track_position_in_album': None},  # 127
-    {'title': 'Before', 'date_release': '2019-07-29', 'duration': '03:31', 'track_position_in_album': None},  # 128
-    {'title': 'where we go?', 'date_release': '2019-07-18', 'duration': '01:48', 'track_position_in_album': None},  # 129
-    {'title': 'smith & wesson', 'date_release': '2019-07-11', 'duration': '02:59', 'track_position_in_album': None},  # 130
-    {'title': "takin 'n' takin", 'date_release': '2019-06-22', 'duration': '02:03', 'track_position_in_album': None},  # 131
-    {'title': 'look like pearl', 'date_release': '2019-06-08', 'duration': '02:39', 'track_position_in_album': None},  # 132
-    {'title': "that's for love", 'date_release': '2019-06-02', 'duration': '02:30', 'track_position_in_album': None},  # 133
-    {'title': 'meet the girl', 'date_release': '2019-02-02', 'duration': '02:31', 'track_position_in_album': None}, # 134
-    {'title': 'You No Lit', 'date_release': '2018-11-23', 'duration': '02:25', 'track_position_in_album': None},  # 135
-    {'title': "HONESTLY.", 'date_release': '2023-11-04', 'duration': '02:11', 'track_position_in_album': 1},  # 136
-    {'title': "MEROCK.", 'date_release': '2023-11-04', 'duration': '01:24', 'track_position_in_album': 2},  # 137
-    {'title': "THEATER.", 'date_release': '2023-11-04', 'duration': '03:09', 'track_position_in_album': 3},  # 138
-    {'title': "ALL YEAR.", 'date_release': '2023-11-04', 'duration': '02:05', 'track_position_in_album': 5},  # 139
-    {'title': "NO CHANGE.", 'date_release': '2023-11-04', 'duration': '02:18', 'track_position_in_album': 6},  # 140
-    {'title': "WHERE DREAMS LEAD.", 'date_release': '2023-11-04', 'duration': '02:32', 'track_position_in_album': 7},  # 141
-    {'title': "UP DOWN.", 'date_release': '2023-11-04', 'duration': '03:04', 'track_position_in_album': 8},  # 142
-    {'title': "PILGRIM.", 'date_release': '2023-11-04', 'duration': '02:38', 'track_position_in_album': 9},  # 143
-    {'title': "IN MY SOUL.", 'date_release': '2023-11-04', 'duration': '02:29', 'track_position_in_album': 10},  # 144
-    {'title': "WE LOVE.", 'date_release': '2023-11-04', 'duration': '02:03', 'track_position_in_album': 11},  # 145
-    {'title': "NEW SEASON.", 'date_release': '2023-11-04', 'duration': '01:35', 'track_position_in_album': 12},  # 146
-    {'title': "COLD.", 'date_release': '2023-11-04', 'duration': '02:08', 'track_position_in_album': 13},  # 147
-    {'title': "A LONG TIME AGO.", 'date_release': '2023-11-04', 'duration': '02:34', 'track_position_in_album': 14},  # 148
-    {'title': "BOBBY FISCHER.", 'date_release': '2023-11-04', 'duration': '02:35', 'track_position_in_album': 15},  # 149
-    {'title': "IDOL.", 'date_release': '2023-11-04', 'duration': '02:17', 'track_position_in_album': 16},  # 150
-    {'title': "REAL.", 'date_release': '2023-11-04', 'duration': '02:53', 'track_position_in_album': 17},  # 151
-    {'title': "STRANGERS.", 'date_release': '2023-11-04', 'duration': '01:36', 'track_position_in_album': 18},  # 152
-    {'title': "WEEKEND.", 'date_release': '2023-11-04', 'duration': '01:36', 'track_position_in_album': 19},  # 153
-    {'title': "BANKROLL.", 'date_release': '2023-11-04', 'duration': '01:57', 'track_position_in_album': 20},  # 154
-    {'title': "HARD FOR ME.", 'date_release': '2023-11-04', 'duration': '01:38', 'track_position_in_album': 22},  # 155
-    {'title': "FORGIVENESS.", 'date_release': '2023-11-04', 'duration': '05:26', 'track_position_in_album': 23},  # 156
-    {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 7},  # 157
-    {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00', 'track_position_in_album': 3}  # 158
-]
-
-lyrics = [
-    {
-        'lyrics': """
+            'date_release': '2019-09-07',
+            'cover': 'life_is_full_of_lies_2'
+        }
+    ]
+    artists: list = [
+        {'name': 'Azuko'},  # 1
+        {'name': '88Ringo'},  # 2
+        {'name': 'ICYWAVE'},  # 3
+        {'name': 'Kaneki'},  # 4
+        {'name': 'YUNG ROUZY'},  # 5
+        {'name': 'Blant'},  # 6
+        {'name': 'СЭТ ГРАНЖ'},  # 7
+        {'name': 'Noicat'},  # 8
+        {'name': 'Bobby D'},  # 9
+        {'name': 'Flipboy'},  # 10
+        {'name': 'Свиридов'},  # 11
+        {'name': 'FARO'},  # 12
+        {'name': 'Brayke'},  # 13
+        {'name': 'YslBby'},  # 14
+        {'name': 'CHATTY'},  # 15
+        {'name': 'Foreign Beep'}  # 16
+    ]
+    albums_tracks: list = [
+        # FUNNY but NOBODY
+        {'album_id': 1, 'track_id': 136}, {'album_id': 1, 'track_id': 137},
+        {'album_id': 1, 'track_id': 138}, {'album_id': 1, 'track_id': 139},
+        {'album_id': 1, 'track_id': 140}, {'album_id': 1, 'track_id': 141},
+        {'album_id': 1, 'track_id': 142}, {'album_id': 1, 'track_id': 143},
+        {'album_id': 1, 'track_id': 144}, {'album_id': 1, 'track_id': 145},
+        {'album_id': 1, 'track_id': 146}, {'album_id': 1, 'track_id': 147},
+        {'album_id': 1, 'track_id': 148}, {'album_id': 1, 'track_id': 149},
+        {'album_id': 1, 'track_id': 150}, {'album_id': 1, 'track_id': 151},
+        {'album_id': 1, 'track_id': 152}, {'album_id': 1, 'track_id': 153},
+        {'album_id': 1, 'track_id': 154}, {'album_id': 1, 'track_id': 155},
+        {'album_id': 1, 'track_id': 156}, {'album_id': 1, 'track_id': 1},
+        {'album_id': 1, 'track_id': 4},
+        # with love from Azuko
+        {'album_id': 2, 'track_id': 5}, {'album_id': 2, 'track_id': 6},
+        {'album_id': 2, 'track_id': 7}, {'album_id': 2, 'track_id': 8},
+        {'album_id': 2, 'track_id': 9}, {'album_id': 2, 'track_id': 10},
+        {'album_id': 2, 'track_id': 11}, {'album_id': 2, 'track_id': 12},
+        # ВРЕМЯ ПЕРЕМЕН
+        {'album_id': 3, 'track_id': 17}, {'album_id': 3, 'track_id': 18},
+        {'album_id': 3, 'track_id': 19}, {'album_id': 3, 'track_id': 20},
+        {'album_id': 3, 'track_id': 21}, {'album_id': 3, 'track_id': 22},
+        {'album_id': 3, 'track_id': 23}, {'album_id': 3, 'track_id': 24},
+        {'album_id': 3, 'track_id': 25}, {'album_id': 3, 'track_id': 26},
+        {'album_id': 3, 'track_id': 27}, {'album_id': 3, 'track_id': 28},
+        # Highway Of Love (Deluxe)
+        {'album_id': 4, 'track_id': 50}, {'album_id': 4, 'track_id': 51},
+        {'album_id': 4, 'track_id': 52}, {'album_id': 4, 'track_id': 53},
+        {'album_id': 4, 'track_id': 54}, {'album_id': 4, 'track_id': 55},
+        {'album_id': 4, 'track_id': 56}, {'album_id': 4, 'track_id': 57},
+        {'album_id': 4, 'track_id': 58}, {'album_id': 4, 'track_id': 59},
+        {'album_id': 4, 'track_id': 60}, {'album_id': 4, 'track_id': 61},
+        {'album_id': 4, 'track_id': 62}, {'album_id': 4, 'track_id': 63},
+        # Highway Of Love
+        {'album_id': 5, 'track_id': 64}, {'album_id': 5, 'track_id': 65},
+        {'album_id': 5, 'track_id': 66}, {'album_id': 5, 'track_id': 67},
+        {'album_id': 5, 'track_id': 68}, {'album_id': 5, 'track_id': 69},
+        {'album_id': 5, 'track_id': 70}, {'album_id': 5, 'track_id': 71},
+        {'album_id': 5, 'track_id': 72}, {'album_id': 5, 'track_id': 73},
+        {'album_id': 5, 'track_id': 74}, {'album_id': 5, 'track_id': 75},
+        {'album_id': 5, 'track_id': 76}, {'album_id': 5, 'track_id': 77},
+        {'album_id': 5, 'track_id': 78}, {'album_id': 5, 'track_id': 79},
+        {'album_id': 5, 'track_id': 80}, {'album_id': 5, 'track_id': 81},
+        {'album_id': 5, 'track_id': 82}, {'album_id': 5, 'track_id': 83},
+        {'album_id': 5, 'track_id': 84}, {'album_id': 5, 'track_id': 85},
+        {'album_id': 5, 'track_id': 86}, {'album_id': 5, 'track_id': 87},
+        {'album_id': 5, 'track_id': 88},
+        # Mileran Vibes
+        {'album_id': 6, 'track_id': 93}, {'album_id': 6, 'track_id': 94},
+        {'album_id': 6, 'track_id': 158}, {'album_id': 6, 'track_id': 95},
+        {'album_id': 6, 'track_id': 96}, {'album_id': 6, 'track_id': 97},
+        {'album_id': 6, 'track_id': 157}, {'album_id': 6, 'track_id': 98},
+        # Life Is Full Of Lies 2: Before Love Story
+        {'album_id': 7, 'track_id': 105}, {'album_id': 7, 'track_id': 106},
+        {'album_id': 7, 'track_id': 107}, {'album_id': 7, 'track_id': 108},
+        {'album_id': 7, 'track_id': 109}, {'album_id': 7, 'track_id': 110},
+        {'album_id': 7, 'track_id': 111}, {'album_id': 7, 'track_id': 112},
+        {'album_id': 7, 'track_id': 113}, {'album_id': 7, 'track_id': 114},
+        {'album_id': 7, 'track_id': 115}, {'album_id': 7, 'track_id': 116},
+        {'album_id': 7, 'track_id': 117}, {'album_id': 7, 'track_id': 118},
+        {'album_id': 7, 'track_id': 119}, {'album_id': 7, 'track_id': 120},
+        {'album_id': 7, 'track_id': 121}
+    ]
+    albums_artists: list = [
+        {'album_id': 1, 'artist_id': 1}, {'album_id': 2, 'artist_id': 1}, {'album_id': 3, 'artist_id': 1},
+        {'album_id': 3, 'artist_id': 4}, {'album_id': 3, 'artist_id': 14}, {'album_id': 3, 'artist_id': 15},
+        {'album_id': 3, 'artist_id': 16}, {'album_id': 4, 'artist_id': 1}, {'album_id': 5, 'artist_id': 1},
+        {'album_id': 5, 'artist_id': 3}, {'album_id': 5, 'artist_id': 9}, {'album_id': 5, 'artist_id': 5},
+        {'album_id': 6, 'artist_id': 1}, {'album_id': 7, 'artist_id': 1}
+    ]
+    artists_tracks: list = [
+        {'track_id': 1, 'artist_id': 1}, {'track_id': 2, 'artist_id': 1}, {'track_id': 2, 'artist_id': 3},
+        {'track_id': 3, 'artist_id': 1}, {'track_id': 3, 'artist_id': 3}, {'track_id': 4, 'artist_id': 1},
+        {'track_id': 5, 'artist_id': 1}, {'track_id': 6, 'artist_id': 1}, {'track_id': 7, 'artist_id': 1},
+        {'track_id': 8, 'artist_id': 1}, {'track_id': 9, 'artist_id': 1}, {'track_id': 10, 'artist_id': 1},
+        {'track_id': 11, 'artist_id': 1}, {'track_id': 12, 'artist_id': 1}, {'track_id': 13, 'artist_id': 1},
+        {'track_id': 14, 'artist_id': 1}, {'track_id': 14, 'artist_id': 10}, {'track_id': 15, 'artist_id': 1},
+        {'track_id': 16, 'artist_id': 1}, {'track_id': 16, 'artist_id': 2}, {'track_id': 17, 'artist_id': 1},
+        {'track_id': 17, 'artist_id': 4}, {'track_id': 18, 'artist_id': 1}, {'track_id': 18, 'artist_id': 4},
+        {'track_id': 19, 'artist_id': 1}, {'track_id': 19, 'artist_id': 4}, {'track_id': 20, 'artist_id': 1},
+        {'track_id': 20, 'artist_id': 4}, {'track_id': 20, 'artist_id': 10}, {'track_id': 21, 'artist_id': 1},
+        {'track_id': 21, 'artist_id': 4}, {'track_id': 22, 'artist_id': 1}, {'track_id': 22, 'artist_id': 4},
+        {'track_id': 22, 'artist_id': 14}, {'track_id': 22, 'artist_id': 15}, {'track_id': 23, 'artist_id': 1},
+        {'track_id': 23, 'artist_id': 4}, {'track_id': 24, 'artist_id': 1}, {'track_id': 24, 'artist_id': 4},
+        {'track_id': 25, 'artist_id': 1}, {'track_id': 25, 'artist_id': 4}, {'track_id': 26, 'artist_id': 1},
+        {'track_id': 26, 'artist_id': 4}, {'track_id': 27, 'artist_id': 1}, {'track_id': 27, 'artist_id': 4},
+        {'track_id': 28, 'artist_id': 1}, {'track_id': 28, 'artist_id': 4}, {'track_id': 28, 'artist_id': 16},
+        {'track_id': 29, 'artist_id': 1}, {'track_id': 30, 'artist_id': 1}, {'track_id': 30, 'artist_id': 10},
+        {'track_id': 31, 'artist_id': 1}, {'track_id': 31, 'artist_id': 2}, {'track_id': 32, 'artist_id': 1},
+        {'track_id': 32, 'artist_id': 3}, {'track_id': 33, 'artist_id': 1}, {'track_id': 33, 'artist_id': 6},
+        {'track_id': 34, 'artist_id': 1}, {'track_id': 34, 'artist_id': 2}, {'track_id': 35, 'artist_id': 1},
+        {'track_id': 35, 'artist_id': 2}, {'track_id': 36, 'artist_id': 1}, {'track_id': 36, 'artist_id': 2},
+        {'track_id': 37, 'artist_id': 1}, {'track_id': 37, 'artist_id': 7}, {'track_id': 38, 'artist_id': 1},
+        {'track_id': 38, 'artist_id': 2}, {'track_id': 39, 'artist_id': 1}, {'track_id': 40, 'artist_id': 1},
+        {'track_id': 40, 'artist_id': 5}, {'track_id': 41, 'artist_id': 1}, {'track_id': 41, 'artist_id': 5},
+        {'track_id': 42, 'artist_id': 1}, {'track_id': 42, 'artist_id': 2}, {'track_id': 42, 'artist_id': 8},
+        {'track_id': 43, 'artist_id': 1}, {'track_id': 44, 'artist_id': 1}, {'track_id': 44, 'artist_id': 2},
+        {'track_id': 45, 'artist_id': 1}, {'track_id': 46, 'artist_id': 1}, {'track_id': 46, 'artist_id': 2},
+        {'track_id': 47, 'artist_id': 1}, {'track_id': 47, 'artist_id': 2}, {'track_id': 48, 'artist_id': 1},
+        {'track_id': 48, 'artist_id': 2}, {'track_id': 49, 'artist_id': 1}, {'track_id': 49, 'artist_id': 3},
+        {'track_id': 49, 'artist_id': 11}, {'track_id': 50, 'artist_id': 1}, {'track_id': 51, 'artist_id': 1},
+        {'track_id': 52, 'artist_id': 1}, {'track_id': 53, 'artist_id': 1}, {'track_id': 54, 'artist_id': 1},
+        {'track_id': 55, 'artist_id': 1}, {'track_id': 56, 'artist_id': 1}, {'track_id': 57, 'artist_id': 1},
+        {'track_id': 58, 'artist_id': 1}, {'track_id': 59, 'artist_id': 1}, {'track_id': 60, 'artist_id': 1},
+        {'track_id': 61, 'artist_id': 1}, {'track_id': 62, 'artist_id': 1}, {'track_id': 63, 'artist_id': 1},
+        {'track_id': 64, 'artist_id': 1}, {'track_id': 65, 'artist_id': 1}, {'track_id': 66, 'artist_id': 1},
+        {'track_id': 66, 'artist_id': 3}, {'track_id': 67, 'artist_id': 1}, {'track_id': 68, 'artist_id': 1},
+        {'track_id': 69, 'artist_id': 1}, {'track_id': 70, 'artist_id': 1}, {'track_id': 71, 'artist_id': 1},
+        {'track_id': 72, 'artist_id': 1}, {'track_id': 72, 'artist_id': 9}, {'track_id': 73, 'artist_id': 1},
+        {'track_id': 74, 'artist_id': 1}, {'track_id': 75, 'artist_id': 1}, {'track_id': 76, 'artist_id': 1},
+        {'track_id': 76, 'artist_id': 9}, {'track_id': 77, 'artist_id': 1}, {'track_id': 78, 'artist_id': 1},
+        {'track_id': 79, 'artist_id': 1}, {'track_id': 80, 'artist_id': 1}, {'track_id': 81, 'artist_id': 1},
+        {'track_id': 82, 'artist_id': 1}, {'track_id': 83, 'artist_id': 1}, {'track_id': 84, 'artist_id': 1},
+        {'track_id': 85, 'artist_id': 1}, {'track_id': 86, 'artist_id': 1}, {'track_id': 86, 'artist_id': 5},
+        {'track_id': 87, 'artist_id': 1}, {'track_id': 88, 'artist_id': 1}, {'track_id': 89, 'artist_id': 1},
+        {'track_id': 90, 'artist_id': 1}, {'track_id': 91, 'artist_id': 1}, {'track_id': 92, 'artist_id': 1},
+        {'track_id': 93, 'artist_id': 1}, {'track_id': 94, 'artist_id': 1}, {'track_id': 95, 'artist_id': 1},
+        {'track_id': 96, 'artist_id': 1}, {'track_id': 97, 'artist_id': 1}, {'track_id': 98, 'artist_id': 1},
+        {'track_id': 99, 'artist_id': 1}, {'track_id': 99, 'artist_id': 12}, {'track_id': 100, 'artist_id': 1},
+        {'track_id': 101, 'artist_id': 1}, {'track_id': 102, 'artist_id': 1}, {'track_id': 103, 'artist_id': 1},
+        {'track_id': 103, 'artist_id': 5},
+        {'track_id': 104, 'artist_id': 1}, {'track_id': 105, 'artist_id': 1}, {'track_id': 106, 'artist_id': 1},
+        {'track_id': 107, 'artist_id': 1}, {'track_id': 108, 'artist_id': 1}, {'track_id': 109, 'artist_id': 1},
+        {'track_id': 110, 'artist_id': 1}, {'track_id': 111, 'artist_id': 1}, {'track_id': 112, 'artist_id': 1},
+        {'track_id': 113, 'artist_id': 1}, {'track_id': 114, 'artist_id': 1}, {'track_id': 115, 'artist_id': 1},
+        {'track_id': 116, 'artist_id': 1}, {'track_id': 117, 'artist_id': 1}, {'track_id': 118, 'artist_id': 1},
+        {'track_id': 119, 'artist_id': 1}, {'track_id': 120, 'artist_id': 1}, {'track_id': 121, 'artist_id': 1},
+        {'track_id': 122, 'artist_id': 1}, {'track_id': 123, 'artist_id': 1}, {'track_id': 124, 'artist_id': 1},
+        {'track_id': 125, 'artist_id': 1}, {'track_id': 126, 'artist_id': 1}, {'track_id': 127, 'artist_id': 1},
+        {'track_id': 128, 'artist_id': 1}, {'track_id': 128, 'artist_id': 13}, {'track_id': 129, 'artist_id': 1},
+        {'track_id': 130, 'artist_id': 1}, {'track_id': 131, 'artist_id': 1}, {'track_id': 132, 'artist_id': 1},
+        {'track_id': 133, 'artist_id': 1}, {'track_id': 134, 'artist_id': 1}, {'track_id': 135, 'artist_id': 1},
+        {'track_id': 136, 'artist_id': 1}, {'track_id': 137, 'artist_id': 1}, {'track_id': 138, 'artist_id': 1},
+        {'track_id': 139, 'artist_id': 1}, {'track_id': 140, 'artist_id': 1}, {'track_id': 141, 'artist_id': 1},
+        {'track_id': 142, 'artist_id': 1}, {'track_id': 143, 'artist_id': 1}, {'track_id': 144, 'artist_id': 1},
+        {'track_id': 145, 'artist_id': 1}, {'track_id': 146, 'artist_id': 1}, {'track_id': 147, 'artist_id': 1},
+        {'track_id': 148, 'artist_id': 1}, {'track_id': 149, 'artist_id': 1}, {'track_id': 150, 'artist_id': 1},
+        {'track_id': 151, 'artist_id': 1}, {'track_id': 152, 'artist_id': 1}, {'track_id': 153, 'artist_id': 1},
+        {'track_id': 154, 'artist_id': 1}, {'track_id': 155, 'artist_id': 1}, {'track_id': 156, 'artist_id': 1},
+        {'track_id': 157, 'artist_id': 1}, {'track_id': 158, 'artist_id': 1}
+    ]
+    singles: list = [
+        {'track_id': 1},  # 1
+        {'track_id': 4},  # 2
+        {'track_id': 13},  # 3
+        {'track_id': 15},  # 4
+        {'track_id': 16},  # 5
+        {'track_id': 29},  # 6
+        {'track_id': 31},  # 7
+        {'track_id': 34},  # 8
+        {'track_id': 35},  # 9
+        {'track_id': 36},  # 10
+        {'track_id': 37},  # 11
+        {'track_id': 38},  # 12
+        {'track_id': 39},  # 13
+        {'track_id': 42},  # 14
+        {'track_id': 43},  # 15
+        {'track_id': 44},  # 16
+        {'track_id': 45},  # 17
+        {'track_id': 46},  # 18
+        {'track_id': 47},  # 19
+        {'track_id': 48},  # 20
+        {'track_id': 65},  # 21
+        {'track_id': 67},  # 22
+        {'track_id': 69},  # 23
+        {'track_id': 72},  # 24
+        {'track_id': 73},  # 25
+        {'track_id': 79},  # 26
+        {'track_id': 83},  # 27
+        {'track_id': 85},  # 28
+        {'track_id': 87},  # 29
+        {'track_id': 89},  # 30
+        {'track_id': 90},  # 31
+        {'track_id': 91},  # 32
+        {'track_id': 92},  # 33
+        {'track_id': 99},  # 34
+        {'track_id': 100},  # 35
+        {'track_id': 101},  # 36
+        {'track_id': 102},  # 37
+        {'track_id': 104},  # 38
+        {'track_id': 77},  # 39
+        {'track_id': 111},  # 40
+        {'track_id': 119},  # 41
+        {'track_id': 122},  # 42
+        {'track_id': 123},  # 43
+        {'track_id': 124},  # 44
+        {'track_id': 125},  # 45
+        {'track_id': 126},  # 46
+        {'track_id': 127},  # 47
+        {'track_id': 128},  # 48
+        {'track_id': 129},  # 49
+        {'track_id': 130},  # 50
+        {'track_id': 131},  # 51
+        {'track_id': 132},  # 52
+        {'track_id': 133},  # 53
+        {'track_id': 134},  # 54
+        {'track_id': 135},  # 55
+    ]
+    featurings: list = [
+        {'track_id': 2}, {'track_id': 3}, {'track_id': 14}, {'track_id': 30}, {'track_id': 32},
+        {'track_id': 33}, {'track_id': 40}, {'track_id': 41}, {'track_id': 49}, {'track_id': 103}
+    ]
+    tracks: list = [
+        {'title': 'FADED.', 'date_release': '2023-08-26', 'duration': '02:24', 'track_position_in_album': 4},  # 1
+        {'title': 'Супермен', 'date_release': '2023-08-04', 'duration': '01:53', 'track_position_in_album': None},  # 2
+        {'title': 'Мы не играем в любовь (Remix)', 'date_release': '2023-08-04', 'duration': '01:58',
+         'track_position_in_album': None},  # 3
+        {'title': 'Supposed To Be', 'date_release': '2023-08-04', 'duration': '02:00', 'track_position_in_album': 21},
+        # 4
+        {'title': 'Моя Вина', 'date_release': '2023-06-30', 'duration': '02:24', 'track_position_in_album': 1},  # 5
+        {'title': 'Ничего Лишнего', 'date_release': '2023-06-30', 'duration': '03:16', 'track_position_in_album': 2},
+        # 6
+        {'title': 'Занят', 'date_release': '2023-06-30', 'duration': '02:08', 'track_position_in_album': 3},  # 7
+        {'title': 'Время Летит', 'date_release': '2023-06-30', 'duration': '02:57', 'track_position_in_album': 4},  # 8
+        {'title': 'Babe <3', 'date_release': '2023-06-30', 'duration': '02:16', 'track_position_in_album': 5},  # 9
+        {'title': 'Маньяк', 'date_release': '2023-06-30', 'duration': '02:07', 'track_position_in_album': 6},  # 10
+        {'title': 'Время Покажет', 'date_release': '2023-06-30', 'duration': '02:49', 'track_position_in_album': 7},
+        # 11
+        {'title': 'Может Быть', 'date_release': '2023-06-30', 'duration': '02:06', 'track_position_in_album': 8},  # 12
+        {'title': 'For Another', 'date_release': '2023-02-23', 'duration': '03:11', 'track_position_in_album': None},
+        # 13
+        {'title': 'Bitch Live In Texas', 'date_release': '2023-02-21', 'duration': '01:12',
+         'track_position_in_album': None},  # 14
+        {'title': 'Dead For You', 'date_release': '2022-12-31', 'duration': '01:54', 'track_position_in_album': None},
+        # 15
+        {'title': 'Лавина', 'date_release': '2022-12-09', 'duration': '02:46', 'track_position_in_album': None},  # 16
+        {'title': 'Время Перемен', 'date_release': '2022-11-25', 'duration': '02:16', 'track_position_in_album': 1},
+        # 17
+        {'title': 'Не Отпускай Меня', 'date_release': '2022-11-25', 'duration': '02:30', 'track_position_in_album': 2},
+        # 18
+        {'title': 'Молчание', 'date_release': '2022-11-25', 'duration': '02:53', 'track_position_in_album': 3},  # 19
+        {'title': 'Ночь', 'date_release': '2022-11-25', 'duration': '02:28', 'track_position_in_album': 4},  # 20
+        {'title': 'Одинокий', 'date_release': '2022-11-25', 'duration': '02:49', 'track_position_in_album': 5},  # 21
+        {'title': 'Нужна Она', 'date_release': '2022-11-25', 'duration': '03:04', 'track_position_in_album': 6},  # 22
+        {'title': 'Ранен', 'date_release': '2022-11-25', 'duration': '02:24', 'track_position_in_album': 7},  # 23
+        {'title': 'Опоздал', 'date_release': '2022-11-25', 'duration': '02:16', 'track_position_in_album': 8},  # 24
+        {'title': 'Между Нами', 'date_release': '2022-11-25', 'duration': '02:21', 'track_position_in_album': 9},  # 25
+        {'title': 'Мгновенье', 'date_release': '2022-11-25', 'duration': '02:08', 'track_position_in_album': 10},  # 26
+        {'title': 'Внимание', 'date_release': '2022-11-25', 'duration': '02:19', 'track_position_in_album': 11},  # 27
+        {'title': 'Не Могу', 'date_release': '2022-11-25', 'duration': '03:14', 'track_position_in_album': 12},  # 28
+        {'title': 'Эйфория', 'date_release': '2022-10-19', 'duration': '02:27', 'track_position_in_album': None},  # 29
+        {'title': 'Половина обезбола', 'date_release': '2022-10-07', 'duration': '01:29',
+         'track_position_in_album': None},  # 30
+        {'title': 'Секси!', 'date_release': '2022-07-22', 'duration': '02:21', 'track_position_in_album': None},  # 31
+        {'title': 'МЫ НЕ ИГРАЕМ В ЛЮБОВЬ', 'date_release': '2022-07-15', 'duration': '02:25',
+         'track_position_in_album': None},  # 32
+        {'title': 'Тсукуёми', 'date_release': '2022-07-15', 'duration': '02:03', 'track_position_in_album': None},  # 33
+        {'title': 'Киборг', 'date_release': '2022-06-03', 'duration': '02:24', 'track_position_in_album': None},  # 34
+        {'title': 'Highway Of Love', 'date_release': '2022-04-01', 'duration': '02:34',
+         'track_position_in_album': None},  # 35
+        {'title': 'Время', 'date_release': '2022-02-11', 'duration': '02:47', 'track_position_in_album': None},  # 36
+        {'title': 'Тени', 'date_release': '2022-01-28', 'duration': '02:14', 'track_position_in_album': None},  # 37
+        {'title': 'Я Скучаю', 'date_release': '2022-01-14', 'duration': '02:09', 'track_position_in_album': None},  # 38
+        {'title': 'Первый Снег', 'date_release': '2021-12-31', 'duration': '02:05', 'track_position_in_album': None},
+        # 39
+        {'title': 'Bad Bitch', 'date_release': '2021-05-23', 'duration': '02:50', 'track_position_in_album': None},
+        # 40
+        {'title': 'Марихуана', 'date_release': '2021-05-23', 'duration': '02:51', 'track_position_in_album': None},
+        # 41
+        {'title': 'Make Choice', 'date_release': '2021-02-24', 'duration': '03:37', 'track_position_in_album': None},
+        # 42
+        {'title': 'Believe', 'date_release': '2020-12-31', 'duration': '02:11', 'track_position_in_album': None},  # 43
+        {'title': 'Stars', 'date_release': '2020-12-29', 'duration': '02:13', 'track_position_in_album': None},  # 44
+        {'title': 'Out The Way', 'date_release': '2020-11-12', 'duration': '03:12', 'track_position_in_album': None},
+        # 45
+        {'title': 'Kill Me Now', 'date_release': '2020-08-28', 'duration': '02:39', 'track_position_in_album': None},
+        # 46
+        {'title': 'Reason', 'date_release': '2020-08-01', 'duration': '02:16', 'track_position_in_album': None},  # 47
+        {'title': 'Quarantine', 'date_release': '2020-05-20', 'duration': '02:44', 'track_position_in_album': None},
+        # 48
+        {'title': 'Космос 2', 'date_release': '2020-04-27', 'duration': '04:13', 'track_position_in_album': None},  # 49
+        {'title': 'Who Needs Love?', 'date_release': '2020-03-22', 'duration': '02:40', 'track_position_in_album': 1},
+        # 50
+        {'title': 'Tell Me Bout That Night', 'date_release': '2020-03-22', 'duration': '01:42',
+         'track_position_in_album': 2},  # 51
+        {'title': 'Highway Of Love', 'date_release': '2020-03-22', 'duration': '02:14', 'track_position_in_album': 3},
+        # 52
+        {'title': 'Love Games', 'date_release': '2020-03-22', 'duration': '02:15', 'track_position_in_album': 4},  # 53
+        {'title': 'Scars', 'date_release': '2020-03-22', 'duration': '02:37', 'track_position_in_album': 5},  # 54
+        {'title': "I'm In love", 'date_release': '2020-03-22', 'duration': '03:14', 'track_position_in_album': 6},  # 55
+        {'title': 'Baby Wants', 'date_release': '2020-03-22', 'duration': '02:00', 'track_position_in_album': 7},  # 56
+        {'title': 'Лишь Ложь', 'date_release': '2020-03-22', 'duration': '03:13', 'track_position_in_album': 8},  # 57
+        {'title': 'Настоящий Ты', 'date_release': '2020-03-22', 'duration': '02:24', 'track_position_in_album': 9},
+        # 58
+        {'title': 'Свет Небес', 'date_release': '2020-03-22', 'duration': '01:57', 'track_position_in_album': 10},  # 59
+        {'title': 'Разбуди Меня', 'date_release': '2020-03-22', 'duration': '02:12', 'track_position_in_album': 11},
+        # 60
+        {'title': 'Остался Прежним', 'date_release': '2020-03-22', 'duration': '02:42', 'track_position_in_album': 12},
+        # 61
+        {'title': 'Мир Грёз', 'date_release': '2020-03-22', 'duration': '02:25', 'track_position_in_album': 13},  # 62
+        {'title': 'За Мечтами', 'date_release': '2020-03-22', 'duration': '02:53', 'track_position_in_album': 14},  # 63
+        {'title': 'Intro', 'date_release': '2020-03-08', 'duration': '02:21', 'track_position_in_album': 1},  # 64
+        {'title': 'Long Way', 'date_release': '2019-10-02', 'duration': '03:04', 'track_position_in_album': 2},  # 65
+        {'title': 'Live In Dreams', 'date_release': '2020-03-08', 'duration': '02:36', 'track_position_in_album': 3},
+        # 66
+        {'title': 'Breakdown', 'date_release': '2019-11-20', 'duration': '02:23', 'track_position_in_album': 4},  # 67
+        {'title': 'Playin In Love', 'date_release': '2020-03-08', 'duration': '02:21', 'track_position_in_album': 5},
+        # 68
+        {'title': 'Can We Be Together?', 'date_release': '2019-11-06', 'duration': '02:18',
+         'track_position_in_album': 6},  # 69
+        {'title': 'Bad Memories', 'date_release': '2020-03-08', 'duration': '02:42', 'track_position_in_album': 7},
+        # 70
+        {'title': 'Workin Hard', 'date_release': '2020-03-08', 'duration': '01:54', 'track_position_in_album': 8},  # 71
+        {'title': 'What You Want From Love?', 'date_release': '2020-02-14', 'duration': '03:12',
+         'track_position_in_album': 9},  # 72
+        {'title': 'I Was Need A Break', 'date_release': '2019-10-24', 'duration': '01:58',
+         'track_position_in_album': 10},  # 73
+        {'title': 'Wassup From The Gap', 'date_release': '2020-03-08', 'duration': '02:49',
+         'track_position_in_album': 11},  # 74
+        {'title': 'Tryin Be The Best', 'date_release': '2020-03-08', 'duration': '02:43',
+         'track_position_in_album': 12},  # 75
+        {'title': 'Early Bird 3', 'date_release': '2020-03-08', 'duration': '02:31', 'track_position_in_album': 13},
+        # 76
+        {'title': 'How Am I Lost?', 'date_release': '2020-01-28', 'duration': '02:30', 'track_position_in_album': 14},
+        # 77
+        {'title': "Don't Leave Me Alone", 'date_release': '2020-03-08', 'duration': '02:23',
+         'track_position_in_album': 15},  # 78
+        {'title': 'Far From Home', 'date_release': '2019-11-07', 'duration': '02:21', 'track_position_in_album': 16},
+        # 79
+        {'title': 'Why Not?', 'date_release': '2020-03-08', 'duration': '02:18', 'track_position_in_album': 17},  # 80
+        {'title': 'Chasing The Money', 'date_release': '2020-03-08', 'duration': '02:20',
+         'track_position_in_album': 18},  # 81
+        {'title': 'I Will No Hate You', 'date_release': '2020-03-08', 'duration': '02:08',
+         'track_position_in_album': 19},  # 82
+        {'title': 'Tonight', 'date_release': '2020-02-11', 'duration': '02:24', 'track_position_in_album': 20},  # 83
+        {'title': 'Under Purple Rain', 'date_release': '2020-03-08', 'duration': '02:24',
+         'track_position_in_album': 21},  # 84
+        {'title': 'Deadmans', 'date_release': '2019-11-28', 'duration': '02:17', 'track_position_in_album': 22},  # 85
+        {'title': 'Visions', 'date_release': '2020-03-08', 'duration': '03:30', 'track_position_in_album': 23},  # 86
+        {'title': 'Bad Bad Bad', 'date_release': '2019-12-10', 'duration': '02:09', 'track_position_in_album': 24},
+        # 87
+        {'title': 'Outro', 'date_release': '2020-03-08', 'duration': '02:14', 'track_position_in_album': 25},  # 88
+        {'title': 'Starry Sky', 'date_release': '2020-03-06', 'duration': '02:56', 'track_position_in_album': None},
+        # 89
+        {'title': 'Do You Love Me?', 'date_release': '2020-03-03', 'duration': '02:46',
+         'track_position_in_album': None},  # 90
+        {'title': 'Slatt Talk', 'date_release': '2020-02-21', 'duration': '02:32', 'track_position_in_album': None},
+        # 91
+        {'title': 'Happy New Year', 'date_release': '2019-12-31', 'duration': '01:57', 'track_position_in_album': None},
+        # 92
+        {'title': 'Mileran Vibes', 'date_release': '2019-10-18', 'duration': '02:08', 'track_position_in_album': 1},
+        # 93
+        {'title': 'Money Kill', 'date_release': '2019-10-18', 'duration': '02:24', 'track_position_in_album': 2},  # 94
+        {'title': 'Early Bird 2', 'date_release': '2019-10-18', 'duration': '02:28', 'track_position_in_album': 4},
+        # 95
+        {'title': 'No Lonely', 'date_release': '2019-10-18', 'duration': '02:20', 'track_position_in_album': 5},  # 96
+        {'title': "Fake Talkin'", 'date_release': '2019-10-18', 'duration': '02:09', 'track_position_in_album': 6},
+        # 97
+        {'title': 'No Time', 'date_release': '2019-09-14', 'duration': '02:22', 'track_position_in_album': 8},  # 98
+        {'title': 'I Got Some Move', 'date_release': '2019-10-11', 'duration': '02:28',
+         'track_position_in_album': None},  # 99
+        {'title': 'Что ты сделал?', 'date_release': '2019-09-30', 'duration': '02:58', 'track_position_in_album': None},
+        # 100
+        {'title': 'wassup, girl', 'date_release': '2019-09-27', 'duration': '02:01', 'track_position_in_album': None},
+        # 101
+        {'title': 'Не Сдавайся', 'date_release': '2019-09-28', 'duration': '02:01', 'track_position_in_album': None},
+        # 102
+        {'title': 'Tanjiro Kamado (Remix)', 'date_release': '2019-09-21', 'duration': '02:54',
+         'track_position_in_album': None},  # 103
+        {'title': 'momma tell me', 'date_release': '2019-09-20', 'duration': '02:34', 'track_position_in_album': None},
+        # 104
+        {'title': 'Intro', 'date_release': '2019-09-07', 'duration': '01:17', 'track_position_in_album': 1},  # 105
+        {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 2},  # 106
+        {'title': 'Spend All Night', 'date_release': '2019-09-07', 'duration': '01:57', 'track_position_in_album': 3},
+        # 107
+        {'title': 'Through The Sky', 'date_release': '2019-09-07', 'duration': '02:33', 'track_position_in_album': 4},
+        # 108
+        {'title': 'We Are Put Our Heart In The Phone', 'date_release': '2019-09-07', 'duration': '02:40',
+         'track_position_in_album': 5},  # 109
+        {'title': 'Go In The Gap', 'date_release': '2019-09-07', 'duration': '02:19', 'track_position_in_album': 6},
+        # 110
+        {'title': 'Heart Is a Full Of Lies', 'date_release': '2019-04-19', 'duration': '02:06',
+         'track_position_in_album': 7},  # 111
+        {'title': 'You Just A Hoe', 'date_release': '2019-09-07', 'duration': '02:38', 'track_position_in_album': 8},
+        # 112
+        {'title': 'Closed Door', 'date_release': '2019-09-07', 'duration': '02:55', 'track_position_in_album': 9},
+        # 113
+        {'title': 'Bang 2', 'date_release': '2019-09-07', 'duration': '02:03', 'track_position_in_album': 10},  # 114
+        {'title': 'My Feelings', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 11},
+        # 115
+        {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00',
+         'track_position_in_album': 12},  # 116
+        {'title': 'Hate That World', 'date_release': '2019-09-07', 'duration': '02:27', 'track_position_in_album': 13},
+        # 117
+        {'title': 'Swag!', 'date_release': '2019-09-07', 'duration': '02:07', 'track_position_in_album': 14},  # 118
+        {'title': 'Time Is Sad With Every Day', 'date_release': '2019-06-14', 'duration': '03:05',
+         'track_position_in_album': 15},  # 119
+        {'title': "You're So Fuckin' Bad, Bae", 'date_release': '2019-09-07', 'duration': '02:59',
+         'track_position_in_album': 16},  # 120
+        {'title': 'Outro', 'date_release': '2019-09-07', 'duration': '01:32', 'track_position_in_album': 17},  # 121
+        {'title': '730, oh yeah', 'date_release': '2019-08-30', 'duration': '02:22', 'track_position_in_album': None},
+        # 122
+        {'title': 'dr. stone', 'date_release': '2019-08-28', 'duration': '02:24', 'track_position_in_album': None},
+        # 123
+        {'title': 'never want dat kind of love', 'date_release': '2019-08-27', 'duration': '01:57',
+         'track_position_in_album': None},  # 124
+        {'title': 'diamonds dance', 'date_release': '2019-08-25', 'duration': '02:28', 'track_position_in_album': None},
+        # 125
+        {'title': 'in the space', 'date_release': '2019-08-23', 'duration': '02:24', 'track_position_in_album': None},
+        # 126
+        {'title': '448!', 'date_release': '2019-08-22', 'duration': '02:04', 'track_position_in_album': None},  # 127
+        {'title': 'Before', 'date_release': '2019-07-29', 'duration': '03:31', 'track_position_in_album': None},  # 128
+        {'title': 'where we go?', 'date_release': '2019-07-18', 'duration': '01:48', 'track_position_in_album': None},
+        # 129
+        {'title': 'smith & wesson', 'date_release': '2019-07-11', 'duration': '02:59', 'track_position_in_album': None},
+        # 130
+        {'title': "takin 'n' takin", 'date_release': '2019-06-22', 'duration': '02:03',
+         'track_position_in_album': None},  # 131
+        {'title': 'look like pearl', 'date_release': '2019-06-08', 'duration': '02:39',
+         'track_position_in_album': None},  # 132
+        {'title': "that's for love", 'date_release': '2019-06-02', 'duration': '02:30',
+         'track_position_in_album': None},  # 133
+        {'title': 'meet the girl', 'date_release': '2019-02-02', 'duration': '02:31', 'track_position_in_album': None},
+        # 134
+        {'title': 'You No Lit', 'date_release': '2018-11-23', 'duration': '02:25', 'track_position_in_album': None},
+        # 135
+        {'title': "HONESTLY.", 'date_release': '2023-11-04', 'duration': '02:11', 'track_position_in_album': 1},  # 136
+        {'title': "MEROCK.", 'date_release': '2023-11-04', 'duration': '01:24', 'track_position_in_album': 2},  # 137
+        {'title': "THEATER.", 'date_release': '2023-11-04', 'duration': '03:09', 'track_position_in_album': 3},  # 138
+        {'title': "ALL YEAR.", 'date_release': '2023-11-04', 'duration': '02:05', 'track_position_in_album': 5},  # 139
+        {'title': "NO CHANGE.", 'date_release': '2023-11-04', 'duration': '02:18', 'track_position_in_album': 6},  # 140
+        {'title': "WHERE DREAMS LEAD.", 'date_release': '2023-11-04', 'duration': '02:32',
+         'track_position_in_album': 7},  # 141
+        {'title': "UP DOWN.", 'date_release': '2023-11-04', 'duration': '03:04', 'track_position_in_album': 8},  # 142
+        {'title': "PILGRIM.", 'date_release': '2023-11-04', 'duration': '02:38', 'track_position_in_album': 9},  # 143
+        {'title': "IN MY SOUL.", 'date_release': '2023-11-04', 'duration': '02:29', 'track_position_in_album': 10},
+        # 144
+        {'title': "WE LOVE.", 'date_release': '2023-11-04', 'duration': '02:03', 'track_position_in_album': 11},  # 145
+        {'title': "NEW SEASON.", 'date_release': '2023-11-04', 'duration': '01:35', 'track_position_in_album': 12},
+        # 146
+        {'title': "COLD.", 'date_release': '2023-11-04', 'duration': '02:08', 'track_position_in_album': 13},  # 147
+        {'title': "A LONG TIME AGO.", 'date_release': '2023-11-04', 'duration': '02:34', 'track_position_in_album': 14},
+        # 148
+        {'title': "BOBBY FISCHER.", 'date_release': '2023-11-04', 'duration': '02:35', 'track_position_in_album': 15},
+        # 149
+        {'title': "IDOL.", 'date_release': '2023-11-04', 'duration': '02:17', 'track_position_in_album': 16},  # 150
+        {'title': "REAL.", 'date_release': '2023-11-04', 'duration': '02:53', 'track_position_in_album': 17},  # 151
+        {'title': "STRANGERS.", 'date_release': '2023-11-04', 'duration': '01:36', 'track_position_in_album': 18},
+        # 152
+        {'title': "WEEKEND.", 'date_release': '2023-11-04', 'duration': '01:36', 'track_position_in_album': 19},  # 153
+        {'title': "BANKROLL.", 'date_release': '2023-11-04', 'duration': '01:57', 'track_position_in_album': 20},  # 154
+        {'title': "HARD FOR ME.", 'date_release': '2023-11-04', 'duration': '01:38', 'track_position_in_album': 22},
+        # 155
+        {'title': "FORGIVENESS.", 'date_release': '2023-11-04', 'duration': '05:26', 'track_position_in_album': 23},
+        # 156
+        {'title': 'Stop Love', 'date_release': '2019-09-07', 'duration': '02:24', 'track_position_in_album': 7},  # 157
+        {'title': 'Pray For My Family', 'date_release': '2019-09-07', 'duration': '04:00', 'track_position_in_album': 3}
+        # 158
+    ]
+    lyrics: list = [
+        {
+            'lyrics': """
         Мы стали грубы – все дело в разлуке
         Дай мне свои руки, чувства подобны вьюге
         Мы стали другими, можно ли нас излечить?
@@ -635,10 +711,10 @@ lyrics = [
         Друг для друга исчезнем, yeah, yeah
         Друг для друга исчезнем, yeah, yeah
         """,
-        'track_id': 1
-    },
-    {
-        'lyrics': """
+            'track_id': 1
+        },
+        {
+            'lyrics': """
         [Intro]
         Icy
         
@@ -680,10 +756,10 @@ lyrics = [
         Не супермен, но могу им стать 
         Этого тебе не хватит
         """,
-        'track_id': 2
-    },
-    {
-        'lyrics': """
+            'track_id': 2
+        },
+        {
+            'lyrics': """
         [Pre-Chorus: ICYWAVE]
         Снова
         Мы не играем в любовь
@@ -743,10 +819,10 @@ lyrics = [
         Мы не играем в любовь
         Мы не играем в любовь
         """,
-        'track_id': 3
-    },
-    {
-        'lyrics': """
+            'track_id': 3
+        },
+        {
+            'lyrics': """
         Azuko, I <3 you
         
         Почему они звучат так неуверенно?
@@ -787,10 +863,10 @@ lyrics = [
         Yeah, у них мания, они все помешаны на деньгах
         Хочешь money? Иди ко мне, я дам их, baby, yeah
         """,
-        'track_id': 4
-    },
-    {
-        'lyrics': """
+            'track_id': 4
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         Azuko, I <3 you
         
@@ -839,10 +915,10 @@ lyrics = [
         Я просто потратил время
         И это моя вина, это моя вина
         """,
-        'track_id': 5
-    },
-    {
-        'lyrics': """
+            'track_id': 5
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble
         Azuko, I love you
         
@@ -895,10 +971,10 @@ lyrics = [
         И как бы не было больно
         И как бы не было больно
         """,
-        'track_id': 6
-    },
-    {
-        'lyrics': """
+            'track_id': 6
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         Azuko, I <3 you
         
@@ -944,10 +1020,10 @@ lyrics = [
         Я не чувствую себя виноватым, yeah-yeah
         И сгорают мосты
         """,
-        'track_id': 7
-    },
-    {
-        'lyrics': """
+            'track_id': 7
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         Azuko, I <3 you
         
@@ -1004,10 +1080,10 @@ lyrics = [
         Каждый день теперь у меня крайность
         Каждый день теперь у меня крайность
         """,
-        'track_id': 8
-    },
-    {
-        'lyrics': """
+            'track_id': 8
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         Azuko, I <3 you
         
@@ -1057,10 +1133,10 @@ lyrics = [
         Не скрывай чувства, они все равно растают
         Yeah, bae, не скрывай свои чувства, они все равно растают
         """,
-        'track_id': 9
-    },
-    {
-        'lyrics': """
+            'track_id': 9
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Yeah, в моих руках жига и косяк
@@ -1112,10 +1188,10 @@ lyrics = [
         С музыкой навечно против моих enemies
         Оппы читают так, будто беременны
         """,
-        'track_id': 10
-    },
-    {
-        'lyrics': """
+            'track_id': 10
+        },
+        {
+            'lyrics': """
         Ничего не сможет заставить делать меня то, что мне не надо
         Это только my money сыпятся на меня водопадом
         И пусть попутный ветер с химикатами унесет меня куда-то
@@ -1141,10 +1217,10 @@ lyrics = [
         И пусть попутный ветер с химикатами унесет меня куда-то
         Где я, не смотря на даты, буду писать музло от рассвета до заката
         """,
-        'track_id': 11
-    },
-    {
-        'lyrics': """
+            'track_id': 11
+        },
+        {
+            'lyrics': """
         Где-то плачет тот, кто потерял все
         Где-то бежит тот, кто потерял любовь
         И, может быть, им просто не повезло
@@ -1165,10 +1241,10 @@ lyrics = [
         Может, может быть
         У-у-у, у-у-у
         """,
-        'track_id': 12
-    },
-    {
-        'lyrics': """
+            'track_id': 12
+        },
+        {
+            'lyrics': """
         И я снова сил полон
         Близкие не знают, где я по ночам снова
         Снова надрываю на битах голос
@@ -1220,10 +1296,10 @@ lyrics = [
         И никаких обещаний мне не надо
         Я оставлю свою любовь for another
         """,
-        'track_id': 13
-    },
-    {
-        'lyrics': """
+            'track_id': 13
+        },
+        {
+            'lyrics': """
         [Intro: Flipboy]
         Flip got da sauce, boy
         
@@ -1264,10 +1340,10 @@ lyrics = [
         Bitch live in Texas
         Bitch live in Texas
         """,
-        'track_id': 14
-    },
-    {
-        'lyrics': """
+            'track_id': 14
+        },
+        {
+            'lyrics': """
         Dead for you, ooh
         Dead for you, ooh
         Dead for you, ooh
@@ -1305,10 +1381,10 @@ lyrics = [
         Теряю, теряю дыханье (Dead for you, ooh)
         Теряю, теряю дыханье (Dead for you, ooh)
         """,
-        'track_id': 15
-    },
-    {
-        'lyrics': """
+            'track_id': 15
+        },
+        {
+            'lyrics': """
         Ringo, you’re a star
         
         Снова увидев твои глаза, я пропал
@@ -1351,10 +1427,10 @@ lyrics = [
         Разум выше облаков – моя стихия
         Высоко забрался и пишу стихи я
         """,
-        'track_id': 16
-    },
-    {
-        'lyrics': """
+            'track_id': 16
+        },
+        {
+            'lyrics': """
         [Verse: Azuko]
         Говорю hello, они действуют мне на зло
         Будто есть счет на табло, как же это заебало
@@ -1409,10 +1485,10 @@ lyrics = [
         Hey, что ты тут забыл?
         Пришло время перемен
         """,
-        'track_id': 17
-    },
-    {
-        'lyrics': """
+            'track_id': 17
+        },
+        {
+            'lyrics': """
         [Pre-Chorus: Kaneki]
         Ничего как раньше не будет
         Воспоминания меня как пули
@@ -1463,10 +1539,10 @@ lyrics = [
         Я бы отдал все, что можно
         Чтобы быть с тобою-ю
         """,
-        'track_id': 18
-    },
-    {
-        'lyrics': """
+            'track_id': 18
+        },
+        {
+            'lyrics': """
         [Chorus: Azuko]
         Я сажусь за майк
         За 4 года мой поток мыслей не иссяк
@@ -1514,10 +1590,10 @@ lyrics = [
         Всем известно, что любовь приносит только страдания
         Будь осторожен, ведь этим чувством так легко пораниться
         """,
-        'track_id': 19
-    },
-    {
-        'lyrics': """
+            'track_id': 19
+        },
+        {
+            'lyrics': """
         [Intro: Flipboy]
         Луна сменяет ночь
         Каждый день темно, каждый день говно
@@ -1586,10 +1662,10 @@ lyrics = [
         Луна сменяет ночь, ooh
         Луна сменяет ночь
         """,
-        'track_id': 20
-    },
-    {
-        'lyrics': """
+            'track_id': 20
+        },
+        {
+            'lyrics': """
         [Intro: Kaneki]
         Каждый день в поисках ответа
         Зацикливаемся на тех, кому нет дела
@@ -1642,10 +1718,10 @@ lyrics = [
         Одинокий навечно
         Одинокий навечно
         """,
-        'track_id': 21
-    },
-    {
-        'lyrics': """
+            'track_id': 21
+        },
+        {
+            'lyrics': """
         [Chorus: Kaneki]
         Мне нужна она
         Так же, как мне нужно тепло
@@ -1734,10 +1810,10 @@ lyrics = [
         С тобой хочу и день, и ночь
         Мне нужна она, мне нужна она
         """,
-        'track_id': 22
-    },
-    {
-        'lyrics': """
+            'track_id': 22
+        },
+        {
+            'lyrics': """
         [Bridge: Azuko]
         Не могу тебе доверять
         Не могу тебе доверять
@@ -1782,10 +1858,10 @@ lyrics = [
         Нам надо бы расстаться
         My baby, тебе лучше быть собой, а не казаться
         """,
-        'track_id': 23
-    },
-    {
-        'lyrics': """
+            'track_id': 23
+        },
+        {
+            'lyrics': """
         [Pre-Chorus: Kaneki]
         Мы с тобой могли сделать больше
         Была бы ты попроще
@@ -1838,10 +1914,10 @@ lyrics = [
         Я опоздал ни вернуть, ни приобрести
         Но понимаю, что нужна ты
         """,
-        'track_id': 24
-    },
-    {
-        'lyrics': """
+            'track_id': 24
+        },
+        {
+            'lyrics': """
         [Verse: Kaneki]
         Я потерялся в твоих глазах
         Будто лучик света на меня упал
@@ -1888,10 +1964,10 @@ lyrics = [
         Закрылся от всех, я ищу эту нить
         Которую мы потеряли
         """,
-        'track_id': 25
-    },
-    {
-        'lyrics': """
+            'track_id': 25
+        },
+        {
+            'lyrics': """
         [Chorus: Azuko]
         Для чего ты живешь, my manny?
         Все эти ублюдки так и норовят заработать этих денег
@@ -1930,10 +2006,10 @@ lyrics = [
         Я с этой музыкой от утра до ночи
         Uh, let’s go
         """,
-        'track_id': 26
-    },
-    {
-        'lyrics': """
+            'track_id': 26
+        },
+        {
+            'lyrics': """
         [Chorus: Azuko]
         Woah, lollies с нами будто суки из Италии, yeah
         Делаю то, за что не будет наказания
@@ -1973,10 +2049,10 @@ lyrics = [
         Иди ко мне, ведь мне так не хватает внимания
         Просто побудь со мной рядом, ведь мне не нужны обещания
         """,
-        'track_id': 27
-    },
-    {
-        'lyrics': """
+            'track_id': 27
+        },
+        {
+            'lyrics': """
         [Intro: Kaneki]
         Твои глаза в моей голове
         
@@ -2051,10 +2127,10 @@ lyrics = [
         Я не могу, я не могу
         Я не могу, в стакане утонем
         """,
-        'track_id': 28
-    },
-    {
-        'lyrics': """
+            'track_id': 28
+        },
+        {
+            'lyrics': """
         Делаю money up, ха
         Делаю my money up
         Я ураган и у меня нет squad’а
@@ -2117,26 +2193,26 @@ lyrics = [
         Я Белорусских, у меня мокрые кроссы
         Ski – мы, бля, лыжи с собой носим
         """,
-        'track_id': 29
-    },
-    {
-        'lyrics': None,
-        'track_id': 30
-    },
-    {
-        'lyrics': None,
-        'track_id': 31
-    },
-    {
-        'lyrics': None,
-        'track_id': 32
-    },
-    {
-        'lyrics': None,
-        'track_id': 33
-    },
-    {
-        'lyrics': """
+            'track_id': 29
+        },
+        {
+            'lyrics': None,
+            'track_id': 30
+        },
+        {
+            'lyrics': None,
+            'track_id': 31
+        },
+        {
+            'lyrics': None,
+            'track_id': 32
+        },
+        {
+            'lyrics': None,
+            'track_id': 33
+        },
+        {
+            'lyrics': """
         Bid dawg, со своим сердцем будто киборг
         Оппам не понять его чувства ритма
         Уходи, ты мне не близок
@@ -2193,10 +2269,10 @@ lyrics = [
         
         Hey, парень, а ты кто?
     """,
-        'track_id': 34
-    },
-    {
-        'lyrics': """
+            'track_id': 34
+        },
+        {
+            'lyrics': """
         Я лечу к тебе по highway
         R-R-Ringo, let’s rumble!
         
@@ -2248,10 +2324,10 @@ lyrics = [
         По highway, по highway
         Yeah, yeah, yeah, yeah
         """,
-        'track_id': 35
-    },
-    {
-        'lyrics': """
+            'track_id': 35
+        },
+        {
+            'lyrics': """
         Druzio, R-R-Ringo, let’s rumble!
         
         Я снова один
@@ -2306,14 +2382,14 @@ lyrics = [
         Время, у меня нет времени
         Нет-нет времени, у меня нет времени
         """,
-        'track_id': 36
-    },
-    {
-        'lyrics': None,
-        'track_id': 37
-    },
-    {
-        'lyrics': """
+            'track_id': 36
+        },
+        {
+            'lyrics': None,
+            'track_id': 37
+        },
+        {
+            'lyrics': """
         R-R-Ringo, let’s rumble!
         
         Что будет дальше, я не знаю
@@ -2350,14 +2426,14 @@ lyrics = [
         Baby, я скучаю по тебе, тебе, тебе, тебе
         Baby, я скучаю по тебе, тебе, тебе, тебе
         """,
-        'track_id': 38
-    },
-    {
-        'lyrics': None,
-        'track_id': 39
-    },
-    {
-        'lyrics': """
+            'track_id': 38
+        },
+        {
+            'lyrics': None,
+            'track_id': 39
+        },
+        {
+            'lyrics': """
         [YUNG ROUZY]
         Мне нужна bad bitch for the summer 
         Я делаю дело, она приходит ко мне сама 
@@ -2436,10 +2512,10 @@ lyrics = [
         Видела лицо – это лицо без шрама 
         Эта bad bitch не сможет без грамма
         """,
-        'track_id': 40
-    },
-    {
-        'lyrics': """
+            'track_id': 40
+        },
+        {
+            'lyrics': """
         [Pre-Chorus: YUNG ROUZY]
         Мы не вернемся обратно 
         Делаем то, что не надо 
@@ -2524,10 +2600,10 @@ lyrics = [
         Почему ты так любишь жить драмой? 
         Я вижу тебя насквозь - ты стеклянная 
         """,
-        'track_id': 41
-    },
-    {
-        'lyrics': """
+            'track_id': 41
+        },
+        {
+            'lyrics': """
         [Intro]
         Ringo, you are star!
         
@@ -2595,10 +2671,10 @@ lyrics = [
         Playin’ with my mind, find a fear, kick outside, ooh
         Don’t trust the anyone, let ‘em fakes die, ooh
         """,
-        'track_id': 42
-    },
-    {
-        'lyrics': """
+            'track_id': 42
+        },
+        {
+            'lyrics': """
         We so high
         We so high
         Just you and me
@@ -2642,10 +2718,10 @@ lyrics = [
         Believe, believe, believe
         I forever believe, woah
         """,
-        'track_id': 43
-    },
-    {
-        'lyrics': """
+            'track_id': 43
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         
         Yeah, we from the stars
@@ -2685,10 +2761,10 @@ lyrics = [
         
         Ringo!
         """,
-        'track_id': 44
-    },
-    {
-        'lyrics': """
+            'track_id': 44
+        },
+        {
+            'lyrics': """
         I’m comin’ inside the room, I’m wanna play
         I know who I am, I never fuck with the lames
         Didn’t forget, they want be the same
@@ -2765,10 +2841,10 @@ lyrics = [
         Bang, bitch get me feelin’ insane
         Put mafuckers out the way, yeah, yeah
         """,
-        'track_id': 45
-    },
-    {
-        'lyrics': """
+            'track_id': 45
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
         
         Kill me now, save me from that lie (Woah)
@@ -2813,10 +2889,10 @@ lyrics = [
         
         Ringo
         """,
-        'track_id': 46
-    },
-    {
-        'lyrics': """
+            'track_id': 46
+        },
+        {
+            'lyrics': """
         1, 2, 3, 4
         Times heard that all will be fine, but I need more, that’s a reason why Im on the road
         1, 2, 3, 4
@@ -2850,10 +2926,10 @@ lyrics = [
         1, 2, 3, 4
         Times heard that I can’t going up, ‘cause Imma sore, that’s a reason why Im on the road
         """,
-        'track_id': 47
-    },
-    {
-        'lyrics': """
+            'track_id': 47
+        },
+        {
+            'lyrics': """
         Underdog Muzik
         Yeah, yeah
         
@@ -2932,10 +3008,10 @@ lyrics = [
         Fuck 12, I gotta win
         Gotta win
         """,
-        'track_id': 48
-    },
-    {
-        'lyrics': """
+            'track_id': 48
+        },
+        {
+            'lyrics': """
         [Intro: Swiridoff] 
         В моих лёгких снова дым и я выдыхаю боль 
         Она хочет по любви, но мне не нужна любовь 
@@ -3019,10 +3095,10 @@ lyrics = [
         В моих лёгких снова дым
         В моих лёгких снова дым
         """,
-        'track_id': 49
-    },
-    {
-        'lyrics': """
+            'track_id': 49
+        },
+        {
+            'lyrics': """
         Baby, say me who needs love?
         Baby, say me who needs love?
         Shawty, why you wanna stop?
@@ -3059,10 +3135,10 @@ lyrics = [
         That’s again everyday, yeah, yeah
         That’s again everyday, yeah, yeah.
         """,
-        'track_id': 50
-    },
-    {
-        'lyrics': """
+            'track_id': 50
+        },
+        {
+            'lyrics': """
         Tell me bout that night,
         Did your feelings fine?
         Please, baby, tell bout that night,
@@ -3096,10 +3172,10 @@ lyrics = [
         Please, baby, tell bout that night,
         Tell me bout that night.
         """,
-        'track_id': 51
-    },
-    {
-        'lyrics': """
+            'track_id': 51
+        },
+        {
+            'lyrics': """
         That’s a highway of love,
         High speed can stopped, you know,
         My heart turning off,
@@ -3124,10 +3200,10 @@ lyrics = [
         My heart turning off,
         Turning off, yeah.
         """,
-        'track_id': 52
-    },
-    {
-        'lyrics': """
+            'track_id': 52
+        },
+        {
+            'lyrics': """
         Made me so bad, too much pain, 
         Baby you mad, cause you play,
         What you want know, can you say?
@@ -3171,10 +3247,10 @@ lyrics = [
         I don’t need your love games,
         I don’t need no fake friends.
         """,
-        'track_id': 53
-    },
-    {
-        'lyrics': """
+            'track_id': 53
+        },
+        {
+            'lyrics': """
         Say me girl why are you sad?
         Say me girl why you say that Imma bad?
         Have you really wanna make me so mad?
@@ -3207,10 +3283,10 @@ lyrics = [
         Do you want die?
         Do you want die?
         """,
-        'track_id': 54
-    },
-    {
-        'lyrics': """
+            'track_id': 54
+        },
+        {
+            'lyrics': """
         Я думаю, ты будешь находить время для своего любимого дела, ну типа блин, я ничем таким не занимаюсь, просто типа хожу на тренировки, но мне тоже тяжело, потому что, вот, много задают, я толком нормас не сплю, но ты вообще молодец просто…
         
         Love scars, 
@@ -3246,10 +3322,10 @@ lyrics = [
         Now Im going up,
         With you don’t wanna stop.
         """,
-        'track_id': 55
-    },
-    {
-        'lyrics': """
+            'track_id': 55
+        },
+        {
+            'lyrics': """
         Baby says, Imma bad,
         Baby wanna racks, yeah,
         Baby wants big checks,
@@ -3293,10 +3369,10 @@ lyrics = [
         Call it bounce back,
         Baby work your head, yeah.
         """,
-        'track_id': 56
-    },
-    {
-        'lyrics': """
+            'track_id': 56
+        },
+        {
+            'lyrics': """
         Пошел нахуй парень, ведь мы на разных полюсах,
         Hate как водопад за то, что верю чудеса,
         Они все верят в дураков, я верю сам в себя,
@@ -3348,10 +3424,10 @@ lyrics = [
         Вокруг лишь фэйки мой друг, и я чувствую этот страх,
         Они все только пиздят, я слышу ложь в их голосах.
         """,
-        'track_id': 57
-    },
-    {
-        'lyrics': """
+            'track_id': 57
+        },
+        {
+            'lyrics': """
         Да я помню те времена, когда я был совсем один,
         Вокруг 100 фейков и блядин,
         И все вдыхали никотин,
@@ -3378,10 +3454,10 @@ lyrics = [
         Покуришь с нами, это кайф,
         You gotta live you fuckin life.
         """,
-        'track_id': 58
-    },
-    {
-        'lyrics': """
+            'track_id': 58
+        },
+        {
+            'lyrics': """
         Сияют камни, это VVS,
         Diamonds, diamonds shine, видишь этот блеск,
         Слепят мне глаза, это свет небес,
@@ -3413,10 +3489,10 @@ lyrics = [
         Верю в чудеса, потому что blessed,
         Слышу голоса, голоса небес.
         """,
-        'track_id': 59
-    },
-    {
-        'lyrics': """
+            'track_id': 59
+        },
+        {
+            'lyrics': """
         Разбуди меня
         Мне снился сон: сияют diamonds on my wrist
         Иду по краю, выхожу из-за кулис, ах
@@ -3448,10 +3524,10 @@ lyrics = [
         Я высоко, но все те hoes падают вниз,
         Hoes падают вниз.
         """,
-        'track_id': 60
-    },
-    {
-        'lyrics': """
+            'track_id': 60
+        },
+        {
+            'lyrics': """
         Сделал пару дел, сотню баксов на неделю, я доволен,
         Оборвал связь, убил свои чувства, теперь я не болен,
         Stayed the same, я все так же стою и жду тебя в холе,
@@ -3498,10 +3574,10 @@ lyrics = [
         Stayed the same, я все так же стою и жду тебя в холе,
         Uh-yeah, и жду тебя в холе.
         """,
-        'track_id': 61
-    },
-    {
-        'lyrics': """
+            'track_id': 61
+        },
+        {
+            'lyrics': """
         Fuck that hoes,
         Я в пути, слышен шум колес,
         Время летит, но для нас мы все еще в мире грёз,
@@ -3542,10 +3618,10 @@ lyrics = [
         Еще один миг, воспоминания уйдут и не будет слёз,
         Yeah, yeah, uh-yeah, yeah, yeah, yeah.
         """,
-        'track_id': 62
-    },
-    {
-        'lyrics': """
+            'track_id': 62
+        },
+        {
+            'lyrics': """
         Рвемся наверх - это погоня,
         Но все эти фейки не догонят меня,
         Одинок, играю свою роль,
@@ -3594,10 +3670,10 @@ lyrics = [
         Одинок, играю свою роль, yeah,
         Улетаю в космос и вокруг тишина.
         """,
-        'track_id': 63
-    },
-    {
-        'lyrics': """
+            'track_id': 63
+        },
+        {
+            'lyrics': """
         I put that love in my head,
         I hoped, that will be ‘til the fuckin’ end,
         But so many time I losed that feeling and becomed sad,
@@ -3632,10 +3708,10 @@ lyrics = [
         Anyone there tryna be the main,
         I losed my purpose, know Im really thinking, that staying same.
         """,
-        'track_id': 64
-    },
-    {
-        'lyrics': """
+            'track_id': 64
+        },
+        {
+            'lyrics': """
         Again I stay alone, around no any soul,
         I don’t understand, why I was fall so low?
         There nobody, yeah, 
@@ -3675,14 +3751,14 @@ lyrics = [
         There nobody, yeah, 
         There nobody, yeah.
         """,
-        'track_id': 65
-    },
-    {
-        'lyrics': None,
-        'track_id': 66
-    },
-    {
-        'lyrics': """
+            'track_id': 65
+        },
+        {
+            'lyrics': None,
+            'track_id': 66
+        },
+        {
+            'lyrics': """
         I’ve been with the gang, now Im falling down, yeah, yeah,
         All my friends is dead, Im in the Ghost town, yeah, yeah,
         That girls want only money, man, just look around,
@@ -3710,10 +3786,10 @@ lyrics = [
         That girls want only money, man, just look around,
         And never lose your way, don't let them break you down.
         """,
-        'track_id': 67
-    },
-    {
-        'lyrics': """
+            'track_id': 67
+        },
+        {
+            'lyrics': """
         You know what I like, woah, woah,
         Yeah, we spent so many time with this lie, you know,
         Are we playin in love?
@@ -3735,10 +3811,10 @@ lyrics = [
         Are we playin in love?
         Are you playin in love, bae?
         """,
-        'track_id': 68
-    },
-    {
-        'lyrics': """
+            'track_id': 68
+        },
+        {
+            'lyrics': """
         I left the Earth, skrt, skrt, yeah,
         Im early bird, like skrt skrt, yeah
         Takin’ the bag, flyin’ like mag,
@@ -3768,10 +3844,10 @@ lyrics = [
         Baby say me, can we be together, be together, be together?
         Baby say me, can we be together, be together, be together?
         """,
-        'track_id': 69
-    },
-    {
-        'lyrics': """
+            'track_id': 69
+        },
+        {
+            'lyrics': """
         I met so many people who lied every time to save their ass, bro, but they all ended up in shit. You gotta listen to no one and just go ahead, just go ahead, you knam sayin.
         
         I go ahead on my own wave,
@@ -3805,10 +3881,10 @@ lyrics = [
         Boy you left the life, cause that baby told you lie,
         That boy say: “That girl was over my mind”.
         """,
-        'track_id': 70
-    },
-    {
-        'lyrics': """
+            'track_id': 70
+        },
+        {
+            'lyrics': """
         Lookin for my way, I riding faster, flying high,
         If you have no purpose, so you, nigga, going die,
         I never left my work, don’t wanna spend my fuckin time,
@@ -3834,10 +3910,10 @@ lyrics = [
         I love my shit, do it my hands, nigga, woah,
         Let me know, who are your bands, nigga? Woah!
         """,
-        'track_id': 71
-    },
-    {
-        'lyrics': """
+            'track_id': 71
+        },
+        {
+            'lyrics': """
         [Verse: Azuko]
         I just take the bag,
         Yeah, Im coming back,
@@ -3875,10 +3951,10 @@ lyrics = [
         Baby, what you want from love, want from love?
         Baby, what you want from love, want from love?
         """,
-        'track_id': 72
-    },
-    {
-        'lyrics': """
+            'track_id': 72
+        },
+        {
+            'lyrics': """
         I cannot lose it myself,
         I cannot lose it myself,
         I tryna get it myself,
@@ -3912,10 +3988,10 @@ lyrics = [
         I tryna get it myself,
         I tryna get it myself.
         """,
-        'track_id': 73
-    },
-    {
-        'lyrics': """
+            'track_id': 73
+        },
+        {
+            'lyrics': """
         Wassup from the gap,
         Why you wanna writing rap?
         Woah, woah,
@@ -3995,10 +4071,10 @@ lyrics = [
         No, no, no, no,
         No, no, no, no, yeah.
         """,
-        'track_id': 74
-    },
-    {
-        'lyrics': """
+            'track_id': 74
+        },
+        {
+            'lyrics': """
         Watch for fuckin’ clout,
         I see these n****s on my block,
         See they still bad, but Im not,
@@ -4044,10 +4120,10 @@ lyrics = [
         See they still bad, but Im not,
         Try be the best, but Im so fucked up.
         """,
-        'track_id': 75
-    },
-    {
-        'lyrics': """
+            'track_id': 75
+        },
+        {
+            'lyrics': """
         [Chorus: Azuko]
         Im the early bird, early bird wanna swerve,
         Early bird fly around the fuckin’ Earth,
@@ -4084,10 +4160,10 @@ lyrics = [
         Use to being strong, family bless me,
         With my dawg makin’ some fire, lookin blaizing.
         """,
-        'track_id': 76
-    },
-    {
-        'lyrics': """
+            'track_id': 76
+        },
+        {
+            'lyrics': """
         My soul break another day,
         All I do with love, it disappears from head,
         All I do with love,
@@ -4120,10 +4196,10 @@ lyrics = [
         All I do with love,
         I can’t love anymore.
         """,
-        'track_id': 77
-    },
-    {
-        'lyrics': """
+            'track_id': 77
+        },
+        {
+            'lyrics': """
         Baby, what you say?
         Fasho, I know, you don’t leave me, cause you not a same,
         Maybe one of day,
@@ -4154,10 +4230,10 @@ lyrics = [
         Maybe one of day,
         Fasho, we’ll leave that planet, cause we wanna take a height.
         """,
-        'track_id': 78
-    },
-    {
-        'lyrics': """
+            'track_id': 78
+        },
+        {
+            'lyrics': """
         I just take the bag, bag, oh, oh, o-oh,
         You don’t know what in bag, bag, oh, oh, o-oh,
         You think Im really bad, bad, oh, oh, o-oh.
@@ -4185,10 +4261,10 @@ lyrics = [
         You don’t know what in bag, bag, oh, 
         You think Im really bad, bad, oh.
         """,
-        'track_id': 79
-    },
-    {
-        'lyrics': """
+            'track_id': 79
+        },
+        {
+            'lyrics': """
         Wanna be with you right now,
         Wanna be with you right now,
         Wanna be with you, why not?
@@ -4220,10 +4296,10 @@ lyrics = [
         Wanna be with you right now,
         Wanna be with you, why not?
         """,
-        'track_id': 80
-    },
-    {
-        'lyrics': """
+            'track_id': 80
+        },
+        {
+            'lyrics': """
         That was long way, always tryna goin’ through,
         Through that fake friends, mum, lm goin’ home,
         Im tryna relax, so I smoke that dope,
@@ -4255,10 +4331,10 @@ lyrics = [
         Yeah,
         Why so many time I forgot my dawg?
         """,
-        'track_id': 81
-    },
-    {
-        'lyrics': """
+            'track_id': 81
+        },
+        {
+            'lyrics': """
         Baby sit in my head, 
         That love ‘til the end
         Inside me, no cap,
@@ -4299,10 +4375,10 @@ lyrics = [
         If you say me, that Im just a lucky man,
         I will no judge you, no hate you, I swear.
         """,
-        'track_id': 82
-    },
-    {
-        'lyrics': """
+            'track_id': 82
+        },
+        {
+            'lyrics': """
         Wassup,
         Tonight I have been rollin’ ‘round,
         Tonight we was loud with my dawg,
@@ -4339,10 +4415,10 @@ lyrics = [
         I have not any reasons to be in the club, 
         All I doin’ makin’ my future with my luck.
         """,
-        'track_id': 83
-    },
-    {
-        'lyrics': """
+            'track_id': 83
+        },
+        {
+            'lyrics': """
         Under fuckin’ rain Im waitin’ that hoe,
         Inside me too much pain, everybody know,
         She forgot my name, I don’t wanna more,
@@ -4380,10 +4456,10 @@ lyrics = [
         Under fuckin’ rain, under purple rain, yeah,
         Under purple rain, under purple rain, yeah, yeah, yeah-ah, yeah-ah.
         """,
-        'track_id': 84
-    },
-    {
-        'lyrics': """
+            'track_id': 84
+        },
+        {
+            'lyrics': """
         If you dead inside, you are deadman,
         Have you really wanna die? You are deadman,
         World so bad, breaking fuckin’ bread man,
@@ -4417,10 +4493,10 @@ lyrics = [
         We are fuckin’ deadmans, yeah,
         We are fuckin’ deadmans, yeah.
         """,
-        'track_id': 85
-    },
-    {
-        'lyrics': """
+            'track_id': 85
+        },
+        {
+            'lyrics': """
         [Chorus: Azuko]
         I was so sad,
         Shawty too bad, too bad, too bad on me,
@@ -4505,10 +4581,10 @@ lyrics = [
         Sorry, I can’t find good girl around the bitches,
         More money their visions.
         """,
-        'track_id': 86
-    },
-    {
-        'lyrics': """
+            'track_id': 86
+        },
+        {
+            'lyrics': """
         I think I lose my purpose,
         My family say me Im bad bad bad,
         Feelin’ like Im ridin’ on the circles,
@@ -4559,10 +4635,10 @@ lyrics = [
         I think I lose my purpose,
         Now Im thinkin’ Imma very bad bad bad.
         """,
-        'track_id': 87
-    },
-    {
-        'lyrics': """
+            'track_id': 87
+        },
+        {
+            'lyrics': """
         Uh,
         Taking fuckin bag, I go away,
         I gotta leave my home to take a height,
@@ -4591,10 +4667,10 @@ lyrics = [
         Yeah, woah, woah, woah,
         Woah, woah, woah.
         """,
-        'track_id': 88
-    },
-    {
-        'lyrics': """
+            'track_id': 88
+        },
+        {
+            'lyrics': """
         Drop top, we on the way, fast car, just me and my gang,
         Don’t stop, cause we feel the wave, that vibes we can get from the height,
         Blinged out, don’t know what do today,
@@ -4649,10 +4725,10 @@ lyrics = [
         I don’t know, why all girls are the same,
         Cause I know who I was and I am.
         """,
-        'track_id': 89
-    },
-    {
-        'lyrics': """
+            'track_id': 89
+        },
+        {
+            'lyrics': """
         Hey, girl,
         Hey,
         Do you wanna be my baby?
@@ -4704,10 +4780,10 @@ lyrics = [
         Do you want me?
         Say me true, cause now Imma fallin’ down, down.
         """,
-        'track_id': 90
-    },
-    {
-        'lyrics': """
+            'track_id': 90
+        },
+        {
+            'lyrics': """
         Talkin bout suicide, suicide doors,
         You are not my homies, baby, yeah we riders,
         Riders on the storm, kick back one person,
@@ -4743,10 +4819,10 @@ lyrics = [
         I would be alone in Vlone, hard workin’,
         Slatt talk, money talk, what they are talkin’?
         """,
-        'track_id': 91
-    },
-    {
-        'lyrics': """
+            'track_id': 91
+        },
+        {
+            'lyrics': """
         I gotta say you some important words,
         I hope in new year you don’t become the worst,
         You gotta do things, which you love the most,
@@ -4786,10 +4862,10 @@ lyrics = [
         We’re going up ‘til the end, 
         Oh yeah, oh yeah.
         """,
-        'track_id': 92
-    },
-    {
-        'lyrics': """
+            'track_id': 92
+        },
+        {
+            'lyrics': """
         Everynight I sit in bed, I fuck with this,
         I lookin’ at the stars, be near you is bless,
         Mileran, where you are go?
@@ -4827,10 +4903,10 @@ lyrics = [
         Mileran, where you are go?
         You don’t need that fuckin’ racks, baby, I know.
         """,
-        'track_id': 93
-    },
-    {
-        'lyrics': """
+            'track_id': 93
+        },
+        {
+            'lyrics': """
         Imma happy everyday, but inside I’m sad
         Happy everywhere, but near you I’m sad
         Diamonds look so clear, but my guap is bad
@@ -4863,10 +4939,10 @@ lyrics = [
         Diamonds look so clear, but my guap is bad
         I want lookin’ lit, I don’t buyin’ shit
         """,
-        'track_id': 94
-    },
-    {
-        'lyrics': """
+            'track_id': 94
+        },
+        {
+            'lyrics': """
         All you do is a shit, it’s a fun,
         Come on, baby, open your eyes,
         I really, really love that sound,
@@ -4918,10 +4994,10 @@ lyrics = [
         Maybe I can go throw it up,
         And then once I feeling more nice.
         """,
-        'track_id': 95
-    },
-    {
-        'lyrics': """
+            'track_id': 95
+        },
+        {
+            'lyrics': """
         I found reason, got the reason to will live,
         My parents love me, they approved me, yeah they lit,
         I know, now I can say that Im no lonely,
@@ -4952,10 +5028,10 @@ lyrics = [
         But all that people tell, escape is all you see,
         I know, now I can say, that Im no lonely
         """,
-        'track_id': 96
-    },
-    {
-        'lyrics': """
+            'track_id': 96
+        },
+        {
+            'lyrics': """
         You talkin’ a lot,
         Fake talkin’ a lot,
         Lost best friend like woah,
@@ -4995,10 +5071,10 @@ lyrics = [
         But I talked him shit,
         And my slime R.I.P.
         """,
-        'track_id': 97
-    },
-    {
-        'lyrics': """
+            'track_id': 97
+        },
+        {
+            'lyrics': """
         I have no time to be sadly,
         I writing my songs, everywhere I put that ad-lib,
         Someone tryna be a friendly,
@@ -5044,10 +5120,10 @@ lyrics = [
         So many scars don’t cure with magic,
         Dodging punches like Im Miss Elastic.
         """,
-        'track_id': 98
-    },
-    {
-        'lyrics': """
+            'track_id': 98
+        },
+        {
+            'lyrics': """
         [Chorus: FARO]
         ???
         
@@ -5074,10 +5150,10 @@ lyrics = [
         [Chorus: FARO]
         ???
         """,
-        'track_id': 99
-    },
-    {
-        'lyrics': """
+            'track_id': 99
+        },
+        {
+            'lyrics': """
         Что ты сделал, парень, чтоб я уважал тебя?
         Что ты сделал, парень, чтоб я замечал тебя?
         
@@ -5112,10 +5188,10 @@ lyrics = [
         Нет времени до вас, у меня своя тропа,
         Иду по ней, но вижу только черепа.
         """,
-        'track_id': 100
-    },
-    {
-        'lyrics': """
+            'track_id': 100
+        },
+        {
+            'lyrics': """
         Wassup, girl?
         How are you feeling for today?
         Got more ‘40 with my gang,
@@ -5166,10 +5242,10 @@ lyrics = [
         I swear, that day magnificent,
         Wassup, girl?
         """,
-        'track_id': 101
-    },
-    {
-        'lyrics': """
+            'track_id': 101
+        },
+        {
+            'lyrics': """
         Каждый день одно и то же,
         Я заебался видеть всех этих прохожих,
         Poker-face, думают, это им поможет,
@@ -5197,10 +5273,10 @@ lyrics = [
         Я не мудрец, просто я знаю, это факт,
         Ты говоришь мне, что ты свой, но ты чужак.
         """,
-        'track_id': 102
-    },
-    {
-        'lyrics': """
+            'track_id': 102
+        },
+        {
+            'lyrics': """
         [Chorus: YUNG ROUZY]
         Я живу жизнь Тандзиро,
         Она второй номер, я hero,
@@ -5275,10 +5351,10 @@ lyrics = [
         Вижу огней,
         Стал поумней.
         """,
-        'track_id': 103
-    },
-    {
-        'lyrics': """
+            'track_id': 103
+        },
+        {
+            'lyrics': """
         Fools never win.
         
         I have lot of facts,
@@ -5330,10 +5406,10 @@ lyrics = [
         You don’t have a cash
         You go to the dash.
         """,
-        'track_id': 104
-    },
-    {
-        'lyrics': """
+            'track_id': 104
+        },
+        {
+            'lyrics': """
         The fuckin’ white nigga presents:
         Life Is Full Of Lies 2: Before Love Story, let’s go!
         
@@ -5354,10 +5430,10 @@ lyrics = [
         My dream so far, but I do best
         For the next year I put aside the rest.
         """,
-        'track_id': 105
-    },
-    {
-        'lyrics': """
+            'track_id': 105
+        },
+        {
+            'lyrics': """
         Have you ever wanted stop?
         For girl who you love,
         That day was so rainy,
@@ -5408,14 +5484,14 @@ lyrics = [
         Fed of that shit, I need leave that town quick,
         Before my heart turns to brick, yeah.
         """,
-        'track_id': 106
-    },
-    {
-        'lyrics': None,
-        'track_id': 107
-    },
-    {
-        'lyrics': """
+            'track_id': 106
+        },
+        {
+            'lyrics': None,
+            'track_id': 107
+        },
+        {
+            'lyrics': """
         Through the sky,
         For the dream I’ll be so high,
         Don’t sleep and open your eyes,
@@ -5466,14 +5542,14 @@ lyrics = [
         Don’t sleep and open your eyes,
         You’re better, so don’t be so shy.
         """,
-        'track_id': 108
-    },
-    {
-        'lyrics': None,
-        'track_id': 109
-    },
-    {
-        'lyrics': """
+            'track_id': 108
+        },
+        {
+            'lyrics': None,
+            'track_id': 109
+        },
+        {
+            'lyrics': """
         N***a say yeah,
         But he is fake, go in the gap,
         He wear new cap,
@@ -5518,14 +5594,14 @@ lyrics = [
         Go in the gap, yeah,
         Go in the gap, yeah.
         """,
-        'track_id': 110
-    },
-    {
-        'lyrics': None,
-        'track_id': 111
-    },
-    {
-        'lyrics': """
+            'track_id': 110
+        },
+        {
+            'lyrics': None,
+            'track_id': 111
+        },
+        {
+            'lyrics': """
         You just a hoe, yeah,
         Always open the door, yeah,
         Don’t matter how old,
@@ -5587,10 +5663,10 @@ lyrics = [
         You wanna get money,
         You always on floor, yeah.
         """,
-        'track_id': 112
-    },
-    {
-        'lyrics': """
+            'track_id': 112
+        },
+        {
+            'lyrics': """
         All that pretty fakes made me fall,
         I put my heart so deep, I lose my soul,
         When put your love away, I losed some more,
@@ -5622,10 +5698,10 @@ lyrics = [
         I close the door, woah, woah, yeah.
         I close the door, woah, woah.
         """,
-        'track_id': 113
-    },
-    {
-        'lyrics': """
+            'track_id': 113
+        },
+        {
+            'lyrics': """
         Make a big bang-bang,
         Album on the way,
         Yeah I come long way,
@@ -5679,10 +5755,10 @@ lyrics = [
         
         Make a big bang-bang!
         """,
-        'track_id': 114
-    },
-    {
-        'lyrics': """
+            'track_id': 114
+        },
+        {
+            'lyrics': """
         Yeah, yeah, yeah,
         Yeah, woah, yeah,
         Yeah, I lookin somebody,
@@ -5741,10 +5817,10 @@ lyrics = [
         Feeling death,
         Feeling death.
         """,
-        'track_id': 115
-    },
-    {
-        'lyrics': """
+            'track_id': 115
+        },
+        {
+            'lyrics': """
         Momma say “Be careful, yeah,
         Cause you not a stoney, yeah,
         But you gotta take full, yeah
@@ -5847,10 +5923,10 @@ lyrics = [
         I cannot turn up that gear,
         Nobody can’t help, I swear.
         """,
-        'track_id': 116
-    },
-    {
-        'lyrics': """
+            'track_id': 116
+        },
+        {
+            'lyrics': """
         All that fake n***as always make me bad,
         Tryna make me bad, 
         But my friends is dead,
@@ -5882,10 +5958,10 @@ lyrics = [
         But my friends is dead,
         But I don’t need no help.
         """,
-        'track_id': 117
-    },
-    {
-        'lyrics': """
+            'track_id': 117
+        },
+        {
+            'lyrics': """
         Swag, swag, swag, swag,
         Swag, swag, swag, swag,
         Swag, swag, swag, swag,
@@ -5919,10 +5995,10 @@ lyrics = [
         Swag, swag, swag, swag,
         Swag, swag, swag, swag.
         """,
-        'track_id': 118
-    },
-    {
-        'lyrics': """
+            'track_id': 118
+        },
+        {
+            'lyrics': """
         Baby you were lie,
         Baby you were lie,
         Always waste my time,
@@ -5978,14 +6054,14 @@ lyrics = [
         Enemy hoes,
         They tryna fuck with my dogs.
         """,
-        'track_id': 119
-    },
-    {
-        'lyrics': None,
-        'track_id': 120
-    },
-    {
-        'lyrics': """
+            'track_id': 119
+        },
+        {
+            'lyrics': None,
+            'track_id': 120
+        },
+        {
+            'lyrics': """
         Yeah, I'm blessed, oh God,
         My life trip, oh God,
         Have no girl, oh God,
@@ -6031,10 +6107,10 @@ lyrics = [
         My life is so deep,
         Jumping to the sun.
         """,
-        'track_id': 121
-    },
-    {
-        'lyrics': """
+            'track_id': 121
+        },
+        {
+            'lyrics': """
         Im on the way,
         Too better, so better,
         I lookin your eyes,
@@ -6085,10 +6161,10 @@ lyrics = [
         Baby, oh yeah,
         Baby, oh yeah.
         """,
-        'track_id': 122
-    },
-    {
-        'lyrics': """
+            'track_id': 122
+        },
+        {
+            'lyrics': """
         Imma takin bag,
         Now Im going home,
         Hat like Imma mag,
@@ -6153,10 +6229,10 @@ lyrics = [
         Im Dr. Stone, yeah,
         Im coming home, yeah.
         """,
-        'track_id': 123
-    },
-    {
-        'lyrics': """
+            'track_id': 123
+        },
+        {
+            'lyrics': """
         Baby loves addict,
         Her brain is sleeping now,
         N***a love weed,
@@ -6197,10 +6273,10 @@ lyrics = [
         I never want dat kind of love,
         I never want dat kind of love.
         """,
-        'track_id': 124
-    },
-    {
-        'lyrics': """
+            'track_id': 124
+        },
+        {
+            'lyrics': """
         Diamonds dance, they shine, it ain’t sunny up,
         But I feel so bad, they no on me, yeah,
         That seems very mad, girl buy them by luck,
@@ -6236,10 +6312,10 @@ lyrics = [
         That seems very mad, girl buy them by luck,
         Shaking shaking ass, than have go to pork. 
         """,
-        'track_id': 125
-    },
-    {
-        'lyrics': """
+            'track_id': 125
+        },
+        {
+            'lyrics': """
         Waste, waste, 
         Waste all my time in the space,
         Write all my songs in the space,
@@ -6285,10 +6361,10 @@ lyrics = [
         Write all my songs in the space,
         Everyday Im in the space.
         """,
-        'track_id': 126
-    },
-    {
-        'lyrics': """
+            'track_id': 126
+        },
+        {
+            'lyrics': """
         Now Im cooking with my gang, 
         Now I really have a weight, 
         Now Im 448,
@@ -6323,10 +6399,10 @@ lyrics = [
         Now Im 448,
         Now Im 448.
         """,
-        'track_id': 127
-    },
-    {
-        'lyrics': """
+            'track_id': 127
+        },
+        {
+            'lyrics': """
         [Chorus: Brayke]
         Have you ever met a person and felt like they were the one before?
         Have you ever fell in love and never felt that way before?
@@ -6375,10 +6451,10 @@ lyrics = [
         And you hope they feel the same,
         And if they don’t you gon’ loose something you never had before.
         """,
-        'track_id': 128
-    },
-    {
-        'lyrics': """
+            'track_id': 128
+        },
+        {
+            'lyrics': """
         I can’t trust to anybody with that fame,
         But more and more of them wanna play in that game, 
         Last night we take 40 and then I was feel so great,
@@ -6411,10 +6487,10 @@ lyrics = [
         Map, map, I lookin at map in app,
         Forget, where we must go, we no sad!
         """,
-        'track_id': 129
-    },
-    {
-        'lyrics': """
+            'track_id': 129
+        },
+        {
+            'lyrics': """
         I just going sleep, when I feeling bad,
         There no diamonds on my wrist shining like iceberg.
         
@@ -6451,10 +6527,10 @@ lyrics = [
         Tonight I meet the girl, she was brazilian,
         She listen your music, tell me need killing y'all.
         """,
-        'track_id': 130
-    },
-    {
-        'lyrics': """
+            'track_id': 130
+        },
+        {
+            'lyrics': """
         I taking the bag, yeah,
         Taking ‘n’ taking the bag, yeah,
         See all you true is a fake, yeah,
@@ -6505,10 +6581,10 @@ lyrics = [
         Good girls now sleep in the bed, yeah,
         In the club lot hoes, yeah, and they bad yeah.
         """,
-        'track_id': 131
-    },
-    {
-        'lyrics': """
+            'track_id': 131
+        },
+        {
+            'lyrics': """
         Look at girl, look at girl,
         Look at girl, look at girl,
         Look at girl, look at girl,
@@ -6558,22 +6634,22 @@ lyrics = [
         Look like pearl, look like pearl,
         Look like pearl, look like pearl
         """,
-        'track_id': 132
-    },
-    {
-        'lyrics': None,
-        'track_id': 133
-    },
-    {
-        'lyrics': None,
-        'track_id': 134
-    },
-    {
-        'lyrics': None,
-        'track_id': 135
-    },
-    {
-        'lyrics': """
+            'track_id': 132
+        },
+        {
+            'lyrics': None,
+            'track_id': 133
+        },
+        {
+            'lyrics': None,
+            'track_id': 134
+        },
+        {
+            'lyrics': None,
+            'track_id': 135
+        },
+        {
+            'lyrics': """
         М, м, мешать, yeah
         Чтобы им мешать (Чтобы им мешать)
         Funny but nobody
@@ -6618,10 +6694,10 @@ lyrics = [
         Временами еще бываю бешеным
         Но теперь у меня нет смысла бежать
         """,
-        'track_id': 136
-    },
-    {
-        'lyrics': """
+            'track_id': 136
+        },
+        {
+            'lyrics': """
         Azuko, I <3 you
 
         В моей кровати тесновато
@@ -6650,10 +6726,10 @@ lyrics = [
         Все чего хотел, исчезло
         Вместе с тобой
         """,
-        'track_id': 137
-    },
-    {
-        'lyrics': """
+            'track_id': 137
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Такое чувство, что я вечно играю, будто это театр
@@ -6712,10 +6788,10 @@ lyrics = [
         Я люблю море – стал викинг
         Говорю о жизни будто старик
         """,
-        'track_id': 138
-    },
-    {
-        'lyrics': """
+            'track_id': 138
+        },
+        {
+            'lyrics': """
         Yeah, uh-huh
         Yeah, uh-huh
         Yeah, uh-huh
@@ -6764,10 +6840,10 @@ lyrics = [
         Я всегда был верен и теперь
         Я живу иначе, делая что умею
         """,
-        'track_id': 139
-    },
-    {
-        'lyrics': """
+            'track_id': 139
+        },
+        {
+            'lyrics': """
         Ноль внимания на других, пока продолжаю жить бедно
         Я полюбил новую, но в который раз она мой лучший friend, yeah
         
@@ -6808,10 +6884,10 @@ lyrics = [
         Думать о других, пока ты вечно опускаешь руки
         Пока ветер меняет тебя как флюгер
         """,
-        'track_id': 140
-    },
-    {
-        'lyrics': """
+            'track_id': 140
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Я лишь хотел быть тем, кто подарит тебе все
@@ -6862,10 +6938,10 @@ lyrics = [
         И я снова поменял свой список
         Тех, ради кого стоит тратить свою жизнь
         """,
-        'track_id': 141
-    },
-    {
-        'lyrics': """
+            'track_id': 141
+        },
+        {
+            'lyrics': """
         Yeah, yeah
         У них в голове Fendi, каждый второй, manny
         У них типа style legend, style magic
@@ -6913,10 +6989,10 @@ lyrics = [
         Sky, yeah, sky
         Sky, yeah, sky
         """,
-        'track_id': 142
-    },
-    {
-        'lyrics': """
+            'track_id': 142
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         И нет того, на что бы я не пошел ради my ni**a
@@ -6980,10 +7056,10 @@ lyrics = [
         Не поверну назад
         Нахуй ваших оппов, я устал от клоунад
         """,
-        'track_id': 143
-    },
-    {
-        'lyrics': """
+            'track_id': 143
+        },
+        {
+            'lyrics': """
         Azuko, I love you
 
         Никто не увидит мир моими глазами, yeah
@@ -7034,10 +7110,10 @@ lyrics = [
         Не буду врать, у меня нет слов, yeah
         Не буду врать, у меня нет слов
         """,
-        'track_id': 144
-     },
-    {
-        'lyrics': """
+            'track_id': 144
+        },
+        {
+            'lyrics': """
         Больно, но я стискиваю зубы
         Больно, каждый раз видеть тебя с другим
         Что мне теперь делать?
@@ -7077,10 +7153,10 @@ lyrics = [
         Эй, кого любим
         Да, мы вечно принимаем на себя боль от тех, кого любим
         """,
-        'track_id': 145
-     },
-    {
-        'lyrics': """
+            'track_id': 145
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Я холодный, меня не видит тепловизор
@@ -7110,10 +7186,10 @@ lyrics = [
         Я так устал от нарциссов – один парт и он уже высох
         Какие релизы? Этот парень точно пиздит
         """,
-        'track_id': 146
-    },
-    {
-        'lyrics': """
+            'track_id': 146
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Сгораю от непонимания
@@ -7168,10 +7244,10 @@ lyrics = [
         Но они этого не понимают
         Не понимают
         """,
-        'track_id': 147
-    },
-    {
-        'lyrics': """
+            'track_id': 147
+        },
+        {
+            'lyrics': """
         Они набивают себе price
         A lotta bitches рядом и футболка oversize
         Я на битах получаю релакс
@@ -7240,10 +7316,10 @@ lyrics = [
         Карманы пустые, но это не главное
         Играю свою жизнь на фортепиано, yeah
         """,
-        'track_id': 148
-    },
-    {
-        'lyrics': """
+            'track_id': 148
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Закрылся ото всех, я будто Bobby Fischer
@@ -7306,10 +7382,10 @@ lyrics = [
         Я музыкой всю голову себе вышиб
         У нас много ран, но мы их залижем
         """,
-        'track_id': 149
-    },
-    {
-        'lyrics': """
+            'track_id': 149
+        },
+        {
+            'lyrics': """
         Ooh, woah
         Я уже для них idol, yeah
         Я уже для них idol, yeah
@@ -7353,10 +7429,10 @@ lyrics = [
         Bae, посмотри, я больше не убегаю
         Bae, bae
         """,
-        'track_id': 150
-    },
-    {
-        'lyrics': """
+            'track_id': 150
+        },
+        {
+            'lyrics': """
         Azuko, I <3 you
 
         Реально
@@ -7419,10 +7495,10 @@ lyrics = [
         Считаю это неправильно, неправильно
         Это неправильно, yeah
         """,
-        'track_id': 151
-    },
-    {
-        'lyrics': """
+            'track_id': 151
+        },
+        {
+            'lyrics': """
         За последнее время мой круг близких был довольно сужен
         Azuko, I <3 you
         Я до сих пор не понимаю, кто мы теперь друг другу
@@ -7457,10 +7533,10 @@ lyrics = [
         
         Ooh, ooh, ooh, ooh!
         """,
-        'track_id': 152
-    },
-    {
-        'lyrics': """
+            'track_id': 152
+        },
+        {
+            'lyrics': """
         Ringo, let’s rumble!
 
         Я так устал от этих бумаг
@@ -7503,10 +7579,10 @@ lyrics = [
         
         Let’s go, woah
         """,
-        'track_id': 153
-    },
-    {
-        'lyrics': """
+            'track_id': 153
+        },
+        {
+            'lyrics': """
         Моя душа, в полымя бросаюсь за теми, кто мне очень дорог
         Но им так важен bankroll, но им так важен bankroll
         Счастье привык видеть в мелочах, говорю им снова и снова
@@ -7531,10 +7607,10 @@ lyrics = [
         Счастье привык видеть в мелочах, говорю им снова и снова
         Но им так важен bankroll, но им так важен bankroll
         """,
-        'track_id': 154
-    },
-    {
-        'lyrics': """
+            'track_id': 154
+        },
+        {
+            'lyrics': """
         Azuko, I <3 you
 
         На моей шее родник
@@ -7566,10 +7642,10 @@ lyrics = [
         И больше не волнует, увидимся ли когда-нибудь
         Я сильно устал от этого ожидания
         """,
-        'track_id': 155
-    },
-    {
-        'lyrics': """
+            'track_id': 155
+        },
+        {
+            'lyrics': """
         Azuko, I <3 you
 
         Мне не перечислить всех тех, кому благодарен
@@ -7653,10 +7729,10 @@ lyrics = [
         Hey, малыш, люблю тебя больше, чем кто-либо из этих людей
         Чем кто-либо из этих людей
         """,
-        'track_id': 156
-    },
-    {
-        'lyrics': """
+            'track_id': 156
+        },
+        {
+            'lyrics': """
         Have you ever wanted stop?
         For girl who you love,
         That day was so rainy,
@@ -7707,10 +7783,10 @@ lyrics = [
         Fed of that shit, I need leave that town quick,
         Before my heart turns to brick, yeah.
         """,
-        'track_id': 157
-    },
-    {
-        'lyrics': """
+            'track_id': 157
+        },
+        {
+            'lyrics': """
         Momma say “Be careful, yeah,
         Cause you not a stoney, yeah,
         But you gotta take full, yeah
@@ -7813,6 +7889,6 @@ lyrics = [
         I cannot turn up that gear,
         Nobody can’t help, I swear.
         """,
-        'track_id': 158
-    }
-]
+            'track_id': 158
+        }
+    ]
