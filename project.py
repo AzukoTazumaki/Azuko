@@ -119,6 +119,11 @@ def order(request: Request):
         {"request": request, "genres": genres})
 
 
+@app.get("/support", response_class=HTMLResponse)
+def order(request: Request):
+    return templates.TemplateResponse("support.html", {"request": request})
+
+
 @app.exception_handler(StarletteHTTPException)
 async def my_custom_exception_handler(request: Request, exception: StarletteHTTPException):
     if exception.status_code == 404:
