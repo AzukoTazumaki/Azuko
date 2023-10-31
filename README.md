@@ -25,7 +25,7 @@ git clone https://github.com/AzukoTazumaki/Azuko.git
 Go to the `Azuko`
 
 ```bash
-cd Azuko
+cd Azuko/
 ```
 
 ## Make an environment & install requirements
@@ -34,9 +34,9 @@ cd Azuko
 
 ```bash
 python -m venv venv
-...
+
 source venv/bin/activate
-...
+
 pip install -r requirements.txt
 ```
 
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 
 ```bash
 python -m pipenv shell
-...
+
 pipenv install
 ```
 
@@ -54,9 +54,9 @@ In terminal:
 
 ```bash
 cd static/
-...
+
 npm install
-...
+
 npm run gulp
 ```
 
