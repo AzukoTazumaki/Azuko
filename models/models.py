@@ -12,6 +12,11 @@ from .tables.Products import Products
 from .tables.Lyrics import Lyrics
 from .tables.Genres import Genres
 from .tables.Keys import Keys
+from .tables.Beats import Beats
+from .tables.Mixing import Mixing
+from .tables.Mastering import Mastering
+from .tables.MixingAndMastering import MixingAndMastering
+from .tables.Ghostwriting import Ghostwriting
 from .data import Data
 from .settings import Settings
 
