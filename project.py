@@ -6,7 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 from models.models import InitDatabase
-from db import SelectProjects
+from db import Selections
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from sqlalchemy.exc import IntegrityError
 
@@ -36,9 +36,9 @@ def index():
 
 @app.get("/home", response_class=HTMLResponse)
 def index(request: Request):
-    db_projects = SelectProjects()
-    last_releases = db_projects.select_last_releases()
-    products_list = db_projects.select_products(None)
+    db = Selections()
+    last_releases = db.select_last_releases()
+    products_list = db.select_products(None)
     return templates.TemplateResponse(
         'home_content/home.html',
         {"request": request, "last_releases": last_releases,
@@ -48,8 +48,8 @@ def index(request: Request):
 
 @app.get("/products", response_class=HTMLResponse)
 def products(request: Request):
-    db_projects = SelectProjects()
-    products_list = db_projects.select_products(None)
+    db = Selections()
+    products_list = db.select_products(None)
     return templates.TemplateResponse(
         "products_content/all_products.html",
         {"request": request, "products": products_list})
@@ -57,7 +57,7 @@ def products(request: Request):
 
 @app.get("/products/{product_id}", response_class=HTMLResponse)
 def albums_playlist(request: Request, product_id: int):
-    db = SelectProjects()
+    db = Selections()
     product = db.select_products(product_id)
     return templates.TemplateResponse(
         f"products_content/product.html", {"request": request, "product": product}
@@ -66,10 +66,10 @@ def albums_playlist(request: Request, product_id: int):
 
 @app.get("/projects", response_class=HTMLResponse)
 def projects(request: Request):
-    db_projects = SelectProjects()
-    albums = db_projects.select_albums(None)
-    singles = db_projects.select_singles()
-    featurings = db_projects.select_featurings()
+    db = Selections()
+    albums = db.select_albums(None)
+    singles = db.select_singles()
+    featurings = db.select_featurings()
     return templates.TemplateResponse(
         "projects_content/projects.html",
         {"request": request, "albums": albums, "singles": singles, "featurings": featurings}
@@ -83,8 +83,8 @@ def playlist(request: Request):
 
 @app.get("/playlist/albums/{album_id}", response_class=HTMLResponse)
 def albums_playlist(request: Request, album_id: int):
-    db_projects = SelectProjects()
-    one_album = db_projects.select_albums(album_id)
+    db = Selections()
+    one_album = db.select_albums(album_id)
     return templates.TemplateResponse(
         "playlist_content/albums.html", {"request": request, "album": one_album}
     )
@@ -94,11 +94,11 @@ def albums_playlist(request: Request, album_id: int):
 def singles_playlist(request: Request, project_name: str):
     tracks = None
     playlist_title = project_name.capitalize()
-    db_projects = SelectProjects()
+    db = Selections()
     if project_name == 'singles':
-        tracks = db_projects.select_singles()
+        tracks = db.select_singles()
     elif project_name == 'featurings':
-        tracks = db_projects.select_featurings()
+        tracks = db.select_featurings()
     return templates.TemplateResponse(
         "playlist_content/singles_featurings.html",
         {"request": request, "tracks": tracks, "title": playlist_title}
@@ -112,8 +112,8 @@ def order(request: Request):
 
 @app.get("/extras", response_class=HTMLResponse)
 def order(request: Request):
-    db_projects = SelectProjects()
-    genres = db_projects.select_genres()
+    db = Selections()
+    genres = db.select_genres()
     return templates.TemplateResponse(
         "extras_content/extras.html",
         {"request": request, "genres": genres})

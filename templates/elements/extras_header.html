@@ -1,7 +1,7 @@
 {% block header %}
 <header class="extras_header">
     <nav class="navbar fixed-top">
-        <div class="container-fluid d-flex justify-content-center">
+        <div class="container nav_extras d-flex justify-content-between">
             <a href="/" class="navbar-brand"><img src="{{url_for('static', path='/images/logos/logo_azuko_extras.svg')}}"
                     width="100" alt="AZUKO"></a>
             <div class="navbar_links">
@@ -10,6 +10,9 @@
                 <a href="/projects">PROJECTS</a>
                 <a class="mx-2" href="/products">PRODUCTS</a>
                 <a href="/extras">EXTRAS</a>
+            </div>
+            <div>
+                <a href="https://github.com/AzukoTazumaki" class="github"><i class="fa-brands fa-github fa-xl"></i></a>
             </div>
         </div>
     </nav>

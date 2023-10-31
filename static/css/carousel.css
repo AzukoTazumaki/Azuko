@@ -1,0 +1,50 @@
+.carousel_image, .carousel-inner {
+    border-radius: 25px !important;
+}
+
+.bg_carousel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+.carousel_left_part {
+    margin-left: 13vw;
+    margin-right: 3vw;
+}
+
+.carousel_left_part span {
+    font-weight: 900;
+    font-size: 2em;
+    text-align: start;
+    color: var(--light-gray-azuko-rgb);
+    text-shadow: 
+        1px 1px 5px var(--dark-gray-azuko-rgb),
+        2px 2px 1px var(--dark-gray-azuko-rgb);
+}
+
+.carousel_left_part .carousel_description {
+    font-weight: 900;
+    font-size: 1.3em !important;
+    color: var(--light-gray-azuko-rgb);
+    text-shadow: 
+        1px 1px 5px var(--dark-gray-azuko-rgb),
+        2px 2px 1px var(--dark-gray-azuko-rgb);
+}
+
+.carousel_right_part {
+    margin-right: 13vw;
+}
+
+.cover_carousel {
+    border-radius: 15px;
+    height: 40vh;
+    box-shadow: 2px 2px 10px var(--dark-gray-rgb);
+}
+
+.carousel_album_title {
+    padding: 0 20px 20px 0;
+    color: var(--light-gray-azuko-rgb);
+    text-shadow: var(--black-shadow);
+    
+}

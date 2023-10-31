@@ -6,20 +6,19 @@ from models.tables.Tracks import Tracks
 from models.tables.Genres import Genres
 
 
-class SelectProjects(InitEngine):
+class Selections(InitEngine):
     def __init__(self):
         super().__init__()
-        self.all_singles = self.session.execute(
-            select(Tracks).join(Tracks.single).join(Tracks.artists).join(Tracks.text).group_by(Tracks)
-        ).scalars()
-        self.all_albums = self.session.execute(
-            select(Albums).join(Albums.tracks).join(Albums.artists).group_by(Albums)
-        ).scalars()
-        self.all_featurings = self.session.execute(
-            select(Tracks).join(Tracks.featuring).join(Tracks.artists).group_by(Tracks)
-        ).scalars()
-        self.all_products = self.session.execute(select(Products).order_by(Products.id)).scalars()
-        self.all_genres = self.session.execute(select(Genres)).scalars()
+        self.albums_statement = select(Albums).group_by(Albums)
+        self.singles_statement = select(Tracks).join(Tracks.single).group_by(Tracks)
+        self.featurings_statement = select(Tracks).join(Tracks.featuring).group_by(Tracks)
+        self.products_statement = select(Products).order_by(Products.id)
+        self.genres_statement = select(Genres)
+        self.all_albums = self.session.execute(self.albums_statement).scalars()
+        self.all_singles = self.session.execute(self.singles_statement).scalars()
+        self.all_featurings = self.session.execute(self.featurings_statement).scalars()
+        self.all_products = self.session.execute(self.products_statement).scalars()
+        self.all_genres = self.session.execute(self.genres_statement).scalars()
 
     def select_albums(self, album_id: int | None):
         if album_id is None:
@@ -28,18 +27,18 @@ class SelectProjects(InitEngine):
                     'id': album.id, 'title': album.title, 'description': album.description,
                     'date_release': album.date_release.strftime('%d %B %Y'),
                     'cover': album.cover, 'artists': album.artists, 'tracks': [
-                    {
-                        'position': track.track_position_in_album, 'title': track.title,
-                        'duration': f'{str(track.duration).split(":")[0]}:{str(track.duration).split(":")[1]}',
-                        'artists': track.artists
-                    } for track in album.tracks
-                ]
+                        {
+                            'position': track.track_position_in_album, 'title': track.title,
+                            'duration': f'{str(track.duration).split(":")[0]}:{str(track.duration).split(":")[1]}',
+                            'artists': track.artists
+                        } for track in album.tracks
+                    ]
                 } for album in self.all_albums
             ]
             return result
         else:
-            db_albums_scalars = self.session.execute(
-                select(Albums).join(Albums.tracks).join(Albums.artists).where(Albums.id == album_id)).scalars()
+            db_one_album_statement = select(Albums).join(Albums.tracks).join(Albums.artists).where(Albums.id == album_id)
+            db_albums_scalars = self.session.execute(db_one_album_statement).scalars()
             result = None
             for album in db_albums_scalars:
                 result = {
@@ -82,9 +81,9 @@ class SelectProjects(InitEngine):
 
     def select_last_releases(self):
         last_releases = []
-        db_last_albums_scalars = self.session\
+        db_last_albums_scalars = self.session \
             .execute(select(Albums).join(Albums.artists).order_by(desc(Albums.date_release)).limit(3)).scalars()
-        db_last_singles_scalars = self.session\
+        db_last_singles_scalars = self.session \
             .execute(select(Tracks).join(Tracks.single).join(Tracks.artists).group_by(Tracks)
                      .order_by(desc(Tracks.date_release)).limit(3)).scalars()
         db_last_featurings_scalars = self.session \

@@ -1,65 +1,58 @@
 {% block featurings_carousel %}
 <div class="row justify-content-center align-items-center vh-100" id="featurings_cards">
     <div class="col-12">
-        <div class="row justify-content-center gap-4">
+        <div class="row justify-content-center gap-5">
             <div class="col-12 d-flex justify-content-center">
                 <img src="{{url_for('static', path='/images/logos/featurings_logo.png')}}" alt="Featurings" width="350">
             </div>
             {% for featuring in featurings | sort(attribute='id') %}
-            {% if loop.index <= 3 %} 
-            <div class="col-2 p-0">
-                <div class="card card_featuring rounded-3">
-                    <img loading="lazy"
-                        src="{{ url_for('static', path='/images/projects/featurings/'+featuring.id|string+'.jpg') }}"
-                        class="card-img-top rounded-top-3" alt="{{ featuring.title }}">
-                    <div class="card-body">
-                        <p class="featuring_name m-0 text-center">
-                            {{ featuring.title }}
-                        </p>
-                        <p class="featuring_artist m-0 text-center">
-                            {% for artist in featuring.artists | sort(attribute='id', reverse=True) %}
-                            {{ artist.name + ', ' if not loop.last else artist.name }}
-                            {% endfor %}
-                        </p>
+                {% if loop.index <= 2 %} 
+                <div class="col-4 p-0">
+                {% else %}
+                <div class="col-4 p-0 disabled_featuring_card">
+                    {% endif %}
+                    <div class="d-flex justify-content-between card_featuring rounded-3">
+                        <div class="project_left_part">
+                            <img loading="lazy"
+                            src="{{ url_for('static', path='/images/projects/featurings/'+featuring.id|string+'.jpg') }}"
+                            class="rounded-start-3" alt="{{ featuring.title }}" width="100%">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-start p-4 project_right_part rounded-end-3">
+                            <div>
+                                <p class="fw-bold m-0">
+                                    <span class="featuring_info_span">Title:</span> {{ featuring.title }}
+                                </p>
+                                <p class="fw-bold m-0 my-2">
+                                    <span class="featuring_info_span">Artists:</span> {% for artist in featuring.artists | sort(attribute='id', reverse=True) %}
+                                    {{ artist.name + ', ' if not loop.last else artist.name }} 
+                                    {% endfor %}
+                                </p>
+                                <p class="fw-bold m-0 my-2">
+                                    <span class="featuring_info_span">Date Release:</span> {{ featuring.date_release }}
+                                </p>
+                                <p class="fw-bold m-0">      
+                                    <span class="featuring_info_span">Duration:</span> {{ featuring.duration }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            {% else %}
-            <div class="col-2 p-0 disabled_featuring_card">
-                <div class="card card_featuring rounded-3">
-                    <img loading="lazy"
-                        src="{{ url_for('static', path='/images/projects/featurings/'+featuring.id|string+'.jpg') }}"
-                        class="card-img-top rounded-top-3" alt="{{ featuring.title }}">
-                    <div class="card-body">
-                        <p class="featuring_name m-0 text-center">
-                            {{ featuring.title }}
-                        </p>
-                        <p class="featuring_artist m-0 text-center">
-                            {% for artist in featuring.artists | sort(attribute='id', reverse=True) %}
-                            {{ artist.name + ', ' if not loop.last else artist.name }}
-                            {% endfor %}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-
             {% endfor %}
-
             <div class="col-12 mb-5">
                 <div class="row d-flex justify-content-center column-gap-0 align-items-center">
                     <div class="col-1 d-flex justify-content-end">
-                        <a href="#singles_cards" class="slider_products"><i class="fa-solid fa-up-long fa-xl"></i></a>
+                        <a href="#singles_cards" class="slider_products"><i
+                                class="fa-solid fa-up-long fa-xl"></i></a>
                     </div>
-                    <div class="col-3 d-flex justify-content-center">
-                        <a class="slider_products show_more_button fw-bold" id="show_more_featurings_button" href="#featurings_cards">SHOW MORE</a>
+                    <div class="col-2 d-flex justify-content-center">
+                        <a class="slider_products show_more_button fw-bold" id="show_more_featurings_button"
+                            href="#featurings_cards">SHOW MORE</a>
                     </div>
                     <div class="col-1 d-flex justify-content-start">
                         <a href="#footer" class="slider_products"><i class="fa-solid fa-down-long fa-xl"></i></a>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

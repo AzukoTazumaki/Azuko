@@ -21,6 +21,10 @@
   height: 150dvh;
 }
 
+#projects {
+  background-image: url(../images/bg/bg_projects.jpg);
+}
+
 .products {
   background-image: url(../images/bg/bg_products.jpg);
 }

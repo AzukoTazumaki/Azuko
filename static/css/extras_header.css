@@ -1,6 +1,12 @@
-.extras_header .navbar {
+.extras_header .nav_extras {
     background-color: var(--darker-gray-azuko-rgb);
     box-shadow: 2px 2px 10px var(--darker-gray-azuko-rgb);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.nav_extras:hover {
+    transform: scale(1.05);
 }
 
 .extras_header .navbar_links a,

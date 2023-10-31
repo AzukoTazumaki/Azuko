@@ -1,21 +1,37 @@
-{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azuko</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/public/bundle.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', path='favicon_azuko.ico') }}" type="image/x-icon">
+</head>
 
-{% include 'elements/bg_video.html' %}
+<body id="extras">
 
-<div class="container">
-    <div class="row d-flex justify-content-center align-items-center vh-100">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                <span class="text-center order_available_soon_text">PAGE NOT FOUND</span>
-            </div>
-            <div class="col-12 d-flex justify-content-center mt-3">
-                <a href="/home">
-                    <button class="other_products_button">MAIN PAGE</button>
-                </a>
+    {% include 'elements/bg_video_extras.html' %}
+
+    {% include 'elements/preloader.html' %}
+
+    <div class="container">
+        <div class="row d-flex justify-content-start align-items-center vh-100">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-start align-items-center">
+                    <span class="text-start page_not_found">SORRY, PAGE NOT FOUND&nbsp;</span><span class="heart_404"><i class="fa-solid fa-heart-crack fa-xl"></i></span>
+                </div>
+                <div class="col-12 d-flex justify-content-start">
+                    <a href="/">
+                        <button class="page_not_found_button">MAIN PAGE</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
+
+    <script src="{{ url_for('static', path='/public/bundle.min.js') }}"></script>
+    <script src="https://kit.fontawesome.com/fb866d52e1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

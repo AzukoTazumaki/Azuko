@@ -17,20 +17,20 @@
                         <div class="product_card_info d-flex justify-content-center align-items-center">
                             <div>
                             {% if product.name == 'Beats' %}
-                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}<i class="fa-solid fa-ruble-sign"></i></span></p>
                             <ul class="m-0">
                                 <li>All instrumentals are available in two formats — MP3 and WAV</li>
                                 <li>All instrumentals have a genre, bpm and key</li>
                                 <li>The opportunity to order an exclusive instrumental, which Azuko will make taking into account your ideas (price is negotiable)</li>
                             </ul>
                             {% elif product.name == 'Mixing' %}
-                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}<i class="fa-solid fa-ruble-sign"></i></span></p>
                             <ul class="m-0">
                                 <li>All of Azuko's tracks are mixed by himself</li>
                                 <li>You can see examples of mixing for other artists</li>
                             </ul>
                             {% elif product.name == 'Mastering' %}
-                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}<i class="fa-solid fa-ruble-sign"></i></span></p>
                             <ul class="m-0">
                                 <li>All of Azuko's tracks are mastered by himself</li>
                                 <li>You can see examples of mastering for other artists</li>
@@ -47,7 +47,7 @@
                                 <li>If you choose this product, you will receive a <strong>25% discount</strong>.</li>
                             </ul>
                             {% else %}
-                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}</span></p>
+                            <p class="m-0 mb-3">Price: <span class="product_price">{{ product.price }}<i class="fa-solid fa-ruble-sign"></i></span></p>
                             <ul class="m-0">
                                 <li>Azuko wrote all the lyrics himself</li>
                                 <li>Exclusive text with meaning, in which everyone puts themselves</li>
