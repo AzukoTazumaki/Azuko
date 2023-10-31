@@ -123,7 +123,15 @@ class Selections(InitEngine):
 
     def select_products(self, product_id: int | None):
         if product_id is None:
-            return self.all_products.all()
+            result = [
+                {
+                    'id': product.id,
+                    'name': product.name,
+                    'price': product.price,
+                    'old_price': product.old_price
+                } for product in self.all_products
+            ]
+            return result
         else:
             db_product_all = self.session.execute(self.match_product_name(product_id)).scalars().all()
             if not db_product_all:
