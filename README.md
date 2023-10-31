@@ -91,9 +91,9 @@ DB_PORT='port'
 DB_NAME='db_name'
 ```
 
-## Databases (default: `Postgres`)
+## Databases (only `Postgres` for now)
 
-If you are using Postgres, you will first need to create a database with the name (`db_name`) you added to your `.env` file (if you use MySQL or SQLite, you don't need to create the database manually, as it will be created automatically). This code will make all things:
+For using Postgres, you will first need to create a database with the name (`db_name`) you added to your `.env` file. This code will make all things:
 
 ```python
 @asynccontextmanager
@@ -108,7 +108,7 @@ async def startup(app: FastAPI):
         pass
 ```
 
-When installing dependencies, two supporting packages for connecting drivers are automatically installed (`mysql-connector-python` for MYSQL and `psycopg2` for Postgres). Before using Postgres, don't forget to export the paths to Postgres like this:
+When installing dependencies, supporting package for connecting driver are automatically installed (`psycopg2` for Postgres, full `db_driver` is `postgresql+psycopg2`). Before using Postgres, don't forget to export the paths to Postgres like this:
 
 ```bash
 # .zshrc file
@@ -128,8 +128,8 @@ Well done!
 (Azuko) <???>@<???> Azuko % python3 project.py 
 INFO:     Will watch for changes in these directories: ['/<your_path_to_project>/Azuko']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [11855] using WatchFiles
-INFO:     Started server process [11857]
+INFO:     Started reloader process [?????] using WatchFiles
+INFO:     Started server process [?????]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
