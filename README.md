@@ -4,7 +4,7 @@
 
 # Welcome to Azuko!
 
-Azuko is a static artist website with the ability to listen to all his tracks
+`Azuko` is a static (for now) artist website with the ability to listen to all his tracks
 
 ## Clone the repository
 
@@ -56,7 +56,11 @@ In terminal:
 cd static/
 
 npm install
+```
 
+If you want to make some changes in `.css` or `.js` files, run command below in this directory:
+
+```bash
 npm run gulp
 ```
 
@@ -71,6 +75,8 @@ You must see:
 [??:??:??] Using gulpfile ~/<your_path_to_project>/Azuko/static/gulpfile.js
 [??:??:??] Starting 'js_css'...
 ```
+
+This means that `Gulp` now looks at all `js` and `css` files, so that when you change anything in styles or scripts, `Gulp` will automatically save everything into bundle (`bundle.min.css` and `bundle.min.js`) files. When you clone a project, the compiled files are there in advance, so you don’t need to create a bundle initially.
 
 ## Create `.env` file with example in `.dev.env`
 
@@ -102,7 +108,15 @@ async def startup(app: FastAPI):
         pass
 ```
 
-Open terminal & run command below
+When installing dependencies, two supporting packages for connecting drivers are automatically installed (`mysql-connector-python` for MYSQL and `psycopg2` for Postgres). Before using Postgres, don't forget to export the paths to Postgres like this:
+
+```bash
+# .zshrc file
+
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+```
+
+After completing all preparations open terminal & run command below
 
 ```bash
 python project.py

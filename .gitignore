@@ -3,6 +3,4 @@ __pycache__
 .DS_Store
 static/node_modules
 environment/.env
-db_data
-alembic.ini
-migrations
+venv
