@@ -1,0 +1,23 @@
+.extras_header .navbar {
+    background-color: var(--darker-gray-azuko-rgb);
+    box-shadow: 2px 2px 10px var(--darker-gray-azuko-rgb);
+}
+
+.extras_header .navbar_links a,
+.extras_header .shopping_cart,
+.extras_header .github {
+    text-decoration: none;
+    color: var(--coral-peach-rgba);
+    text-shadow: var(--dark-gray-azuko-shadow);
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: .3s;
+}
+
+.extras_header .navbar_links a:hover,
+.extras_header .shopping_cart:hover,
+.extras_header .github:hover {
+    background-color: var(--coral-peach-rgba);
+    color: var(--dark-gray-azuko-rgb);
+    text-shadow: none;
+}

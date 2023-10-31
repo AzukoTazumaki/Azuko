@@ -1,0 +1,22 @@
+#extras_footer .footer_title {
+    color: var(--coral-peach-rgb);
+    text-shadow: 1px 1px 5px var(--coral-peach-rgb);
+}
+#extras_footer .contacts a {
+    color: var(--coral-peach-rgb);
+}
+#extras_footer .contacts a:hover {
+    color: var(--coral-peach-rgb-deep);
+}
+#extras_footer .all_rights {
+    color: var(--coral-peach-rgb);
+    text-shadow: var(--coral-peach-shadow);
+}
+
+#extras_footer .order_service_button {
+    background-color: var(--coral-peach-rgb);
+}
+
+#extras_footer .order_service_button:hover {
+    background-color: var(--coral-peach-rgb-deep);
+}

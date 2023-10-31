@@ -41,33 +41,6 @@
     }
 }
 
-.extras_header .nav_container {
-    background-color: transparent;
-}
-.extras_header .navbar {
-    background-color: var(--darker-gray-azuko-rgb);
-    box-shadow: 2px 2px 10px var(--darker-gray-azuko-rgb);
-}
-
-.extras_header .navbar_links a,
-.extras_header .shopping_cart,
-.extras_header .github {
-    text-decoration: none;
-    color: var(--coral-peach-rgba);
-    text-shadow: var(--dark-gray-azuko-shadow);
-    border-radius: 5px;
-    padding: 5px 10px;
-    transition: .3s;
-}
-
-.extras_header .navbar_links a:hover,
-.extras_header .shopping_cart:hover,
-.extras_header .github:hover {
-    background-color: var(--coral-peach-rgba);
-    color: var(--dark-gray-azuko-rgb);
-    text-shadow: none;
-}
-
 .extras_genre_div {
     overflow-y: scroll;
     height: 60vh;
@@ -94,29 +67,6 @@
 
 #extras_genres .extras_title {
     font-size: 6vh;
-}
-
-#extras_footer .footer_title {
-    color: var(--coral-peach-rgb);
-    text-shadow: 1px 1px 5px var(--coral-peach-rgb);
-}
-#extras_footer .contacts a {
-    color: var(--coral-peach-rgb);
-}
-#extras_footer .contacts a:hover {
-    color: var(--coral-peach-rgb-deep);
-}
-#extras_footer .all_rights {
-    color: var(--coral-peach-rgb);
-    text-shadow: var(--coral-peach-shadow);
-}
-
-#extras_footer .order_service_button {
-    background-color: var(--coral-peach-rgb);
-}
-
-#extras_footer .order_service_button:hover {
-    background-color: var(--coral-peach-rgb-deep);
 }
 
 .genres_arrow_down {
