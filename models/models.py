@@ -1,25 +1,25 @@
 from datetime import time
 from sqlmodel import SQLModel, create_engine, Session
-from .ArtistsTracks import ArtistsTracks
-from .AlbumsArtists import AlbumsArtists
-from .Artists import Artists
-from .Featurings import Featurings
-from .Albums import Albums
-from .Singles import Singles
-from .Tracks import Tracks
-from .AlbumsTracks import AlbumsTracks
-from .Products import Products
-from .Lyrics import Lyrics
-from .Beats import Beats
-from .Genres import Genres
-from .Keys import Keys
-from .Mixing import Mixing
-from .Mastering import Mastering
-from .MixingAndMastering import MixingAndMastering
-from .Ghostwriting import Ghostwriting
-from .Data import albums, artists, singles, tracks, albums_tracks, albums_artists, \
+from .tables.ArtistsTracks import ArtistsTracks
+from .tables.AlbumsArtists import AlbumsArtists
+from .tables.Artists import Artists
+from .tables.Featurings import Featurings
+from .tables.Albums import Albums
+from .tables.Singles import Singles
+from .tables.Tracks import Tracks
+from .tables.AlbumsTracks import AlbumsTracks
+from .tables.Products import Products
+from .tables.Lyrics import Lyrics
+from .tables.Genres import Genres
+from .tables.Keys import Keys
+from .tables.Beats import Beats
+from .tables.Mixing import Mixing
+from .tables.Mastering import Mastering
+from .tables.MixingAndMastering import MixingAndMastering
+from .tables.Ghostwriting import Ghostwriting
+from .data import albums, artists, singles, tracks, albums_tracks, albums_artists, \
     artists_tracks, featurings, products, lyrics, genres, keys
-from .settings import db_url
+from .tables.settings import db_url
 
 
 class InitEngine:

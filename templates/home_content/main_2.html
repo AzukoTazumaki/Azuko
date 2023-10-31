@@ -13,8 +13,11 @@
                         {% if release.is_album %}
                         <img loading="lazy" src="{{ url_for('static', path='/images/projects/albums/covers/'+release.id|string+'.jpg') }}"
                             class="card-img-top img_release" alt="{{ release.title }}">
-                        {% else %}
+                        {% elif release.is_single %}
                         <img loading="lazy" src="{{ url_for('static', path='/images/projects/singles/'+release.id|string+'.jpg') }}"
+                            class="card-img-top img_release" alt="{{ release.title }}">
+                        {% else %}
+                        <img loading="lazy" src="{{ url_for('static', path='/images/projects/featurings/'+release.id|string+'.jpg') }}"
                             class="card-img-top img_release" alt="{{ release.title }}">
                         {% endif %}
                         <div class="release_info">

@@ -1,10 +1,9 @@
-from models.Products import Products
+from models.tables.Products import Products
 from models.models import InitEngine
 from sqlmodel import select, desc
-from models.Albums import Albums
-from models.Tracks import Tracks
-from models.Genres import Genres
-from models.Beats import Beats
+from models.tables.Albums import Albums
+from models.tables.Tracks import Tracks
+from models.tables.Genres import Genres
 
 
 class SelectProjects(InitEngine):
@@ -88,10 +87,18 @@ class SelectProjects(InitEngine):
         db_last_singles_scalars = self.session\
             .execute(select(Tracks).join(Tracks.single).join(Tracks.artists).group_by(Tracks)
                      .order_by(desc(Tracks.date_release)).limit(3)).scalars()
+        db_last_featurings_scalars = self.session \
+            .execute(select(Tracks).join(Tracks.featuring).join(Tracks.artists).group_by(Tracks)
+                     .order_by(desc(Tracks.date_release)).limit(3)).scalars()
         for release in db_last_singles_scalars:
             last_releases.append({
-                'id': release.id, 'title': release.title,
-                'artists': release.artists, 'date_release': release.date_release
+                'id': release.id, 'title': release.title, 'artists': release.artists,
+                'date_release': release.date_release, 'is_single': True
+            })
+        for release in db_last_featurings_scalars:
+            last_releases.append({
+                'id': release.id, 'title': release.title, 'artists': release.artists,
+                'date_release': release.date_release, 'is_featuring': True
             })
         for release in db_last_albums_scalars:
             last_releases.append({
